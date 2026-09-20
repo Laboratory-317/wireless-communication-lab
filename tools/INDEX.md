@@ -130,3 +130,16 @@ node tools/translate-ru-to-en.js --source content\news\items\001-laboratory-news
   a reachable LibreTranslate instance.
 - Notes: MyMemory works without a key but has free-tier limits. LibreTranslate
   can run for free as a self-hosted local API.
+
+## `tools/build-diagrams.js`
+
+- Purpose: Generate the four explanatory SVG diagrams in both languages from labels in `content/research-diagrams/{ru,en}.md`.
+- Parameters: none.
+- Example: `node tools/build-diagrams.js`.
+- Dependencies: Node.js built-ins only.
+- Outputs: `assets/research/*.svg`. Edit labels in Markdown and drawing geometry in this script.
+- Integration: `tools/build-site.js` and `tools/codex-check.ps1` now run this generator before building content; their existing parameters remain unchanged.
+
+`tools/check-site.js` also checks that missing photos, contacts and interests remain visible in both languages. Run with `node tools/check-site.js`; no parameters or additional dependencies.
+
+`tools/build-content.js` retains colon-containing CV prose and excludes only known profile metadata from introductions. `tools/check-site.js` checks research-interest introductions remain visible. Existing commands and dependencies are unchanged.

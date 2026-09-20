@@ -3,15 +3,15 @@
 Name: Dmitriy Pokamestov
 Role: Candidate of Technical Sciences, Associate Professor at the TUSUR Department of Telecommunications and Basic Principles of Radio Engineering
 
-Specialist in non-orthogonal multiple access methods for multi-antenna wireless communication systems. His research is connected with 5G/6G, SCMA, NOMA, RSMA, polar codes, and radio channel modeling.
+Research interests: multiple access methods and multi-antenna systems for 5G/6G communications; SCMA, NOMA, RSMA, polar codes and radio channel modelling.
 
 ### Research Work
 
-His research topic is non-orthogonal multiple access methods in multi-antenna wireless communication systems. Scientific consultant: Alexander Filatov, Doctor of Technical Sciences, Professor at the Department of Telecommunications and Basic Principles of Radio Engineering.
+Research interests: non-orthogonal multiple access in multi-antenna wireless systems. Scientific consultant: Alexander Filatov, Doctor of Technical Sciences, Professor at the Department of Telecommunications and Basic Principles of Radio Engineering.
 
 ### Publications and Results
 
-He has 21 publications in journals recommended by VAK, 15 publications in Russian "White List" journals, 15 publications in proceedings of national conferences, and 65 publications in proceedings of international conferences.
+Author and co-author of 21 publications in journals recommended by VAK, 15 publications in Russian "White List" journals, 15 publications in proceedings of national conferences, and 65 publications in proceedings of international conferences.
 
 ### Projects and Grants
 
@@ -19,7 +19,7 @@ He participated in RSF No. 19-79-00087 "Using non-orthogonal multiple access met
 
 ### Intellectual Property
 
-Intellectual property results include the inventions "Channel estimation method in orthogonal frequency division multiplexing data transmission systems using Compressed Sensing" and "Radiometric receiver for low-intensity noise signals", software registrations for SCMA, SCMA-MIMO, MIMO, NOMA, polar coding, and multi-user communication system models, and the utility models "Device for transmitting information through power circuits" and "Transceiver module of a radar system".
+Developments include the inventions "Channel estimation method in orthogonal frequency division multiplexing data transmission systems using Compressed Sensing" and "Radiometric receiver for low-intensity noise signals", software registrations for SCMA, SCMA-MIMO, MIMO, NOMA, polar coding, and multi-user communication system models, and the utility models "Device for transmitting information through power circuits" and "Transceiver module of a radar system".
 
 ### Awards
 

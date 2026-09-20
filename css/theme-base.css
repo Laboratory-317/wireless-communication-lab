@@ -541,3 +541,7 @@ body:not([data-page="home"]) .brand img {
 .page:focus {
   outline:none;
 }
+
+.missing-data { color: var(--muted, #586970); font-size: .85rem; font-style: italic; }
+.photo-note { margin: .5rem 0; }
+.news-date { display: block; margin-bottom: .5rem; }

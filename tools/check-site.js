@@ -51,6 +51,12 @@ for (const theme of model.themes) {
         assert(!/\bTODO\b|undefined|>заглушка<|>placeholder</i.test(app.innerHTML), `Placeholder in ${file}`);
         assert(!app.innerHTML.includes('https://example.com'), `Example link in ${file}`);
         if (profile) assert(app.innerHTML.includes(profile.name), `Wrong CV ${profile.slug}`);
+        if (name === 'people') {
+          const content = model.languages[language];
+          assert(app.innerHTML.includes(content.missingPhoto), 'Missing-photo label must be visible');
+          assert(app.innerHTML.includes(content.missingData), 'Unknown contact must remain visible');
+          assert(app.innerHTML.includes(content.missingBiography), 'Unknown interests must remain visible');
+        }
         if (name === 'index') assert.equal((app.innerHTML.match(/class="interest-image"/g) || []).length, 4);
         checkLinks(app.innerHTML, file);
         renders++;
@@ -67,6 +73,7 @@ for (const theme of model.themes) {
 assert.equal(model.themes.length, 4);
 for (const content of Object.values(model.languages)) {
   for (const profile of content.cvProfiles) {
+    assert(/Научные интересы:|Research interests:/.test(profile.summary), `Research-interest lead must remain visible: ${profile.slug}`);
     for (const section of profile.sections) {
       assert(!profile.summary.includes(section.text), `CV summary duplicates section: ${profile.slug}`);
     }

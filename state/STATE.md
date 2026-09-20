@@ -5,6 +5,16 @@
 Deliver four genuinely distinct theme previews with shared Markdown content,
 GitHub Pages-only publishing, and a practical editing workflow for non-developers.
 
+## September 21, 2026 editorial revision
+
+- Cleaned RU/EN home, student, news, team and CV wording. Research descriptions use neutral research-interest lists; removed laboratory leadership hierarchy.
+- Fixed CV parsing to retain introductory prose containing a colon (including research interests), with a regression check.
+- Restored the original lab logo in the journal theme, including narrow layouts.
+- Rebuilt all four SVG diagrams with explanatory labels and separate RU/EN assets. Human-authored labels live in `content/research-diagrams/`; the dependency-free generator runs in both build and check workflows.
+- Following the user's updated requirement, unknown photos, contacts, research interests, news dates, history and laboratory photographs remain explicit placeholders. This supersedes the September 20 decision to hide empty contacts. No missing facts were invented.
+- Verified all 80 renders and local references through `tools/codex-check.ps1`, plus the Pages artifact build. Browser-reviewed team/logo on desktop and at 375px content width, and the English diagram gallery. No horizontal overflow in the checked narrow team layout.
+- Work remains local on `codex/four-lab-designs`; no push or publication.
+
 ## September 20, 2026 redesign
 
 - Baseline captured in commit `634be9a`, including the existing documentation bundle.

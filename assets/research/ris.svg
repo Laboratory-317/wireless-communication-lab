@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
-<rect width="720" height="480" fill="#f0f3f0"/>
-<defs><pattern id="cells" width="26" height="26" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="22" height="22" fill="#b8cfc3" stroke="#326855"/></pattern></defs>
-<g fill="none" stroke="#253e48" stroke-width="2"><path d="M125 345H603" stroke-dasharray="5 7" opacity=".3"/>
-<rect x="306" y="273" width="52" height="128" fill="#d4dbd5"/><path d="M295 401H370"/>
-<rect x="338" y="78" width="156" height="78" fill="url(#cells)" stroke="none"/>
-<path d="M125 345L416 143L603 337M590 332L603 337L600 324" stroke="#326855" stroke-width="3"/>
-<path d="M416 160V238" stroke-dasharray="4 5"/><circle cx="125" cy="345" r="9" fill="#253e48"/><circle cx="603" cy="345" r="9" fill="#253e48"/>
-</g><g fill="#253e48" font-family="monospace" font-size="18"><text x="104" y="388">Tx</text><text x="584" y="388">Rx</text><text x="398" y="54">RIS</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+<title id="title">Управляемое отражение сигнала</title><desc id="desc">RIS создаёт дополнительный путь между передатчиком и приёмником</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}</style>
+<rect x="0" y="0" width="800" height="520" fill="#f3f6f3"/><rect x="32" y="32" width="4" height="60" fill="#257664"/>
+<text x="52" y="58" class="head">Управляемое отражение сигнала</text><text x="52" y="88" class="muted">RIS создаёт дополнительный путь между передатчиком и приёмником</text>
+<text x="744" y="57" text-anchor="end" class="muted">04</text>
+<path d="M138 339L682 339" style="stroke:#a7b9b1;stroke-dasharray:5 6"/><rect x="368" y="283" width="50" height="105" fill="#d7dcd4" stroke="#536c70"/><text x="393" y="413" text-anchor="middle" class="muted">Препятствие</text><rect x="443" y="152" width="164" height="62" rx="4" fill="#dce8e1" stroke="#183841"/><rect x="450" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="475" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="500" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="525" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="550" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="575" y="159" width="20" height="20" rx="2" fill="#257664"/><rect x="450" y="184" width="20" height="20" rx="2" fill="#257664"/><rect x="475" y="184" width="20" height="20" rx="2" fill="#257664"/><rect x="500" y="184" width="20" height="20" rx="2" fill="#257664"/><rect x="525" y="184" width="20" height="20" rx="2" fill="#257664"/><rect x="550" y="184" width="20" height="20" rx="2" fill="#257664"/><rect x="575" y="184" width="20" height="20" rx="2" fill="#257664"/><path d="M142 330L512 217" class="signal" marker-end="url(#arrow)"/><path d="M531 219L674 329" class="signal" marker-end="url(#arrow)"/><path d="M138 313L138 376" /><path d="M122 376L154 376" /><circle cx="138" cy="314" r="6" style="fill:#183841"/><rect x="674" y="318" width="28" height="47" rx="5" fill="#fff" stroke="#183841"/><path d="M683 356L693 356" /><text x="525" y="135" text-anchor="middle" font-weight="700">Поверхность RIS</text><text x="138" y="413" text-anchor="middle">Передатчик</text><text x="686" y="413" text-anchor="middle">Приёмник</text>
+<path d="M40 449L760 449" style="stroke:#ccd9d3"/><text x="40" y="483" class="small">Прямой путь перекрыт · сигнал проходит через RIS</text>
 </svg>

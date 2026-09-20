@@ -166,7 +166,7 @@
           <div class="news-list">
             ${content.newsItems.map((item) => `
               <article class="news-item">
-                <time>${item.date}</time>
+                ${item.date ? `<time>${html(item.date)}</time>` : `<span class="news-date missing-data">${html(content.missingDate)}</span>`}
                 <h3>${item.title}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>
@@ -286,7 +286,7 @@
       function personPhoto(person, name) {
         if (typeof person === "string" || !person.photo) {
           const initials = name.trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join("");
-          return `<div class="photo-placeholder person-initials" aria-hidden="true">${html(initials)}</div>`;
+          return `<div class="photo-placeholder person-initials" aria-hidden="true">${html(initials)}</div><p class="missing-data photo-note">${html(content.missingPhoto)}</p>`;
         }
 
         return `<img class="photo-placeholder" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;
@@ -296,7 +296,7 @@
         const value = String(contact.value || "").trim();
 
         if (!value) {
-          return html(placeholders.value);
+          return `<span class="missing-data">${html(content.missingData)}</span>`;
         }
 
         const markdownLink = value.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
@@ -321,13 +321,13 @@
 
       function personContacts(person) {
         if (typeof person === "string" || !person.contacts || !person.contacts.length) {
-          return [];
+          return [{ label: placeholders.email, value: "" }];
         }
 
         return person.contacts.map((contact) => ({
           label: contact.label,
-          value: contact.value || placeholders.value
-        })).filter((contact) => contact.label.toLowerCase() !== "cv" && contact.value !== placeholders.value);
+          value: contact.value || ""
+        })).filter((contact) => contact.label.toLowerCase() !== "cv");
       }
 
       function personCvHref(person) {
@@ -366,7 +366,7 @@
                     </div>
                     <div class="person-info">
                       <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
-                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
+                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : `<p class="missing-data">${html(content.missingBiography)}</p>`}
                     </div>
                   </article>
                 `;

@@ -3,15 +3,15 @@
 Name: Yakov Kryukov
 Role: Candidate of Technical Sciences, Associate Professor
 
-Specialist in wireless communication systems, signal processing, and multiple access technologies. His professional work combines research, software model development, and education projects in telecommunications.
+Research interests: wireless communication systems, signal processing and multiple access methods. Develops simulation models and teaches telecommunications courses.
 
-### Professional Profile
+### Work at TUSUR
 
-Since 2025, he has worked as Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. In 2023-2028, his doctoral research focuses on signal generation, processing, and transmission in multi-user wireless communication systems with power-domain channel separation and reconfigurable intelligent surfaces.
+Since 2025, he has worked as Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. His doctoral research focuses on signal generation, processing, and transmission in multi-user wireless communication systems with power-domain channel separation and reconfigurable intelligent surfaces.
 
 ### Research Areas and Results
 
-His research areas include non-orthogonal multiple access, error-correcting coding, multi-antenna systems, reconfigurable intelligent surfaces, and signal generation and processing for 5G/6G communication systems. He is the author and co-author of more than 100 research works; more than 60 publications are indexed in Scopus, Web of Science, the VAK list, and the Russian "White List". He is also the author and co-author of 10 intellectual property results.
+His research areas include non-orthogonal multiple access, error-correcting coding, multi-antenna systems, reconfigurable intelligent surfaces, and signal generation and processing for 5G/6G communication systems. He is the author and co-author of more than 100 research works; more than 60 publications appeared in venues indexed in Scopus or Web of Science, or included in Russia’s VAK or White List. He is also the author and co-author of 10 intellectual property results.
 
 ### Projects
 
@@ -19,7 +19,7 @@ He participated in RSF No. 21-79-00160 "Communication resource allocation in tel
 
 ### Teaching
 
-He has participated in TUSUR education since 2013. He supervised graduation theses for 31 bachelor's students and 18 master's students. He teaches seven communication-related courses in Russian and English and developed eight online courses.
+He has taught at TUSUR since 2013. He supervised theses for 31 bachelor's students and 18 master's students. He teaches seven communication-related courses in Russian and English and developed eight online courses.
 
 ### Awards
 

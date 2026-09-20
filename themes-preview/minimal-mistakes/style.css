@@ -1,4 +1,4 @@
-@import url("../../css/theme-base.css?v=20260920-final");
+@import url("../../css/theme-base.css?v=20260921-editorial");
 /* Research journal: masthead, editorial columns and fine typographic rules. */
 :root {
   --paper:#f7f3eb;
@@ -21,13 +21,19 @@
 }
 
 .brand {
+  flex-direction:column;
+  gap:18px;
   justify-content:center;
   text-align:center;
   padding:36px 0 28px;
 }
 
 .brand img {
-  display:none;
+  display:block;
+  flex-shrink:0;
+  width:64px;
+  height:64px;
+  object-fit:contain;
 }
 
 .brand h1 {

@@ -15,12 +15,13 @@ powershell -ExecutionPolicy Bypass -File .\tools\codex-check.ps1
 The check should:
 
 - show repository status;
-- regenerate `js/lab-content.js`;
+- regenerate localized SVG diagrams and `js/lab-content.js`;
 - run `setup-theme-showcase.ps1`;
 - validate generated JavaScript with Node.js;
 - verify required entry files exist.
 - exercise all four themes in both languages, including each CV profile;
-- validate local content links/images and reject public TODO/example links.
+- validate local content links/images and reject public TODO/example links;
+- retain localized, explicit placeholders for genuinely missing profile data.
 
 For publication changes also run `node tools/build-site.js` and inspect `/_site/`
 through the local server. The artifact must not contain repository documentation.

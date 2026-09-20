@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
-<rect width="720" height="480" fill="#f0f3f0"/>
-<path d="M120 370V100M112 114L120 100L128 114M120 370H615M602 362L615 370L602 378" fill="none" stroke="#253e48" stroke-width="2"/>
-<g fill="#315e55"><path d="M145 125H270V180H145ZM290 200H415V255H290ZM435 275H560V330H435Z"/></g>
-<g fill="#79948e"><path d="M290 125H415V180H290ZM435 200H560V255H435ZM145 275H270V330H145Z"/></g>
-<g fill="#c9d6cf"><path d="M435 125H560V180H435ZM145 200H270V255H145ZM290 275H415V330H290Z"/></g>
-<g fill="#253e48" font-family="monospace" font-size="18"><text x="593" y="411">t</text><text x="84" y="116">f</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+<title id="title">Как пользователи делят радиоресурсы</title><desc id="desc">Два принципа распределения одного частотного канала</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}</style>
+<rect x="0" y="0" width="800" height="520" fill="#f3f6f3"/><rect x="32" y="32" width="4" height="60" fill="#257664"/>
+<text x="52" y="58" class="head">Как пользователи делят радиоресурсы</text><text x="52" y="88" class="muted">Два принципа распределения одного частотного канала</text>
+<text x="744" y="57" text-anchor="end" class="muted">03</text>
+<text x="210" y="145" text-anchor="middle" font-weight="700">Раздельные ресурсы</text><text x="592" y="145" text-anchor="middle" font-weight="700">Общий ресурс</text><rect x="50" y="180" width="320" height="130" rx="6" fill="#fff" stroke="#ccdad3"/><rect x="430" y="180" width="320" height="130" rx="6" fill="#fff" stroke="#ccdad3"/><rect x="62" y="192" width="68" height="106" rx="3" fill="#257664"/><rect x="139" y="192" width="68" height="106" rx="3" fill="#b77538"/><rect x="216" y="192" width="68" height="106" rx="3" fill="#257664"/><rect x="293" y="192" width="68" height="106" rx="3" fill="#b77538"/><rect x="442" y="192" width="296" height="66" rx="3" fill="#257664"/><rect x="442" y="262" width="296" height="36" rx="3" fill="#b77538"/><path d="M50 326L369 326" class="signal" marker-end="url(#arrow)"/><path d="M430 326L748 326" class="signal" marker-end="url(#arrow)"/><text x="210" y="351" text-anchor="middle" class="small">Время</text><text x="592" y="351" text-anchor="middle" class="small">Время</text><text x="210" y="383" text-anchor="middle" class="small">Пользователи передают по очереди</text><text x="592" y="383" text-anchor="middle" class="small">Сигналы разделяются при приёме</text><rect x="195" y="411" width="12" height="12" fill="#257664"/><text x="217" y="422" class="small">Пользователь A</text><rect x="438" y="411" width="12" height="12" fill="#b77538"/><text x="460" y="422" class="small">Пользователь B</text>
+<path d="M40 449L760 449" style="stroke:#ccd9d3"/><text x="40" y="483" class="small">TDMA — разделение по времени · PD-NOMA — по мощности</text>
 </svg>

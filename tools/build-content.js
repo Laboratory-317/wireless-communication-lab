@@ -312,6 +312,10 @@ function parseNavigation(lang) {
   return {
     labName: meta["название лаборатории"] || meta["lab name"],
     tagline: meta["подзаголовок"] || meta.tagline,
+    missingPhoto: meta["нет фото"] || meta["missing photo"],
+    missingData: meta["нет данных"] || meta["missing data"],
+    missingDate: meta["нет даты"] || meta["missing date"],
+    missingBiography: meta["нет биографии"] || meta["missing biography"],
     diagramCaption: meta["подпись схем"] || meta["diagram caption"] || "",
     skipNavigation: meta["пропуск навигации"] || meta["skip navigation"] || "",
     navigationLabel: meta["навигация"] || meta["navigation label"] || "",
@@ -642,7 +646,7 @@ function parseCv(lang) {
         slug: profileMeta.slug || slug,
         name: profileMeta["имя"] || profileMeta.name || title,
         role: profileMeta["роль"] || profileMeta.role || "",
-        summary: textFromLines(summaryLines),
+        summary: textFromLines(summaryLines.filter((line) => !/^(?:имя|роль|name|role|slug):/i.test(line)), { includeKeyValues: true }),
         sections: parseCvSections(bodyLines)
       };
     })

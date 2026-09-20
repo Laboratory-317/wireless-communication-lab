@@ -26,6 +26,10 @@ Require-Command "git"
 Step "Repository status"
 git status --short --branch
 
+Step "Regenerating research diagrams"
+node tools/build-diagrams.js
+if ($LASTEXITCODE -ne 0) { throw "Diagram generation failed." }
+
 Step "Regenerating js/lab-content.js"
 node tools/build-content.js
 if ($LASTEXITCODE -ne 0) {

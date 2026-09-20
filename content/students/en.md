@@ -1,6 +1,6 @@
-# We will teach you
+# For students
 
-A small task in simulation, signal processing or reading a research paper can be a starting point in wireless communications. The steps below help you prepare your first enquiry.
+Interested in wireless communications? Start with a simulation, a signal processing task or a research paper.
 
 ## Choose a topic
 
@@ -8,11 +8,11 @@ Explore our [research areas](index.html) and [projects](projects.html). Possible
 
 ## Introduce yourself
 
-Tell us where and what you study, which topics interest you, and whether you have experience in programming or mathematical modelling. If you are new to the field, say so — this helps identify a suitable starting point.
+Tell us where and what you study, which topics interest you, and whether you have experience in programming or mathematical modelling. If you are new to the field, let us know — we can discuss where to start.
 
 ## Contact the laboratory
 
-Email [laboratory317@gmail.com](mailto:laboratory317@gmail.com) to suggest a topic or discuss possible work. The specific task, participation format and supervisor should be agreed individually.
+Email [laboratory317@gmail.com](mailto:laboratory317@gmail.com) to suggest a topic or ask about available tasks. We can discuss the scope and format of the work by email.
 
 ## Tracks
 

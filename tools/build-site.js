@@ -5,6 +5,7 @@ const vm = require('vm');
 const { execFileSync } = require('child_process');
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, '_site');
+execFileSync(process.execPath, [path.join(__dirname, 'build-diagrams.js')], { stdio: 'inherit' });
 execFileSync(process.execPath, [path.join(__dirname, 'build-content.js')], { stdio: 'inherit' });
 execFileSync(process.execPath, [path.join(__dirname, 'check-site.js')], { stdio: 'inherit' });
 // _site is disposable generated output, never a source directory.
