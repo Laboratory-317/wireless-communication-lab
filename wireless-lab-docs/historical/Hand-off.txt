@@ -1,0 +1,336 @@
+# Hand-off: Wireless Communication Laboratory GitHub Pages project
+
+## Репозиторий
+
+GitHub:
+https://github.com/temaSW/wireless-communication-lab
+
+Локально:
+
+A:\Work\wireless-lab-site
+
+GitHub Pages:
+
+https://temasw.github.io/wireless-communication-lab/
+
+---
+
+# Текущее состояние
+
+Сделано:
+
+✅ GitHub Pages включён  
+✅ GitHub Actions deployment работает  
+✅ labicon.png находится в корне проекта  
+✅ базовый сайт опубликован  
+
+Workflow:
+
+.github/workflows/pages.yml
+
+Последний успешный deployment:
+
+Trigger Pages deployment
+ID: 31824816966
+
+---
+
+# Текущая проблема
+
+Все стили выглядят одинаково на сайте.
+
+Причина:
+
+Showcase разных тем ещё не реализован полностью.
+
+Нужно сделать отдельные preview-страницы, чтобы визуально сравнить:
+
+1. Academic Pages
+2. Hugo Academic
+3. Minimal Mistakes
+4. Bootstrap Academic
+
+---
+
+# Подготовленные темы
+
+Папка:
+
+A:\Work\wireless-lab-themes-test
+
+
+Структура:
+
+wireless-lab-themes-test
+
+├── academicpages
+│
+├── hugo-academic
+│
+├── minimal-mistakes
+│
+└── bootstrap-academic
+
+
+## Academic Pages
+
+Источник:
+
+https://github.com/academicpages/academicpages.github.io
+
+Стек:
+
+- Jekyll
+- Markdown
+- GitHub Pages native
+
+Подходит для:
+
+- Publications
+- CV
+- Projects
+- Research pages
+
+
+---
+
+## Hugo Academic / Hugo Blox
+
+Источник:
+
+https://github.com/HugoBlox/theme-academic-cv
+
+Стек:
+
+- Hugo
+- Markdown
+- современные academic layouts
+
+
+Важно:
+
+Это тема, не готовый сайт.
+
+Нужно создать Hugo project:
+
+hugo new site lab-hugo
+
+
+---
+
+## Minimal Mistakes
+
+Источник:
+
+https://github.com/mmistakes/minimal-mistakes
+
+Стек:
+
+- Jekyll
+- flexible layouts
+
+
+---
+
+## Bootstrap Academic
+
+Создан через:
+
+npm create vite@latest
+
+Сейчас:
+
+Vite starter
+
+Требуется адаптация под лабораторию.
+
+---
+
+# Незавершённая задача
+
+Был создан:
+
+setup-theme-showcase.ps1
+
+Проблема:
+
+PowerShell ParserError:
+
+The string is missing the terminator: "@
+
+
+Причина:
+
+сломанный here-string:
+
+@"
+...
+"@
+
+
+Нужно заменить скрипт полностью.
+
+---
+
+# Следующая задача
+
+Создать рабочий showcase.
+
+
+Целевая структура:
+
+wireless-lab-site
+
+│
+├── index.html
+│
+├── themes-preview
+│
+├── academicpages
+│   └── demo
+│
+├── hugo-academic
+│   └── demo
+│
+├── minimal-mistakes
+│   └── demo
+│
+└── bootstrap-academic
+    └── demo
+
+
+Главная страница:
+
+Wireless Communication Laboratory
+
+Choose design:
+
+[Academic Pages]
+
+[Hugo Academic]
+
+[Minimal Mistakes]
+
+[Bootstrap]
+
+
+---
+
+# Новый setup-theme-showcase.ps1 должен:
+
+Создать:
+
+themes-preview/
+
+
+Скопировать:
+
+labicon.png
+
+
+Создать:
+
+index.html
+
+
+Добавить:
+
+- карточки тем
+- кнопки Preview
+- одинаковый лабораторный контент
+- ссылки на демо
+
+
+---
+
+# После showcase
+
+Собрать каждую тему.
+
+
+## Academic Pages
+
+Запуск:
+
+bundle install
+
+bundle exec jekyll serve
+
+
+---
+
+## Minimal Mistakes
+
+Запуск:
+
+bundle install
+
+bundle exec jekyll serve
+
+
+---
+
+## Hugo Academic
+
+Создание:
+
+hugo new site lab-hugo
+
+
+Подключение:
+
+git submodule add https://github.com/HugoBlox/theme-academic-cv themes/academic-cv
+
+
+---
+
+## Bootstrap
+
+Сборка:
+
+npm install
+
+npm run build
+
+
+---
+
+# Цель
+
+Выбрать один дизайн и сделать официальный сайт лаборатории.
+
+
+Финальная структура:
+
+Home
+
+├── Research
+│   ├── 5G/6G
+│   ├── Wireless Networks
+│   ├── IoT
+│   └── Signal Processing
+│
+├── People
+│
+├── Publications
+│
+├── Projects
+│
+├── News
+│
+└── Contact
+
+
+Логотип:
+
+labicon.png
+
+
+---
+
+# Точка продолжения
+
+1. Исправить setup-theme-showcase.ps1
+2. Создать страницу выбора дизайнов
+3. Проверить, что GitHub Pages показывает разные темы
+4. Выбрать основу для финального сайта

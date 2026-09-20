@@ -1,0 +1,84 @@
+{
+  "bundle": "wireless-lab-docs",
+  "prepared": "2026-09-08",
+  "repository": "https://github.com/temaSW/wireless-communication-lab",
+  "snapshot_branch": "main",
+  "snapshot_commit": "235cab1fc477eb7542e98a42816365866a7effd3",
+  "files": [
+    {
+      "path": "README_FIRST.md",
+      "sha256": "34cf503e4becb58926f657f5070c6654391fa2afa6778ede04f7cb3147a6a5e4",
+      "bytes": 1014
+    },
+    {
+      "path": "historical/Hand-off.txt",
+      "sha256": "1eb205a9daf65f2e1fef204da152be671046c70678d6343e3bda6b5893ef9c67",
+      "bytes": 4579
+    },
+    {
+      "path": "repository-docs/AGENTS.md",
+      "sha256": "452b2c0bea000ddb619607dacd03ee7958bcf87b9f408b1c31a02be8ea3d52d4",
+      "bytes": 1968
+    },
+    {
+      "path": "repository-docs/ARCHITECTURE.md",
+      "sha256": "f2ecbc198efd39b73aeba46d88ed2c19406df4492782e883b8721b23dfc7954b",
+      "bytes": 2490
+    },
+    {
+      "path": "repository-docs/CONTENT_EDITING.md",
+      "sha256": "c9b763f615c6558eda95b1cf825f967ee134fc79440a3c879a9d72e246ed339f",
+      "bytes": 2389
+    },
+    {
+      "path": "repository-docs/DEPLOYMENT.md",
+      "sha256": "a5ec20b91c88c05f2fbad85aef831e6cf6183ba5e4b0de139db65134c70d5b9b",
+      "bytes": 633
+    },
+    {
+      "path": "repository-docs/ENVIRONMENT.md",
+      "sha256": "e5b9546e7aad29ba6ecd30986fec14436e2117685835e087672844a77194ae79",
+      "bytes": 1813
+    },
+    {
+      "path": "repository-docs/ENVIRONMENT_INVENTORY.md",
+      "sha256": "82faff6880a2e5424fcf403a322ec33ccceec07df8a13ea493b246eafe87df39",
+      "bytes": 849
+    },
+    {
+      "path": "repository-docs/STATE.md",
+      "sha256": "cac1beef9c4d4d8d04cfb7e7d527b391884ded18a9dd4a808fb28d71fe803108",
+      "bytes": 1597
+    },
+    {
+      "path": "repository-docs/THEME_CONFIG.md",
+      "sha256": "706fe207248c949e91325129145d934ad4abead5ab0bad1101897e142c0b5c4e",
+      "bytes": 496
+    },
+    {
+      "path": "repository-docs/TOOLS_INDEX.md",
+      "sha256": "6d8d620f2552dc9f20c64f07ea9459d9f76b98d4f0d80fecb4ef7e23855758b9",
+      "bytes": 1493
+    },
+    {
+      "path": "repository-docs/VERIFICATION.md",
+      "sha256": "e24fa9f70091033db527c99a2b5f1e237afea8f3b55b363cb84c259ac9f56f24",
+      "bytes": 1401
+    },
+    {
+      "path": "synthesis/OPENAI_CODEX_GUIDANCE.md",
+      "sha256": "538ff8978bcfb14379dc40f3199659c788ca8a34ce11dcbac8f954c4fcac2a44",
+      "bytes": 3691
+    },
+    {
+      "path": "synthesis/PROJECT_SNAPSHOT.md",
+      "sha256": "288450fd603fc161444ab1cc8735a9fdb03a03e04ee421292b02c854015e01f1",
+      "bytes": 3065
+    },
+    {
+      "path": "synthesis/SOURCE_PRIORITY.md",
+      "sha256": "4706ba2d25e5fe59fd6747cda39c770eedd846b5a84f112ff121bee4735eb0cc",
+      "bytes": 743
+    }
+  ]
+}
