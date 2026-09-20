@@ -5,6 +5,14 @@
 Deliver four genuinely distinct theme previews with shared Markdown content,
 GitHub Pages-only publishing, and a practical editing workflow for non-developers.
 
+## GitHub access verified after owner login
+
+- GitHub account `temaSW` has admin/push access to the repository.
+- Pages is configured with `build_type: workflow` and HTTPS enabled; recent deployments of the existing main branch succeeded.
+- Public URL: https://temasw.github.io/wireless-communication-lab/ .
+- Remote main is `235cab1`; local redesign is `16b39cc`. No push, merge or deployment was performed.
+- Codex has an isolated APPDATA directory. For gh commands in this session, set process-local GH_CONFIG_DIR to the existing user configuration at `$env:USERPROFILE\AppData\Roaming\GitHub CLI`. Do not copy or print credentials.
+
 ## September 21, 2026 launch preparation
 
 - User confirmed keeping the four-theme selector at launch.
