@@ -1,22 +1,32 @@
-# For students
+# Turn curiosity into research
 
-Interested in wireless communications? Start with a simulation, a signal processing task or a research paper.
+How can we send more data over the same radio channel? How can we recover a message almost lost in noise? These are some of the questions we explore in the lab — and we invite students to explore them with us.
 
-## Choose a topic
+## Start with a small question
 
-Explore our [research areas](index.html) and [projects](projects.html). Possible starting points include mobile communications, polar codes, multiple access and intelligent surfaces.
+Your first task could be a simple channel model, a comparison of two transmission methods or a test of an idea from a paper. Together, we will find a starting point that is interesting and manageable.
 
-## Introduce yourself
+## Learn as you go
 
-Tell us where and what you study, which topics interest you, and whether you have experience in programming or mathematical modelling. If you are new to the field, let us know — we can discuss where to start.
+Programming, mathematics and reading research papers become more familiar through practical work. Bring your questions and curiosity. From there, you can try things out, discuss what is unclear and gradually build your understanding.
 
-## Contact the laboratory
+## Make a finding of your own
 
-Email [laboratory317@gmail.com](mailto:laboratory317@gmail.com) to suggest a topic or ask about available tasks. We can discuss the scope and format of the work by email.
+Run a model, explain unexpected signal behaviour, suggest an improvement and test it. These small steps build into research that may develop into a course project, a thesis or a scientific publication.
 
 ## Tracks
 
-- 5G/6G wireless systems
-- Error-correcting codes
-- Multiple access
-- RIS and STAR-RIS
+- Next-generation communications — 5G/6G
+- Data through noise — error-correcting codes
+- One channel, many users — multiple access
+- Shaping radio propagation — RIS and STAR-RIS
+
+## First step
+
+### Let's find your first research task
+
+Tell us where you study and what makes you curious about wireless communications. You do not need a project proposal — a conversation is a good place to start.
+
+[Talk about a first step](mailto:laboratory317@gmail.com)
+
+laboratory317@gmail.com

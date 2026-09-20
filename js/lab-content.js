@@ -111,7 +111,7 @@ window.LAB_CONTENT = {
         "peopleKicker": "Команда лаборатории",
         "peopleTitle": "Коллектив",
         "studentsKicker": "Для студентов",
-        "studentsTitle": "Студентам",
+        "studentsTitle": "От любопытства к исследованию",
         "projectsKicker": "Текущая работа",
         "projectsTitle": "Проекты",
         "patentsKicker": "Интеллектуальная собственность",
@@ -281,7 +281,11 @@ window.LAB_CONTENT = {
                 },
                 {
                   "label": "Scholar",
-                  "value": "https://scholar.google.ru/citations?user=32XjC7sAAAAJ&hl=ru&oi=ao"
+                  "value": ""
+                },
+                {
+                  "label": "Профиль ТУСУР",
+                  "value": "https://directory.tusur.ru/people/2554"
                 },
                 {
                   "label": "ORCID",
@@ -300,7 +304,7 @@ window.LAB_CONTENT = {
               "contacts": [
                 {
                   "label": "E-mail",
-                  "value": ""
+                  "value": "iakov.v.kriukov@tusur.ru"
                 },
                 {
                   "label": "Scholar",
@@ -439,10 +443,15 @@ window.LAB_CONTENT = {
           "title": "Студенты",
           "people": [
             {
-              "name": "Погорелов Евгений Батькович",
+              "name": "Погорелов Евгений",
               "photo": "",
-              "description": "",
-              "contacts": []
+              "description": "Отчество и научные интересы уточняются.",
+              "contacts": [
+                {
+                  "label": "E-mail",
+                  "value": ""
+                }
+              ]
             }
           ]
         }
@@ -455,32 +464,33 @@ window.LAB_CONTENT = {
         "value": "заглушка"
       },
       "studentOffer": {
-        "lead": "Интересуетесь беспроводной связью? Начать можно с моделирования, обработки сигналов или разбора научной статьи.",
+        "lead": "Как передать больше данных в том же радиоканале? Как восстановить сообщение, почти потерявшееся в шуме? В лаборатории мы ищем ответы на такие вопросы — и приглашаем студентов искать их вместе с нами.",
         "steps": [
           {
-            "title": "Выберите тему",
-            "text": "Посмотрите [научные направления](index.html) и [проекты](projects.html). Можно начать с мобильной связи, полярных кодов, множественного доступа или интеллектуальных поверхностей."
+            "title": "Начать с небольшого вопроса",
+            "text": "Первой задачей может стать простая модель канала, сравнение двух способов передачи или проверка идеи из статьи. Вместе выберем отправную точку, с которой интересно и посильно начать."
           },
           {
-            "title": "Расскажите о себе",
-            "text": "Напишите, где и на каком курсе вы учитесь, какие темы вам интересны и знакомы ли вы с программированием и математическим моделированием. Если опыта пока нет, напишите об этом — обсудим, с чего начать."
+            "title": "Разобраться в процессе",
+            "text": "Программирование, математика и язык научных статей осваиваются постепенно, на конкретных задачах. Можно прийти с вопросами и интересом к теме. Дальше — пробовать, обсуждать непонятное и шаг за шагом разбираться глубже."
           },
           {
-            "title": "Свяжитесь с лабораторией",
-            "text": ""
+            "title": "Получить свой результат",
+            "text": "Запустить модель, объяснить неожиданное поведение сигнала, предложить улучшение и проверить его. Из таких шагов складывается исследование, которое может вырасти в курсовую, выпускную работу или научную публикацию."
           }
         ],
+        "contact": "### Давайте найдём вашу первую задачу\n\nРасскажите, где вы учитесь и что вам любопытно в беспроводной связи. Готовая тема не обязательна — начнём с разговора.\n\n[Обсудить первый шаг](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
         "tracks": [
-          "Беспроводные системы 5G/6G",
-          "Помехоустойчивое кодирование",
-          "Множественный доступ",
-          "RIS и STAR-RIS"
+          "Связь нового поколения — 5G/6G",
+          "Передача данных сквозь шум — помехоустойчивые коды",
+          "Один канал для многих — множественный доступ",
+          "Управление радиоволнами — RIS и STAR-RIS"
         ]
       },
       "projects": [
         {
           "title": "РНФ",
-          "text": "- РНФ № 24-29-00172. Улучшение характеристик систем связи с неортогональным множественным доступом с помощью полярных кодов. 2023-2025.\n- РНФ № 22-79-10148. Перспективные методы множественного доступа для будущих систем беспроводной связи 6G. 2022-2025. Объем финансирования: 18 млн руб.\n- РНФ № 21-79-00160. Распределение ресурсов связи в телекоммуникационных системах с неортогональным множественным доступом. 2021-2023.\n- РНФ № 19-79-00087. Использование методов неортогонального множественного доступа для систем беспроводной связи. 2019-2021. Объем финансирования: 3 млн руб.",
+          "text": "- РНФ № 24-29-00172. Улучшение характеристик систем связи с неортогональным множественным доступом с помощью полярных кодов. 2024–2025. [Карточка РНФ](https://rscf.ru/project/24-29-00172/).\n- РНФ № 22-79-10148. Перспективные методы множественного доступа для будущих систем беспроводной связи 6G. 2022-2025. Объем финансирования: 18 млн руб. [Карточка РНФ](https://rscf.ru/project/22-79-10148/).\n- РНФ № 21-79-00160. Распределение ресурсов связи в телекоммуникационных системах с неортогональным множественным доступом. 2021-2023.\n- РНФ № 19-79-00087. Использование методов неортогонального множественного доступа для систем беспроводной связи. 2019-2021. Объем финансирования: 3 млн руб.",
           "images": []
         },
         {
@@ -535,7 +545,7 @@ window.LAB_CONTENT = {
             "items": [
               "**Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)",
               "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
-              "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. [DOI](https://doi.org/10.31857/S0033849425010102)",
+              "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Статья](https://journals.eco-vector.com/0033-8494/article/view/684125)",
               "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
               "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",
               "**Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)",
@@ -565,7 +575,7 @@ window.LAB_CONTENT = {
                   "**Analysis and design of common channel precoding algorithms for RSMA.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Eugeniy Rogozhnikov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 440–444. 2025.",
                   "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
                   "**Comparative Analysis of RSMA and SDMA under ZF and RZF Precoding.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Rudolf Litvinov, Eugeniy Rogozhnikov. *2025 IEEE XVII International Scientific and Technical Conference on Actual Problems of Electronic Instrument Engineering (APEIE)*, pp. 1–5. 2025.",
-                  "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. [DOI](https://doi.org/10.31857/S0033849425010102)",
+                  "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Статья](https://journals.eco-vector.com/0033-8494/article/view/684125)",
                   "**Influence of Phase States of Binary Unit Cell on Ris Characteristics.** Sergey Eremeev, Dmitriy Ilinskiy, Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov, Ivan Rybakov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–524. 2025.",
                   "**Linear Frequency Modulated Signals in a Multipath Channel with Time and Frequency Offsets.** S Mukhamadiev, E Rogozhnikov, K Dinochenko, N Kalashnikova, Y Kryukov, D Pokamestov, E Lomakov. *Radiotehnika i èlektronika*, vol. 70, no. 6, pp. 583–597. 2025.",
                   "**Modeling and Prototyping of Unit Cell for Reconfigurable Intelligent Surface: Electromagnetic Model, Design and Circuitry.** Dmitriy Ilinskiy, Sergey Eremeev, Yakov Kryukov, Dmitriy Pokamestov, Georgiy Shalin, Artem Shinkevich. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 450–453. 2025.",
@@ -589,7 +599,7 @@ window.LAB_CONTENT = {
                   "**Reducing Successive Interference Cancellation Iterations in Hybrid Beamforming Multiuser Massive Multiple Input Multiple Output Systems Through Grouping Users with Symmetry Channels.** Hashem Khaled Rehab, Eugeniy Rogozhnikov, Kirill Savenko, Semen Mukhamadiev, Yakov Kryukov, Dmitriy Pokamestov. *Symmetry*, vol. 16, no. 11, 1437. 2024.",
                   "**Simulation of RIS-assisted OFDM multipath channel.** Sergey A Eremeev, Dmitriy E Ilinskiy, Yakov V Kryukov, Dmitriy A Pokamestov, Georgiy N Shalin, Artem S Shinkevich. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 660–663. 2024.",
                   "**Алгоритм совместной оценки и компенсации ошибок временной и частотной синхронизации сигналов с возможностью регулирования точности оценки.** С. М. Мухамадиев, Е. В. Рогожников, Х. К. Х. А. А. Рехаб, К. В. Диноченко, Я. В. Крюков, Н. Г. Калашникова. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 3, pp. 331–340. 2024. [DOI](https://doi.org/10.17725/rensit.2024.16.331)",
-                  "**Применение физического уровня 5G NR в космических коммуникациях, оценка эффективности.** Евгений Васильевич Рогожников, Эдгар Михайлович Дмитриев, Данила Александрович Кондрашов, Яков Владимирович Крюков, Артем Владимирович Коновальчиков, Семен Минисович Мухамадиев. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 1, pp. 143–156. 2024. [DOI](https://doi.org/10.17725/j.rensit.2024.16.143)",
+                  "**Применение физического уровня 5G NR в космических коммуникациях, оценка эффективности.** Евгений Васильевич Рогожников, Эдгар Михайлович Дмитриев, Данила Александрович Кондрашов, Яков Владимирович Крюков, Артем Владимирович Коновальчиков, Семен Минисович Мухамадиев. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 1, pp. 143–156. 2024. DOI: 10.17725/rensit.2024.16.143. [Статья](http://rensit.ru/vypuski/article/550/)",
                   "**Формирование расширенных сигнально-кодовых конструкций на основе ldpс кодека 5G NR.** Денис Вячеславович Рыбалов, Андрей Александрович Моисеенко, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Александр Владимирович Филатов, Александр Михайлович Заболоцкий. *T Comm*, vol. 18, no. 12. 2024."
                 ]
               },
@@ -745,7 +755,7 @@ window.LAB_CONTENT = {
           }
         ]
       },
-      "mediaLead": "",
+      "mediaLead": "Схемы научных направлений лаборатории. Это концептуальные иллюстрации, а не экспериментальные данные. Для запроса материалов о лаборатории напишите на [laboratory317@gmail.com](mailto:laboratory317@gmail.com).",
       "mediaItems": [
         {
           "title": "Многоантенная связь",
@@ -922,7 +932,7 @@ window.LAB_CONTENT = {
         "peopleKicker": "Laboratory Team",
         "peopleTitle": "Team",
         "studentsKicker": "For Students",
-        "studentsTitle": "For students",
+        "studentsTitle": "Turn curiosity into research",
         "projectsKicker": "Current Work",
         "projectsTitle": "Projects",
         "patentsKicker": "Intellectual Property",
@@ -1092,7 +1102,11 @@ window.LAB_CONTENT = {
                 },
                 {
                   "label": "Scholar",
-                  "value": "https://scholar.google.ru/citations?user=32XjC7sAAAAJ&hl=ru&oi=ao"
+                  "value": ""
+                },
+                {
+                  "label": "TUSUR profile",
+                  "value": "https://directory.tusur.ru/people/2554"
                 },
                 {
                   "label": "ORCID",
@@ -1111,7 +1125,7 @@ window.LAB_CONTENT = {
               "contacts": [
                 {
                   "label": "E-mail",
-                  "value": ""
+                  "value": "iakov.v.kriukov@tusur.ru"
                 },
                 {
                   "label": "Scholar",
@@ -1252,8 +1266,13 @@ window.LAB_CONTENT = {
             {
               "name": "Evgeniy Pogorelov",
               "photo": "",
-              "description": "",
-              "contacts": []
+              "description": "Profile details and research interests to be confirmed.",
+              "contacts": [
+                {
+                  "label": "E-mail",
+                  "value": ""
+                }
+              ]
             }
           ]
         }
@@ -1266,32 +1285,33 @@ window.LAB_CONTENT = {
         "value": "placeholder"
       },
       "studentOffer": {
-        "lead": "Interested in wireless communications? Start with a simulation, a signal processing task or a research paper.",
+        "lead": "How can we send more data over the same radio channel? How can we recover a message almost lost in noise? These are some of the questions we explore in the lab — and we invite students to explore them with us.",
         "steps": [
           {
-            "title": "Choose a topic",
-            "text": "Explore our [research areas](index.html) and [projects](projects.html). Possible starting points include mobile communications, polar codes, multiple access and intelligent surfaces."
+            "title": "Start with a small question",
+            "text": "Your first task could be a simple channel model, a comparison of two transmission methods or a test of an idea from a paper. Together, we will find a starting point that is interesting and manageable."
           },
           {
-            "title": "Introduce yourself",
-            "text": "Tell us where and what you study, which topics interest you, and whether you have experience in programming or mathematical modelling. If you are new to the field, let us know — we can discuss where to start."
+            "title": "Learn as you go",
+            "text": "Programming, mathematics and reading research papers become more familiar through practical work. Bring your questions and curiosity. From there, you can try things out, discuss what is unclear and gradually build your understanding."
           },
           {
-            "title": "Contact the laboratory",
-            "text": ""
+            "title": "Make a finding of your own",
+            "text": "Run a model, explain unexpected signal behaviour, suggest an improvement and test it. These small steps build into research that may develop into a course project, a thesis or a scientific publication."
           }
         ],
+        "contact": "### Let's find your first research task\n\nTell us where you study and what makes you curious about wireless communications. You do not need a project proposal — a conversation is a good place to start.\n\n[Talk about a first step](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
         "tracks": [
-          "5G/6G wireless systems",
-          "Error-correcting codes",
-          "Multiple access",
-          "RIS and STAR-RIS"
+          "Next-generation communications — 5G/6G",
+          "Data through noise — error-correcting codes",
+          "One channel, many users — multiple access",
+          "Shaping radio propagation — RIS and STAR-RIS"
         ]
       },
       "projects": [
         {
           "title": "Russian Science Foundation",
-          "text": "- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2023-2025.\n- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. Funding: RUB 18 million.\n- RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.\n- RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021. Funding: RUB 3 million.",
+          "text": "- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).\n- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. Funding: RUB 18 million. [RSF project record](https://rscf.ru/project/22-79-10148/).\n- RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.\n- RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021. Funding: RUB 3 million.",
           "images": []
         },
         {
@@ -1346,7 +1366,7 @@ window.LAB_CONTENT = {
             "items": [
               "**Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)",
               "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
-              "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. [DOI](https://doi.org/10.31857/S0033849425010102)",
+              "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Article](https://journals.eco-vector.com/0033-8494/article/view/684125)",
               "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
               "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",
               "**Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)",
@@ -1376,7 +1396,7 @@ window.LAB_CONTENT = {
                   "**Analysis and design of common channel precoding algorithms for RSMA.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Eugeniy Rogozhnikov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 440–444. 2025.",
                   "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
                   "**Comparative Analysis of RSMA and SDMA under ZF and RZF Precoding.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Rudolf Litvinov, Eugeniy Rogozhnikov. *2025 IEEE XVII International Scientific and Technical Conference on Actual Problems of Electronic Instrument Engineering (APEIE)*, pp. 1–5. 2025.",
-                  "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. [DOI](https://doi.org/10.31857/S0033849425010102)",
+                  "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Article](https://journals.eco-vector.com/0033-8494/article/view/684125)",
                   "**Influence of Phase States of Binary Unit Cell on Ris Characteristics.** Sergey Eremeev, Dmitriy Ilinskiy, Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov, Ivan Rybakov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–524. 2025.",
                   "**Linear Frequency Modulated Signals in a Multipath Channel with Time and Frequency Offsets.** S Mukhamadiev, E Rogozhnikov, K Dinochenko, N Kalashnikova, Y Kryukov, D Pokamestov, E Lomakov. *Radiotehnika i èlektronika*, vol. 70, no. 6, pp. 583–597. 2025.",
                   "**Modeling and Prototyping of Unit Cell for Reconfigurable Intelligent Surface: Electromagnetic Model, Design and Circuitry.** Dmitriy Ilinskiy, Sergey Eremeev, Yakov Kryukov, Dmitriy Pokamestov, Georgiy Shalin, Artem Shinkevich. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 450–453. 2025.",
@@ -1400,7 +1420,7 @@ window.LAB_CONTENT = {
                   "**Reducing Successive Interference Cancellation Iterations in Hybrid Beamforming Multiuser Massive Multiple Input Multiple Output Systems Through Grouping Users with Symmetry Channels.** Hashem Khaled Rehab, Eugeniy Rogozhnikov, Kirill Savenko, Semen Mukhamadiev, Yakov Kryukov, Dmitriy Pokamestov. *Symmetry*, vol. 16, no. 11, 1437. 2024.",
                   "**Simulation of RIS-assisted OFDM multipath channel.** Sergey A Eremeev, Dmitriy E Ilinskiy, Yakov V Kryukov, Dmitriy A Pokamestov, Georgiy N Shalin, Artem S Shinkevich. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 660–663. 2024.",
                   "**Алгоритм совместной оценки и компенсации ошибок временной и частотной синхронизации сигналов с возможностью регулирования точности оценки.** С. М. Мухамадиев, Е. В. Рогожников, Х. К. Х. А. А. Рехаб, К. В. Диноченко, Я. В. Крюков, Н. Г. Калашникова. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 3, pp. 331–340. 2024. [DOI](https://doi.org/10.17725/rensit.2024.16.331)",
-                  "**Применение физического уровня 5G NR в космических коммуникациях, оценка эффективности.** Евгений Васильевич Рогожников, Эдгар Михайлович Дмитриев, Данила Александрович Кондрашов, Яков Владимирович Крюков, Артем Владимирович Коновальчиков, Семен Минисович Мухамадиев. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 1, pp. 143–156. 2024. [DOI](https://doi.org/10.17725/j.rensit.2024.16.143)",
+                  "**Применение физического уровня 5G NR в космических коммуникациях, оценка эффективности.** Евгений Васильевич Рогожников, Эдгар Михайлович Дмитриев, Данила Александрович Кондрашов, Яков Владимирович Крюков, Артем Владимирович Коновальчиков, Семен Минисович Мухамадиев. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 1, pp. 143–156. 2024. DOI: 10.17725/rensit.2024.16.143. [Article](http://rensit.ru/vypuski/article/550/)",
                   "**Формирование расширенных сигнально-кодовых конструкций на основе ldpс кодека 5G NR.** Денис Вячеславович Рыбалов, Андрей Александрович Моисеенко, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Александр Владимирович Филатов, Александр Михайлович Заболоцкий. *T Comm*, vol. 18, no. 12. 2024."
                 ]
               },
@@ -1556,7 +1576,7 @@ window.LAB_CONTENT = {
           }
         ]
       },
-      "mediaLead": "",
+      "mediaLead": "Diagrams of the laboratory's research areas. These are conceptual illustrations, not experimental data. For enquiries about laboratory media, contact [laboratory317@gmail.com](mailto:laboratory317@gmail.com).",
       "mediaItems": [
         {
           "title": "Multi-antenna communications",

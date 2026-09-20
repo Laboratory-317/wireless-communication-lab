@@ -66,7 +66,10 @@ images, and paragraphs rather than a list of placeholder categories.
 
 `tools/check-site.js` exercises all theme/language/page renders and local links.
 `tools/build-site.js` builds a disposable `_site/` publication directory containing
-only public resources. GitHub Pages uploads this directory, not the repository.
+only public resources. It pre-renders the default Russian content using the same
+shared renderer and validates the resulting HTML with `tools/check-built-site.js`.
+JavaScript adds language switching and individual CV selection; without JavaScript,
+`cv.html` includes both labelled CVs. The selector still exposes all four themes. GitHub Pages uploads this directory, not the repository.
 Legacy `themes/` mockups and `wireless-lab-docs/` historical documentation are not
 part of the publication output.
 

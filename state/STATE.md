@@ -5,6 +5,21 @@
 Deliver four genuinely distinct theme previews with shared Markdown content,
 GitHub Pages-only publishing, and a practical editing workflow for non-developers.
 
+## September 21, 2026 launch preparation
+
+- User confirmed keeping the four-theme selector at launch.
+- Matched the original circular logo to each background with CSS clipping.
+- Reworked the RU/EN student invitation and a separate contact call to action.
+- Fixed colon/URL handling in Markdown prose and heading/paragraph rendering.
+- Added default-language prerendering, metadata, root attachment allowlisting,
+  automatic logo synchronization and artifact checks; introduced PR validation CI.
+- Corrected sourced project dates, replaced failing DOI redirects with publisher links,
+  filled a published professional email and kept unresolved profile fields explicit.
+- Browser audit: 72 desktop pages and 64 narrow-page combinations passed overflow/image checks.
+- Details, source links, known limitations and the small remaining data list are in `state/LAUNCH_REVIEW.md`.
+- GitHub CLI has no active authentication; remote Pages configuration was not verified.
+  No push, merge or publication was performed.
+
 ## September 21, 2026 editorial revision
 
 - Cleaned RU/EN home, student, news, team and CV wording. Research descriptions use neutral research-interest lists; removed laboratory leadership hierarchy.

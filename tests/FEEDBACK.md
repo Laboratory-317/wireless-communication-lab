@@ -24,7 +24,8 @@ The check should:
 - retain localized, explicit placeholders for genuinely missing profile data.
 
 For publication changes also run `node tools/build-site.js` and inspect `/_site/`
-through the local server. The artifact must not contain repository documentation.
+through the local server. The artifact must not contain repository documentation. The build also validates
+pre-rendered content, exact-case local paths, HTML IDs and PDF signatures.
 For responsive checks, `tests/responsive-preview.html` provides an actual narrow
 iframe when the browser's viewport override is unavailable.
 

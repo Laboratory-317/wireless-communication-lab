@@ -1,0 +1,125 @@
+[
+  {
+    "url": "https://doi.org/10.1002/dac.5642",
+    "status": 403
+  },
+  {
+    "url": "https://doi.org/10.1002/itl2.70219",
+    "status": 403
+  },
+  {
+    "url": "https://doi.org/10.1007/s11235-025-01333-8",
+    "status": 200,
+    "final": "https://link.springer.com/10.1007/s11235-025-01333-8"
+  },
+  {
+    "url": "https://doi.org/10.17725/j.rensit.2024.16.143",
+    "status": 404
+  },
+  {
+    "url": "https://doi.org/10.17725/rensit.2024.16.331",
+    "status": 200,
+    "final": "http://rensit.ru/vypuski/article/568/"
+  },
+  {
+    "url": "https://doi.org/10.31857/S0033849425010102",
+    "status": 404
+  },
+  {
+    "url": "https://doi.org/10.3390/sym13112153",
+    "status": 403
+  },
+  {
+    "url": "https://doi.org/10.3390/sym14102103",
+    "status": 403
+  },
+  {
+    "url": "https://doi.org/10.36724/2072-8735-2021-15-12-11-16",
+    "status": 200,
+    "final": "http://media-publisher.ru/wp-content/uploads/2-12-2021.pdf"
+  },
+  {
+    "url": "https://doi.org/10.52452/00213462_2025_68_07_545",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=26827973",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=30452010",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=36721877",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=49525475",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=50404421",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=54515115",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=54515120",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=54623922",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=59722088",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=82965338",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=88792041",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=89085072",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=89121112",
+    "status": "URLError"
+  },
+  {
+    "url": "https://elibrary.ru/item.asp?id=91678911",
+    "status": "URLError"
+  },
+  {
+    "url": "https://rscf.ru/project/22-79-10148/",
+    "status": 200,
+    "final": "https://rscf.ru/project/22-79-10148/"
+  },
+  {
+    "url": "https://rscf.ru/project/24-29-00172/",
+    "status": 200,
+    "final": "https://rscf.ru/project/24-29-00172/"
+  },
+  {
+    "url": "https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru",
+    "status": 200,
+    "final": "https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru"
+  },
+  {
+    "url": "https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru",
+    "status": 200,
+    "final": "https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru"
+  },
+  {
+    "url": "https://scholar.google.ru/citations?user=32XjC7sAAAAJ&hl=ru&oi=ao",
+    "status": 404
+  }
+]

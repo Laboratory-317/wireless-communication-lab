@@ -2,8 +2,8 @@
 
 ## Russian Science Foundation
 
-- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2023-2025.
-- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. Funding: RUB 18 million.
+- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).
+- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. Funding: RUB 18 million. [RSF project record](https://rscf.ru/project/22-79-10148/).
 - RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.
 - RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021. Funding: RUB 3 million.
 

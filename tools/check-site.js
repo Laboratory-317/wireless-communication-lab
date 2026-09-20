@@ -51,6 +51,13 @@ for (const theme of model.themes) {
         assert(!/\bTODO\b|undefined|>заглушка<|>placeholder</i.test(app.innerHTML), `Placeholder in ${file}`);
         assert(!app.innerHTML.includes('https://example.com'), `Example link in ${file}`);
         if (profile) assert(app.innerHTML.includes(profile.name), `Wrong CV ${profile.slug}`);
+        if (name === 'students') {
+          assert(app.innerHTML.includes('class="student-contact markdown-block"'), 'Student contact must be separate from steps');
+          assert(/<h3>[^<]+<\/h3>/.test(app.innerHTML), 'Student subheadings must render as headings');
+          assert(!app.innerHTML.includes('### '), 'Markdown headings must not leak into prose');
+        }
+        if (name === 'media') assert(app.innerHTML.includes('mailto:laboratory317@gmail.com'), 'Media lead containing a mailto link must not disappear');
+        assert(!/href="https?:\s/.test(app.innerHTML), 'Do not insert whitespace into URL schemes');
         if (name === 'people') {
           const content = model.languages[language];
           assert(app.innerHTML.includes(content.missingPhoto), 'Missing-photo label must be visible');

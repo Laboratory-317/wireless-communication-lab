@@ -9,7 +9,8 @@
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.
 
 - E-mail: dmaltomsk@mail.ru
-- Scholar: https://scholar.google.ru/citations?user=32XjC7sAAAAJ&hl=ru&oi=ao
+- Scholar:
+- TUSUR profile: https://directory.tusur.ru/people/2554
 - ORCID: 0000-0002-9405-4573
 - CV: [CV](cv.html?person=pokamestov)
 
@@ -17,7 +18,7 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.
 
-- E-mail:
+- E-mail: iakov.v.kriukov@tusur.ru
 - Scholar: https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru
 - ORCID: 0000-0002-4115-9080
 - CV: [CV](cv.html?person=kryukov)
@@ -87,4 +88,8 @@ Research interests to be confirmed.
 
 ## Students
 
-- Evgeniy Pogorelov
+### Evgeniy Pogorelov
+
+Profile details and research interests to be confirmed.
+
+- E-mail:

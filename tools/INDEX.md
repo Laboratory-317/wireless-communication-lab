@@ -9,7 +9,8 @@ Reusable project tools.
 - Example: `node tools/build-site.js`
 - Dependencies: Node.js built-in modules; existing content builder and site checker.
 - Notes: Recreates only the generated `_site/` directory. Copies configured previews,
-  CSS, JS, assets, and root image attachments. Excludes content sources and internal
+  CSS, JS, assets, and referenced root image attachments. Pre-renders the default
+  language into 37 HTML documents, synchronizes the logo, and validates the final artifact. Excludes content sources and internal
   documentation. Run a local server at the repository root and open `/_site/` to
   verify project-subpath behavior before deployment.
 
@@ -143,3 +144,12 @@ node tools/translate-ru-to-en.js --source content\news\items\001-laboratory-news
 `tools/check-site.js` also checks that missing photos, contacts and interests remain visible in both languages. Run with `node tools/check-site.js`; no parameters or additional dependencies.
 
 `tools/build-content.js` retains colon-containing CV prose and excludes only known profile metadata from introductions. `tools/check-site.js` checks research-interest introductions remain visible. Existing commands and dependencies are unchanged.
+
+## `tools/check-built-site.js`
+
+- Purpose: Check the generated Pages artifact, including static content, headings, metadata, duplicate IDs, exact-case local references, PDF signatures and exclusion of source documentation.
+- Parameters: none.
+- Example: `node tools/check-built-site.js` after `node tools/build-site.js`.
+- Dependencies: Node.js built-ins; existing `_site/` output. Called automatically by `build-site.js`.
+
+The content parser preserves prose containing colons and URLs. The student page supports a final `## Первый шаг` / `## First step` contact section, separate from the three introductory sections.

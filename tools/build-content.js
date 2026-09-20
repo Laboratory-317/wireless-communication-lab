@@ -172,14 +172,18 @@ function headingMatchOf(line) {
   return stripComment(line).match(/^(#{1,6})\s+(.+)$/);
 }
 
+// Only explicit content metadata is hidden; colons in prose and URLs are text.
+function isContentMetadata(line) {
+  return /^(?:надзаголовок|kicker|дата|date|имя|name|роль|role|slug):\s*/i.test(line);
+}
+
 function textFromLines(lines, options = {}) {
   return lines
-    .filter((line) => !headingMatchOf(line) && (options.includeBullets || !line.startsWith("- ")) && (options.includeKeyValues || !keyValue(line)) && !imageFromLine(line))
+    .filter((line) => !headingMatchOf(line) && (options.includeBullets || !line.startsWith("- ")) && (options.includeKeyValues || !isContentMetadata(line)) && !imageFromLine(line))
     .map((line) => {
       const isBullet = line.startsWith("- ");
       const text = isBullet ? line.replace(/^-\s+/, "").trim() : line;
-      const pair = keyValue(text);
-      const rendered = options.includeKeyValues && pair ? `${pair[0]}: ${pair[1]}` : text;
+      const rendered = text;
 
       return options.includeBullets && isBullet ? `- ${rendered}` : rendered;
     })
@@ -571,12 +575,13 @@ function parseStudents(lang) {
     const titleLower = section.title.toLowerCase();
     return titleLower === "направления" || titleLower === "tracks";
   });
-  const stepSections = pageSections.filter((section) => section !== tracksSection);
+  const contactSection = pageSections.find((section) => /^(Первый шаг|First step)$/i.test(section.title));
+  const stepSections = pageSections.filter((section) => section !== tracksSection && section !== contactSection);
   const leadLines = [];
 
   for (const line of allLines) {
     if (line.startsWith("## ")) break;
-    if (!keyValue(line)) leadLines.push(line);
+    if (!isContentMetadata(line)) leadLines.push(line);
   }
 
   return {
@@ -587,6 +592,7 @@ function parseStudents(lang) {
         title: section.title,
         text: textFromLines(section.lines)
       })),
+      contact: contactSection ? contactSection.lines.join("\n\n") : "",
       tracks: tracksSection ? bullets(tracksSection.lines) : []
     }
   };
@@ -719,7 +725,7 @@ function leadBeforeSections(markdown) {
 
   for (const line of bodyAfterTitle(markdown).map(stripComment).filter(Boolean)) {
     if (line.startsWith("## ")) break;
-    if (!keyValue(line)) leadLines.push(line);
+    if (!isContentMetadata(line)) leadLines.push(line);
   }
 
   return textFromLines(leadLines);
@@ -753,7 +759,7 @@ function parsePublicationSection(section) {
       return;
     }
 
-    if (!keyValue(line)) {
+    if (!isContentMetadata(line)) {
       sectionLead.push(line);
     }
   });

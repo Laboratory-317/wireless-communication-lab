@@ -70,6 +70,7 @@
         url.searchParams.set("lang", nextLanguage);
         window.history.replaceState(null, "", url);
         render(nextLanguage);
+        app.querySelector(`[data-language="${nextLanguage}"]`)?.focus();
       });
     });
   }

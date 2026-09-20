@@ -280,3 +280,5 @@ body {
   }
 
 }
+
+.lab-mark { clip-path: circle(47% at 50% 50%); }

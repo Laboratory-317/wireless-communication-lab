@@ -140,6 +140,9 @@ main {
 }
 
 .brand img {
+  clip-path: circle(47% at 50% 50%);
+  object-fit: contain;
+  flex-shrink: 0;
   width:64px;
   height:64px;
 }
@@ -225,7 +228,7 @@ main {
 .interest-image {
   width:100%;
   aspect-ratio:3/2;
-  object-fit:cover;
+  object-fit:contain;
   display:block;
   margin-bottom:22px;
 }
@@ -286,7 +289,7 @@ main {
 .photo-placeholder {
   width:140px;
   aspect-ratio:1;
-  object-fit:cover;
+  object-fit:contain;
   background:var(--wash,#edf1f2);
 }
 
@@ -381,7 +384,7 @@ main {
 .media-list img {
   width:100%;
   aspect-ratio:3/2;
-  object-fit:cover;
+  object-fit:contain;
 }
 
 .media-list figcaption {
@@ -545,3 +548,17 @@ body:not([data-page="home"]) .brand img {
 .missing-data { color: var(--muted, #586970); font-size: .85rem; font-style: italic; }
 .photo-note { margin: .5rem 0; }
 .news-date { display: block; margin-bottom: .5rem; }
+
+/* Student invitation: a clear lead, three possible steps, then a direct contact. */
+.section-students .section-head { max-width: 900px; margin-bottom: 44px; }
+.section-students .section-head h2 { max-width: 22ch; text-wrap: balance; }
+.student-lead { max-width: 68ch; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.65; }
+.student-step h3 { text-wrap: balance; }
+.student-contact { margin-top: 48px; padding: 32px 0; border-top: 2px solid var(--accent); max-width: 760px; }
+.student-contact h3 { font-size: clamp(26px, 3vw, 36px); text-wrap: balance; }
+.student-contact p { max-width: 62ch; }
+.student-contact a[href^="mailto:"] { display: inline-block; padding: 12px 20px; background: var(--accent); color: var(--paper, #fff); font-weight: 600; text-decoration: none; border: 1px solid var(--accent); }
+.student-contact a[href^="mailto:"]:hover { background: transparent; color: var(--accent); }
+.student-contact p:last-child { font-size: 14px; overflow-wrap: anywhere; }
+
+.language-switch button { min-width: 40px; min-height: 40px; }

@@ -54,7 +54,7 @@
   }
 
   function blockMarkdown(text) {
-    const lines = String(text || "").split(/\n+/).map((line) => line.trim()).filter(Boolean);
+    const lines = String(text || "").split(/\r?\n/).map((line) => line.trim());
     const blocks = [];
     let paragraph = [];
     let list = [];
@@ -72,6 +72,14 @@
     }
 
     lines.forEach((line) => {
+      if (!line) { flushParagraph(); flushList(); return; }
+      const heading = line.match(/^(#{2,4})\s+(.+)$/);
+      if (heading) {
+        flushParagraph(); flushList();
+        const level = heading[1].length;
+        blocks.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+        return;
+      }
       if (line.startsWith("- ")) {
         flushParagraph();
         list.push(line.replace(/^-\s+/, "").trim());
@@ -188,7 +196,7 @@
               ${items.map((item) => `
                 <article class="${item.images && item.images.length ? "has-image" : ""}">
                   ${item.images && item.images.length ? `
-                    <img class="interest-image" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
+                    <img class="interest-image" width="800" height="520" decoding="async" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
                   ` : ""}
                   <h3>${html(item.title)}</h3>
                   <div class="research-copy">${blockMarkdown(item.text)}</div>
@@ -227,7 +235,7 @@
             ${content.researchInterests.map((item) => `
               <article class="${item.images && item.images.length ? "has-image" : ""}">
                 ${item.images && item.images.length ? `
-                  <img class="interest-image" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
+                  <img class="interest-image" width="800" height="520" decoding="async" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
                 ` : ""}
                 <h3>${html(item.title)}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
@@ -289,7 +297,7 @@
           return `<div class="photo-placeholder person-initials" aria-hidden="true">${html(initials)}</div><p class="missing-data photo-note">${html(content.missingPhoto)}</p>`;
         }
 
-        return `<img class="photo-placeholder" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;
+        return `<img class="photo-placeholder" loading="lazy" decoding="async" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;
       }
 
       function contactValue(contact) {
@@ -397,6 +405,7 @@
           <div class="student-tracks" aria-label="${labels.studentsKicker}">
             ${content.studentOffer.tracks.map((track) => `<article>${track}</article>`).join("")}
           </div>
+          ${content.studentOffer.contact ? `<div class="student-contact markdown-block">${blockMarkdown(content.studentOffer.contact)}</div>` : ""}
         </section>
       `;
     }
@@ -559,6 +568,7 @@
         url.searchParams.set("lang", nextLanguage);
         window.history.replaceState(null, "", url);
         render(nextLanguage);
+        app.querySelector(`[data-language="${nextLanguage}"]`)?.focus();
       });
     });
   }
