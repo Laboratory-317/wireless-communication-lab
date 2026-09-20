@@ -36,6 +36,14 @@
     `;
   }
 
+
+  function colorModeControl(content) {
+    const labels = content.colorModeLabels;
+    const selected = document.documentElement.dataset?.colorMode || 'system';
+    return `<label class="color-mode-control"><span>${labels.label}</span><select data-color-mode-select aria-label="${labels.label}">
+      ${['system', 'light', 'dark'].map((mode) => `<option value="${mode}"${mode === selected ? ' selected' : ''}>${labels[mode]}</option>`).join('')}
+    </select></label>`;
+  }
   function render(language) {
     const content = model.languages[language] || model.languages[model.defaultLanguage];
     document.documentElement.lang = language;
@@ -44,7 +52,7 @@
     app.innerHTML = `
       <div class="root-topbar">
         <img class="lab-mark" src="labicon.png" alt="${content.labName}">
-        ${languageSwitch(language)}
+        <div class="display-controls">${colorModeControl(content)}${languageSwitch(language)}</div>
       </div>
       ${content.rootEyebrow ? `<p class="eyebrow">${content.rootEyebrow}</p>` : ""}
       <h1 id="page-title">${content.labName}</h1>

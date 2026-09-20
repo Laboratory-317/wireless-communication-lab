@@ -1,12 +1,20 @@
-@import url("../../css/theme-base.css?v=20260921-ready");
+@import url("../../css/theme-base.css?v=20260921-colors");
 /* Academic directory: fixed navigation rail and a text-first reading column. */
 :root {
-  --paper:#fbfaf7;
-  --ink:#25352d;
-  --accent:#315f48;
-  --line:#d6dbd1;
-  --wash:#e8ece3;
-  --muted:#657165;
+  --light-paper:#fbfaf7;
+  --light-ink:#25352d;
+  --light-accent:#315f48;
+  --light-line:#d6dbd1;
+  --light-wash:#e8ece3;
+  --light-muted:#657165;
+  --light-surface:#eef0e9;
+  --dark-paper:#171e1a;
+  --dark-ink:#e3e9e0;
+  --dark-accent:#a6ccb0;
+  --dark-line:#425046;
+  --dark-wash:#25342a;
+  --dark-muted:#b1beaf;
+  --dark-surface:#1e2a22;
 }
 
 body {
@@ -18,7 +26,7 @@ body {
   inset:0 auto 0 0;
   width:290px;
   padding:32px;
-  background:#eef0e9;
+  background:var(--surface);
   border-right:1px solid var(--line);
   overflow:auto;
 }
@@ -262,3 +270,5 @@ body {
   }
 
 }
+
+.topbar-actions { flex-wrap:wrap; }

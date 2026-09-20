@@ -80,7 +80,7 @@ for (const relative of publicPages) {
   const description = `${content.labName}. ${content.tagline}. ${content.footer}.`;
   const prefix = isRoot ? '' : '../../';
   shell = shell.replace('</head>', `  <meta name="description" content="${escape(description)}">\n  <meta property="og:title" content="${escape(rendered.title)}">\n  <meta property="og:description" content="${escape(description)}">\n  <meta property="og:type" content="website">\n  <link rel="icon" href="${prefix}labicon.png" type="image/png">\n</head>`);
-  shell = shell.replace('</body>', '<noscript><style>.language-switch{display:none}</style></noscript>\n</body>');
+  shell = shell.replace('</body>', '<noscript><style>.language-switch,.color-mode-control{display:none}</style></noscript>\n</body>');
   if (!shell.includes('<h1') || shell.includes('undefined')) throw new Error(`Invalid prerender: ${relative}`);
   fs.writeFileSync(file, shell);
 }

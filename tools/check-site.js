@@ -4,6 +4,7 @@ const path = require('path');
 const vm = require('vm');
 const assert = require('assert/strict');
 const root = path.resolve(__dirname, '..');
+require('./check-color-mode.js');
 const dataContext = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'js/lab-content.js'), 'utf8'), dataContext);
 const model = dataContext.window.LAB_CONTENT;

@@ -51,6 +51,11 @@ stem is used in links such as `cv.html?person=kryukov`.
 `js/render-theme.js` renders all theme preview pages from the same generated
 content model.
 
+`js/color-mode.js` applies the saved system/light/dark preference before styles load
+and handles selection/storage events. `css/color-mode.css` follows the live system
+preference via `prefers-color-scheme`, including without JavaScript. Each layout
+provides light/dark semantic color tokens; photos and diagrams retain their colors.
+
 `themes-preview/<theme>/` contains standalone preview pages and theme-local CSS.
 Preview HTML should remain structurally consistent and use the shared renderer.
 

@@ -19,6 +19,7 @@ foreach ($path in $files) {
     $text = [regex]::Replace($text, 'js/main\.js(\?v=[^">]*)?', "js/main.js?v=$Version")
     $text = [regex]::Replace($text, '\.\./\.\./js/lab-content\.js(\?v=[^">]*)?', "../../js/lab-content.js?v=$Version")
     $text = [regex]::Replace($text, '\.\./\.\./js/render-theme\.js(\?v=[^">]*)?', "../../js/render-theme.js?v=$Version")
+    $text = [regex]::Replace($text, 'js/color-mode\.js(\?v=[^">]*)?', "js/color-mode.js?v=$Version")
     Set-Content -LiteralPath $path -Value $text -NoNewline
 }
 
@@ -31,3 +32,10 @@ Get-ChildItem -LiteralPath (Join-Path $root "themes-preview") -Recurse -Filter "
     }
 
 Write-Host "Updated HTML and shared theme CSS cache version to $Version"
+
+foreach ($relative in @("css\theme-base.css", "css\style.css")) {
+    $path = Join-Path $root $relative
+    $text = Get-Content -Raw -LiteralPath $path
+    $text = [regex]::Replace($text, 'color-mode\.css(\?v=[^"\)]*)?', "color-mode.css?v=$Version")
+    Set-Content -LiteralPath $path -Value $text -NoNewline
+}

@@ -59,3 +59,12 @@ Open `http://127.0.0.1:8080/`.
 ## Update Policy
 
 Update this file when checks, build commands, or readiness criteria change.
+
+## Color mode changes
+
+Run `node tools/check-color-mode.js` (also part of the site check). In the browser,
+verify both system schemes using `tests/color-mode-preview.html`; manual light/dark
+must override the system, persist through navigation and language changes, and sync
+across same-origin tabs. Check all four layout palettes and narrow-header wrapping.
+Use `scripts=off` to verify the CSS fallback without JavaScript. Return the manual
+selector to System after testing.

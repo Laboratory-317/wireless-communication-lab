@@ -153,3 +153,19 @@ node tools/translate-ru-to-en.js --source content\news\items\001-laboratory-news
 - Dependencies: Node.js built-ins; existing `_site/` output. Called automatically by `build-site.js`.
 
 The content parser preserves prose containing colons and URLs. The student page supports a final `## Первый шаг` / `## First step` contact section, separate from the three introductory sections.
+
+## `tools/check-color-mode.js`
+
+- Purpose: Verify system defaults, saved light/dark preferences, early initialization, cross-tab synchronization and blocked storage handling.
+- Parameters: none.
+- Example: `node tools/check-color-mode.js`.
+- Dependencies: Node.js built-ins only. Included in `check-site.js`, so the normal checks and deployment build run it.
+
+## `tests/color-mode-preview.html`
+
+- Purpose: Browser verification of system color changes using the iframe's inherited preferred color scheme, without changing OS settings.
+- Parameters: `theme`, `page`, `lang`, `width` (320–1600, default 390), `scripts=off` to test the pre-rendered page with JavaScript disabled.
+- Example: `http://127.0.0.1:8080/tests/color-mode-preview.html?theme=minimal-mistakes&page=students.html&lang=ru&scripts=off`.
+- Dependencies: run `node tools/build-site.js`, then serve the repository locally. Not included in the public artifact.
+
+`tools/update-cache-version.ps1` also updates the early color-mode script and shared palette CSS imports. The page template includes the early script for future pages.

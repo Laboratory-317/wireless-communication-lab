@@ -5,6 +5,15 @@
 Deliver four genuinely distinct theme previews with shared Markdown content,
 GitHub Pages-only publishing, and a practical editing workflow for non-developers.
 
+## Light and dark modes — September 21, 2026
+
+- Added system/light/dark selection to the four layouts and theme selector, with separate palettes for each design.
+- Defaults to the browser/OS preference and responds live through CSS. Manual selection persists across pages and language switches; other same-origin tabs synchronize through storage events.
+- Applied stored preferences before styles load. Without JavaScript, the pre-rendered page follows the system and hides manual controls. Blocked storage does not break rendering.
+- Validated all eight layout palettes, system changes, manual override, reload persistence, language changes and the no-JavaScript fallback in a real browser.
+- 128 narrow page/language/mode checks passed; main text/link/muted colors against page backgrounds measured at least 4.9:1. All existing render and artifact checks passed.
+- Added dependency-free behavior checks and a local iframe harness for system-mode changes; no new runtime packages or services.
+
 ## Published to main — September 21, 2026
 
 - At the user's explicit request, fast-forwarded `main` to the prepared branch and pushed it to origin.

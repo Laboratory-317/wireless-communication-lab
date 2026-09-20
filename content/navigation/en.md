@@ -25,3 +25,8 @@ Missing photo: Photo not yet added
 Missing data: To be confirmed
 Missing date: Date to be confirmed
 Missing biography: Research interests to be confirmed
+
+Color theme: Color theme
+System theme: Match system
+Light theme: Light
+Dark theme: Dark

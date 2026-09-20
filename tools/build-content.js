@@ -314,6 +314,12 @@ function parseNavigation(lang) {
   }
 
   return {
+    colorModeLabels: {
+      label: meta["цветовая тема"] || meta["color theme"],
+      system: meta["системная тема"] || meta["system theme"],
+      light: meta["светлая тема"] || meta["light theme"],
+      dark: meta["тёмная тема"] || meta["dark theme"]
+    },
     labName: meta["название лаборатории"] || meta["lab name"],
     tagline: meta["подзаголовок"] || meta.tagline,
     missingPhoto: meta["нет фото"] || meta["missing photo"],

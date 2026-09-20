@@ -1,12 +1,20 @@
-@import url("../../css/theme-base.css?v=20260921-ready");
+@import url("../../css/theme-base.css?v=20260921-colors");
 /* Research showcase: panoramic sections and alternating image/text features. */
 :root {
-  --paper:#fff;
-  --ink:#142d3c;
-  --accent:#136174;
-  --line:#d1e0e4;
-  --wash:#eaf2f4;
-  --muted:#586f79;
+  --light-paper:#ffffff;
+  --light-ink:#142d3c;
+  --light-accent:#136174;
+  --light-line:#d1e0e4;
+  --light-wash:#eaf2f4;
+  --light-muted:#586f79;
+  --light-surface:#f5f8fa;
+  --dark-paper:#111e28;
+  --dark-ink:#e4edf3;
+  --dark-accent:#89d4e3;
+  --dark-line:#3d5360;
+  --dark-wash:#223744;
+  --dark-muted:#b0c3cc;
+  --dark-surface:#192d3a;
 }
 
 .site-header {

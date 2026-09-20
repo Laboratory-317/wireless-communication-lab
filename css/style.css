@@ -1,3 +1,4 @@
+@import url("color-mode.css?v=20260921-colors");
 * {
   box-sizing: border-box;
 }
@@ -5,8 +6,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  color: #17202a;
-  background: #f5f7fa;
+  color: var(--ink);
+  background: var(--paper);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,9 +34,9 @@ body {
   display: inline-flex;
   gap: 4px;
   padding: 4px;
-  border: 1px solid #d6dde5;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
 }
 
 .language-switch button {
@@ -43,7 +44,7 @@ body {
   min-height: 34px;
   border: 0;
   border-radius: 6px;
-  color: #47627c;
+  color: var(--muted);
   background: transparent;
   font: inherit;
   font-weight: 700;
@@ -51,13 +52,13 @@ body {
 }
 
 .language-switch button[aria-pressed="true"] {
-  color: #fff;
-  background: #1f6fb2;
+  color: var(--paper);
+  background: var(--accent);
 }
 
 .eyebrow {
   margin: 28px 0 8px;
-  color: #47627c;
+  color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -74,7 +75,7 @@ h1 {
 
 .lead {
   margin: 18px 0 36px;
-  color: #4b5f72;
+  color: var(--muted);
   font-size: 1.1rem;
 }
 
@@ -87,17 +88,17 @@ h1 {
 .theme-card {
   min-height: 150px;
   padding: 22px;
-  border: 1px solid #d6dde5;
+  border: 1px solid var(--line);
   border-radius: 8px;
   color: inherit;
-  background: #fff;
+  background: var(--surface);
   text-decoration: none;
   transition: transform 160ms ease, border-color 160ms ease;
 }
 
 .theme-card:hover,
 .theme-card:focus-visible {
-  border-color: #1f6fb2;
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -112,7 +113,7 @@ h1 {
 
 .theme-card small {
   margin-top: 14px;
-  color: #5d6f82;
+  color: var(--muted);
   line-height: 1.45;
 }
 
@@ -151,7 +152,7 @@ h1 {
 .theme-number {
   font:12px monospace;
   margin:20px 0 10px;
-  color:#61736d;
+  color:var(--muted);
 }
 
 .theme-sketch {
@@ -247,7 +248,7 @@ h1 {
 }
 
 body {
-  background:#fafaf7;
+  background:var(--paper);
 }
 
 .theme-card small {
@@ -255,7 +256,7 @@ body {
 }
 
 .theme-card:focus-visible {
-  outline:3px solid #315f48;
+  outline:3px solid var(--accent);
   outline-offset:4px;
 }
 
@@ -282,3 +283,8 @@ body {
 }
 
 .lab-mark { clip-path: circle(47% at 50% 50%); }
+
+.theme-sketch { border-color:var(--line); }
+.theme-card .theme-sketch { background:var(--wash); }
+.theme-card .theme-sketch i { background:var(--accent); }
+.theme-card .theme-sketch b,.theme-card .theme-sketch em { background:var(--line); }

@@ -1,3 +1,4 @@
+@import url("color-mode.css?v=20260921-colors");
 /* Shared reading, accessibility and components. Layout lives in each theme. */
 * {
   box-sizing:border-box;
@@ -77,7 +78,7 @@ main {
   top:-80px;
   left:16px;
   padding:12px;
-  background:white;
+  background:var(--surface);
   z-index:100;
 }
 
@@ -562,3 +563,6 @@ body:not([data-page="home"]) .brand img {
 .student-contact p:last-child { font-size: 14px; overflow-wrap: anywhere; }
 
 .language-switch button { min-width: 40px; min-height: 40px; }
+
+.topbar, .topbar-actions { flex-wrap:wrap; }
+.topbar-actions { justify-content:flex-end; }

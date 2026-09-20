@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Color mode verification</title>
+<style>
+  body { margin:20px; background:#ddd; color:#222; font:14px system-ui; }
+  iframe { display:block; border:0; height:850px; margin-top:18px; }
+</style>
+<label>Emulated system scheme
+  <select id="system-scheme"><option value="light">Light</option><option value="dark">Dark</option></select>
+</label>
+<p>Local test only: the iframe inherits its preferred color scheme from its embedding element.</p>
+<iframe title="Color mode preview" style="color-scheme:light"></iframe>
+<script>
+  const params = new URLSearchParams(location.search);
+  const themes = ['academicpages', 'hugo-academic', 'minimal-mistakes', 'bootstrap-academic'];
+  const theme = themes.includes(params.get('theme')) ? params.get('theme') : themes[0];
+  const page = /^[a-z]+\.html$/.test(params.get('page') || '') ? params.get('page') : 'index.html';
+  const lang = params.get('lang') === 'en' ? 'en' : 'ru';
+  const width = Math.min(1600, Math.max(320, Number(params.get('width')) || 390));
+  const frame = document.querySelector('iframe');
+  frame.style.width = `${width}px`;
+  if (params.get('scripts') === 'off') frame.setAttribute('sandbox', 'allow-same-origin');
+  frame.src = `../_site/themes-preview/${theme}/${page}?lang=${lang}`;
+  document.querySelector('select').addEventListener('change', (event) => {
+    frame.style.colorScheme = event.target.value;
+  });
+</script>
+</html>

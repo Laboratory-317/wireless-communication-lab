@@ -1,12 +1,20 @@
-@import url("../../css/theme-base.css?v=20260921-ready");
+@import url("../../css/theme-base.css?v=20260921-colors");
 /* Research journal: masthead, editorial columns and fine typographic rules. */
 :root {
-  --paper:#f7f3eb;
-  --ink:#262825;
-  --accent:#8b3d2b;
-  --line:#cdc6b9;
-  --wash:#eae3d5;
-  --muted:#70695f;
+  --light-paper:#f7f3eb;
+  --light-ink:#262825;
+  --light-accent:#8b3d2b;
+  --light-line:#cdc6b9;
+  --light-wash:#eae3d5;
+  --light-muted:#70695f;
+  --light-surface:#eee8dd;
+  --dark-paper:#211e1a;
+  --dark-ink:#eee5d7;
+  --dark-accent:#e6ae8e;
+  --dark-line:#554c40;
+  --dark-wash:#342e26;
+  --dark-muted:#c3b7a7;
+  --dark-surface:#2a251f;
 }
 
 .site-header {
@@ -125,7 +133,7 @@ h2,h3,h4 {
 .interest-list article:not(:first-child) .interest-image {
   aspect-ratio:2.1;
   object-fit:contain;
-  background:#f0f3f0;
+  background:var(--wash);
 }
 
 .interest-list h3 {

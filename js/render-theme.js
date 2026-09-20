@@ -147,6 +147,14 @@
     return `../../${encodeURI(src)}`;
   }
 
+
+  function colorModeControl(content) {
+    const labels = content.colorModeLabels;
+    const selected = document.documentElement.dataset?.colorMode || 'system';
+    return `<label class="color-mode-control"><span>${labels.label}</span><select data-color-mode-select aria-label="${labels.label}">
+      ${['system', 'light', 'dark'].map((mode) => `<option value="${mode}"${mode === selected ? ' selected' : ''}>${labels[mode]}</option>`).join('')}
+    </select></label>`;
+  }
   function render(language) {
     const content = model.languages[language] || model.languages[model.defaultLanguage];
     const theme = model.themes.find((item) => item.key === themeKey);
@@ -534,6 +542,7 @@
           <div class="topbar-actions">
             ${headerActions(content.headerActions)}
             ${languageSwitch(language)}
+            ${colorModeControl(content)}
           </div>
         </div>
         <div class="brand">

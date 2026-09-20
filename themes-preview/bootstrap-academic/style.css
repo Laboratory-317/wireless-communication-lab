@@ -1,16 +1,24 @@
-@import url("../../css/theme-base.css?v=20260921-ready");
+@import url("../../css/theme-base.css?v=20260921-colors");
 /* Engineering atlas: asymmetric technical grid and numbered research plates. */
 :root {
-  --paper:#101d27;
-  --ink:#e6edf0;
-  --accent:#99dbcd;
-  --line:#3d505d;
-  --wash:#223541;
-  --muted:#afc0c9;
+  --light-paper:#f3f7f8;
+  --light-ink:#18303c;
+  --light-accent:#236858;
+  --light-line:#c7d7dc;
+  --light-wash:#e3edef;
+  --light-muted:#506970;
+  --light-surface:#eaf2f4;
+  --dark-paper:#101d27;
+  --dark-ink:#e6edf0;
+  --dark-accent:#99dbcd;
+  --dark-line:#3d505d;
+  --dark-wash:#223541;
+  --dark-muted:#afc0c9;
+  --dark-surface:#142530;
 }
 
 body {
-  background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);
+  background-image:linear-gradient(var(--grid-color) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);
   background-size:36px 36px;
 }
 
@@ -63,7 +71,7 @@ body {
 
 .site-nav a[aria-current=page] {
   background:var(--accent);
-  color:#101d27;
+  color:var(--paper);
   border-bottom:0;
 }
 
@@ -118,7 +126,7 @@ body {
   padding:22px;
   border-right:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  background:#142530;
+  background:var(--surface);
 }
 
 .interest-list article:before {
@@ -137,7 +145,7 @@ body {
 
 .interest-list .research-copy {
   font-size:15px;
-  color:#c3d0d7;
+  color:var(--muted);
 }
 
 .people-list {

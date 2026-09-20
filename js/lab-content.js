@@ -54,6 +54,12 @@ window.LAB_CONTENT = {
   ],
   "languages": {
     "ru": {
+      "colorModeLabels": {
+        "label": "Цветовая тема",
+        "system": "Как в системе",
+        "light": "Светлая",
+        "dark": "Тёмная"
+      },
       "labName": "Лаборатория беспроводной связи",
       "tagline": "ТУСУР · Томск",
       "missingPhoto": "Фото пока не добавлено",
@@ -875,6 +881,12 @@ window.LAB_CONTENT = {
       ]
     },
     "en": {
+      "colorModeLabels": {
+        "label": "Color theme",
+        "system": "Match system",
+        "light": "Light",
+        "dark": "Dark"
+      },
       "labName": "Wireless Communication Laboratory",
       "tagline": "TUSUR · Tomsk",
       "missingPhoto": "Photo not yet added",

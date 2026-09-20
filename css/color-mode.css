@@ -1,0 +1,34 @@
+/* Semantic palettes are supplied by each layout; this file selects the mode. */
+:root {
+  --light-paper:#fafaf7; --light-ink:#172b27; --light-accent:#315f48;
+  --light-line:#d1d9d2; --light-wash:#edf0e9; --light-muted:#56665d; --light-surface:#fff;
+  --dark-paper:#151d1a; --dark-ink:#e2eae4; --dark-accent:#a1ceb0;
+  --dark-line:#3e5147; --dark-wash:#26352c; --dark-muted:#b1c0b6; --dark-surface:#1d2922;
+  color-scheme:light;
+  --paper:var(--light-paper); --ink:var(--light-ink); --accent:var(--light-accent);
+  --line:var(--light-line); --wash:var(--light-wash); --muted:var(--light-muted); --surface:var(--light-surface);
+  --grid-color:#163e5010;
+}
+:root[data-color-mode="dark"] {
+  color-scheme:dark;
+  --paper:var(--dark-paper); --ink:var(--dark-ink); --accent:var(--dark-accent);
+  --line:var(--dark-line); --wash:var(--dark-wash); --muted:var(--dark-muted); --surface:var(--dark-surface);
+  --grid-color:#ffffff07;
+}
+@media(prefers-color-scheme:dark) {
+  :root:not([data-color-mode="light"]):not([data-color-mode="dark"]) {
+    color-scheme:dark;
+    --paper:var(--dark-paper); --ink:var(--dark-ink); --accent:var(--dark-accent);
+    --line:var(--dark-line); --wash:var(--dark-wash); --muted:var(--dark-muted); --surface:var(--dark-surface);
+    --grid-color:#ffffff07;
+  }
+}
+.color-mode-control { display:flex; align-items:center; gap:8px; font:12px/1.4 system-ui,sans-serif; color:var(--muted); }
+.color-mode-control select { font:inherit; font-size:13px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:8px 28px 8px 10px; min-height:40px; max-width:100%; cursor:pointer; }
+.color-mode-control select:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.display-controls { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+@media(max-width:600px) { .color-mode-control { flex-wrap:wrap; gap:4px; } }
+@media print {
+  :root { color-scheme:light!important; --paper:#fff!important; --surface:#fff!important; --ink:#000!important; --muted:#333!important; --accent:#000!important; --wash:#eee!important; --line:#aaa!important; }
+  .color-mode-control { display:none!important; }
+}
