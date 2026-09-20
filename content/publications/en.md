@@ -1,7 +1,7 @@
-# Публикации
+# Publications
 
 
-## Избранные 
+## Selected
 
 - **Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)
 - **Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)
@@ -12,7 +12,7 @@
 - **Symbol Error-Rate Analytical Expressions for a Two-User PD-NOMA System with Square QAM.** Yakov V Kryukov, Dmitriy A Pokamestov, Serafim A Novichkov. *Symmetry*, vol. 13, no. 11, 2153. 2021. [DOI](https://doi.org/10.3390/sym13112153)
 - **Концепция физического уровня систем связи пятого поколения.** Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Ренат Рамазанович Абенов, Анатолий Яковлевич Демидов. *Известия высших учебных заведений. Радиоэлектроника*, vol. 60, no. 7, pp. 367–382. 2017. [Источник](https://elibrary.ru/item.asp?id=30452010)
 
-## Все публикации
+## All publications
 
 ### 2026
 

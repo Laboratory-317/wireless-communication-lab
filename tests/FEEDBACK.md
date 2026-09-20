@@ -19,6 +19,13 @@ The check should:
 - run `setup-theme-showcase.ps1`;
 - validate generated JavaScript with Node.js;
 - verify required entry files exist.
+- exercise all four themes in both languages, including each CV profile;
+- validate local content links/images and reject public TODO/example links.
+
+For publication changes also run `node tools/build-site.js` and inspect `/_site/`
+through the local server. The artifact must not contain repository documentation.
+For responsive checks, `tests/responsive-preview.html` provides an actual narrow
+iframe when the browser's viewport override is unavailable.
 
 ## Change-Specific Checks
 

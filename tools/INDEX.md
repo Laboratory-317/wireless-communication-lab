@@ -2,6 +2,35 @@
 
 Reusable project tools.
 
+## `tools/build-site.js`
+
+- Purpose: Build and validate the public GitHub Pages artifact in `_site/`.
+- Parameters: None.
+- Example: `node tools/build-site.js`
+- Dependencies: Node.js built-in modules; existing content builder and site checker.
+- Notes: Recreates only the generated `_site/` directory. Copies configured previews,
+  CSS, JS, assets, and root image attachments. Excludes content sources and internal
+  documentation. Run a local server at the repository root and open `/_site/` to
+  verify project-subpath behavior before deployment.
+
+## `tools/check-site.js`
+
+- Purpose: Validate all theme/language/page renders, CV selection, local links,
+  images, and absence of public TODO/example links.
+- Parameters: None.
+- Example: `node tools/build-content.js` followed by `node tools/check-site.js`.
+- Dependencies: Node.js built-in fs, path, vm and assert modules.
+- Notes: Uses a minimal DOM stub; does not replace browser layout/interaction checks.
+
+## `tests/responsive-preview.html`
+
+- Purpose: Local browser inspection in a real 390px iframe viewport.
+- Parameters: `theme`, `page`, and `lang` query parameters.
+- Example: `http://127.0.0.1:8080/tests/responsive-preview.html?theme=academicpages&page=people.html&lang=en`
+- Dependencies: A static local HTTP server and a browser. No packages.
+- Notes: Not included in the Pages artifact. Scrollbar reduces content width to 375px
+  on browsers using a 15px scrollbar.
+
 ## `tools/build-content.js`
 
 - Purpose: Generate `js/lab-content.js` from human-readable Markdown in
@@ -52,12 +81,13 @@ powershell -ExecutionPolicy Bypass -File .\tools\new-theme-page.ps1
 
 ## `tools/update-cache-version.ps1`
 
-- Purpose: Update CSS/JS query-string cache versions across working HTML files.
-- Parameters: See script source before use.
+- Purpose: Update CSS/JS query-string cache versions across working HTML files
+  and shared `theme-base.css` imports in theme-local CSS.
+- Parameters: Required `-Version <string>`, for example `20260920-final`.
 - Example:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\tools\update-cache-version.ps1
+powershell -ExecutionPolicy Bypass -File .\tools\update-cache-version.ps1 -Version 20260920-final
 ```
 
 - Dependencies: PowerShell.

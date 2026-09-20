@@ -312,6 +312,10 @@ function parseNavigation(lang) {
   return {
     labName: meta["название лаборатории"] || meta["lab name"],
     tagline: meta["подзаголовок"] || meta.tagline,
+    diagramCaption: meta["подпись схем"] || meta["diagram caption"] || "",
+    skipNavigation: meta["пропуск навигации"] || meta["skip navigation"] || "",
+    navigationLabel: meta["навигация"] || meta["navigation label"] || "",
+    footer: meta["подвал"] || meta.footer || "",
     rootEyebrow: meta["надзаголовок выбора темы"] || meta["theme selector eyebrow"],
     rootLead: meta["описание выбора темы"] || meta["theme selector lead"],
     themeSelector: meta["ссылка выбора темы"] || meta["theme selector link"],
@@ -511,6 +515,10 @@ function parsePeopleEntries(lines) {
 
     if (listItem) {
       const [label, ...valueParts] = listItem[1].split(":");
+      if (!valueParts.length) {
+        current.description = `${current.description} ${listItem[1]}`.trim();
+        return;
+      }
       current.contacts.push({
         label: label.trim(),
         value: valueParts.join(":").trim()
@@ -627,12 +635,14 @@ function parseCv(lang) {
       const bodyLines = bodyAfterTitle(markdown).map(stripComment).filter(Boolean);
       const profileMeta = metadata(bodyLines);
       const slug = fileName.replace(new RegExp(`_${lang}\\.md$`), "");
+      const firstSection = bodyLines.findIndex((line) => headingTitle(line, 3));
+      const summaryLines = firstSection < 0 ? bodyLines : bodyLines.slice(0, firstSection);
 
       return {
         slug: profileMeta.slug || slug,
         name: profileMeta["имя"] || profileMeta.name || title,
         role: profileMeta["роль"] || profileMeta.role || "",
-        summary: textFromLines(bodyLines),
+        summary: textFromLines(summaryLines),
         sections: parseCvSections(bodyLines)
       };
     })
@@ -775,6 +785,19 @@ function parseNewsPage(lang) {
   return labelData(lang, "news", title, meta);
 }
 
+function parseMedia(lang) {
+  const { filePath, markdown } = readPage(lang, "media");
+  return {
+    ...labelData(lang, "media", titleOf(markdown, filePath), {}),
+    mediaLead: leadBeforeSections(markdown),
+    mediaItems: sections(markdown).map((section) => ({
+      title: section.title,
+      text: textFromLines(section.lines),
+      images: imagesFromLines(section.lines)
+    }))
+  };
+}
+
 function parseNewsItems(lang) {
   const pageItems = parseInlineNewsItems(lang);
   return pageItems.length ? pageItems : parseLegacyNewsItems(lang);
@@ -846,7 +869,7 @@ function buildLanguage(lang) {
     parseProjects(lang),
     parsePatents(lang),
     parsePublications(lang),
-    parseSimpleList(lang, "media", "mediaSections", "media"),
+    parseMedia(lang),
     parseNewsPage(lang),
     parseCv(lang)
   ].forEach((section) => mergeContent(data, section));

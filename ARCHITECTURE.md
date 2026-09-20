@@ -56,6 +56,20 @@ Preview HTML should remain structurally consistent and use the shared renderer.
 
 `css/style.css` styles the root theme-selection page.
 
+`css/theme-base.css` shares accessible controls and content components. Theme-local
+CSS owns the four distinct compositions: directory, showcase, journal, and atlas.
+The legacy directory names under `themes-preview/` remain stable for existing links.
+
+`assets/research/` stores editable SVG concept diagrams. Captions and descriptions
+remain in the paired home/media Markdown files. Media uses ordinary `##` sections,
+images, and paragraphs rather than a list of placeholder categories.
+
+`tools/check-site.js` exercises all theme/language/page renders and local links.
+`tools/build-site.js` builds a disposable `_site/` publication directory containing
+only public resources. GitHub Pages uploads this directory, not the repository.
+Legacy `themes/` mockups and `wireless-lab-docs/` historical documentation are not
+part of the publication output.
+
 `obsidian-templates/` contains templates for human content editing in Obsidian.
 
 `tools/` contains reusable project scripts. See `tools/INDEX.md`.

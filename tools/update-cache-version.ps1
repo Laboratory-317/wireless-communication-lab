@@ -22,4 +22,12 @@ foreach ($path in $files) {
     Set-Content -LiteralPath $path -Value $text -NoNewline
 }
 
-Write-Host "Updated cache version to $Version"
+Get-ChildItem -LiteralPath (Join-Path $root "themes-preview") -Recurse -Filter "style.css" |
+    Where-Object { $_.FullName -notmatch "\\themes-preview\\[^\\]+-demo\\" } |
+    ForEach-Object {
+        $text = Get-Content -Raw -LiteralPath $_.FullName
+        $text = [regex]::Replace($text, 'theme-base\.css(\?v=[^"\)]*)?', "theme-base.css?v=$Version")
+        Set-Content -LiteralPath $_.FullName -Value $text -NoNewline
+    }
+
+Write-Host "Updated HTML and shared theme CSS cache version to $Version"

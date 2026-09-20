@@ -8,6 +8,8 @@
   const availableLanguages = Object.keys(model.languages);
 
   function storedLanguage() {
+    const query = new URLSearchParams(window.location.search).get("lang");
+    if (availableLanguages.includes(query)) return query;
     try {
       const value = window.localStorage.getItem(model.languageStorageKey);
       return availableLanguages.includes(value) ? value : model.defaultLanguage;
@@ -145,13 +147,13 @@
     const placeholders = content.placeholders;
 
     document.documentElement.lang = language;
-    document.title = `${content.labName} - ${themeName}`;
+    document.title = `${page === "home" ? content.home : labels[`${page}Title`] || content.home} — ${content.labName}`;
 
     const nav = content.sections
       .filter((section) => section.key !== "research" && section.href !== "research.html")
       .map((section) => {
         const isCurrent = page === section.key || (page === "cv" && section.key === "people");
-        return `<a href="${section.href}" aria-current="${isCurrent ? "page" : "false"}">${section.title}</a>`;
+        return `<a href="${html(section.href)}" aria-current="${isCurrent ? "page" : "false"}">${html(section.title)}</a>`;
       })
       .join("");
 
@@ -189,10 +191,11 @@
                     <img class="interest-image" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
                   ` : ""}
                   <h3>${html(item.title)}</h3>
-                  <p>${inlineMarkdown(item.text)}</p>
+                  <div class="research-copy">${blockMarkdown(item.text)}</div>
                 </article>
               `).join("")}
             </div>
+            <p class="illustration-note">${html(content.diagramCaption)}</p>
           </section>
         `;
       }
@@ -282,7 +285,8 @@
 
       function personPhoto(person, name) {
         if (typeof person === "string" || !person.photo) {
-          return `<div class="photo-placeholder" aria-hidden="true"></div>`;
+          const initials = name.trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join("");
+          return `<div class="photo-placeholder person-initials" aria-hidden="true">${html(initials)}</div>`;
         }
 
         return `<img class="photo-placeholder" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;
@@ -317,18 +321,13 @@
 
       function personContacts(person) {
         if (typeof person === "string" || !person.contacts || !person.contacts.length) {
-          return [
-            { label: placeholders.email, value: placeholders.value },
-            { label: placeholders.orcid, value: placeholders.value },
-            { label: placeholders.scholar, value: placeholders.value },
-            { label: placeholders.profile, value: placeholders.value }
-          ];
+          return [];
         }
 
         return person.contacts.map((contact) => ({
           label: contact.label,
           value: contact.value || placeholders.value
-        })).filter((contact) => contact.label.toLowerCase() !== "cv");
+        })).filter((contact) => contact.label.toLowerCase() !== "cv" && contact.value !== placeholders.value);
       }
 
       function personCvHref(person) {
@@ -367,7 +366,7 @@
                     </div>
                     <div class="person-info">
                       <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
-                      ${description ? `<p class="person-bio">${description}</p>` : ""}
+                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
                     </div>
                   </article>
                 `;
@@ -457,14 +456,14 @@
         <section class="section">
           <div class="section-head">
             <h2>${labels.mediaTitle}</h2>
+            <div class="markdown-block">${blockMarkdown(content.mediaLead)}</div>
           </div>
           <div class="media-list">
-            ${content.mediaSections.map((title) => `
-              <article class="media-placeholder">
-                <div aria-hidden="true"></div>
-                <h3>${title}</h3>
-                <p>${placeholders.media}</p>
-              </article>
+            ${(content.mediaItems || []).map((item) => `
+              <figure>
+                ${item.images.map((img) => `<img src="${assetSrc(img.src)}" alt="${html(img.alt)}" loading="lazy" width="720" height="480">`).join("")}
+                <figcaption><h3>${html(item.title)}</h3>${blockMarkdown(item.text)}</figcaption>
+              </figure>
             `).join("")}
           </div>
         </section>
@@ -519,6 +518,7 @@
     };
 
     app.innerHTML = `
+      <a class="skip-link" href="#content">${html(content.skipNavigation)}</a>
       <header class="site-header">
         <div class="topbar">
           <a class="back-link" href="../../index.html">${content.themeSelector}</a>
@@ -535,17 +535,29 @@
             ${content.tagline ? `<p>${html(content.tagline)}</p>` : ""}
           </div>
         </div>
-        <nav class="site-nav" aria-label="${labels.peopleTitle}">
+        <nav class="site-nav" aria-label="${html(content.navigationLabel)}">
           <a href="index.html" aria-current="${page === "home" ? "page" : "false"}">${content.home}</a>${nav}
         </nav>
       </header>
-      <main class="page page-${page}">${pages[page] || pages.home}</main>
+      <main id="content" tabindex="-1" class="page page-${page}">${pages[page] || pages.home}</main>
+      <footer class="site-footer"><p>${html(content.tagline)}</p><p>${html(content.footer)}</p></footer>
     `;
+
+    app.querySelectorAll('a[href]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || /^(?:[a-z]+:|\/\/|#)/i.test(href) || !/\.html(?:[?#]|$)/.test(href)) return;
+      const url = new URL(href, window.location.href);
+      url.searchParams.set('lang', language);
+      link.setAttribute('href', url.pathname + url.search + url.hash);
+    });
 
     app.querySelectorAll("[data-language]").forEach((button) => {
       button.addEventListener("click", () => {
         const nextLanguage = button.dataset.language;
         saveLanguage(nextLanguage);
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", nextLanguage);
+        window.history.replaceState(null, "", url);
         render(nextLanguage);
       });
     });

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
+<rect width="720" height="480" fill="#f0f3f0"/>
+<g fill="none" stroke="#253e48" stroke-width="2">
+<path d="M110 105H615M110 195H615M110 285H615M110 375H615"/>
+<g stroke="#326855"><path d="M185 285L250 105M185 375L250 195M405 195L470 105M405 375L470 285"/></g>
+<g fill="#f0f3f0"><circle cx="250" cy="105" r="11"/><circle cx="250" cy="195" r="11"/><circle cx="470" cy="105" r="11"/><circle cx="470" cy="285" r="11"/></g>
+<path d="M243 105H257M250 98V112M243 195H257M250 188V202M463 105H477M470 98V112M463 285H477M470 278V292"/>
+<g fill="#326855"><circle cx="185" cy="285" r="4"/><circle cx="185" cy="375" r="4"/><circle cx="405" cy="195" r="4"/><circle cx="405" cy="375" r="4"/></g>
+</g><g fill="#253e48" font-family="monospace" font-size="18"><text x="65" y="111">u₀</text><text x="65" y="201">u₁</text><text x="65" y="291">u₂</text><text x="65" y="381">u₃</text><text x="630" y="111">x₀</text><text x="630" y="201">x₁</text><text x="630" y="291">x₂</text><text x="630" y="381">x₃</text></g>
+</svg>

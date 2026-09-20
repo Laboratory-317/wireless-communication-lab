@@ -2,8 +2,37 @@
 
 ## Current Objective
 
-Update the lab website with a patents placeholder, grant projects, and team CV
-profile pages.
+Deliver four genuinely distinct theme previews with shared Markdown content,
+GitHub Pages-only publishing, and a practical editing workflow for non-developers.
+
+## September 20, 2026 redesign
+
+- Baseline captured in commit `634be9a`, including the existing documentation bundle.
+- Reviewed WCSNG (UCSD), Signal Kinetics (MIT), Dina Katabi (MIT), and USC NSL.
+  Findings and design decisions are in `state/DESIGN_REVIEW.md`.
+- Rebuilt themes as an academic directory, research showcase, research journal,
+  and engineering atlas, retaining existing URLs and section order.
+- Added shared `css/theme-base.css`; each theme owns its composition.
+- Filled home and student content in RU/EN; replaced history TODO with verified
+  location/context. Removed empty public contact placeholders and example news links.
+- The user rejected generated 3D illustrations. Those images were not added to the
+  repository. Final visuals are editable SVG concept diagrams in `assets/research/`.
+- Media now supports Markdown sections with images and captions. English bibliography
+  headings are translated; original publication titles remain in their source language.
+- Added URL language persistence, skip navigation, descriptive page titles, visible
+  focus styles, and print styles. No new dependencies or external site services.
+- Added 80 render combinations and local-link/image validation in `tools/check-site.js`.
+- Fixed the parser so bulleted biographies remain descriptions, and CV introductions
+  contain only the lead instead of repeating all subsequent sections.
+- Verified all four home layouts visually on desktop and in a 390px iframe. Checked
+  all 32 internal theme/page combinations in English at 375px content width: no
+  horizontal overflow or broken loaded images. Tested language switching, team/CV
+  navigation, and the `_site/` project-subpath build in the browser.
+- `tools/build-site.js` and the full `tools/codex-check.ps1` passed. No publication
+  or push was performed; implementation is on `codex/four-lab-designs`.
+- Pages workflow now validates and publishes only `_site/`, using Node.js 24.
+- Remaining source-data gaps: laboratory founding chronology, unavailable portraits,
+  event/lab photos, and missing individual contacts. No public TODOs are required.
 
 ## Completed
 
@@ -74,17 +103,14 @@ profile pages.
 
 ## Blocked
 
-- Automatic translation through MyMemory is blocked until the daily quota resets
-  or a reachable LibreTranslate endpoint is configured.
+- No blocker for the redesign. Translation-service availability is not a build dependency.
 
 ## Known Issues
 
-- The working tree had pre-existing modifications before this harness work.
-- The generated `js/lab-content.js` may change when checks regenerate content;
-  treat pre-existing generated changes separately from harness changes.
-- `content/publications/en.md` is currently a copied fallback of the Russian
-  publications list; replace it with edited English content when translation
-  quality matters.
+- The published pages still require JavaScript for content rendering; HTML
+  prerendering is outside this visual redesign.
+- Browser viewport overrides did not apply in the in-app browser. Responsive layout
+  was inspected via `tests/responsive-preview.html` (390px iframe, 375px content width).
 
 ## Temporary Decisions
 

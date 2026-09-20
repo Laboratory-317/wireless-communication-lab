@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Responsive theme preview</title>
+<style>body{margin:20px;background:#ddd;font:14px system-ui}iframe{display:block;border:0;background:white;height:844px;width:390px}p{margin:0 0 16px}</style>
+<p>Isolated 390px viewport — local verification only.</p>
+<iframe title="Mobile theme preview"></iframe>
+<script>
+const query = new URLSearchParams(location.search);
+const themes = ['academicpages','hugo-academic','minimal-mistakes','bootstrap-academic'];
+const theme = themes.includes(query.get('theme')) ? query.get('theme') : themes[0];
+const page = /^[a-z]+\.html$/.test(query.get('page') || '') ? query.get('page') : 'index.html';
+const lang = query.get('lang') === 'en' ? 'en' : 'ru';
+document.querySelector('iframe').src = `../themes-preview/${theme}/${page}?lang=${lang}`;
+</script>
+</html>

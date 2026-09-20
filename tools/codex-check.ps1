@@ -40,6 +40,11 @@ if ($LASTEXITCODE -ne 0) {
 
 Step "Checking generated content is valid JavaScript"
 node -e "const fs=require('fs'); const vm=require('vm'); vm.runInNewContext(fs.readFileSync('js/lab-content.js','utf8'), { window: {} });"
+if ($LASTEXITCODE -ne 0) { throw "Generated JavaScript validation failed." }
+
+Step "Checking all theme and language renders, links, and images"
+node tools/check-site.js
+if ($LASTEXITCODE -ne 0) { throw "Site checks failed." }
 
 Step "Checking required entry points"
 $requiredFiles = @(

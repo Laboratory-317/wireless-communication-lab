@@ -1,5 +1,6 @@
 codex/
 .obsidian/
+_site/
 themes-preview/*-demo/
 .env
 .env.*

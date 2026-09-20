@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
+<rect width="720" height="480" fill="#f0f3f0"/>
+<g fill="none" stroke="#253e48" stroke-width="2">
+<path d="M130 120V360M117 120H143M117 180H143M117 240H143M117 300H143M117 360H143" stroke-width="5"/>
+<g stroke="#326855" opacity=".3"><path d="M150 120Q310 240 570 240M150 180Q310 240 570 240M150 300Q310 240 570 240M150 360Q310 240 570 240"/></g>
+<path d="M160 240H568M555 232L568 240L555 248" stroke="#326855"/>
+<g stroke="#326855"><path d="M245 190Q280 240 245 290M330 160Q390 240 330 320M420 130Q510 240 420 350"/></g>
+<rect x="590" y="217" width="32" height="48" rx="3"/><circle cx="606" cy="255" r="2"/>
+</g><g fill="#253e48" font-family="monospace" font-size="16"><text x="98" y="411">MIMO</text><text x="526" y="411">5G / 6G</text></g>
+</svg>

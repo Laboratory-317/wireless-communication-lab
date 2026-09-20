@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
+<rect width="720" height="480" fill="#f0f3f0"/>
+<path d="M120 370V100M112 114L120 100L128 114M120 370H615M602 362L615 370L602 378" fill="none" stroke="#253e48" stroke-width="2"/>
+<g fill="#315e55"><path d="M145 125H270V180H145ZM290 200H415V255H290ZM435 275H560V330H435Z"/></g>
+<g fill="#79948e"><path d="M290 125H415V180H290ZM435 200H560V255H435ZM145 275H270V330H145Z"/></g>
+<g fill="#c9d6cf"><path d="M435 125H560V180H435ZM145 200H270V255H145ZM290 275H415V330H290Z"/></g>
+<g fill="#253e48" font-family="monospace" font-size="18"><text x="593" y="411">t</text><text x="84" y="116">f</text></g>
+</svg>

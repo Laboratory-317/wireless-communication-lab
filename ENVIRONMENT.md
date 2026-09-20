@@ -40,3 +40,7 @@ facts about this machine are stored in `environment/INVENTORY.md`.
 The published site is expected to be built by GitHub Pages from `main` using the
 workflow under `.github/workflows/`. Do not publish or push without explicit user
 request.
+
+The workflow uses Node.js 24 and `node tools/build-site.js`; it publishes `_site/`
+after render/link checks. Local editors do not need Node.js when editing through
+GitHub's web interface. Translation remains optional and is disabled in deployment.

@@ -6,6 +6,8 @@
   const availableLanguages = Object.keys(model.languages);
 
   function storedLanguage() {
+    const query = new URLSearchParams(window.location.search).get("lang");
+    if (availableLanguages.includes(query)) return query;
     try {
       const value = window.localStorage.getItem(model.languageStorageKey);
       return availableLanguages.includes(value) ? value : model.defaultLanguage;
@@ -49,8 +51,10 @@
       ${content.rootLead ? `<p class="lead">${content.rootLead}</p>` : ""}
 
       <nav class="theme-grid" aria-label="${content.themeSelector}">
-        ${model.themes.map((theme) => `
-          <a class="theme-card" href="${theme.href}">
+        ${model.themes.map((theme, index) => `
+          <a class="theme-card theme-card-${index + 1}" href="${theme.href}?lang=${language}">
+            <div class="theme-sketch" aria-hidden="true"><i></i><b></b><em></em><em></em><em></em></div>
+            <div class="theme-number">0${index + 1}</div>
             <span>${theme.title[language]}</span>
             ${theme.description[language] ? `<small>${theme.description[language]}</small>` : ""}
           </a>
@@ -62,6 +66,9 @@
       button.addEventListener("click", () => {
         const nextLanguage = button.dataset.language;
         saveLanguage(nextLanguage);
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", nextLanguage);
+        window.history.replaceState(null, "", url);
         render(nextLanguage);
       });
     });
