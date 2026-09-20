@@ -5,6 +5,14 @@
 Deliver four genuinely distinct theme previews with shared Markdown content,
 GitHub Pages-only publishing, and a practical editing workflow for non-developers.
 
+## Published to main — September 21, 2026
+
+- At the user's explicit request, fast-forwarded `main` to the prepared branch and pushed it to origin.
+- Deployment of `60811cf` succeeded: https://github.com/temaSW/wireless-communication-lab/actions/runs/35527977408 .
+- Verified HTTP 200 and updated content on the public selector, student page and team page; verified a public patent PDF signature.
+- Live URL: https://temasw.github.io/wireless-communication-lab/ . All four themes remain available.
+- The launch-review publication status below supersedes the earlier local-only notes.
+
 ## GitHub access verified after owner login
 
 - GitHub account `temaSW` has admin/push access to the repository.
