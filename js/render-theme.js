@@ -158,6 +158,7 @@
     const content = model.languages[language] || model.languages[model.defaultLanguage];
     const labels = content.sectionLabels;
     const placeholders = content.placeholders;
+    const illustrationPlaceholder = language === "en" ? "Illustration coming later" : "Иллюстрация будет позже";
 
     document.documentElement.lang = language;
     document.title = `${page === "home" ? content.home : labels[`${page}Title`] || content.home} — ${content.labName}`;
@@ -199,10 +200,8 @@
             </div>
             <div class="interest-list">
               ${items.map((item) => `
-                <article class="${item.images && item.images.length ? "has-image" : ""}">
-                  ${item.images && item.images.length ? `
-                    <img class="interest-image" width="800" height="520" decoding="async" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
-                  ` : ""}
+                <article>
+                  <div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>
                   <h3>${html(item.title)}</h3>
                   <div class="research-copy">${blockMarkdown(item.text)}</div>
                 </article>
@@ -238,10 +237,8 @@
           </div>
           <div class="interest-list">
             ${content.researchInterests.map((item) => `
-              <article class="${item.images && item.images.length ? "has-image" : ""}">
-                ${item.images && item.images.length ? `
-                  <img class="interest-image" width="800" height="520" decoding="async" src="${assetSrc(item.images[0].src)}" alt="${html(item.images[0].alt || item.title)}">
-                ` : ""}
+              <article>
+                <div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>
                 <h3>${html(item.title)}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>

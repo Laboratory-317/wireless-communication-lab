@@ -6,6 +6,8 @@
 
 ### Dmitriy Pokamestov
 
+![Dmitriy Pokamestov](assets/people/pokamestov-dmitriy.jpg)
+
 
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.
 
@@ -19,6 +21,8 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 - CV: [CV](cv.html?person=pokamestov)
 
 ### Yakov Kryukov
+
+![Yakov Kryukov](assets/people/kryukov-yakov.png)
 
 
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.
@@ -34,6 +38,8 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 ### Rudolf Litvinov
 
+![Rudolf Litvinov](assets/people/litvinov-rudolf.jpg)
+
 
 Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
@@ -46,6 +52,8 @@ Research interests to be confirmed.
 ## Engineers
 
 ### Viktor Stepnoy
+![Viktor Stepnoy](assets/people/stepnoy-viktor.jpg)
+
 
 Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
@@ -56,6 +64,8 @@ Research interests to be confirmed.
 ## Postgraduate Students
 
 ### Artyom Shinkevich
+![Artyom Shinkevich](assets/people/shinkevich-artem.png)
+
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
@@ -69,6 +79,8 @@ Research interests to be confirmed.
 - ORCID: 0000-0002-0174-9158
 
 ### Georgy Shalin
+![Georgy Shalin](assets/people/shalin-georgy.jpg)
+
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
@@ -95,6 +107,8 @@ Research interests to be confirmed.
 - ORCID: 0009-0008-0570-5495
 
 ### Dmitriy Ilinskiy
+![Dmitriy Ilinskiy](assets/people/ilinskiy-dmitriy.jpg)
+
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 

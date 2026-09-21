@@ -227,6 +227,16 @@ main {
   margin-bottom:22px;
 }
 
+.interest-image.illustration-pending {
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:var(--wash,#edf1f2);
+  color:var(--muted,#63747e);
+  font-size:14px;
+  text-align:center;
+}
+
 .interest-list p {
   font-size:16px;
 }

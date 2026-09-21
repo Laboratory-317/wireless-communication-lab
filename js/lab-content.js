@@ -231,7 +231,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Покаместов Дмитрий Алексеевич",
-              "photo": "",
+              "photo": "assets/people/pokamestov-dmitriy.jpg",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.",
               "contacts": [
                 {
@@ -266,11 +266,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ]
+              ],
+              "photoAlt": "Дмитрий Покаместов"
             },
             {
               "name": "Крюков Яков Владимирович",
-              "photo": "",
+              "photo": "assets/people/kryukov-yakov.png",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа.",
               "contacts": [
                 {
@@ -305,11 +306,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ]
+              ],
+              "photoAlt": "Яков Крюков"
             },
             {
               "name": "Литвинов Рудольф Викторович",
-              "photo": "",
+              "photo": "assets/people/litvinov-rudolf.jpg",
               "description": "Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -324,7 +326,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Рудольф Литвинов"
             }
           ]
         },
@@ -333,14 +336,15 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Степной Виктор Серафимович",
-              "photo": "",
+              "photo": "assets/people/stepnoy-viktor.jpg",
               "description": "Старший преподаватель кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": "stepnoyvs47@mail.ru"
                 }
-              ]
+              ],
+              "photoAlt": "Виктор Степной"
             }
           ]
         },
@@ -349,7 +353,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Шинкевич Артём Сергеевич",
-              "photo": "",
+              "photo": "assets/people/shinkevich-artem.png",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -376,11 +380,12 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
-              ]
+              ],
+              "photoAlt": "Артём Шинкевич"
             },
             {
               "name": "Шалин Георгий Николаевич",
-              "photo": "",
+              "photo": "assets/people/shalin-georgy.jpg",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -407,7 +412,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0001-5015-599X"
                 }
-              ]
+              ],
+              "photoAlt": "Георгий Шалин"
             },
             {
               "name": "Еремеев Сергей Александрович",
@@ -442,7 +448,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Ильинский Дмитрий Евгеньевич",
-              "photo": "",
+              "photo": "assets/people/ilinskiy-dmitriy.jpg",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -473,7 +479,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0009-0008-8697-8945"
                 }
-              ]
+              ],
+              "photoAlt": "Дмитрий Ильинский"
             }
           ]
         },
@@ -1121,7 +1128,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Dmitriy Pokamestov",
-              "photo": "",
+              "photo": "assets/people/pokamestov-dmitriy.jpg",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.",
               "contacts": [
                 {
@@ -1156,11 +1163,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ]
+              ],
+              "photoAlt": "Dmitriy Pokamestov"
             },
             {
               "name": "Yakov Kryukov",
-              "photo": "",
+              "photo": "assets/people/kryukov-yakov.png",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.",
               "contacts": [
                 {
@@ -1195,11 +1203,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ]
+              ],
+              "photoAlt": "Yakov Kryukov"
             },
             {
               "name": "Rudolf Litvinov",
-              "photo": "",
+              "photo": "assets/people/litvinov-rudolf.jpg",
               "description": "Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1214,7 +1223,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Rudolf Litvinov"
             }
           ]
         },
@@ -1223,14 +1233,15 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Viktor Stepnoy",
-              "photo": "",
+              "photo": "assets/people/stepnoy-viktor.jpg",
               "description": "Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": "stepnoyvs47@mail.ru"
                 }
-              ]
+              ],
+              "photoAlt": "Viktor Stepnoy"
             }
           ]
         },
@@ -1239,7 +1250,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Artyom Shinkevich",
-              "photo": "",
+              "photo": "assets/people/shinkevich-artem.png",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1266,11 +1277,12 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
-              ]
+              ],
+              "photoAlt": "Artyom Shinkevich"
             },
             {
               "name": "Georgy Shalin",
-              "photo": "",
+              "photo": "assets/people/shalin-georgy.jpg",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1297,7 +1309,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0001-5015-599X"
                 }
-              ]
+              ],
+              "photoAlt": "Georgy Shalin"
             },
             {
               "name": "Sergey Eremeev",
@@ -1332,7 +1345,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Dmitriy Ilinskiy",
-              "photo": "",
+              "photo": "assets/people/ilinskiy-dmitriy.jpg",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1363,7 +1376,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0009-0008-8697-8945"
                 }
-              ]
+              ],
+              "photoAlt": "Dmitriy Ilinskiy"
             }
           ]
         },
