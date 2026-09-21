@@ -287,6 +287,11 @@ main {
   background:var(--wash,#edf1f2);
 }
 
+.person-photo img.photo-placeholder {
+  aspect-ratio:230 / 324;
+  object-fit:cover;
+}
+
 .person-initials {
   display:grid;
   place-items:center;

@@ -142,11 +142,11 @@ h2,h3,h4 {
 }
 
 .person {
-  grid-template-columns:120px 1fr;
+  grid-template-columns:150px 1fr;
 }
 
 .photo-placeholder {
-  width:120px;
+  width:150px;
 }
 
 .person h4 {
@@ -242,11 +242,11 @@ h2,h3,h4 {
   }
 
   .person {
-    grid-template-columns:105px 1fr;
+    grid-template-columns:130px 1fr;
   }
 
   .photo-placeholder {
-    width:105px;
+    width:130px;
   }
 
   .site-footer {
