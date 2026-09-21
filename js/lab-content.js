@@ -4,32 +4,8 @@ window.LAB_CONTENT = {
   "languageStorageKey": "wireless-lab-language",
   "themes": [
     {
-      "key": "Academic Pages",
-      "href": "themes-preview/academicpages/",
-      "title": {
-        "ru": "Академический справочник",
-        "en": "Academic directory"
-      },
-      "description": {
-        "ru": "Боковая навигация, компактные записи и спокойная книжная типографика.",
-        "en": "Sidebar navigation, compact entries and book-like typography."
-      }
-    },
-    {
-      "key": "Hugo Academic / Hugo Blox",
-      "href": "themes-preview/hugo-academic/",
-      "title": {
-        "ru": "Витрина исследований",
-        "en": "Research showcase"
-      },
-      "description": {
-        "ru": "Крупные схемы, открытые пространства и чередование изображения с текстом.",
-        "en": "Large diagrams, open space and alternating image and text sections."
-      }
-    },
-    {
-      "key": "Minimal Mistakes",
-      "href": "themes-preview/minimal-mistakes/",
+      "key": "Journal",
+      "href": "themes-preview/journal/",
       "title": {
         "ru": "Научный журнал",
         "en": "Research journal"
@@ -37,18 +13,6 @@ window.LAB_CONTENT = {
       "description": {
         "ru": "Журнальная шапка, асимметричные колонки и выразительная типографика.",
         "en": "Editorial masthead, asymmetric columns and expressive typography."
-      }
-    },
-    {
-      "key": "Bootstrap Academic",
-      "href": "themes-preview/bootstrap-academic/",
-      "title": {
-        "ru": "Инженерный атлас",
-        "en": "Engineering atlas"
-      },
-      "description": {
-        "ru": "Техническая сетка, нумерованные блоки и компактная информационная панель.",
-        "en": "Technical grid, numbered plates and a compact information panel."
       }
     }
   ],
@@ -70,9 +34,6 @@ window.LAB_CONTENT = {
       "skipNavigation": "К содержимому",
       "navigationLabel": "Разделы сайта",
       "footer": "Беспроводные системы · Кодирование · Обработка сигналов",
-      "rootEyebrow": "Лаборатория / четыре взгляда",
-      "rootLead": "Один коллектив, одни исследования — четыре самостоятельных варианта оформления.",
-      "themeSelector": "Выбор темы",
       "home": "Главная",
       "sections": [
         {
@@ -209,14 +170,6 @@ window.LAB_CONTENT = {
         {
           "title": "Лаборатория в ТУСУР",
           "text": "Россия, Томск, ул. Вершинина, 47, аудитория 317. [Сотрудники лаборатории](people.html) · [Проекты и разработки](projects.html).",
-          "images": [],
-          "actions": [],
-          "cards": [],
-          "type": "text"
-        },
-        {
-          "title": "История лаборатории",
-          "text": "Дата основания и основные этапы работы уточняются.",
           "images": [],
           "actions": [],
           "cards": [],
@@ -485,7 +438,7 @@ window.LAB_CONTENT = {
             "text": "Запустить модель, объяснить неожиданное поведение сигнала, предложить улучшение и проверить его. Из таких шагов складывается исследование, которое может вырасти в курсовую, выпускную работу или научную публикацию."
           }
         ],
-        "contact": "### Давайте найдём вашу первую задачу\n\nРасскажите, где вы учитесь и что вам любопытно в беспроводной связи. Готовая тема не обязательна — начнём с разговора.\n\n[Обсудить первый шаг](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
+        "contact": "### Давайте найдём вашу первую задачу\n\nРасскажите, где вы учитесь и что вам любопытно в беспроводной связи. Готовая тема не обязательна — начнём с разговора.\n\nМожно прийти в лабораторию по адресу: Томск, ул. Вершинина, 47, ауд. 317.\n\n[Обсудить первый шаг](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
         "tracks": [
           "Связь нового поколения — 5G/6G",
           "Передача данных сквозь шум — помехоустойчивые коды",
@@ -870,13 +823,8 @@ window.LAB_CONTENT = {
       "newsItems": [
         {
           "date": "",
-          "title": "Победа в конкурсе «УМНИК»",
-          "text": "Сотрудники лаборатории стали победителями конкурса «УМНИК». Подробнее о разработках — в разделе [«Проекты»](projects.html)."
-        },
-        {
-          "date": "",
-          "title": "Первая версия сайта",
-          "text": "На сайте собраны сведения о коллективе, научных направлениях, проектах и публикациях лаборатории."
+          "title": "Будет позднее",
+          "text": ""
         }
       ]
     },
@@ -897,9 +845,6 @@ window.LAB_CONTENT = {
       "skipNavigation": "Skip to content",
       "navigationLabel": "Site sections",
       "footer": "Wireless systems · Coding · Signal processing",
-      "rootEyebrow": "Laboratory / four perspectives",
-      "rootLead": "One team, shared research — four distinct approaches to presenting it.",
-      "themeSelector": "Theme selector",
       "home": "Home",
       "sections": [
         {
@@ -1036,14 +981,6 @@ window.LAB_CONTENT = {
         {
           "title": "The laboratory at TUSUR",
           "text": "Room 317, 47 Vershinin Street, Tomsk, Russia. [Our team](people.html) · [Projects and developments](projects.html).",
-          "images": [],
-          "actions": [],
-          "cards": [],
-          "type": "text"
-        },
-        {
-          "title": "Laboratory history",
-          "text": "The founding date and key milestones are to be confirmed.",
           "images": [],
           "actions": [],
           "cards": [],
@@ -1312,7 +1249,7 @@ window.LAB_CONTENT = {
             "text": "Run a model, explain unexpected signal behaviour, suggest an improvement and test it. These small steps build into research that may develop into a course project, a thesis or a scientific publication."
           }
         ],
-        "contact": "### Let's find your first research task\n\nTell us where you study and what makes you curious about wireless communications. You do not need a project proposal — a conversation is a good place to start.\n\n[Talk about a first step](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
+        "contact": "### Let's find your first research task\n\nTell us where you study and what makes you curious about wireless communications. You do not need a project proposal — a conversation is a good place to start.\n\nYou are also welcome to visit the laboratory at Room 317, 47 Vershinina Street, Tomsk.\n\n[Talk about a first step](mailto:laboratory317@gmail.com)\n\nlaboratory317@gmail.com",
         "tracks": [
           "Next-generation communications — 5G/6G",
           "Data through noise — error-correcting codes",
@@ -1697,13 +1634,8 @@ window.LAB_CONTENT = {
       "newsItems": [
         {
           "date": "",
-          "title": "UMNIK competition award",
-          "text": "Laboratory researchers won awards in the UMNIK competition. Read about their work in [Projects](projects.html)."
-        },
-        {
-          "date": "",
-          "title": "Website Launch",
-          "text": "The website brings together information about the team, research areas, projects and publications."
+          "title": "Coming soon",
+          "text": ""
         }
       ]
     }

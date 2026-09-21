@@ -1,4 +1,4 @@
-@import url("color-mode.css?v=20260921-colors");
+@import url("color-mode.css?v=20260922-prod");
 /* Shared reading, accessibility and components. Layout lives in each theme. */
 * {
   box-sizing:border-box;
@@ -156,13 +156,6 @@ main {
   margin:0;
 }
 
-.theme-label {
-  font-size:11px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  font-weight:700;
-  margin-bottom:16px;
-}
 
 .site-nav {
   display:flex;
@@ -493,7 +486,7 @@ main {
 }
 
 @media print {
-  .topbar,.site-nav,.theme-label,.site-footer {
+  .topbar,.site-nav,.site-footer {
     display:none!important;
   }
 

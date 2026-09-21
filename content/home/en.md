@@ -34,7 +34,3 @@ Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control o
 # The laboratory at TUSUR
 
 Room 317, 47 Vershinin Street, Tomsk, Russia. [Our team](people.html) · [Projects and developments](projects.html).
-
-# Laboratory history
-
-The founding date and key milestones are to be confirmed.

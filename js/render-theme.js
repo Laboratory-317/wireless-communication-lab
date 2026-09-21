@@ -4,7 +4,6 @@
   if (!model || !app) return;
 
   const page = document.body.dataset.page || "home";
-  const themeKey = document.body.dataset.themeName || "Theme preview";
   const availableLanguages = Object.keys(model.languages);
 
   function storedLanguage() {
@@ -157,8 +156,6 @@
   }
   function render(language) {
     const content = model.languages[language] || model.languages[model.defaultLanguage];
-    const theme = model.themes.find((item) => item.key === themeKey);
-    const themeName = theme ? theme.title[language] : themeKey;
     const labels = content.sectionLabels;
     const placeholders = content.placeholders;
 
@@ -182,7 +179,7 @@
           <div class="news-list">
             ${content.newsItems.map((item) => `
               <article class="news-item">
-                ${item.date ? `<time>${html(item.date)}</time>` : `<span class="news-date missing-data">${html(content.missingDate)}</span>`}
+                ${item.date ? `<time>${html(item.date)}</time>` : ""}
                 <h3>${item.title}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>
@@ -538,7 +535,6 @@
       <a class="skip-link" href="#content">${html(content.skipNavigation)}</a>
       <header class="site-header">
         <div class="topbar">
-          <a class="back-link" href="../../index.html">${content.themeSelector}</a>
           <div class="topbar-actions">
             ${headerActions(content.headerActions)}
             ${languageSwitch(language)}
@@ -548,7 +544,6 @@
         <div class="brand">
           <img src="labicon.png" alt="${content.labName}">
           <div>
-            <p class="theme-label">${themeName}</p>
             <h1>${content.labName}</h1>
             ${content.tagline ? `<p>${html(content.tagline)}</p>` : ""}
           </div>

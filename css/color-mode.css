@@ -16,7 +16,8 @@
   --grid-color:#ffffff07;
 }
 @media(prefers-color-scheme:dark) {
-  :root:not([data-color-mode="light"]):not([data-color-mode="dark"]) {
+  :root[data-color-mode="system"],
+  :root:not([data-color-mode]) {
     color-scheme:dark;
     --paper:var(--dark-paper); --ink:var(--dark-ink); --accent:var(--dark-accent);
     --line:var(--dark-line); --wash:var(--dark-wash); --muted:var(--dark-muted); --surface:var(--dark-surface);

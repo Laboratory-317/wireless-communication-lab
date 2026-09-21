@@ -27,6 +27,8 @@ Run a model, explain unexpected signal behaviour, suggest an improvement and tes
 
 Tell us where you study and what makes you curious about wireless communications. You do not need a project proposal — a conversation is a good place to start.
 
+You are also welcome to visit the laboratory at Room 317, 47 Vershinina Street, Tomsk.
+
 [Talk about a first step](mailto:laboratory317@gmail.com)
 
 laboratory317@gmail.com
