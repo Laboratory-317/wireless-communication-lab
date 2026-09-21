@@ -71,7 +71,7 @@ body:not([data-page="home"]) .brand {
 }
 
 body:not([data-page="home"]) .brand h1 {
-  font-size:32px;
+  font-size:clamp(36px,4.2vw,60px);
 }
 
 .page {
