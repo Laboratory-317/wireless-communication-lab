@@ -78,6 +78,21 @@ body:not([data-page="home"]) .brand h1 {
   max-width:1400px;
 }
 
+/* Keep prose aligned to the same wide reading column across site sections. */
+.page .markdown-block,
+.publication-items li,
+.section-students .section-head,
+.student-lead,
+.student-contact,
+.student-contact p,
+.section-home-text:first-child .home-text-body {
+  max-width:none;
+}
+
+.page-cv {
+  max-width:1400px;
+}
+
 h2,h3,h4 {
   font-family:Georgia,serif;
   font-weight:400;
