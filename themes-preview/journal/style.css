@@ -98,6 +98,14 @@ body:not([data-page="home"]) .brand img {
   max-width:1400px;
 }
 
+@media (min-width:761px) {
+  .section-students .section-head h2 {
+    max-width:none;
+    text-wrap:initial;
+    white-space:nowrap;
+  }
+}
+
 h2,h3,h4 {
   font-family:Georgia,serif;
   font-weight:400;
