@@ -337,10 +337,20 @@
           return [{ label: placeholders.email, value: "" }];
         }
 
-        return person.contacts.map((contact) => ({
+        const priority = (label) => {
+          const normalized = String(label || "").toLowerCase();
+          if (normalized === "e-mail" || normalized === "email") return 0;
+          if (normalized === "scholar") return 1;
+          if (normalized === "orcid" || normalized === "orcid id") return 2;
+          return 3;
+        };
+
+        return person.contacts.map((contact, index) => ({
           label: contact.label,
-          value: contact.value || ""
-        })).filter((contact) => contact.label.toLowerCase() !== "cv");
+          value: contact.value || "",
+          index
+        })).filter((contact) => contact.label.toLowerCase() !== "cv")
+          .sort((left, right) => priority(left.label) - priority(right.label) || left.index - right.index);
       }
 
       function profileContact(contact) {
