@@ -40,8 +40,8 @@
 .brand img {
   display:block;
   flex-shrink:0;
-  width:52px;
-  height:52px;
+  width:92px;
+  height:92px;
   object-fit:contain;
 }
 
@@ -75,8 +75,8 @@ body:not([data-page="home"]) .brand h1 {
 }
 
 body:not([data-page="home"]) .brand img {
-  width:52px;
-  height:52px;
+  width:92px;
+  height:92px;
 }
 
 .page {
