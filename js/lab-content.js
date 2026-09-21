@@ -26,7 +26,7 @@ window.LAB_CONTENT = {
       },
       "labName": "Лаборатория беспроводной связи",
       "tagline": "ТУСУР · Томск",
-      "missingPhoto": "Фото пока не добавлено",
+      "missingPhoto": "Фото будет позже",
       "missingData": "Уточняется",
       "missingDate": "Дата уточняется",
       "missingBiography": "Научные интересы уточняются",
@@ -231,7 +231,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Покаместов Дмитрий Алексеевич",
-              "photo": "assets/people/pokamestov-dmitriy.jpg",
+              "photo": "",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.",
               "contacts": [
                 {
@@ -266,12 +266,11 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ],
-              "photoAlt": "Дмитрий Покаместов"
+              ]
             },
             {
               "name": "Крюков Яков Владимирович",
-              "photo": "assets/people/kryukov-yakov.png",
+              "photo": "",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа.",
               "contacts": [
                 {
@@ -306,12 +305,11 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ],
-              "photoAlt": "Яков Крюков"
+              ]
             },
             {
               "name": "Литвинов Рудольф Викторович",
-              "photo": "assets/people/litvinov-rudolf.jpg",
+              "photo": "",
               "description": "Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -326,8 +324,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ],
-              "photoAlt": "Рудольф Литвинов"
+              ]
             }
           ]
         },
@@ -336,15 +333,14 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Степной Виктор Серафимович",
-              "photo": "assets/people/stepnoy-viktor.jpg",
+              "photo": "",
               "description": "Старший преподаватель кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": "stepnoyvs47@mail.ru"
                 }
-              ],
-              "photoAlt": "Виктор Степной"
+              ]
             }
           ]
         },
@@ -353,7 +349,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Шинкевич Артём Сергеевич",
-              "photo": "assets/people/shinkevich-artem.png",
+              "photo": "",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -380,12 +376,11 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
-              ],
-              "photoAlt": "Артём Шинкевич"
+              ]
             },
             {
               "name": "Шалин Георгий Николаевич",
-              "photo": "assets/people/shalin-georgy.jpg",
+              "photo": "",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -412,8 +407,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0001-5015-599X"
                 }
-              ],
-              "photoAlt": "Георгий Шалин"
+              ]
             },
             {
               "name": "Еремеев Сергей Александрович",
@@ -448,7 +442,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Ильинский Дмитрий Евгеньевич",
-              "photo": "assets/people/ilinskiy-dmitriy.jpg",
+              "photo": "",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -479,8 +473,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0009-0008-8697-8945"
                 }
-              ],
-              "photoAlt": "Дмитрий Ильинский"
+              ]
             }
           ]
         },
@@ -591,7 +584,7 @@ window.LAB_CONTENT = {
               "**Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)",
               "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
               "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Статья](https://journals.eco-vector.com/0033-8494/article/view/684125)",
-              "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
+              "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)",
               "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",
               "**Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)",
               "**Symbol Error-Rate Analytical Expressions for a Two-User PD-NOMA System with Square QAM.** Yakov V Kryukov, Dmitriy A Pokamestov, Serafim A Novichkov. *Symmetry*, vol. 13, no. 11, 2153. 2021. [DOI](https://doi.org/10.3390/sym13112153)",
@@ -636,7 +629,7 @@ window.LAB_CONTENT = {
                 "items": [
                   "**BER analytical expression for two-user PD-NOMA with square QAM by polynomial approximation.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *AIP Conference Proceedings*, vol. 2969, no. 1, 050022. 2024.",
                   "**Comparison of PD-NOMA Capacity with Conventional and Joint Gray-Mapping.** Andrey A Brovkin, Yakov V Kryukov, Dmitriy A Pokamestov, Artem S Shinkevich, Georgiy N Shalin, Dmitriy E Ilinskiy. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–523. 2024.",
-                  "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
+                  "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)",
                   "**Design of SCMA codebooks based on APSK constellations for Rayleigh fading channels.** I Kanatbekuli, D Pokamestov, Y Kryukov, G Shalin, A Shinkevich. *Third International Conference on Digital Technologies, Optics, and Materials Science (DTIEE 2024)*, vol. 13217, pp. 75–83. 2024.",
                   "**Evaluation of the efficiency of rate-splitting multiple access in next-generation communication systems scenarios.** Dmitriy Pokamestov, Artyom Shinkevich, Yakov Kryukov, Evgeniy Rogozhnikov, Georgiy Shalin, Sergey Zemlyanukhin. *2024 IEEE 9th All-Russian Microwave Conference (RMC)*, pp. 161–165. 2024.",
                   "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",
@@ -923,7 +916,7 @@ window.LAB_CONTENT = {
       },
       "labName": "Wireless Communication Laboratory",
       "tagline": "TUSUR · Tomsk",
-      "missingPhoto": "Photo not yet added",
+      "missingPhoto": "Photo coming later",
       "missingData": "To be confirmed",
       "missingDate": "Date to be confirmed",
       "missingBiography": "Research interests to be confirmed",
@@ -1128,7 +1121,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Dmitriy Pokamestov",
-              "photo": "assets/people/pokamestov-dmitriy.jpg",
+              "photo": "",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.",
               "contacts": [
                 {
@@ -1163,12 +1156,11 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ],
-              "photoAlt": "Dmitriy Pokamestov"
+              ]
             },
             {
               "name": "Yakov Kryukov",
-              "photo": "assets/people/kryukov-yakov.png",
+              "photo": "",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.",
               "contacts": [
                 {
@@ -1203,12 +1195,11 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ],
-              "photoAlt": "Yakov Kryukov"
+              ]
             },
             {
               "name": "Rudolf Litvinov",
-              "photo": "assets/people/litvinov-rudolf.jpg",
+              "photo": "",
               "description": "Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1223,8 +1214,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ],
-              "photoAlt": "Rudolf Litvinov"
+              ]
             }
           ]
         },
@@ -1233,15 +1223,14 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Viktor Stepnoy",
-              "photo": "assets/people/stepnoy-viktor.jpg",
+              "photo": "",
               "description": "Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": "stepnoyvs47@mail.ru"
                 }
-              ],
-              "photoAlt": "Viktor Stepnoy"
+              ]
             }
           ]
         },
@@ -1250,7 +1239,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Artyom Shinkevich",
-              "photo": "assets/people/shinkevich-artem.png",
+              "photo": "",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1277,12 +1266,11 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
-              ],
-              "photoAlt": "Artyom Shinkevich"
+              ]
             },
             {
               "name": "Georgy Shalin",
-              "photo": "assets/people/shalin-georgy.jpg",
+              "photo": "",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1309,8 +1297,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0000-0001-5015-599X"
                 }
-              ],
-              "photoAlt": "Georgy Shalin"
+              ]
             },
             {
               "name": "Sergey Eremeev",
@@ -1345,7 +1332,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Dmitriy Ilinskiy",
-              "photo": "assets/people/ilinskiy-dmitriy.jpg",
+              "photo": "",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1376,8 +1363,7 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": "0009-0008-8697-8945"
                 }
-              ],
-              "photoAlt": "Dmitriy Ilinskiy"
+              ]
             }
           ]
         },
@@ -1488,7 +1474,7 @@ window.LAB_CONTENT = {
               "**Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)",
               "**Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)",
               "**Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Article](https://journals.eco-vector.com/0033-8494/article/view/684125)",
-              "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
+              "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)",
               "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",
               "**Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)",
               "**Symbol Error-Rate Analytical Expressions for a Two-User PD-NOMA System with Square QAM.** Yakov V Kryukov, Dmitriy A Pokamestov, Serafim A Novichkov. *Symmetry*, vol. 13, no. 11, 2153. 2021. [DOI](https://doi.org/10.3390/sym13112153)",
@@ -1533,7 +1519,7 @@ window.LAB_CONTENT = {
                 "items": [
                   "**BER analytical expression for two-user PD-NOMA with square QAM by polynomial approximation.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *AIP Conference Proceedings*, vol. 2969, no. 1, 050022. 2024.",
                   "**Comparison of PD-NOMA Capacity with Conventional and Joint Gray-Mapping.** Andrey A Brovkin, Yakov V Kryukov, Dmitriy A Pokamestov, Artem S Shinkevich, Georgiy N Shalin, Dmitriy E Ilinskiy. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–523. 2024.",
-                  "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024.",
+                  "**Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)",
                   "**Design of SCMA codebooks based on APSK constellations for Rayleigh fading channels.** I Kanatbekuli, D Pokamestov, Y Kryukov, G Shalin, A Shinkevich. *Third International Conference on Digital Technologies, Optics, and Materials Science (DTIEE 2024)*, vol. 13217, pp. 75–83. 2024.",
                   "**Evaluation of the efficiency of rate-splitting multiple access in next-generation communication systems scenarios.** Dmitriy Pokamestov, Artyom Shinkevich, Yakov Kryukov, Evgeniy Rogozhnikov, Georgiy Shalin, Sergey Zemlyanukhin. *2024 IEEE 9th All-Russian Microwave Conference (RMC)*, pp. 161–165. 2024.",
                   "**Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)",

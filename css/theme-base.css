@@ -299,6 +299,15 @@ main {
   color:var(--muted,#63747e);
 }
 
+.person-photo-pending {
+  display:grid;
+  place-items:center;
+  padding:14px;
+  text-align:center;
+  color:var(--muted,#63747e);
+  font-size:13px;
+}
+
 .profile-list {
   font-size:12px;
   line-height:1.5;

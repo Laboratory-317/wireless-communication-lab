@@ -298,8 +298,7 @@
 
       function personPhoto(person, name) {
         if (typeof person === "string" || !person.photo) {
-          const initials = name.trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join("");
-          return `<div class="photo-placeholder person-initials" aria-hidden="true">${html(initials)}</div><p class="missing-data photo-note">${html(content.missingPhoto)}</p>`;
+          return `<div class="photo-placeholder person-photo-pending">${html(content.missingPhoto)}</div>`;
         }
 
         return `<img class="photo-placeholder" loading="lazy" decoding="async" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;

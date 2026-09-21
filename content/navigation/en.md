@@ -18,7 +18,7 @@ Home: Home
 - media | Media | media.html
 - news | News | news.html
 
-Missing photo: Photo not yet added
+Missing photo: Photo coming later
 Missing data: To be confirmed
 Missing date: Date to be confirmed
 Missing biography: Research interests to be confirmed
