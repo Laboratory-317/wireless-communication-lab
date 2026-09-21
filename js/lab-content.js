@@ -231,7 +231,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Покаместов Дмитрий Алексеевич",
-              "photo": "",
+              "photo": "assets/people/pokamestov-dmitriy.jpg",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.",
               "contacts": [
                 {
@@ -247,6 +247,22 @@ window.LAB_CONTENT = {
                   "value": "https://directory.tusur.ru/people/2554"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "860831"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "7819-9512"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "E-2544-2019"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57188748446"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-9405-4573"
                 },
@@ -254,11 +270,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ]
+              ],
+              "photoAlt": "Дмитрий Покаместов"
             },
             {
               "name": "Крюков Яков Владимирович",
-              "photo": "",
+              "photo": "assets/people/kryukov-yakov.png",
               "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа.",
               "contacts": [
                 {
@@ -270,6 +287,22 @@ window.LAB_CONTENT = {
                   "value": "https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "886532"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "3956-3916"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "AAG-5931-2020"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57195284047"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-4115-9080"
                 },
@@ -277,11 +310,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ]
+              ],
+              "photoAlt": "Яков Крюков"
             },
             {
               "name": "Литвинов Рудольф Викторович",
-              "photo": "",
+              "photo": "assets/people/litvinov-rudolf.jpg",
               "description": "Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -296,7 +330,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Рудольф Литвинов"
             }
           ]
         },
@@ -305,14 +340,15 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Степной Виктор Серафимович",
-              "photo": "",
+              "photo": "assets/people/stepnoy-viktor.jpg",
               "description": "Старший преподаватель кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Виктор Степной"
             }
           ]
         },
@@ -321,7 +357,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Шинкевич Артём Сергеевич",
-              "photo": "Pasted image 20260823214412.png",
+              "photo": "assets/people/shinkevich-artem.png",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -333,6 +369,18 @@ window.LAB_CONTENT = {
                   "value": "https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1213138"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "8492-1845"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57946915200"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
@@ -341,7 +389,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Шалин Георгий Николаевич",
-              "photo": "",
+              "photo": "assets/people/shalin-georgy.jpg",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -353,10 +401,23 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1213133"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "1529-0615"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57947072800"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0000-0001-5015-599X"
                 }
-              ]
+              ],
+              "photoAlt": "Георгий Шалин"
             },
             {
               "name": "Еремеев Сергей Александрович",
@@ -372,14 +433,26 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1222191"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "6544-0460"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "59296552300"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0009-0008-0570-5495"
                 }
               ]
             },
             {
               "name": "Ильинский Дмитрий Евгеньевич",
-              "photo": "",
+              "photo": "assets/people/ilinskiy-dmitriy.jpg",
               "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
               "contacts": [
                 {
@@ -391,10 +464,27 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1215444"
+                },
+                {
+                  "label": "eLibrary SPIN-код",
+                  "value": "4167-9931"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "MFH-0927-2025"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "59296800900"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0009-0008-8697-8945"
                 }
-              ]
+              ],
+              "photoAlt": "Дмитрий Ильинский"
             }
           ]
         },
@@ -1042,7 +1132,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Dmitriy Pokamestov",
-              "photo": "",
+              "photo": "assets/people/pokamestov-dmitriy.jpg",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.",
               "contacts": [
                 {
@@ -1058,6 +1148,22 @@ window.LAB_CONTENT = {
                   "value": "https://directory.tusur.ru/people/2554"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "860831"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "7819-9512"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "E-2544-2019"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57188748446"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-9405-4573"
                 },
@@ -1065,11 +1171,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=pokamestov)"
                 }
-              ]
+              ],
+              "photoAlt": "Dmitriy Pokamestov"
             },
             {
               "name": "Yakov Kryukov",
-              "photo": "",
+              "photo": "assets/people/kryukov-yakov.png",
               "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.",
               "contacts": [
                 {
@@ -1081,6 +1188,22 @@ window.LAB_CONTENT = {
                   "value": "https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "886532"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "3956-3916"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "AAG-5931-2020"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57195284047"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-4115-9080"
                 },
@@ -1088,11 +1211,12 @@ window.LAB_CONTENT = {
                   "label": "CV",
                   "value": "[CV](cv.html?person=kryukov)"
                 }
-              ]
+              ],
+              "photoAlt": "Yakov Kryukov"
             },
             {
               "name": "Rudolf Litvinov",
-              "photo": "",
+              "photo": "assets/people/litvinov-rudolf.jpg",
               "description": "Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1107,7 +1231,8 @@ window.LAB_CONTENT = {
                   "label": "ORCID",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Rudolf Litvinov"
             }
           ]
         },
@@ -1116,14 +1241,15 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Viktor Stepnoy",
-              "photo": "",
+              "photo": "assets/people/stepnoy-viktor.jpg",
               "description": "Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
                   "label": "E-mail",
                   "value": ""
                 }
-              ]
+              ],
+              "photoAlt": "Viktor Stepnoy"
             }
           ]
         },
@@ -1132,7 +1258,7 @@ window.LAB_CONTENT = {
           "people": [
             {
               "name": "Artyom Shinkevich",
-              "photo": "Pasted image 20260823214412.png",
+              "photo": "assets/people/shinkevich-artem.png",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1144,6 +1270,18 @@ window.LAB_CONTENT = {
                   "value": "https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru"
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1213138"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "8492-1845"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57946915200"
+                },
+                {
                   "label": "ORCID",
                   "value": "0000-0002-0174-9158"
                 }
@@ -1152,7 +1290,7 @@ window.LAB_CONTENT = {
             },
             {
               "name": "Georgy Shalin",
-              "photo": "",
+              "photo": "assets/people/shalin-georgy.jpg",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1164,10 +1302,23 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1213133"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "1529-0615"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "57947072800"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0000-0001-5015-599X"
                 }
-              ]
+              ],
+              "photoAlt": "Georgy Shalin"
             },
             {
               "name": "Sergey Eremeev",
@@ -1183,14 +1334,26 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1222191"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "6544-0460"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "59296552300"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0009-0008-0570-5495"
                 }
               ]
             },
             {
               "name": "Dmitriy Ilinskiy",
-              "photo": "",
+              "photo": "assets/people/ilinskiy-dmitriy.jpg",
               "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
               "contacts": [
                 {
@@ -1202,10 +1365,27 @@ window.LAB_CONTENT = {
                   "value": ""
                 },
                 {
+                  "label": "eLibrary AuthorID",
+                  "value": "1215444"
+                },
+                {
+                  "label": "eLibrary SPIN code",
+                  "value": "4167-9931"
+                },
+                {
+                  "label": "WoS ResearcherID",
+                  "value": "MFH-0927-2025"
+                },
+                {
+                  "label": "Scopus AuthorID",
+                  "value": "59296800900"
+                },
+                {
                   "label": "ORCID",
-                  "value": ""
+                  "value": "0009-0008-8697-8945"
                 }
-              ]
+              ],
+              "photoAlt": "Dmitriy Ilinskiy"
             }
           ]
         },
