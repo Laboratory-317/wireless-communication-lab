@@ -43,8 +43,6 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
-Research interests to be confirmed.
-
 - E-mail:
 - Scholar:
 - ORCID:
@@ -57,8 +55,6 @@ Research interests to be confirmed.
 
 Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
-Research interests to be confirmed.
-
 - E-mail: stepnoyvs47@mail.ru
 
 ## Postgraduate Students
@@ -68,8 +64,6 @@ Research interests to be confirmed.
 
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
-
-Research interests to be confirmed.
 
 - E-mail: a.shinkevich00@gmail.com
 - Scholar: https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru
@@ -84,8 +78,6 @@ Research interests to be confirmed.
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
-Research interests to be confirmed.
-
 - E-mail:
 - Scholar:
 - eLibrary AuthorID: 1213133
@@ -96,8 +88,6 @@ Research interests to be confirmed.
 ### Sergey Eremeev
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
-
-Research interests to be confirmed.
 
 - E-mail:
 - Scholar:
@@ -112,8 +102,6 @@ Research interests to be confirmed.
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
-Research interests to be confirmed.
-
 - E-mail:
 - Scholar:
 - eLibrary AuthorID: 1215444
@@ -124,8 +112,6 @@ Research interests to be confirmed.
 
 ## Students
 
-### Evgeniy Pogorelov
-
-Profile details and research interests to be confirmed.
+### Evgeniy Dmitrievich Pogorelov
 
 - E-mail:

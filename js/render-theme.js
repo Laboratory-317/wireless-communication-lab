@@ -295,7 +295,13 @@
 
       function personPhoto(person, name) {
         if (typeof person === "string" || !person.photo) {
-          return `<div class="photo-placeholder person-photo-pending">${html(content.missingPhoto)}</div>`;
+          const initials = String(name || "")
+            .trim()
+            .split(/\s+/)
+            .slice(0, 2)
+            .map((part) => part.charAt(0).toUpperCase())
+            .join("");
+          return `<div class="photo-placeholder person-initials" aria-label="${html(name)}">${html(initials)}</div>`;
         }
 
         return `<img class="photo-placeholder" loading="lazy" decoding="async" src="${assetSrc(person.photo)}" alt="${html(person.photoAlt || name)}">`;
@@ -345,7 +351,7 @@
           label: contact.label,
           value: contact.value || "",
           index
-        })).filter((contact) => contact.label.toLowerCase() !== "cv")
+        })).filter((contact) => contact.label.toLowerCase() !== "cv" && String(contact.value || "").trim())
           .sort((left, right) => priority(left.label) - priority(right.label) || left.index - right.index);
       }
 
@@ -399,7 +405,7 @@
                     </div>
                     <div class="person-info">
                       <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
-                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : `<p class="missing-data">${html(content.missingBiography)}</p>`}
+                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
                       <dl class="profile-list">
                         ${personContacts(person).map(profileContact).join("")}
                       </dl>

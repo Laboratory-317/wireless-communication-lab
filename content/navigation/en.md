@@ -16,7 +16,6 @@ Home: Home
 - patents | Patents | patents.html
 - publications | Publications | publications.html
 - media | Media | media.html
-- news | News | news.html
 
 Missing photo: Photo coming later
 Missing data: To be confirmed

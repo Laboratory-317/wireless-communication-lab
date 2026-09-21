@@ -16,7 +16,6 @@
 - patents | Патенты | patents.html
 - publications | Публикации | publications.html
 - media | Медиа | media.html
-- news | Новости | news.html
 
 Нет фото: Фото будет позже
 Нет данных: Уточняется

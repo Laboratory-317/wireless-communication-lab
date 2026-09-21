@@ -65,11 +65,6 @@ window.LAB_CONTENT = {
           "key": "media",
           "title": "Медиа",
           "href": "media.html"
-        },
-        {
-          "key": "news",
-          "title": "Новости",
-          "href": "news.html"
         }
       ],
       "sectionLabels": {
@@ -312,7 +307,7 @@ window.LAB_CONTENT = {
             {
               "name": "Литвинов Рудольф Викторович",
               "photo": "assets/people/litvinov-rudolf.jpg",
-              "description": "Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -337,7 +332,7 @@ window.LAB_CONTENT = {
             {
               "name": "Степной Виктор Серафимович",
               "photo": "assets/people/stepnoy-viktor.jpg",
-              "description": "Старший преподаватель кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Старший преподаватель кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -354,7 +349,7 @@ window.LAB_CONTENT = {
             {
               "name": "Шинкевич Артём Сергеевич",
               "photo": "assets/people/shinkevich-artem.png",
-              "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Ассистент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -386,7 +381,7 @@ window.LAB_CONTENT = {
             {
               "name": "Шалин Георгий Николаевич",
               "photo": "assets/people/shalin-georgy.jpg",
-              "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Ассистент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -418,7 +413,7 @@ window.LAB_CONTENT = {
             {
               "name": "Еремеев Сергей Александрович",
               "photo": "",
-              "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Ассистент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -449,7 +444,7 @@ window.LAB_CONTENT = {
             {
               "name": "Ильинский Дмитрий Евгеньевич",
               "photo": "assets/people/ilinskiy-dmitriy.jpg",
-              "description": "Ассистент кафедры ТОР ТУСУР. Научные интересы уточняются.",
+              "description": "Ассистент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -488,9 +483,9 @@ window.LAB_CONTENT = {
           "title": "Студенты",
           "people": [
             {
-              "name": "Погорелов Евгений",
+              "name": "Погорелов Евгений Дмитриевич",
               "photo": "",
-              "description": "Отчество и научные интересы уточняются.",
+              "description": "",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -841,11 +836,6 @@ window.LAB_CONTENT = {
               "src": "assets/research/ris.svg"
             }
           ]
-        },
-        {
-          "title": "Фотографии лаборатории",
-          "text": "Фотографии лаборатории и мероприятий пока не добавлены.",
-          "images": []
         }
       ],
       "cvProfiles": [
@@ -962,11 +952,6 @@ window.LAB_CONTENT = {
           "key": "media",
           "title": "Media",
           "href": "media.html"
-        },
-        {
-          "key": "news",
-          "title": "News",
-          "href": "news.html"
         }
       ],
       "sectionLabels": {
@@ -1209,7 +1194,7 @@ window.LAB_CONTENT = {
             {
               "name": "Rudolf Litvinov",
               "photo": "assets/people/litvinov-rudolf.jpg",
-              "description": "Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1234,7 +1219,7 @@ window.LAB_CONTENT = {
             {
               "name": "Viktor Stepnoy",
               "photo": "assets/people/stepnoy-viktor.jpg",
-              "description": "Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1251,7 +1236,7 @@ window.LAB_CONTENT = {
             {
               "name": "Artyom Shinkevich",
               "photo": "assets/people/shinkevich-artem.png",
-              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1283,7 +1268,7 @@ window.LAB_CONTENT = {
             {
               "name": "Georgy Shalin",
               "photo": "assets/people/shalin-georgy.jpg",
-              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1315,7 +1300,7 @@ window.LAB_CONTENT = {
             {
               "name": "Sergey Eremeev",
               "photo": "",
-              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1346,7 +1331,7 @@ window.LAB_CONTENT = {
             {
               "name": "Dmitriy Ilinskiy",
               "photo": "assets/people/ilinskiy-dmitriy.jpg",
-              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests to be confirmed.",
+              "description": "Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1385,9 +1370,9 @@ window.LAB_CONTENT = {
           "title": "Students",
           "people": [
             {
-              "name": "Evgeniy Pogorelov",
+              "name": "Evgeniy Dmitrievich Pogorelov",
               "photo": "",
-              "description": "Profile details and research interests to be confirmed.",
+              "description": "",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1738,11 +1723,6 @@ window.LAB_CONTENT = {
               "src": "assets/research/ris-en.svg"
             }
           ]
-        },
-        {
-          "title": "Laboratory photographs",
-          "text": "Photographs of the laboratory and events have not yet been added.",
-          "images": []
         }
       ],
       "cvProfiles": [

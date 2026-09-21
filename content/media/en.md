@@ -25,7 +25,3 @@ A comparison of users transmitting in separate time slots (TDMA) and simultaneou
 ![Signal reflection via an RIS](assets/research/ris-en.svg)
 
 A conceptual reflected signal path when the direct channel is blocked.
-
-## Laboratory photographs
-
-Photographs of the laboratory and events have not yet been added.
