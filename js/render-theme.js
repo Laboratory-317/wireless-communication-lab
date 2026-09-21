@@ -343,6 +343,23 @@
         })).filter((contact) => contact.label.toLowerCase() !== "cv");
       }
 
+      function profileContact(contact) {
+        const label = String(contact.label || "").trim();
+        const value = String(contact.value || "").trim();
+        const labelLower = label.toLowerCase();
+
+        if (labelLower === "scholar" && /^https?:\/\//.test(value)) {
+          return `<div class="profile-link"><a href="${html(value)}">Google Scholar</a></div>`;
+        }
+
+        if (labelLower === "orcid" && /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/i.test(value)) {
+          return `<div class="profile-link"><a href="https://orcid.org/${html(value)}">ORCID</a></div>`;
+        }
+
+        const emailClass = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? " profile-email" : "";
+        return `<div class="profile-field${emailClass}"><dt>${html(label)}</dt><dd>${contactValue(contact)}</dd></div>`;
+      }
+
       function personCvHref(person) {
         if (typeof person === "string" || !person.contacts) return "";
 
@@ -373,13 +390,13 @@
                   <article class="person">
                     <div class="person-photo">
                       ${personPhoto(person, name)}
-                      <dl class="profile-list">
-                        ${personContacts(person).map((contact) => `<dt>${html(contact.label)}</dt><dd>${contactValue(contact)}</dd>`).join("")}
-                      </dl>
                     </div>
                     <div class="person-info">
                       <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
                       ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : `<p class="missing-data">${html(content.missingBiography)}</p>`}
+                      <dl class="profile-list">
+                        ${personContacts(person).map(profileContact).join("")}
+                      </dl>
                     </div>
                   </article>
                 `;
