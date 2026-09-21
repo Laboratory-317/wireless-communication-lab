@@ -240,7 +240,7 @@ window.LAB_CONTENT = {
                 },
                 {
                   "label": "Scholar",
-                  "value": ""
+                  "value": "https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru"
                 },
                 {
                   "label": "Профиль ТУСУР",
@@ -345,7 +345,7 @@ window.LAB_CONTENT = {
               "contacts": [
                 {
                   "label": "E-mail",
-                  "value": ""
+                  "value": "stepnoyvs47@mail.ru"
                 }
               ],
               "photoAlt": "Виктор Степной"
@@ -1141,7 +1141,7 @@ window.LAB_CONTENT = {
                 },
                 {
                   "label": "Scholar",
-                  "value": ""
+                  "value": "https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru"
                 },
                 {
                   "label": "TUSUR profile",
@@ -1246,7 +1246,7 @@ window.LAB_CONTENT = {
               "contacts": [
                 {
                   "label": "E-mail",
-                  "value": ""
+                  "value": "stepnoyvs47@mail.ru"
                 }
               ],
               "photoAlt": "Viktor Stepnoy"

@@ -11,7 +11,7 @@
 Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.
 
 - E-mail: dmaltomsk@mail.ru
-- Scholar:
+- Scholar: https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru
 - Профиль ТУСУР: https://directory.tusur.ru/people/2554
 - eLibrary AuthorID: 860831
 - eLibrary SPIN-код: 7819-9512
@@ -53,7 +53,7 @@
 Старший преподаватель кафедры ТОР ТУСУР.
 
 Научные интересы уточняются.
-- E-mail:
+- E-mail: stepnoyvs47@mail.ru
 
 ## Аспиранты
 ### Шинкевич Артём Сергеевич
