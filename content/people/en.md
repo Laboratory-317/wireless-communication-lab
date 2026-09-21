@@ -12,7 +12,6 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 - E-mail: dmaltomsk@mail.ru
 - Scholar: https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru
-- TUSUR profile: https://directory.tusur.ru/people/2554
 - eLibrary AuthorID: 860831
 - eLibrary SPIN code: 7819-9512
 - WoS ResearcherID: E-2544-2019

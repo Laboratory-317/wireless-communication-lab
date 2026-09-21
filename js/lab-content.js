@@ -243,10 +243,6 @@ window.LAB_CONTENT = {
                   "value": "https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru"
                 },
                 {
-                  "label": "Профиль ТУСУР",
-                  "value": "https://directory.tusur.ru/people/2554"
-                },
-                {
                   "label": "eLibrary AuthorID",
                   "value": "860831"
                 },
@@ -1142,10 +1138,6 @@ window.LAB_CONTENT = {
                 {
                   "label": "Scholar",
                   "value": "https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru"
-                },
-                {
-                  "label": "TUSUR profile",
-                  "value": "https://directory.tusur.ru/people/2554"
                 },
                 {
                   "label": "eLibrary AuthorID",
