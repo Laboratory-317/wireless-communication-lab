@@ -164,7 +164,7 @@
     document.title = `${page === "home" ? content.home : labels[`${page}Title`] || content.home} — ${content.labName}`;
 
     const nav = content.sections
-      .filter((section) => section.key !== "research" && section.href !== "research.html")
+      .filter((section) => !["research", "media", "news"].includes(section.key) && !["research.html", "media.html", "news.html"].includes(section.href))
       .map((section) => {
         const isCurrent = page === section.key || (page === "cv" && section.key === "people");
         return `<a href="${html(section.href)}" aria-current="${isCurrent ? "page" : "false"}">${html(section.title)}</a>`;
