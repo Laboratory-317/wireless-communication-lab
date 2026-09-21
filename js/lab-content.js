@@ -60,11 +60,6 @@ window.LAB_CONTENT = {
           "key": "publications",
           "title": "Публикации",
           "href": "publications.html"
-        },
-        {
-          "key": "media",
-          "title": "Медиа",
-          "href": "media.html"
         }
       ],
       "sectionLabels": {
@@ -947,11 +942,6 @@ window.LAB_CONTENT = {
           "key": "publications",
           "title": "Publications",
           "href": "publications.html"
-        },
-        {
-          "key": "media",
-          "title": "Media",
-          "href": "media.html"
         }
       ],
       "sectionLabels": {

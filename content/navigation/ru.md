@@ -15,7 +15,6 @@
 - projects | Проекты | projects.html
 - patents | Патенты | patents.html
 - publications | Публикации | publications.html
-- media | Медиа | media.html
 
 Нет фото: Фото будет позже
 Нет данных: Уточняется

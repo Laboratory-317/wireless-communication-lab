@@ -15,7 +15,6 @@ Home: Home
 - projects | Projects | projects.html
 - patents | Patents | patents.html
 - publications | Publications | publications.html
-- media | Media | media.html
 
 Missing photo: Photo coming later
 Missing data: To be confirmed

@@ -22,7 +22,7 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'js/lab-content.js'), 'utf8')
 const model = context.window.LAB_CONTENT;
 model.themes.forEach((theme) => {
   copy(theme.href);
-  fs.rmSync(path.join(output, theme.href, 'news.html'), { force: true });
+  ['media.html', 'news.html'].forEach((page) => fs.rmSync(path.join(output, theme.href, page), { force: true }));
   fs.copyFileSync(path.join(root, 'labicon.png'), path.join(output, theme.href, 'labicon.png'));
 });
 // Copy only root image attachments referenced by public content.
@@ -56,7 +56,7 @@ function renderDocument(shell, search = '') {
   return { markup: app.innerHTML, title: document.title };
 }
 const publicPages = model.themes.flatMap((theme) =>
-  fs.readdirSync(path.join(output, theme.href)).filter((name) => name.endsWith('.html') && name !== 'news.html').map((name) => theme.href + name)
+  fs.readdirSync(path.join(output, theme.href)).filter((name) => name.endsWith('.html') && !['media.html', 'news.html'].includes(name)).map((name) => theme.href + name)
 );
 for (const relative of publicPages) {
   const file = path.join(output, relative);
