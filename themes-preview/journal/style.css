@@ -30,10 +30,10 @@
 }
 
 .brand {
-  flex-direction:column;
+  flex-direction:row;
   gap:12px;
   justify-content:center;
-  text-align:center;
+  text-align:left;
   padding:22px 0 18px;
 }
 
@@ -72,6 +72,11 @@ body:not([data-page="home"]) .brand {
 
 body:not([data-page="home"]) .brand h1 {
   font-size:clamp(36px,4.2vw,60px);
+}
+
+body:not([data-page="home"]) .brand img {
+  width:52px;
+  height:52px;
 }
 
 .page {
