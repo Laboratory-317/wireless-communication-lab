@@ -327,14 +327,14 @@ main {
 }
 
 .profile-field {
-  display:grid;
-  grid-template-columns:minmax(96px,max-content) minmax(0,1fr);
+  display:flex;
   align-items:baseline;
   gap:8px;
 }
 
 .profile-list dt {
   font-weight:700;
+  white-space:nowrap;
 }
 
 .profile-list dd {
