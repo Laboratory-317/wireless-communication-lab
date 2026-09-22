@@ -96,14 +96,14 @@ window.LAB_CONTENT = {
       "homeSections": [
         {
           "title": "О лаборатории",
-          "text": "Мы исследуем беспроводные системы связи 5G/6G, помехоустойчивое кодирование, множественный доступ и интеллектуальные поверхности.\nЛаборатория работает на кафедре телекоммуникаций и основ радиотехники ТУСУР в Томске.",
+          "text": "Мы исследуем технологии физического уровня систем связи 5G/6G: неортогональный множественный доступ, помехоустойчивое кодирование, реконфигурируемые мета-поверхности и многоантенные системы MIMO.\nЛаборатория работает на кафедре телекоммуникаций и основ радиотехники ТУСУР в Томске.",
           "images": [],
           "actions": [],
           "cards": []
         },
         {
           "title": "Лаборатория в ТУСУР",
-          "text": "Россия, Томск, ул. Вершинина, 47, аудитория 317. [Сотрудники лаборатории](people.html) · [Проекты и разработки](projects.html).",
+          "text": "Российская Федерация, г. Томск, ул. Вершинина, 47, аудитория 317. [Сотрудники лаборатории](people.html) · [Проекты и разработки](projects.html).",
           "images": [],
           "actions": [],
           "cards": []
@@ -179,6 +179,7 @@ window.LAB_CONTENT = {
           }
         }
       ],
+      "educationLead": "В разделе представлены образовательные курсы и материалы, подготовленные сотрудниками лаборатории.",
       "courses": [
         {
           "title": "[Технологии множественного доступа](https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa)",
@@ -872,7 +873,16 @@ window.LAB_CONTENT = {
           ]
         }
       ],
-      "newsItems": []
+      "newsItems": [
+        {
+          "date": "2026-09-23",
+          "title": "Доклад лаборатории на DCCN 2026",
+          "directions": [
+            "access"
+          ],
+          "text": "Сотрудник лаборатории Покаместов Д. А. выступил на конференции DCCN 2026 в Москве с докладом «[BER Performance of SCMA with Large Codebooks](https://dccn.ru/papers/4198)».\n[Сайт конференции DCCN 2026](https://dccn.ru/#about)."
+        }
+      ]
     },
     "en": {
       "colorModeLabels": {
@@ -953,14 +963,14 @@ window.LAB_CONTENT = {
       "homeSections": [
         {
           "title": "About the laboratory",
-          "text": "We study 5G/6G wireless systems, error-correcting codes, multiple access and intelligent surfaces.\nThe laboratory is based at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR, in Tomsk.",
+          "text": "We study physical-layer technologies for 5G/6G communication systems: non-orthogonal multiple access, error-correcting coding, reconfigurable metasurfaces and multiple-input multiple-output (MIMO) systems.\nThe laboratory is based at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR, in Tomsk.",
           "images": [],
           "actions": [],
           "cards": []
         },
         {
           "title": "The laboratory at TUSUR",
-          "text": "Room 317, 47 Vershinin Street, Tomsk, Russia. [Our team](people.html) · [Projects and developments](projects.html).",
+          "text": "Russian Federation, Tomsk, 47 Vershinin Street, room 317. [Our team](people.html) · [Projects and developments](projects.html).",
           "images": [],
           "actions": [],
           "cards": []
@@ -1036,6 +1046,7 @@ window.LAB_CONTENT = {
           }
         }
       ],
+      "educationLead": "This section presents educational courses and materials developed by the laboratory staff.",
       "courses": [
         {
           "title": "[Multiple Access Technologies](https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa)",
@@ -1729,7 +1740,16 @@ window.LAB_CONTENT = {
           ]
         }
       ],
-      "newsItems": []
+      "newsItems": [
+        {
+          "date": "2026-09-23",
+          "title": "Laboratory presentation at DCCN 2026",
+          "directions": [
+            "access"
+          ],
+          "text": "Laboratory researcher Dmitriy Pokamestov presented “[BER Performance of SCMA with Large Codebooks](https://dccn.ru/papers/4198)” at DCCN 2026 in Moscow.\n[DCCN 2026 conference website](https://dccn.ru/#about)."
+        }
+      ]
     }
   }
 };

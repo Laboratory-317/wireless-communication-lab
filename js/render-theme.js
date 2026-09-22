@@ -177,7 +177,7 @@
           <div class="news-list">
             ${items.map((item) => `
               <article class="news-item">
-                ${item.date ? `<time>${html(item.date)}</time>` : ""}
+                ${item.date ? `<time datetime="${html(item.date)}">${html(item.date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, "$3.$2.$1"))}</time>` : ""}
                 <h3>${html(item.title)}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>
@@ -210,7 +210,7 @@
           <div class="interest-list">
             ${content.researchInterests.map((item) => `
               <article>
-                <a class="research-image-link" href="research-${item.slug}.html" aria-label="${html(item.title)}">${researchImage(item)}</a>
+                ${item.images.length ? `<a class="research-image-link" href="research-${item.slug}.html" aria-label="${html(item.title)}">${researchImage(item)}</a>` : ""}
                 <h3><a href="research-${item.slug}.html">${html(item.title)}</a></h3>
                 <div class="research-copy">${blockMarkdown(item.text)}</div>
                 <a class="research-news-link" href="research-${item.slug}.html">${language === "en" ? "Research news →" : "Новости направления →"}</a>
@@ -249,7 +249,10 @@
     function educationBlock() {
       return `
         <section class="section section-education">
-          <div class="section-head"><h2>${html(labels.educationTitle)}</h2></div>
+          <div class="section-head">
+            <h2>${html(labels.educationTitle)}</h2>
+            <div class="markdown-block">${blockMarkdown(content.educationLead)}</div>
+          </div>
           <div class="course-list">
             ${content.courses.map((course) => `
               <article class="course-item">

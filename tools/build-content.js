@@ -395,6 +395,7 @@ function parseEducation(lang) {
   const { filePath, markdown } = readPage(lang, "education");
   return {
     ...labelData(lang, "education", titleOf(markdown, filePath), {}),
+    educationLead: leadBeforeSections(markdown),
     courses: sections(markdown).map((section) => ({
       title: section.title,
       text: textFromLines(section.lines.filter((line) => !/^(Продолжительность|Duration):/i.test(line))),

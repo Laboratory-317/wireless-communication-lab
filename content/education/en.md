@@ -1,5 +1,7 @@
 # Education
 
+This section presents educational courses and materials developed by the laboratory staff.
+
 ## [Multiple Access Technologies](https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa)
 
 Multichannel digital communication and simulation of systems using different multiple access methods. Topics include FDMA, TDMA, CDMA, SDMA, OFDMA, PD-NOMA and SCMA.
