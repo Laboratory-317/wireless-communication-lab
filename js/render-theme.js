@@ -191,6 +191,14 @@
     }
 
     function researchBlock() {
+      function researchImage(item) {
+        // Other research areas keep their placeholders until artwork is selected.
+        const image = item.images?.find((image) => image.src === "assets/research/reconfigurable-metasurface.png");
+        return image
+          ? `<img class="interest-image" src="${assetSrc(image.src)}" alt="${html(image.alt)}" loading="lazy" width="640" height="640">`
+          : `<div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>`;
+      }
+
       function researchSection(section) {
         const items = section.cards || content.researchInterests || [];
         return `
@@ -201,7 +209,7 @@
             <div class="interest-list">
               ${items.map((item) => `
                 <article>
-                  <div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>
+                  ${researchImage(item)}
                   <h3>${html(item.title)}</h3>
                   <div class="research-copy">${blockMarkdown(item.text)}</div>
                 </article>
@@ -238,7 +246,7 @@
           <div class="interest-list">
             ${content.researchInterests.map((item) => `
               <article>
-                <div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>
+                ${researchImage(item)}
                 <h3>${html(item.title)}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>

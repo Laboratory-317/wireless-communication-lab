@@ -170,6 +170,11 @@ h2,h3,h4 {
   background:var(--wash);
 }
 
+.interest-list article:not(:first-child) img.interest-image {
+  height:auto;
+  aspect-ratio:1;
+}
+
 .interest-list h3 {
   font-size:28px;
 }

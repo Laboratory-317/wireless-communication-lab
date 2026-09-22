@@ -108,8 +108,8 @@ window.LAB_CONTENT = {
               "src": "assets/research/access.svg"
             },
             {
-              "alt": "Концептуальная схема пути сигнала через RIS при перекрытом прямом канале",
-              "src": "assets/research/ris.svg"
+              "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
+              "src": "assets/research/reconfigurable-metasurface.png"
             }
           ],
           "actions": [],
@@ -145,12 +145,12 @@ window.LAB_CONTENT = {
               ]
             },
             {
-              "title": "Интеллектуальные поверхности",
+              "title": "Реконфигурируемые мета-поверхности",
               "text": "Реконфигурируемые интеллектуальные поверхности RIS и STAR-RIS позволяют управлять распространением радиоволн. Мы моделируем радиоканал и разрабатываем отражающие поверхности. [Связанные проекты](projects.html).",
               "images": [
                 {
-                  "alt": "Концептуальная схема пути сигнала через RIS при перекрытом прямом канале",
-                  "src": "assets/research/ris.svg"
+                  "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
+                  "src": "assets/research/reconfigurable-metasurface.png"
                 }
               ]
             }
@@ -205,12 +205,12 @@ window.LAB_CONTENT = {
           ]
         },
         {
-          "title": "Интеллектуальные поверхности",
+          "title": "Реконфигурируемые мета-поверхности",
           "text": "Реконфигурируемые интеллектуальные поверхности RIS и STAR-RIS позволяют управлять распространением радиоволн. Мы моделируем радиоканал и разрабатываем отражающие поверхности. [Связанные проекты](projects.html).",
           "images": [
             {
-              "alt": "Концептуальная схема пути сигнала через RIS при перекрытом прямом канале",
-              "src": "assets/research/ris.svg"
+              "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
+              "src": "assets/research/reconfigurable-metasurface.png"
             }
           ]
         }
@@ -990,8 +990,8 @@ window.LAB_CONTENT = {
               "src": "assets/research/access-en.svg"
             },
             {
-              "alt": "Conceptual signal path via an RIS when the direct channel is blocked",
-              "src": "assets/research/ris-en.svg"
+              "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
+              "src": "assets/research/reconfigurable-metasurface.png"
             }
           ],
           "actions": [],
@@ -1027,12 +1027,12 @@ window.LAB_CONTENT = {
               ]
             },
             {
-              "title": "Intelligent surfaces",
+              "title": "Reconfigurable metasurfaces",
               "text": "Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).",
               "images": [
                 {
-                  "alt": "Conceptual signal path via an RIS when the direct channel is blocked",
-                  "src": "assets/research/ris-en.svg"
+                  "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
+                  "src": "assets/research/reconfigurable-metasurface.png"
                 }
               ]
             }
@@ -1087,12 +1087,12 @@ window.LAB_CONTENT = {
           ]
         },
         {
-          "title": "Intelligent surfaces",
+          "title": "Reconfigurable metasurfaces",
           "text": "Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).",
           "images": [
             {
-              "alt": "Conceptual signal path via an RIS when the direct channel is blocked",
-              "src": "assets/research/ris-en.svg"
+              "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
+              "src": "assets/research/reconfigurable-metasurface.png"
             }
           ]
         }

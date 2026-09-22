@@ -25,9 +25,9 @@ Error-correcting codes for reliable information transmission. Research includes 
 
 Sharing radio resources among multiple users. The laboratory studies NOMA, SCMA and RSMA, resource allocation and comparisons of access techniques. [Research results](publications.html).
 
-## Intelligent surfaces
+## Reconfigurable metasurfaces
 
-![Conceptual signal path via an RIS when the direct channel is blocked](assets/research/ris-en.svg)
+![A reconfigurable metasurface directs a radio signal toward a 6G device](assets/research/reconfigurable-metasurface.png)
 
 Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).
 
