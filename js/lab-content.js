@@ -525,17 +525,17 @@ window.LAB_CONTENT = {
       "projects": [
         {
           "title": "РНФ",
-          "text": "- РНФ № 24-29-00172. Улучшение характеристик систем связи с неортогональным множественным доступом с помощью полярных кодов. 2024–2025. [Карточка РНФ](https://rscf.ru/project/24-29-00172/).\n- РНФ № 22-79-10148. Перспективные методы множественного доступа для будущих систем беспроводной связи 6G. 2022-2025. Объем финансирования: 18 млн руб. [Карточка РНФ](https://rscf.ru/project/22-79-10148/).\n- РНФ № 21-79-00160. Распределение ресурсов связи в телекоммуникационных системах с неортогональным множественным доступом. 2021-2023.\n- РНФ № 19-79-00087. Использование методов неортогонального множественного доступа для систем беспроводной связи. 2019-2021. Объем финансирования: 3 млн руб.",
+          "text": "- РНФ № 24-29-00172. Улучшение характеристик систем связи с неортогональным множественным доступом с помощью полярных кодов. 2024–2025. [Карточка РНФ](https://rscf.ru/project/24-29-00172/).\n- РНФ № 22-79-10148. Перспективные методы множественного доступа для будущих систем беспроводной связи 6G. 2022-2025. [Карточка РНФ](https://rscf.ru/project/22-79-10148/).\n- РНФ № 21-79-00160. Распределение ресурсов связи в телекоммуникационных системах с неортогональным множественным доступом. 2021-2023.\n- РНФ № 19-79-00087. Использование методов неортогонального множественного доступа для систем беспроводной связи. 2019-2021.",
           "images": []
         },
         {
           "title": "Приоритет 2030",
-          "text": "- Разработка интеллектуальной отражающей поверхности STAR-RIS для перспективных беспроводных систем связи. 2025.\n- Адаптация полярных кодов к состоянию канала передачи. 2023. Объем финансирования: 2 млн руб.\n- Имитационное моделирование помехоустойчивых кодов с малой плотностью проверок на четность в системах связи 5G NR. 2022. Объем финансирования: 0,5 млн руб.\n- Исследование эффективности применения полярных кодов для широкого класса моделей каналов. 2022. Объем финансирования: 1,5 млн руб.\n- Экспериментальное исследование неортогонального множественного доступа PD-NOMA для сетей 6G. 2022.\n- Разработка экспериментального макета многоканальной системы связи с неортогональным множественным доступом. 2021.",
+          "text": "- Разработка интеллектуальной отражающей поверхности STAR-RIS для перспективных беспроводных систем связи. 2025.\n- Адаптация полярных кодов к состоянию канала передачи. 2023.\n- Имитационное моделирование помехоустойчивых кодов с малой плотностью проверок на четность в системах связи 5G NR. 2022.\n- Исследование эффективности применения полярных кодов для широкого класса моделей каналов. 2022.\n- Экспериментальное исследование неортогонального множественного доступа PD-NOMA для сетей 6G. 2022.\n- Разработка экспериментального макета многоканальной системы связи с неортогональным множественным доступом. 2021.",
           "images": []
         },
         {
           "title": "Передовая инженерная школа ТУСУР",
-          "text": "- Разработка методов и алгоритмов цифровой компенсации искажений в системах беспроводной связи. 2024-2026. Объем финансирования: 472,5 тыс. руб.\n- Разработка модели канала связи с реконфигурируемой интеллектуальной поверхностью. 2023-2025.\n- Разработка алгоритмов канального кодирования для систем связи 5G NR. 2023-2025. Объем финансирования: 1,5 млн руб.",
+          "text": "- Разработка методов и алгоритмов цифровой компенсации искажений в системах беспроводной связи. 2024-2026.\n- Разработка модели канала связи с реконфигурируемой интеллектуальной поверхностью. 2023-2025.\n- Разработка алгоритмов канального кодирования для систем связи 5G NR. 2023-2025.",
           "images": []
         },
         {
@@ -545,12 +545,12 @@ window.LAB_CONTENT = {
         },
         {
           "title": "Хозяйственные договоры",
-          "text": "- Договор ТУСУР с АО НПФ \"Микран\". Разработка программного обеспечения и алгоритмов обработки сигналов модема радиорелейной линии связи. 2024. Объем финансирования: 12 млн руб.\n- Хозяйственный договор ТУСУР и Сколтех. Математическая модель расчета максимального количества обслуживаемых базовой станцией 5G абонентов при использовании ограниченных вычислительных ресурсов. 2020.\n- Хозяйственный договор ТУСУР и Сколтех. Математическая модель расчета пропускной способности каналов связи между базовой станцией сети 5G с открытой архитектурой и ядром сети для оптимизации транспортной инфраструктуры сети 5G. 2021.\n- Хозяйственный договор ТУСУР и Сколтех. Математическая модель расчета пропускной способности каналов связи между модулями базовой станции сети 5G с открытой архитектурой. 2021.\n- Хозяйственный договор ТУСУР и Сколтех. Математическая модель радиоканала, использующая методы машинного обучения для ускорения разработки и отладки алгоритмов сверхнадежного обмена данными URLLC в сетях 5G. 2021.",
+          "text": "- Сотрудничество со Сколтехом в 2020–2021 годах по тематике моделирования сетей 5G: оценка числа обслуживаемых абонентов при ограниченных вычислительных ресурсах, расчёт пропускной способности каналов связи в открытой архитектуре и моделирование радиоканала с применением машинного обучения для сверхнадёжной связи URLLC.\n- Сотрудничество с АО НПФ «Микран» в 2024 году по направлению разработки программного обеспечения и алгоритмов обработки сигналов для модемов радиорелейных линий связи.",
           "images": []
         },
         {
           "title": "Индивидуальные гранты",
-          "text": "- Грант Президента 2021. Методы формирования и обработки сигналов в многоантенных системах связи с множественным доступом на основе разреженных кодов, № 075-15-2021-071. 2021-2022. Объем финансирования: 1,2 млн руб.\n- Грант Президента 2019. Формирование адаптивных к состоянию канала передачи сигнальных конструкций для систем связи с множественным доступом на основе разреженных кодов, № 075-15-2019-374. 2019-2020. Объем финансирования: 1,2 млн руб.",
+          "text": "- Грант Президента 2021. Методы формирования и обработки сигналов в многоантенных системах связи с множественным доступом на основе разреженных кодов, № 075-15-2021-071. 2021-2022.\n- Грант Президента 2019. Формирование адаптивных к состоянию канала передачи сигнальных конструкций для систем связи с множественным доступом на основе разреженных кодов, № 075-15-2019-374. 2019-2020.",
           "images": []
         }
       ],
@@ -1407,17 +1407,17 @@ window.LAB_CONTENT = {
       "projects": [
         {
           "title": "Russian Science Foundation",
-          "text": "- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).\n- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. Funding: RUB 18 million. [RSF project record](https://rscf.ru/project/22-79-10148/).\n- RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.\n- RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021. Funding: RUB 3 million.",
+          "text": "- RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).\n- RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. [RSF project record](https://rscf.ru/project/22-79-10148/).\n- RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.\n- RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021.",
           "images": []
         },
         {
           "title": "Priority 2030",
-          "text": "- Development of a STAR-RIS intelligent reflecting surface for future wireless communication systems. 2025.\n- Adaptation of polar codes to the channel state. 2023. Funding: RUB 2 million.\n- Simulation modeling of low-density parity-check codes in 5G NR communication systems. 2022. Funding: RUB 0.5 million.\n- Research on the efficiency of polar codes for a broad class of channel models. 2022. Funding: RUB 1.5 million.\n- Experimental study of PD-NOMA non-orthogonal multiple access for 6G networks. 2022.\n- Development of an experimental prototype of a multichannel communication system with non-orthogonal multiple access. 2021.",
+          "text": "- Development of a STAR-RIS intelligent reflecting surface for future wireless communication systems. 2025.\n- Adaptation of polar codes to the channel state. 2023.\n- Simulation modeling of low-density parity-check codes in 5G NR communication systems. 2022.\n- Research on the efficiency of polar codes for a broad class of channel models. 2022.\n- Experimental study of PD-NOMA non-orthogonal multiple access for 6G networks. 2022.\n- Development of an experimental prototype of a multichannel communication system with non-orthogonal multiple access. 2021.",
           "images": []
         },
         {
           "title": "TUSUR Advanced Engineering School",
-          "text": "- Development of methods and algorithms for digital distortion compensation in wireless communication systems. 2024-2026. Funding: RUB 472.5 thousand.\n- Development of a communication channel model with a reconfigurable intelligent surface. 2023-2025.\n- Development of channel coding algorithms for 5G NR communication systems. 2023-2025. Funding: RUB 1.5 million.",
+          "text": "- Development of methods and algorithms for digital distortion compensation in wireless communication systems. 2024-2026.\n- Development of a communication channel model with a reconfigurable intelligent surface. 2023-2025.\n- Development of channel coding algorithms for 5G NR communication systems. 2023-2025.",
           "images": []
         },
         {
@@ -1427,12 +1427,12 @@ window.LAB_CONTENT = {
         },
         {
           "title": "Industry Contracts",
-          "text": "- TUSUR contract with Micran. Development of software and signal processing algorithms for a radio-relay modem. 2024. Funding: RUB 12 million.\n- TUSUR and Skoltech contract. Mathematical model for calculating the maximum number of 5G base station users under limited computing resources. 2020.\n- TUSUR and Skoltech contract. Mathematical model for calculating communication channel throughput between an open-architecture 5G base station and the network core. 2021.\n- TUSUR and Skoltech contract. Mathematical model for calculating communication channel throughput between open-architecture 5G base station modules. 2021.\n- TUSUR and Skoltech contract. Machine-learning-based radio channel model for faster development and debugging of URLLC algorithms in 5G networks. 2021.",
+          "text": "- Collaboration with Skoltech in 2020–2021 on 5G network modeling: estimating the number of users served under limited computing resources, calculating channel throughput in open-architecture networks, and applying machine learning to radio channel modeling for ultra-reliable communication (URLLC).\n- Collaboration with Micran in 2024 on software development and signal processing algorithms for radio-relay modems.",
           "images": []
         },
         {
           "title": "Individual Grants",
-          "text": "- Presidential Grant 2021. Signal generation and processing methods in multi-antenna communication systems with sparse-code multiple access, No. 075-15-2021-071. 2021-2022. Funding: RUB 1.2 million.\n- Presidential Grant 2019. Adaptive channel-state-dependent signal structures for sparse-code multiple access communication systems, No. 075-15-2019-374. 2019-2020. Funding: RUB 1.2 million.",
+          "text": "- Presidential Grant 2021. Signal generation and processing methods in multi-antenna communication systems with sparse-code multiple access, No. 075-15-2021-071. 2021-2022.\n- Presidential Grant 2019. Adaptive channel-state-dependent signal structures for sparse-code multiple access communication systems, No. 075-15-2019-374. 2019-2020.",
           "images": []
         }
       ],
