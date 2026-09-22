@@ -44,6 +44,13 @@ for (const language of ['ru', 'en']) {
   assert.equal((education.match(/class="course-item"/g) || []).length, 3);
   assert.equal((education.match(/class="course-duration"/g) || []).length, 3);
   assert.equal((education.match(/https:\/\/engineers\.tusur\.ru\/courses\//g) || []).length, 3);
+  const ris = render('research-metasurfaces', language).markup;
+  assert.equal((ris.match(/<figure id="ris-/g) || []).length, 4);
+  for (const id of ['ris-chamber', 'ris-prototype', 'ris-control', 'ris-exhibition']) {
+    assert(ris.includes(`href="#${id}"`));
+    assert(ris.includes(`id="${id}"`));
+  }
+  assert(!research.includes('research-gallery'));
   assert(!/Стоимость|Funding:|RUB |Price:/.test(education));
   assert(!/Научные интересы:|Research interests:/.test(render('people', language).markup));
   for (const profile of data.cvProfiles.filter((item) => ['kryukov', 'pokamestov'].includes(item.slug))) {
@@ -77,7 +84,11 @@ for (const file of pages) {
   assert(!/Объем финансирования|Funding: RUB/.test(markup));
   for (const match of markup.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const url = match[1];
-    if (/^(?:[a-z]+:|\/\/|#)/i.test(url)) continue;
+    if (url.startsWith('#')) {
+      assert(markup.includes(`id="${url.slice(1)}"`), `Broken anchor in ${file}: ${url}`);
+      continue;
+    }
+    if (/^(?:[a-z]+:|\/\/)/i.test(url)) continue;
     const target = decodeURI(url.split(/[?#]/)[0]);
     assert(fs.existsSync(path.resolve(output, target)), `Broken link in ${file}: ${url}`);
   }

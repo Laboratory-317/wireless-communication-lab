@@ -121,19 +121,22 @@ window.LAB_CONTENT = {
           "slug": "wireless",
           "title": "5G/6G",
           "text": "Многоантенные системы, обработка сигналов и организация радиоканала для мобильной связи. Исследуем, как повысить эффективность передачи данных и использования радиоресурсов. [Проекты лаборатории](projects.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "polar",
           "title": "Полярные коды",
           "text": "Помехоустойчивое кодирование для надёжной передачи информации. Исследования включают адаптацию полярных кодов к условиям канала и их применение в системах множественного доступа. [Научные публикации](publications.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "access",
           "title": "Множественный доступ",
           "text": "Совместное использование радиоресурсов несколькими абонентами. В работах лаборатории рассматриваются NOMA, SCMA и RSMA, распределение ресурсов и сравнение методов доступа. [Результаты исследований](publications.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "metasurfaces",
@@ -144,7 +147,36 @@ window.LAB_CONTENT = {
               "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
               "src": "assets/research/reconfigurable-metasurface.png"
             }
-          ]
+          ],
+          "article": {
+            "text": "Реконфигурируемые мета-поверхности (RIS) — это радиотехнические устройства, способные управлять распространением радиосигналов. Они рассматриваются как одна из перспективных технологий сетей 6G, потому что могут расширять зону покрытия, снижать потери сигнала и повышать эффективность беспроводных систем.\n\nНаправление RIS возникло в лаборатории в 2023 году как инициативный исследовательский проект. Работа началась совместно со студентами четвёртого курса, выполнявшими ВКР по моделированию базовых сценариев применения RIS.\n\nВ дальнейшем исследования получили развитие в рамках проекта Передовой инженерной школы (ПИШ). Переход от моделирования к практической реализации был поддержан в рамках конкурса УМНИК. Разработаны и изготовлены прототипы RIS на [16](#ris-prototype) и [64 элемента](#ris-exhibition). Созданы контроллер управления 16-элементной поверхностью, программное обеспечение для настройки RIS и оценки её работы в реальном времени, а также разрабатывается модуль управления поверхностью с мобильного телефона. Для [экспериментальных исследований в безэховой камере](#ris-chamber) студентами разработано и внедрено [устройство механического поворота на шаговом двигателе и световой индикации](#ris-control).\n\nДва выпускника, начавшие исследования ещё в период обучения, продолжили работу по тематике RIS в аспирантуре. Текущие исследования охватывают алгоритмы управления поверхностями, мобильное дистанционное управление, применение RIS в неназемных сетях связи и разработку STAR-RIS — поверхностей, одновременно отражающих и пропускающих электромагнитную волну.\n\nРазвитие нового для лаборатории направления позволило сформировать компетенции в области СВЧ-моделирования, антенной техники, конструирования, трассировки печатных плат, разработки контроллеров и радиотехнических измерений. Результаты представлены в ряде научных публикаций, на конференциях EDM, научно-технических выставках, включая [«Рост UP»](#ris-exhibition), и в выпускных квалификационных работах студентов.\n\nСегодня работа развивается по трём взаимосвязанным направлениям: научному — моделирование и разработка новых алгоритмов; практическому — доработка созданных прототипов, апробация новых технологий и методик измерения; образовательному — обучение студентов и их вовлечение в перспективную тематику интеллектуальных поверхностей.",
+            "photos": [
+              {
+                "id": "ris-chamber",
+                "caption": "Экспериментальные исследования RIS в безэховой камере",
+                "alt": "Исследователи у измерительной установки с RIS и рупорной антенной в безэховой камере",
+                "src": "assets/research/ris/anechoic-chamber-team.jpg"
+              },
+              {
+                "id": "ris-prototype",
+                "caption": "Прототип RIS на 16 элементов в измерительном стенде",
+                "alt": "16-элементная поверхность RIS на поворотной платформе в безэховой камере",
+                "src": "assets/research/ris/anechoic-chamber-prototype.jpg"
+              },
+              {
+                "id": "ris-control",
+                "caption": "Поворотная платформа и плата управления RIS",
+                "alt": "Экспериментальная установка с поворотной платформой, платой управления и световой индикацией",
+                "src": "assets/research/ris/rotation-control-setup.jpg"
+              },
+              {
+                "id": "ris-exhibition",
+                "caption": "Представление прототипа RIS на 64 элемента на выставке «Рост UP»",
+                "alt": "Прототип RIS на 64 элемента и информационный стенд на выставке «Рост UP»",
+                "src": "assets/research/ris/prototype-exhibition.jpg"
+              }
+            ]
+          }
         }
       ],
       "courses": [
@@ -946,19 +978,22 @@ window.LAB_CONTENT = {
           "slug": "wireless",
           "title": "5G/6G",
           "text": "Multi-antenna systems, signal processing and radio channel design for mobile communications. We study ways to improve data transmission and radio resource efficiency. [Laboratory projects](projects.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "polar",
           "title": "Polar codes",
           "text": "Error-correcting codes for reliable information transmission. Research includes adapting polar codes to channel conditions and using them in multiple access systems. [Research publications](publications.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "access",
           "title": "Multiple access",
           "text": "Sharing radio resources among multiple users. The laboratory studies NOMA, SCMA and RSMA, resource allocation and comparisons of access techniques. [Research results](publications.html).",
-          "images": []
+          "images": [],
+          "article": null
         },
         {
           "slug": "metasurfaces",
@@ -969,7 +1004,36 @@ window.LAB_CONTENT = {
               "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
               "src": "assets/research/reconfigurable-metasurface.png"
             }
-          ]
+          ],
+          "article": {
+            "text": "Reconfigurable intelligent surfaces (RIS) are radio engineering devices that can control radio signal propagation. They are considered a promising technology for 6G networks because they can extend coverage, reduce signal losses and improve the efficiency of wireless systems.\n\nRIS research began in the laboratory in 2023 as an independently initiated project. The work started with fourth-year students whose graduation projects focused on modeling basic RIS application scenarios.\n\nThe research subsequently developed within a project of the TUSUR Advanced Engineering School. The transition from modeling to practical implementation was supported by the UMNIK competition. RIS prototypes with [16](#ris-prototype) and [64 elements](#ris-exhibition) have been designed and manufactured. A controller for the 16-element surface and software for configuring RIS and evaluating its operation in real time have been developed. A module for controlling the surface from a mobile phone is also under development. For [experiments in an anechoic chamber](#ris-chamber), students developed and implemented a [mechanical rotation device with a stepper motor and indicator lights](#ris-control).\n\nTwo graduates who began this research as students continued working on RIS during their doctoral studies. Current research covers surface control algorithms, mobile remote control, RIS applications in non-terrestrial networks, and STAR-RIS development: surfaces that simultaneously reflect and transmit electromagnetic waves.\n\nThis new research area helped the laboratory develop expertise in microwave modeling, antenna engineering, mechanical design, PCB layout, controller development and radio measurements. Results have been presented in scientific publications, at EDM conferences, at scientific and technical exhibitions including [Rost UP](#ris-exhibition), and in students' graduation theses.\n\nThe work now follows three interconnected directions: research — modeling and developing new algorithms; practical development — refining existing prototypes and testing new technologies and measurement methods; and education — training students and involving them in intelligent surface research.",
+            "photos": [
+              {
+                "id": "ris-chamber",
+                "caption": "RIS experiments in an anechoic chamber",
+                "alt": "Researchers beside a measurement setup with an RIS and a horn antenna in an anechoic chamber",
+                "src": "assets/research/ris/anechoic-chamber-team.jpg"
+              },
+              {
+                "id": "ris-prototype",
+                "caption": "A 16-element RIS prototype in the measurement setup",
+                "alt": "A 16-element RIS on a rotating platform in an anechoic chamber",
+                "src": "assets/research/ris/anechoic-chamber-prototype.jpg"
+              },
+              {
+                "id": "ris-control",
+                "caption": "Rotating platform and RIS control board",
+                "alt": "Experimental setup with a rotating platform, a control board and indicator lights",
+                "src": "assets/research/ris/rotation-control-setup.jpg"
+              },
+              {
+                "id": "ris-exhibition",
+                "caption": "Presentation of a 64-element RIS prototype at the Rost UP exhibition",
+                "alt": "A 64-element RIS prototype and an information poster at the Rost UP exhibition",
+                "src": "assets/research/ris/prototype-exhibition.jpg"
+              }
+            ]
+          }
         }
       ],
       "courses": [

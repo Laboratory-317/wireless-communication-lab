@@ -216,6 +216,46 @@ h2,h3,h4 {
   aspect-ratio:1;
 }
 
+.research-gallery {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:32px;
+  margin-top:36px;
+}
+
+.research-gallery figure {
+  margin:0;
+  scroll-margin-top:24px;
+}
+
+.research-gallery figure:target {
+  outline:2px solid var(--accent);
+  outline-offset:8px;
+}
+
+.research-gallery a {
+  display:block;
+}
+
+.research-gallery img {
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:contain;
+  background:var(--wash);
+}
+
+.research-gallery figcaption {
+  padding-top:12px;
+  font-size:15px;
+}
+
+@media(max-width:760px) {
+  .research-gallery {
+    grid-template-columns:1fr;
+  }
+}
+
 .people-list {
   gap:40px;
 }

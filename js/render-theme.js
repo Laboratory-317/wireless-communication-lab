@@ -228,8 +228,20 @@
           <div class="section-head"><h2>${html(item.title)}</h2></div>
           <div class="direction-overview">
             ${item.images.length ? researchImage(item) : ""}
-            <div class="markdown-block">${blockMarkdown(item.text)}</div>
+            <div class="markdown-block">${blockMarkdown(item.article ? item.article.text : item.text)}</div>
           </div>
+          ${item.article?.photos.length ? `
+            <section class="research-gallery" aria-label="${language === "en" ? "Research photos" : "Фотографии исследований"}">
+              ${item.article.photos.map((photo) => `
+                <figure id="${html(photo.id)}">
+                  <a href="${assetSrc(photo.src)}" target="_blank" rel="noopener">
+                    <img src="${assetSrc(photo.src)}" alt="${html(photo.alt)}" loading="lazy">
+                  </a>
+                  <figcaption>${html(photo.caption)}</figcaption>
+                </figure>
+              `).join("")}
+            </section>
+          ` : ""}
         </section>
       ` + newsBlock(content.newsItems.filter((news) => news.directions.includes(item.slug)), true);
     }

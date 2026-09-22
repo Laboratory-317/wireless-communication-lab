@@ -362,7 +362,8 @@ function parseResearch(lang) {
     slug: metadata(section.lines).slug,
     title: section.title,
     text: textFromLines(section.lines),
-    images: imagesFromLines(section.lines)
+    images: imagesFromLines(section.lines),
+    article: parseResearchArticle(lang, metadata(section.lines).slug)
   }));
   const slugs = researchInterests.map((item) => item.slug);
   if (slugs.some((slug) => !/^[a-z][a-z0-9-]*$/.test(slug || "")) || new Set(slugs).size !== slugs.length) {
@@ -371,6 +372,22 @@ function parseResearch(lang) {
   return {
     ...labelData(lang, "research", titleOf(markdown, filePath), {}),
     researchInterests
+  };
+}
+
+function parseResearchArticle(lang, slug) {
+  const filePath = path.join(contentRoot, "research", slug, `${lang}.md`);
+  if (!fs.existsSync(filePath)) return null;
+  const markdown = readMarkdown(filePath);
+  const lines = bodyAfterTitle(markdown);
+  const firstPhoto = lines.findIndex((line) => line.startsWith("## "));
+  return {
+    text: (firstPhoto < 0 ? lines : lines.slice(0, firstPhoto)).join("\n").trim(),
+    photos: sections(markdown).map((section) => ({
+      id: metadata(section.lines).slug,
+      caption: section.title,
+      ...imagesFromLines(section.lines)[0]
+    }))
   };
 }
 
