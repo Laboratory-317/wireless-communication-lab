@@ -10,6 +10,8 @@ Home: Home
 
 ## Tabs
 
+- research | Research | research.html
+- education | Education | education.html
 - people | Team | people.html
 - students | Students | students.html
 - projects | Projects | projects.html

@@ -174,7 +174,7 @@ function headingMatchOf(line) {
 
 // Only explicit content metadata is hidden; colons in prose and URLs are text.
 function isContentMetadata(line) {
-  return /^(?:надзаголовок|kicker|дата|date|имя|name|роль|role|slug):\s*/i.test(line);
+  return /^(?:надзаголовок|kicker|дата|date|имя|name|роль|role|slug|направления|directions):\s*/i.test(line);
 }
 
 function textFromLines(lines, options = {}) {
@@ -348,29 +348,41 @@ function parseNavigation(lang) {
 function parseHome(lang) {
   const { filePath, markdown } = readPage(lang, "home");
   const title = titleOf(markdown, filePath);
-  const meta = metadata(bodyAfterTitle(markdown));
   const homeSections = parseHomeSections(markdown);
-  const researchSection = homeSections.find((section) => section.cards.length);
-
-  if (researchSection) {
-    return {
-      ...labelData(lang, "home", researchSection.title, meta),
-      homeSections: homeSections.map((section) => ({
-        title: section.title,
-        text: section.text,
-        images: section.images,
-        actions: section.type === "research" ? section.actions : [],
-        cards: section.cards,
-        type: section === researchSection ? "research" : "text"
-      })),
-      headerActions: homeSections.flatMap((section) => section.actions || []),
-      researchInterests: researchSection.cards
-    };
-  }
-
   return {
-    ...labelData(lang, "home", title, meta),
-    researchInterests: parseSectionCards(markdown)
+    sectionLabels: { homeTitle: title },
+    homeSections: homeSections.map((section) => ({ ...section, actions: [] })),
+    headerActions: homeSections.flatMap((section) => section.actions)
+  };
+}
+
+function parseResearch(lang) {
+  const { filePath, markdown } = readPage(lang, "research");
+  const researchInterests = sections(markdown).map((section) => ({
+    slug: metadata(section.lines).slug,
+    title: section.title,
+    text: textFromLines(section.lines),
+    images: imagesFromLines(section.lines)
+  }));
+  const slugs = researchInterests.map((item) => item.slug);
+  if (slugs.some((slug) => !/^[a-z][a-z0-9-]*$/.test(slug || "")) || new Set(slugs).size !== slugs.length) {
+    throw new Error(`Invalid or duplicate research slug in ${filePath}`);
+  }
+  return {
+    ...labelData(lang, "research", titleOf(markdown, filePath), {}),
+    researchInterests
+  };
+}
+
+function parseEducation(lang) {
+  const { filePath, markdown } = readPage(lang, "education");
+  return {
+    ...labelData(lang, "education", titleOf(markdown, filePath), {}),
+    courses: sections(markdown).map((section) => ({
+      title: section.title,
+      text: textFromLines(section.lines.filter((line) => !/^(Продолжительность|Duration):/i.test(line))),
+      duration: metadata(section.lines)[lang === "ru" ? "продолжительность" : "duration"]
+    }))
   };
 }
 
@@ -827,9 +839,10 @@ function parseInlineNewsItems(lang) {
     return {
       date: meta["дата"] || meta.date || "",
       title: section.title,
+      directions: (meta["направления"] || meta.directions || "").split(",").map((slug) => slug.trim()).filter(Boolean),
       text: textFromLines(section.lines, { includeBullets: true })
     };
-  });
+  }).filter((item) => item.text);
 }
 
 function parseLegacyNewsItems(lang) {
@@ -857,6 +870,7 @@ function parseLegacyNewsItems(lang) {
       return {
         date: meta["дата"] || meta.date || "",
         title,
+        directions: (meta["направления"] || meta.directions || "").split(",").map((slug) => slug.trim()).filter(Boolean),
         text: textFromLines(lines)
       };
     });
@@ -880,6 +894,8 @@ function buildLanguage(lang) {
 
   [
     parseHome(lang),
+    parseResearch(lang),
+    parseEducation(lang),
     parsePeople(lang),
     parseStudents(lang),
     parseProjects(lang),
@@ -891,6 +907,11 @@ function buildLanguage(lang) {
   ].forEach((section) => mergeContent(data, section));
 
   data.newsItems = parseNewsItems(lang);
+  const directions = new Set(data.researchInterests.map((item) => item.slug));
+  for (const item of data.newsItems) {
+    if (item.directions.some((slug) => !directions.has(slug))) throw new Error(`Unknown research direction in news: ${item.title}`);
+  }
+  data.newsItems.sort((a, b) => b.date.localeCompare(a.date));
 
   return data;
 }

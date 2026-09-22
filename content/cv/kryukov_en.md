@@ -3,7 +3,7 @@
 Name: Yakov Kryukov
 Role: Candidate of Technical Sciences, Associate Professor
 
-Research interests: wireless communication systems, signal processing and multiple access methods. Develops simulation models and teaches telecommunications courses.
+Develops simulation models and teaches telecommunications courses.
 
 ### Work at TUSUR
 

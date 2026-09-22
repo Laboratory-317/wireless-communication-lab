@@ -10,6 +10,8 @@
 
 ## Вкладки
 
+- research | Научная деятельность | research.html
+- education | Образовательная деятельность | education.html
 - people | Коллектив | people.html
 - students | Студентам | students.html
 - projects | Проекты | projects.html

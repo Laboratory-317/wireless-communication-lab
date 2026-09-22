@@ -3,7 +3,7 @@
 Name: Dmitriy Pokamestov
 Role: Candidate of Technical Sciences, Associate Professor at the TUSUR Department of Telecommunications and Basic Principles of Radio Engineering
 
-Research interests: multiple access methods and multi-antenna systems for 5G/6G communications; SCMA, NOMA, RSMA, polar codes and radio channel modelling.
+
 
 ### Research Work
 

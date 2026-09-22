@@ -37,6 +37,16 @@ window.LAB_CONTENT = {
       "home": "Главная",
       "sections": [
         {
+          "key": "research",
+          "title": "Научная деятельность",
+          "href": "research.html"
+        },
+        {
+          "key": "education",
+          "title": "Образовательная деятельность",
+          "href": "education.html"
+        },
+        {
           "key": "people",
           "title": "Коллектив",
           "href": "people.html"
@@ -63,8 +73,9 @@ window.LAB_CONTENT = {
         }
       ],
       "sectionLabels": {
-        "researchKicker": "Научные направления",
+        "homeTitle": "О лаборатории",
         "researchTitle": "Научные направления",
+        "educationTitle": "Образовательная деятельность",
         "peopleKicker": "Команда лаборатории",
         "peopleTitle": "Коллектив",
         "studentsKicker": "Для студентов",
@@ -88,82 +99,14 @@ window.LAB_CONTENT = {
           "text": "Мы исследуем беспроводные системы связи 5G/6G, помехоустойчивое кодирование, множественный доступ и интеллектуальные поверхности.\nЛаборатория работает на кафедре телекоммуникаций и основ радиотехники ТУСУР в Томске.",
           "images": [],
           "actions": [],
-          "cards": [],
-          "type": "text"
-        },
-        {
-          "title": "Научные направления",
-          "text": "Многоантенные системы, обработка сигналов и организация радиоканала для мобильной связи. Исследуем, как повысить эффективность передачи данных и использования радиоресурсов. [Проекты лаборатории](projects.html).\nПомехоустойчивое кодирование для надёжной передачи информации. Исследования включают адаптацию полярных кодов к условиям канала и их применение в системах множественного доступа. [Научные публикации](publications.html).\nСовместное использование радиоресурсов несколькими абонентами. В работах лаборатории рассматриваются NOMA, SCMA и RSMA, распределение ресурсов и сравнение методов доступа. [Результаты исследований](publications.html).\nРеконфигурируемые интеллектуальные поверхности RIS и STAR-RIS позволяют управлять распространением радиоволн. Мы моделируем радиоканал и разрабатываем отражающие поверхности. [Связанные проекты](projects.html).",
-          "images": [
-            {
-              "alt": "Антенная решётка и направленная передача сигнала",
-              "src": "assets/research/wireless.svg"
-            },
-            {
-              "alt": "Преобразование полярного кода для четырёх входных битов",
-              "src": "assets/research/polar.svg"
-            },
-            {
-              "alt": "Сравнение разделения пользователей по времени и мощности",
-              "src": "assets/research/access.svg"
-            },
-            {
-              "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
-              "src": "assets/research/reconfigurable-metasurface.png"
-            }
-          ],
-          "actions": [],
-          "cards": [
-            {
-              "title": "5G/6G",
-              "text": "Многоантенные системы, обработка сигналов и организация радиоканала для мобильной связи. Исследуем, как повысить эффективность передачи данных и использования радиоресурсов. [Проекты лаборатории](projects.html).",
-              "images": [
-                {
-                  "alt": "Антенная решётка и направленная передача сигнала",
-                  "src": "assets/research/wireless.svg"
-                }
-              ]
-            },
-            {
-              "title": "Полярные коды",
-              "text": "Помехоустойчивое кодирование для надёжной передачи информации. Исследования включают адаптацию полярных кодов к условиям канала и их применение в системах множественного доступа. [Научные публикации](publications.html).",
-              "images": [
-                {
-                  "alt": "Преобразование полярного кода для четырёх входных битов",
-                  "src": "assets/research/polar.svg"
-                }
-              ]
-            },
-            {
-              "title": "Множественный доступ",
-              "text": "Совместное использование радиоресурсов несколькими абонентами. В работах лаборатории рассматриваются NOMA, SCMA и RSMA, распределение ресурсов и сравнение методов доступа. [Результаты исследований](publications.html).",
-              "images": [
-                {
-                  "alt": "Сравнение разделения пользователей по времени и мощности",
-                  "src": "assets/research/access.svg"
-                }
-              ]
-            },
-            {
-              "title": "Реконфигурируемые мета-поверхности",
-              "text": "Реконфигурируемые интеллектуальные поверхности RIS и STAR-RIS позволяют управлять распространением радиоволн. Мы моделируем радиоканал и разрабатываем отражающие поверхности. [Связанные проекты](projects.html).",
-              "images": [
-                {
-                  "alt": "Реконфигурируемая мета-поверхность направляет радиосигнал к устройству 6G",
-                  "src": "assets/research/reconfigurable-metasurface.png"
-                }
-              ]
-            }
-          ],
-          "type": "research"
+          "cards": []
         },
         {
           "title": "Лаборатория в ТУСУР",
           "text": "Россия, Томск, ул. Вершинина, 47, аудитория 317. [Сотрудники лаборатории](people.html) · [Проекты и разработки](projects.html).",
           "images": [],
           "actions": [],
-          "cards": [],
-          "type": "text"
+          "cards": []
         }
       ],
       "headerActions": [
@@ -175,36 +118,25 @@ window.LAB_CONTENT = {
       ],
       "researchInterests": [
         {
+          "slug": "wireless",
           "title": "5G/6G",
           "text": "Многоантенные системы, обработка сигналов и организация радиоканала для мобильной связи. Исследуем, как повысить эффективность передачи данных и использования радиоресурсов. [Проекты лаборатории](projects.html).",
-          "images": [
-            {
-              "alt": "Антенная решётка и направленная передача сигнала",
-              "src": "assets/research/wireless.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "polar",
           "title": "Полярные коды",
           "text": "Помехоустойчивое кодирование для надёжной передачи информации. Исследования включают адаптацию полярных кодов к условиям канала и их применение в системах множественного доступа. [Научные публикации](publications.html).",
-          "images": [
-            {
-              "alt": "Преобразование полярного кода для четырёх входных битов",
-              "src": "assets/research/polar.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "access",
           "title": "Множественный доступ",
           "text": "Совместное использование радиоресурсов несколькими абонентами. В работах лаборатории рассматриваются NOMA, SCMA и RSMA, распределение ресурсов и сравнение методов доступа. [Результаты исследований](publications.html).",
-          "images": [
-            {
-              "alt": "Сравнение разделения пользователей по времени и мощности",
-              "src": "assets/research/access.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "metasurfaces",
           "title": "Реконфигурируемые мета-поверхности",
           "text": "Реконфигурируемые интеллектуальные поверхности RIS и STAR-RIS позволяют управлять распространением радиоволн. Мы моделируем радиоканал и разрабатываем отражающие поверхности. [Связанные проекты](projects.html).",
           "images": [
@@ -215,6 +147,23 @@ window.LAB_CONTENT = {
           ]
         }
       ],
+      "courses": [
+        {
+          "title": "[Технологии множественного доступа](https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa)",
+          "text": "Организация многоканальной цифровой связи и моделирование систем с разными методами множественного доступа. Рассматриваются FDMA, TDMA, CDMA, SDMA, OFDMA, PD-NOMA и SCMA.",
+          "duration": "2 месяца"
+        },
+        {
+          "title": "[Основы беспроводной связи](https://engineers.tusur.ru/courses/osnovy-besprovodnoi-sviazi)",
+          "text": "Основные этапы передачи и приёма цифрового сигнала: кодирование, модуляция, фильтрация, OFDM и оценка качества связи. Практическая часть посвящена моделированию систем связи в MATLAB или Octave.",
+          "duration": "2 месяца"
+        },
+        {
+          "title": "[Помехоустойчивое кодирование](https://engineers.tusur.ru/courses/pomekhoustoichivoe-kodirovanie)",
+          "text": "Принципы обнаружения и исправления ошибок в цифровых системах связи. Изучаются CRC, свёрточные коды, декодирование Витерби, турбокоды, коды Хэмминга, LDPC и полярные коды.",
+          "duration": "2 месяца"
+        }
+      ],
       "peopleGroups": [
         {
           "title": "Научные сотрудники",
@@ -222,7 +171,7 @@ window.LAB_CONTENT = {
             {
               "name": "Покаместов Дмитрий Алексеевич",
               "photo": "assets/people/pokamestov-dmitriy.jpg",
-              "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.",
+              "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -262,7 +211,7 @@ window.LAB_CONTENT = {
             {
               "name": "Крюков Яков Владимирович",
               "photo": "assets/people/kryukov-yakov.png",
-              "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа.",
+              "description": "Кандидат технических наук, доцент кафедры ТОР ТУСУР.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -838,7 +787,7 @@ window.LAB_CONTENT = {
           "slug": "kryukov",
           "name": "Крюков Яков Владимирович",
           "role": "Кандидат технических наук, доцент",
-          "summary": "Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа. Разрабатывает программные модели и преподаёт дисциплины по телекоммуникациям.",
+          "summary": "Разрабатывает программные модели и преподаёт дисциплины по телекоммуникациям.",
           "sections": [
             {
               "title": "Работа в ТУСУР",
@@ -866,7 +815,7 @@ window.LAB_CONTENT = {
           "slug": "pokamestov",
           "name": "Покаместов Дмитрий Алексеевич",
           "role": "Кандидат технических наук, доцент кафедры ТОР ТУСУР",
-          "summary": "Научные интересы: методы множественного доступа и многоантенные системы связи 5G/6G, SCMA, NOMA, RSMA, полярные коды и моделирование радиоканалов.",
+          "summary": "",
           "sections": [
             {
               "title": "Научная работа",
@@ -891,13 +840,7 @@ window.LAB_CONTENT = {
           ]
         }
       ],
-      "newsItems": [
-        {
-          "date": "",
-          "title": "Будет позднее",
-          "text": ""
-        }
-      ]
+      "newsItems": []
     },
     "en": {
       "colorModeLabels": {
@@ -918,6 +861,16 @@ window.LAB_CONTENT = {
       "footer": "Wireless systems · Coding · Signal processing",
       "home": "Home",
       "sections": [
+        {
+          "key": "research",
+          "title": "Research",
+          "href": "research.html"
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "href": "education.html"
+        },
         {
           "key": "people",
           "title": "Team",
@@ -945,8 +898,9 @@ window.LAB_CONTENT = {
         }
       ],
       "sectionLabels": {
-        "researchKicker": "Research Interests",
+        "homeTitle": "About the laboratory",
         "researchTitle": "Research Areas",
+        "educationTitle": "Education",
         "peopleKicker": "Laboratory Team",
         "peopleTitle": "Team",
         "studentsKicker": "For Students",
@@ -970,82 +924,14 @@ window.LAB_CONTENT = {
           "text": "We study 5G/6G wireless systems, error-correcting codes, multiple access and intelligent surfaces.\nThe laboratory is based at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR, in Tomsk.",
           "images": [],
           "actions": [],
-          "cards": [],
-          "type": "text"
-        },
-        {
-          "title": "Research Areas",
-          "text": "Multi-antenna systems, signal processing and radio channel design for mobile communications. We study ways to improve data transmission and radio resource efficiency. [Laboratory projects](projects.html).\nError-correcting codes for reliable information transmission. Research includes adapting polar codes to channel conditions and using them in multiple access systems. [Research publications](publications.html).\nSharing radio resources among multiple users. The laboratory studies NOMA, SCMA and RSMA, resource allocation and comparisons of access techniques. [Research results](publications.html).\nReconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).",
-          "images": [
-            {
-              "alt": "Antenna array and directional signal transmission",
-              "src": "assets/research/wireless-en.svg"
-            },
-            {
-              "alt": "Polar code transform for four input bits",
-              "src": "assets/research/polar-en.svg"
-            },
-            {
-              "alt": "Conceptual allocation of time-frequency resources to different users",
-              "src": "assets/research/access-en.svg"
-            },
-            {
-              "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
-              "src": "assets/research/reconfigurable-metasurface.png"
-            }
-          ],
-          "actions": [],
-          "cards": [
-            {
-              "title": "5G/6G",
-              "text": "Multi-antenna systems, signal processing and radio channel design for mobile communications. We study ways to improve data transmission and radio resource efficiency. [Laboratory projects](projects.html).",
-              "images": [
-                {
-                  "alt": "Antenna array and directional signal transmission",
-                  "src": "assets/research/wireless-en.svg"
-                }
-              ]
-            },
-            {
-              "title": "Polar codes",
-              "text": "Error-correcting codes for reliable information transmission. Research includes adapting polar codes to channel conditions and using them in multiple access systems. [Research publications](publications.html).",
-              "images": [
-                {
-                  "alt": "Polar code transform for four input bits",
-                  "src": "assets/research/polar-en.svg"
-                }
-              ]
-            },
-            {
-              "title": "Multiple access",
-              "text": "Sharing radio resources among multiple users. The laboratory studies NOMA, SCMA and RSMA, resource allocation and comparisons of access techniques. [Research results](publications.html).",
-              "images": [
-                {
-                  "alt": "Conceptual allocation of time-frequency resources to different users",
-                  "src": "assets/research/access-en.svg"
-                }
-              ]
-            },
-            {
-              "title": "Reconfigurable metasurfaces",
-              "text": "Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).",
-              "images": [
-                {
-                  "alt": "A reconfigurable metasurface directs a radio signal toward a 6G device",
-                  "src": "assets/research/reconfigurable-metasurface.png"
-                }
-              ]
-            }
-          ],
-          "type": "research"
+          "cards": []
         },
         {
           "title": "The laboratory at TUSUR",
           "text": "Room 317, 47 Vershinin Street, Tomsk, Russia. [Our team](people.html) · [Projects and developments](projects.html).",
           "images": [],
           "actions": [],
-          "cards": [],
-          "type": "text"
+          "cards": []
         }
       ],
       "headerActions": [
@@ -1057,36 +943,25 @@ window.LAB_CONTENT = {
       ],
       "researchInterests": [
         {
+          "slug": "wireless",
           "title": "5G/6G",
           "text": "Multi-antenna systems, signal processing and radio channel design for mobile communications. We study ways to improve data transmission and radio resource efficiency. [Laboratory projects](projects.html).",
-          "images": [
-            {
-              "alt": "Antenna array and directional signal transmission",
-              "src": "assets/research/wireless-en.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "polar",
           "title": "Polar codes",
           "text": "Error-correcting codes for reliable information transmission. Research includes adapting polar codes to channel conditions and using them in multiple access systems. [Research publications](publications.html).",
-          "images": [
-            {
-              "alt": "Polar code transform for four input bits",
-              "src": "assets/research/polar-en.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "access",
           "title": "Multiple access",
           "text": "Sharing radio resources among multiple users. The laboratory studies NOMA, SCMA and RSMA, resource allocation and comparisons of access techniques. [Research results](publications.html).",
-          "images": [
-            {
-              "alt": "Conceptual allocation of time-frequency resources to different users",
-              "src": "assets/research/access-en.svg"
-            }
-          ]
+          "images": []
         },
         {
+          "slug": "metasurfaces",
           "title": "Reconfigurable metasurfaces",
           "text": "Reconfigurable intelligent surfaces, including RIS and STAR-RIS, offer control over radio wave propagation. We model radio channels and develop reflecting surfaces. [Related projects](projects.html).",
           "images": [
@@ -1097,6 +972,23 @@ window.LAB_CONTENT = {
           ]
         }
       ],
+      "courses": [
+        {
+          "title": "[Multiple Access Technologies](https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa)",
+          "text": "Multichannel digital communication and simulation of systems using different multiple access methods. Topics include FDMA, TDMA, CDMA, SDMA, OFDMA, PD-NOMA and SCMA.",
+          "duration": "2 months"
+        },
+        {
+          "title": "[Wireless Communication Fundamentals](https://engineers.tusur.ru/courses/osnovy-besprovodnoi-sviazi)",
+          "text": "The main stages of digital signal transmission and reception: coding, modulation, filtering, OFDM and communication quality assessment. Practical work covers communication system simulation in MATLAB or Octave.",
+          "duration": "2 months"
+        },
+        {
+          "title": "[Error-Correcting Coding](https://engineers.tusur.ru/courses/pomekhoustoichivoe-kodirovanie)",
+          "text": "Error detection and correction in digital communication systems. Topics include CRC, convolutional codes, Viterbi decoding, turbo codes, Hamming codes, LDPC and polar codes.",
+          "duration": "2 months"
+        }
+      ],
       "peopleGroups": [
         {
           "title": "Research Staff",
@@ -1104,7 +996,7 @@ window.LAB_CONTENT = {
             {
               "name": "Dmitriy Pokamestov",
               "photo": "assets/people/pokamestov-dmitriy.jpg",
-              "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.",
+              "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1144,7 +1036,7 @@ window.LAB_CONTENT = {
             {
               "name": "Yakov Kryukov",
               "photo": "assets/people/kryukov-yakov.png",
-              "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.",
+              "description": "Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.",
               "contacts": [
                 {
                   "label": "E-mail",
@@ -1720,7 +1612,7 @@ window.LAB_CONTENT = {
           "slug": "kryukov",
           "name": "Yakov Kryukov",
           "role": "Candidate of Technical Sciences, Associate Professor",
-          "summary": "Research interests: wireless communication systems, signal processing and multiple access methods. Develops simulation models and teaches telecommunications courses.",
+          "summary": "Develops simulation models and teaches telecommunications courses.",
           "sections": [
             {
               "title": "Work at TUSUR",
@@ -1748,7 +1640,7 @@ window.LAB_CONTENT = {
           "slug": "pokamestov",
           "name": "Dmitriy Pokamestov",
           "role": "Candidate of Technical Sciences, Associate Professor at the TUSUR Department of Telecommunications and Basic Principles of Radio Engineering",
-          "summary": "Research interests: multiple access methods and multi-antenna systems for 5G/6G communications; SCMA, NOMA, RSMA, polar codes and radio channel modelling.",
+          "summary": "",
           "sections": [
             {
               "title": "Research Work",
@@ -1773,13 +1665,7 @@ window.LAB_CONTENT = {
           ]
         }
       ],
-      "newsItems": [
-        {
-          "date": "",
-          "title": "Coming soon",
-          "text": ""
-        }
-      ]
+      "newsItems": []
     }
   }
 };

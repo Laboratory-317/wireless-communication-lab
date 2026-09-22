@@ -31,7 +31,9 @@ jobs:
           node-version: '24'
 
       - name: Validate and build public site
-        run: node tools/build-site.js
+        run: |
+          node tools/build-site.js
+          node tools/check-site.js
         env:
           LAB_AUTO_TRANSLATE: "0"
 

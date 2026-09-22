@@ -16,7 +16,7 @@ function copy(relative) {
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.cpSync(path.join(root, relative), destination, { recursive: true });
 }
-['index.html', 'css/color-mode.css', 'css/theme-base.css', 'js/color-mode.js', 'js/lab-content.js', 'js/render-theme.js', 'assets', 'labicon.png'].forEach(copy);
+['index.html', 'css/color-mode.css', 'css/theme-base.css', 'js/lab-content.js', 'js/render-theme.js', 'assets', 'labicon.png'].forEach(copy);
 const context = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'js/lab-content.js'), 'utf8'), context);
 const model = context.window.LAB_CONTENT;

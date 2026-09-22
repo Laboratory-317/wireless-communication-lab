@@ -9,7 +9,7 @@
 ![Дмитрий Покаместов](assets/people/pokamestov-dmitriy.jpg)
 
 
-Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: неортогональный множественный доступ, многоантенные системы и помехоустойчивое кодирование.
+Кандидат технических наук, доцент кафедры ТОР ТУСУР.
 
 - E-mail: dmaltomsk@mail.ru
 - Scholar: https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru
@@ -25,7 +25,7 @@
 ![Яков Крюков](assets/people/kryukov-yakov.png)
 
 
-Кандидат технических наук, доцент кафедры ТОР ТУСУР. Научные интересы: беспроводные системы связи, обработка сигналов и методы множественного доступа.
+Кандидат технических наук, доцент кафедры ТОР ТУСУР.
 
 - E-mail: iakov.v.kriukov@tusur.ru
 - Scholar: https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru

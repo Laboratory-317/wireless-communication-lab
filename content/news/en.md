@@ -1,3 +1,1 @@
 # News
-
-## Coming soon

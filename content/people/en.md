@@ -9,7 +9,7 @@
 ![Dmitriy Pokamestov](assets/people/pokamestov-dmitriy.jpg)
 
 
-Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: non-orthogonal multiple access, multi-antenna systems and error-correcting codes.
+Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
 - E-mail: dmaltomsk@mail.ru
 - Scholar: https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru
@@ -25,7 +25,7 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 ![Yakov Kryukov](assets/people/kryukov-yakov.png)
 
 
-Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. Research interests: wireless communication systems, signal processing and multiple access methods.
+Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
 - E-mail: iakov.v.kriukov@tusur.ru
 - Scholar: https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru

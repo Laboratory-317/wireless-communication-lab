@@ -147,13 +147,6 @@
   }
 
 
-  function colorModeControl(content) {
-    const labels = content.colorModeLabels;
-    const selected = document.documentElement.dataset?.colorMode || 'system';
-    return `<label class="color-mode-control"><span>${labels.label}</span><select data-color-mode-select aria-label="${labels.label}">
-      ${['system', 'light', 'dark'].map((mode) => `<option value="${mode}"${mode === selected ? ' selected' : ''}>${labels[mode]}</option>`).join('')}
-    </select></label>`;
-  }
   function render(language) {
     const content = model.languages[language] || model.languages[model.defaultLanguage];
     const labels = content.sectionLabels;
@@ -161,27 +154,31 @@
     const illustrationPlaceholder = language === "en" ? "Illustration coming later" : "Иллюстрация будет позже";
 
     document.documentElement.lang = language;
-    document.title = `${page === "home" ? content.home : labels[`${page}Title`] || content.home} — ${content.labName}`;
+    const direction = content.researchInterests.find((item) => page === `research-${item.slug}`);
+    document.title = `${direction ? direction.title : page === "home" ? content.home : labels[`${page}Title`] || content.home} — ${content.labName}`;
 
     const nav = content.sections
-      .filter((section) => !["research", "media", "news"].includes(section.key) && !["research.html", "media.html", "news.html"].includes(section.href))
+      .filter((section) => !["media", "news"].includes(section.key))
       .map((section) => {
-        const isCurrent = page === section.key || (page === "cv" && section.key === "people");
+        const isCurrent = page === section.key || (page === "cv" && section.key === "people") || (direction && section.key === "research");
         return `<a href="${html(section.href)}" aria-current="${isCurrent ? "page" : "false"}">${html(section.title)}</a>`;
       })
       .join("");
 
-    function newsBlock() {
+    function newsBlock(items = content.newsItems, forDirection = false) {
       return `
         <section class="section section-news">
           <div class="section-head">
-            <h2>${labels.newsTitle}</h2>
+            <h2>${forDirection ? (language === "en" ? "Research news" : "Новости направления") : html(labels.newsTitle)}</h2>
           </div>
+          ${!items.length ? `<p class="news-empty">${forDirection
+            ? (language === "en" ? "No news has been published for this research area yet." : "Новости по этому направлению пока не опубликованы.")
+            : (language === "en" ? "Laboratory news will appear here." : "Здесь будут публиковаться новости лаборатории.")}</p>` : ""}
           <div class="news-list">
-            ${content.newsItems.map((item) => `
+            ${items.map((item) => `
               <article class="news-item">
                 ${item.date ? `<time>${html(item.date)}</time>` : ""}
-                <h3>${item.title}</h3>
+                <h3>${html(item.title)}</h3>
                 <div class="markdown-block">${blockMarkdown(item.text)}</div>
               </article>
             `).join("")}
@@ -190,65 +187,63 @@
       `;
     }
 
+    function homeBlock() {
+      return content.homeSections.map((section) => `
+        <section class="section section-home-text">
+          <div class="section-head"><h2>${html(section.title)}</h2></div>
+          <div class="home-text-body markdown-block">${blockMarkdown(section.text)}</div>
+        </section>
+      `).join("") + newsBlock();
+    }
+
+    function researchImage(item) {
+      const image = item.images[0];
+      return image
+        ? `<img class="interest-image" src="${assetSrc(image.src)}" alt="${html(image.alt)}" loading="lazy" width="640" height="640">`
+        : `<div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>`;
+    }
+
     function researchBlock() {
-      function researchImage(item) {
-        // Other research areas keep their placeholders until artwork is selected.
-        const image = item.images?.find((image) => image.src === "assets/research/reconfigurable-metasurface.png");
-        return image
-          ? `<img class="interest-image" src="${assetSrc(image.src)}" alt="${html(image.alt)}" loading="lazy" width="640" height="640">`
-          : `<div class="interest-image illustration-pending">${html(illustrationPlaceholder)}</div>`;
-      }
-
-      function researchSection(section) {
-        const items = section.cards || content.researchInterests || [];
-        return `
-          <section class="section section-research">
-            <div class="section-head">
-              <h2>${html(section.title || labels.researchTitle)}</h2>
-            </div>
-            <div class="interest-list">
-              ${items.map((item) => `
-                <article>
-                  ${researchImage(item)}
-                  <h3>${html(item.title)}</h3>
-                  <div class="research-copy">${blockMarkdown(item.text)}</div>
-                </article>
-              `).join("")}
-            </div>
-            <p class="illustration-note">${html(content.diagramCaption)}</p>
-          </section>
-        `;
-      }
-
-      function textSection(section) {
-        return `
-          <section class="section section-home-text">
-            <div class="section-head">
-              <h2>${html(section.title)}</h2>
-            </div>
-            ${section.text ? `<div class="home-text-body markdown-block">${blockMarkdown(section.text)}</div>` : ""}
-            ${sectionActions(section.actions)}
-          </section>
-        `;
-      }
-
-      if (content.homeSections && content.homeSections.length) {
-        return content.homeSections.map((section) => (
-          section.type === "research" ? researchSection(section) : textSection(section)
-        )).join("");
-      }
-
       return `
         <section class="section section-research">
-          <div class="section-head">
-            <h2>${labels.researchTitle}</h2>
-          </div>
+          <div class="section-head"><h2>${html(labels.researchTitle)}</h2></div>
           <div class="interest-list">
             ${content.researchInterests.map((item) => `
               <article>
-                ${researchImage(item)}
-                <h3>${html(item.title)}</h3>
-                <div class="markdown-block">${blockMarkdown(item.text)}</div>
+                <a class="research-image-link" href="research-${item.slug}.html" aria-label="${html(item.title)}">${researchImage(item)}</a>
+                <h3><a href="research-${item.slug}.html">${html(item.title)}</a></h3>
+                <div class="research-copy">${blockMarkdown(item.text)}</div>
+                <a class="research-news-link" href="research-${item.slug}.html">${language === "en" ? "Research news →" : "Новости направления →"}</a>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function directionBlock(item) {
+      return `
+        <section class="section section-direction">
+          <a class="back-link" href="research.html">${language === "en" ? "← All research areas" : "← Все научные направления"}</a>
+          <div class="section-head"><h2>${html(item.title)}</h2></div>
+          <div class="direction-overview">
+            ${item.images.length ? researchImage(item) : ""}
+            <div class="markdown-block">${blockMarkdown(item.text)}</div>
+          </div>
+        </section>
+      ` + newsBlock(content.newsItems.filter((news) => news.directions.includes(item.slug)), true);
+    }
+
+    function educationBlock() {
+      return `
+        <section class="section section-education">
+          <div class="section-head"><h2>${html(labels.educationTitle)}</h2></div>
+          <div class="course-list">
+            ${content.courses.map((course) => `
+              <article class="course-item">
+                <h3>${inlineMarkdown(course.title)}</h3>
+                <div class="markdown-block">${blockMarkdown(course.text)}</div>
+                <p class="course-duration">${language === "en" ? "Duration" : "Продолжительность"}: ${html(course.duration)}</p>
               </article>
             `).join("")}
           </div>
@@ -557,7 +552,9 @@
     }
 
     const pages = {
-      home: researchBlock(),
+      home: homeBlock(),
+      research: researchBlock(),
+      education: educationBlock(),
       news: newsBlock(),
       projects: projectsBlock(),
       patents: patentsBlock(),
@@ -575,7 +572,6 @@
           <div class="topbar-actions">
             ${headerActions(content.headerActions)}
             ${languageSwitch(language)}
-            ${colorModeControl(content)}
           </div>
         </div>
         <div class="brand">
@@ -589,8 +585,7 @@
           <a href="index.html" aria-current="${page === "home" ? "page" : "false"}">${content.home}</a>${nav}
         </nav>
       </header>
-      <main id="content" tabindex="-1" class="page page-${page}">${pages[page] || pages.home}</main>
-      <footer class="site-footer"><p>${html(content.tagline)}</p><p>${html(content.footer)}</p></footer>
+      <main id="content" tabindex="-1" class="page page-${page}">${direction ? directionBlock(direction) : pages[page] || pages.home}</main>
     `;
 
     app.querySelectorAll('a[href]').forEach((link) => {
