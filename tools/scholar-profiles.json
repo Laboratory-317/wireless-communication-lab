@@ -1,0 +1,13 @@
+{
+  "min_year": 2026,
+  "profiles": [
+    { "name": "Dmitriy Pokamestov", "id": "-_7z65YAAAAJ" },
+    { "name": "Yakov Kryukov", "id": "Ms3raocp3REC" }
+  ],
+  "publication_files": [
+    "content/publications/ru.md",
+    "content/publications/en.md",
+    "quarto-site/ru/publications.qmd",
+    "quarto-site/en/publications.qmd"
+  ]
+}

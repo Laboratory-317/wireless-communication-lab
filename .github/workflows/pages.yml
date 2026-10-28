@@ -5,9 +5,12 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    # Monday 03:23 UTC = Monday 10:23 Asia/Tomsk (GitHub may delay the start).
+    - cron: '23 3 * * 1'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -30,6 +33,18 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Set up Python for Scholar synchronization
+        if: github.event_name != 'push' && github.ref == 'refs/heads/main'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Synchronize recent Google Scholar publications
+        if: github.event_name != 'push' && github.ref == 'refs/heads/main'
+        run: |
+          python -m unittest discover -s tools -p test_sync_scholar.py
+          python tools/sync-scholar.py
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -51,6 +66,17 @@ jobs:
           node tools/build-comparison.js
           node tools/check-site.js
           node tools/check-comparison.js
+
+      - name: Save validated publication additions
+        if: github.event_name != 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git add content/publications/ru.md content/publications/en.md quarto-site/ru/publications.qmd quarto-site/en/publications.qmd
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update recent publications from Google Scholar'
+            git push origin HEAD:main
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

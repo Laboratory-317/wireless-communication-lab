@@ -38,6 +38,8 @@
 
 ### 2026
 
+- **МЕТОД СИНТЕЗА МАСШТАБИРУЕМЫХ КОДОВЫХ КНИГ SCMA.** ДА Покаместов, ЯВ Крюков, ЕВ Рогожников, СЮ Землянухин, .... *T-Comm: Телекоммуникации и транспорт 20 \(8\), 18-26, 2026*. 2026. [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&citation_for_view=-_7z65YAAAAJ%3A_B80troHkn4C)
+- **SLNR‐Based Private Precoding for RSMA Systems: Analysis and Performance Evaluation.** D Pokamestov, A Shinkevich, Y Kryukov, G Shalin, S Zemlyanukhin, .... *International Journal of Communication Systems 39 \(16\), e70606, 2026*. 2026. [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&citation_for_view=-_7z65YAAAAJ%3AeMMeJKvmdy0C)
 - **A Novel Genetic Algorithm for Low-Complexity PAPR Reduction in OTFS Modulation.** Hashem Khaled Rehab, Artyom Konovalchikov, Eugeniy Rogozhnikov, Dmitriy Pokamestov, Kirill Dinochenko. *2026 Systems of Signal Synchronization, Generating and Processing in Telecommunications (SYNCHROINFO)*, pp. 1–8. 2026. [DOI](https://doi.org/10.1109/synchroinfo70145.2026.11613219)
 - **Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)
 - **Множественный доступ с разделением по скорости: современное состояние и перспективы развития.** А. С. Шинкевич, Д. А. Покаместов, Я. В. Крюков, Г. Н. Шалин, С. А. Еремеев, Д. Е. Ильинский. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 29, no. 1 (89), pp. 53–67. 2026. [Источник](https://elibrary.ru/item.asp?id=91678911)
