@@ -38,6 +38,7 @@
 
 ### 2026
 
+- **A Method for the Design of Scalable SCMA Codebooks.** Dmitry A. Pokamestov, Yakov V. Kryukov, Evgeny V. Rogozhnikov, Sergey Yu. Zemlyanukhin, Rudolf V. Litvinov, Aleksandr M. Zabolotskiy. *T-Comm*, vol. 20, no. 8, pp. 18–26. 2026. DOI: 10.36724/2072-8735-2026-20-8-18-26. [Source](http://media-publisher.ru/wp-content/uploads/Nom-8-2026s.pdf#page=18)
 - **SLNR‐Based Private Precoding for RSMA Systems: Analysis and Performance Evaluation.** Dmitriy Pokamestov, Artem Shinkevich, Yakov Kryukov, Georgiy Shalin, Sergey Zemlyanukhin, Alexander Filatov. *International Journal of Communication Systems*, vol. 39, no. 16, e70606. 2026. [DOI](https://doi.org/10.1002/dac.70606)
 - **A Novel Genetic Algorithm for Low-Complexity PAPR Reduction in OTFS Modulation.** Hashem Khaled Rehab, Artyom Konovalchikov, Eugeniy Rogozhnikov, Dmitriy Pokamestov, Kirill Dinochenko. *2026 Systems of Signal Synchronization, Generating and Processing in Telecommunications (SYNCHROINFO)*, pp. 1–8. 2026. [DOI](https://doi.org/10.1109/synchroinfo70145.2026.11613219)
 - **Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)
