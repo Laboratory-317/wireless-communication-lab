@@ -70,7 +70,7 @@ jobs:
       - name: Save validated publication additions
         if: github.event_name != 'push' && github.ref == 'refs/heads/main'
         run: |
-          git add content/publications/ru.md content/publications/en.md quarto-site/ru/publications.qmd quarto-site/en/publications.qmd
+          git add content/publications/ru.md content/publications/en.md quarto-site/ru/publications.qmd quarto-site/en/publications.qmd data/scholar-pending.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

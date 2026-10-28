@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 import time
 import unicodedata
-from urllib.parse import urlencode, urlsplit, parse_qs
+from urllib.parse import urlencode, urlsplit, parse_qs, quote, unquote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,23 +138,100 @@ def md(value):
     return re.sub(r"([\\`*_{}\[\]()#!|~])", r"\\\1", value)
 
 
-def merge_document(document, papers):
+def text_only(value):
+    return html.unescape(re.sub(r"<[^>]+>", "", value)).strip()
+
+
+def crossref_lookup(paper):
+    query = urlencode({"query.bibliographic": paper["title"], "rows": 5})
+    request = Request("https://api.crossref.org/works?" + query,
+                      headers={"User-Agent": AGENT, "Accept": "application/json"})
+    with urlopen(request, timeout=25) as response:
+        data = json.load(response)
+    return data["message"]["items"]
+
+
+def verified_metadata(paper, matches):
+    """Require exact normalized title, year, lead author and complete metadata."""
+    accepted = {}
+    for item in matches:
+        titles = [text_only(t) for t in item.get("title", [])]
+        matching_title = next((t for t in titles if normalized(t) == normalized(paper["title"])), None)
+        if not matching_title:
+            continue
+        if item.get("type") not in ("journal-article", "proceedings-article"):
+            continue
+        dates = [item.get(key, {}).get("date-parts", [[]])[0]
+                 for key in ("published", "published-online", "published-print")]
+        if not any(d and str(d[0]) == paper["year"] for d in dates):
+            continue
+        authors = item.get("author", [])
+        if not authors or any(not a.get("family") or not a.get("given") for a in authors):
+            continue
+        if normalized(authors[0]["family"]) not in normalized(paper["authors"].split(",", 1)[0]):
+            continue
+        journal = item.get("container-title", [])
+        doi = item.get("DOI", "").lower().strip()
+        if not journal or not re.fullmatch(r"10\.\d{4,9}/[^\s<>]+", doi):
+            continue
+        # A journal record with no pages/article number and no volume/issue may
+        # be online-first. Do not invent any of those optional fields.
+        accepted[doi] = {
+            "title": matching_title, "year": paper["year"], "doi": doi,
+            "authors": ", ".join(text_only(a["given"] + " " + a["family"]) for a in authors),
+            "venue": text_only(journal[0]), "volume": item.get("volume", ""),
+            "issue": item.get("issue", ""), "pages": item.get("page", ""),
+            "article_number": item.get("article-number", ""),
+        }
+    return next(iter(accepted.values())) if len(accepted) == 1 else None
+
+
+def render_publication(paper):
+    if any(not paper.get(key) for key in ("title", "authors", "venue", "year", "doi")):
+        raise ValueError("Publication lacks verified bibliographic fields")
+    if re.search(r"\.\.\.|…|\bet\s+al\b", paper["authors"], re.I):
+        raise ValueError("Truncated author list must not enter the bibliography")
+    title = paper["title"].rstrip(".")
+    if not title.endswith(("?", "!")):
+        title += "."
+    fields = [f"*{md(paper['venue'])}*"]
+    if paper.get("volume"):
+        fields.append("vol. " + md(str(paper["volume"])))
+    if paper.get("issue"):
+        fields.append("no. " + md(str(paper["issue"])))
+    if paper.get("article_number"):
+        fields.append(md(str(paper["article_number"])))
+    elif paper.get("pages"):
+        pages = re.sub(r"(?<=\d)[-–—]+(?=\d)", "–", str(paper["pages"]))
+        fields.append("pp. " + md(pages))
+    return (f"- **{md(title)}** {md(paper['authors'].rstrip('.'))}. "
+            + ", ".join(fields) + f". {paper['year']}. [DOI](https://doi.org/{quote(paper['doi'], safe='/')})\n")
+
+
+def merge_document(document, papers, discovered=()):
     document = document.replace("\r\n", "\n")
+    # Migrate only the raw Scholar records produced by the old importer.
+    # Unconfirmed records stay in the pending JSON instead of public pages.
+    discovered_titles = {normalized(p["title"]) for p in discovered}
+    document = "".join(line for line in document.splitlines(keepends=True)
+                       if not ("[Google Scholar](https://scholar.google.com/citations?" in line
+                               and (m := re.match(r"^- \*\*(.*?)\*\*", line))
+                               and normalized(html.unescape(m[1]).replace("\\", "")) in discovered_titles))
     heading = re.search(r"^## (?:Все публикации|All publications)\s*$", document, re.M)
     if not heading:
         raise ValueError("Publication archive heading missing")
     seen = {normalized(html.unescape(t).replace("\\", "").rstrip("."))
             for t in re.findall(r"^- \*\*(.*?)\*\*", document, re.M)}
+    seen_dois = {unquote(doi).lower().rstrip(".,") for doi in re.findall(r"https://doi.org/([^\s)]+)", document)}
     added = 0
     for paper in sorted(papers, key=lambda p: (-int(p["year"]), p["title"])):
         key = normalized(paper["title"])
-        if key in seen:
+        if key in seen or paper["doi"].lower() in seen_dois:
             continue
         seen.add(key)
+        seen_dois.add(paper["doi"].lower())
         year = paper["year"]
-        title = md(paper["title"].rstrip("."))
-        venue = f" *{md(paper['venue'])}*." if paper["venue"] else ""
-        line = f"- **{title}.** {md(paper['authors'])}.{venue} {year}. [Google Scholar]({paper['link']})\n"
+        line = render_publication(paper)
         # Only archive years after the main heading; featured records stay untouched.
         years = list(re.finditer(r"^### (\d{4})\s*\n", document[heading.end():], re.M))
         matching = next((m for m in years if m[1] == year), None)
@@ -173,6 +250,8 @@ def run(root, dry_run=False):
     config = json.loads((root / "tools/scholar-profiles.json").read_text(encoding="utf-8"))
     targets = [root / relative for relative in config["publication_files"]]
     originals = {target: target.read_text(encoding="utf-8") for target in targets}
+    pending_path = root / "data/scholar-pending.json"
+    previous = json.loads(pending_path.read_text(encoding="utf-8")) if pending_path.exists() else []
     robots = fetch(ORIGIN + "/robots.txt")
     papers = []
     for index, profile in enumerate(config["profiles"]):
@@ -190,14 +269,43 @@ def run(root, dry_run=False):
                 print(f"Skipping suspicious/truncated title: {item['title']}")
                 continue
             papers.append(item)
+    # Scholar discovers candidates. Only complete, unambiguous Crossref records
+    # are allowed into the public bibliography; never guess missing metadata.
+    papers.extend(previous)
+    verified, pending, processed = [], [], set()
+    title_sets = [{normalized(html.unescape(title).replace("\\", ""))
+                   for line in original.splitlines() if "[Google Scholar]" not in line
+                   for title in re.findall(r"^- \*\*(.*?)\*\*", line)} for original in originals.values()]
+    existing_titles = set.intersection(*title_sets)
+    for paper in papers:
+        key = normalized(paper["title"])
+        if key in processed or key in existing_titles:
+            continue
+        processed.add(key)
+        metadata = verified_metadata(paper, crossref_lookup(paper))
+        if metadata:
+            render_publication(metadata)  # Validate before any files are written.
+            verified.append(metadata)
+        else:
+            pending.append({**paper, "reason": "No unique verified Crossref record with full author metadata"})
+            print(f"Pending metadata verification: {paper['title']}")
     # Fetch and validate every profile and every document before touching any file.
-    changes = {target: merge_document(original, papers) for target, original in originals.items()}
+    changes = {target: merge_document(original, verified, papers) for target, original in originals.items()}
     for target, (updated, count) in changes.items():
         print(f"{target.relative_to(root)}: {count} additions{' (dry run)' if dry_run else ''}")
-        if count and not dry_run:
+        if updated != originals[target] and not dry_run:
             temporary = target.with_suffix(target.suffix + ".tmp")
             temporary.write_text(updated, encoding="utf-8")
             temporary.replace(target)
+    if not dry_run:
+        pending_path.parent.mkdir(parents=True, exist_ok=True)
+        # Retain previously unresolved candidates even after they leave the first
+        # 100 results. Verified/existing papers no longer need pending entries.
+        resolved = existing_titles | {normalized(p["title"]) for p in verified}
+        outstanding = {normalized(p["title"]): p for p in previous + pending
+                       if normalized(p["title"]) not in resolved}
+        pending_path.write_text(json.dumps(sorted(outstanding.values(), key=lambda p: p["title"]),
+                                           ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
