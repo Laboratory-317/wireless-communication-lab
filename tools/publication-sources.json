@@ -1,0 +1,16 @@
+{
+  "allowed_hosts": [
+    "journals.rcsi.science",
+    "journals.eco-vector.com",
+    "journal.tusur.ru",
+    "media-publisher.ru",
+    "onlinelibrary.wiley.com"
+  ],
+  "publisher_searches": [
+    {
+      "venue": "T-Comm",
+      "url": "https://journals.rcsi.science/2072-8735/search/search?query={query}"
+    }
+  ],
+  "articles": []
+}

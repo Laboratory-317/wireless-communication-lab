@@ -42,6 +42,7 @@ jobs:
       - name: Synchronize recent Google Scholar publications
         if: github.event_name != 'push' && github.ref == 'refs/heads/main'
         run: |
+          python -m unittest discover -s tools -p 'test_*sources.py'
           python -m unittest discover -s tools -p test_sync_scholar.py
           python tools/sync-scholar.py
 

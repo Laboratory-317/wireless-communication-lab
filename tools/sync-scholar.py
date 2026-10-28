@@ -9,6 +9,7 @@ import time
 import unicodedata
 from urllib.parse import urlencode, urlsplit, parse_qs, quote, unquote
 from urllib.request import Request, urlopen
+from publication_sources import SourceClient, resolve_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://scholar.google.com"
@@ -186,10 +187,12 @@ def verified_metadata(paper, matches):
     return next(iter(accepted.values())) if len(accepted) == 1 else None
 
 
-def render_publication(paper):
-    if any(not paper.get(key) for key in ("title", "authors", "venue", "year", "doi")):
+def render_publication(paper, language="en"):
+    if any(not paper.get(key) for key in ("title", "authors", "venue", "year")):
         raise ValueError("Publication lacks verified bibliographic fields")
-    if re.search(r"\.\.\.|…|\bet\s+al\b", paper["authors"], re.I):
+    if not paper.get("doi") and not re.match(r"^https://", paper.get("source_url", "")):
+        raise ValueError("Publication requires a DOI or verified source URL")
+    if re.search(r"\.\.\.|…|\bet\s+al\b|и\s+др\b", paper["authors"], re.I):
         raise ValueError("Truncated author list must not enter the bibliography")
     title = paper["title"].rstrip(".")
     if not title.endswith(("?", "!")):
@@ -204,8 +207,13 @@ def render_publication(paper):
     elif paper.get("pages"):
         pages = re.sub(r"(?<=\d)[-–—]+(?=\d)", "–", str(paper["pages"]))
         fields.append("pp. " + md(pages))
+    if paper.get("doi"):
+        link = f"[DOI](https://doi.org/{quote(paper['doi'], safe='/')})"
+    else:
+        label = "Источник" if language == "ru" else "Source"
+        link = f"[{label}]({quote(paper['source_url'], safe=':/?=&%')})"
     return (f"- **{md(title)}** {md(paper['authors'].rstrip('.'))}. "
-            + ", ".join(fields) + f". {paper['year']}. [DOI](https://doi.org/{quote(paper['doi'], safe='/')})\n")
+            + ", ".join(fields) + f". {paper['year']}. {link}\n")
 
 
 def merge_document(document, papers, discovered=()):
@@ -226,12 +234,14 @@ def merge_document(document, papers, discovered=()):
     added = 0
     for paper in sorted(papers, key=lambda p: (-int(p["year"]), p["title"])):
         key = normalized(paper["title"])
-        if key in seen or paper["doi"].lower() in seen_dois:
+        doi = paper.get("doi", "").lower()
+        if key in seen or (doi and doi in seen_dois):
             continue
         seen.add(key)
-        seen_dois.add(paper["doi"].lower())
+        if doi:
+            seen_dois.add(doi)
         year = paper["year"]
-        line = render_publication(paper)
+        line = render_publication(paper, "ru" if heading[0].strip().endswith("Все публикации") else "en")
         # Only archive years after the main heading; featured records stay untouched.
         years = list(re.finditer(r"^### (\d{4})\s*\n", document[heading.end():], re.M))
         matching = next((m for m in years if m[1] == year), None)
@@ -252,6 +262,16 @@ def run(root, dry_run=False):
     originals = {target: target.read_text(encoding="utf-8") for target in targets}
     pending_path = root / "data/scholar-pending.json"
     previous = json.loads(pending_path.read_text(encoding="utf-8")) if pending_path.exists() else []
+    sources_path = root / "tools/publication-sources.json"
+    sources = json.loads(sources_path.read_text(encoding="utf-8")) if sources_path.exists() else {}
+    source_client = SourceClient(sources.get("allowed_hosts", []), robots_allowed)
+    known_sources = {}
+    for original in originals.values():
+        for line in original.splitlines():
+            match = re.match(r"^- \*\*(.*?)\*\*", line)
+            if match:
+                key = normalized(html.unescape(match[1]).replace("\\", ""))
+                known_sources.setdefault(key, []).extend(re.findall(r"\]\((https://[^\s)]+)\)", line))
     robots = fetch(ORIGIN + "/robots.txt")
     papers = []
     for index, profile in enumerate(config["profiles"]):
@@ -269,9 +289,17 @@ def run(root, dry_run=False):
                 print(f"Skipping suspicious/truncated title: {item['title']}")
                 continue
             papers.append(item)
-    # Scholar discovers candidates. Only complete, unambiguous Crossref records
-    # are allowed into the public bibliography; never guess missing metadata.
+    # Scholar discovers candidates; independent sources verify the bibliography.
     papers.extend(previous)
+    combined = {}
+    for candidate in papers:
+        key = normalized(candidate["title"])
+        if key not in combined:
+            combined[key] = dict(candidate)
+        source_urls = combined[key].get("source_urls", []) + candidate.get("source_urls", [])
+        if source_urls:
+            combined[key]["source_urls"] = sorted(set(source_urls))
+    papers = list(combined.values())
     verified, pending, processed = [], [], set()
     title_sets = [{normalized(html.unescape(title).replace("\\", ""))
                    for line in original.splitlines() if "[Google Scholar]" not in line
@@ -282,12 +310,29 @@ def run(root, dry_run=False):
         if key in processed or key in existing_titles:
             continue
         processed.add(key)
-        metadata = verified_metadata(paper, crossref_lookup(paper))
+        attempts, matches = [], []
+        try:
+            matches = crossref_lookup(paper)
+            metadata = verified_metadata(paper, matches)
+            attempts.append({"source": "Crossref", "status": "verified" if metadata else "no_unique_match"})
+        except (OSError, ValueError) as error:
+            metadata = None
+            attempts.append({"source": "Crossref", "status": "unavailable", "reason": str(error)})
+        if not metadata:
+            urls = list(known_sources.get(key, []))
+            for match in matches:
+                if any(normalized(text_only(t)) == key for t in match.get("title", [])):
+                    primary = match.get("resource", {}).get("primary", {}).get("URL")
+                    if primary:
+                        urls.append(primary)
+            metadata, fallback_attempts = resolve_sources(paper, sources, source_client, urls)
+            attempts.extend(fallback_attempts)
         if metadata:
             render_publication(metadata)  # Validate before any files are written.
             verified.append(metadata)
         else:
-            pending.append({**paper, "reason": "No unique verified Crossref record with full author metadata"})
+            pending.append({**paper, "reason": "No unique complete record from Crossref, publisher or eLIBRARY",
+                            "attempts": attempts})
             print(f"Pending metadata verification: {paper['title']}")
     # Fetch and validate every profile and every document before touching any file.
     changes = {target: merge_document(original, verified, papers) for target, original in originals.items()}
