@@ -1,0 +1,159 @@
+{
+  "sourceCommit": "9c28dadcea98835b0fa915d180c986b6590adbaf",
+  "pages": [
+    {
+      "file": "ru/index.html",
+      "title": "Главная"
+    },
+    {
+      "file": "ru/research.html",
+      "title": "Научные направления"
+    },
+    {
+      "file": "ru/research-wireless.html",
+      "title": "5G/6G"
+    },
+    {
+      "file": "ru/research-polar.html",
+      "title": "Полярные коды"
+    },
+    {
+      "file": "ru/research-access.html",
+      "title": "Множественный доступ"
+    },
+    {
+      "file": "ru/research-metasurfaces.html",
+      "title": "Реконфигурируемые мета-поверхности"
+    },
+    {
+      "file": "ru/education.html",
+      "title": "Образовательная деятельность"
+    },
+    {
+      "file": "ru/projects.html",
+      "title": "Проекты"
+    },
+    {
+      "file": "ru/patents.html",
+      "title": "Патенты"
+    },
+    {
+      "file": "ru/publications.html",
+      "title": "Публикации"
+    },
+    {
+      "file": "ru/people.html",
+      "title": "Коллектив"
+    },
+    {
+      "file": "ru/students.html",
+      "title": "От любопытства к исследованию"
+    },
+    {
+      "file": "ru/cv-kryukov.html",
+      "title": "Крюков Яков Владимирович"
+    },
+    {
+      "file": "ru/cv-pokamestov.html",
+      "title": "Покаместов Дмитрий Алексеевич"
+    },
+    {
+      "file": "ru/cv.html",
+      "title": "CV"
+    },
+    {
+      "file": "ru/news.html",
+      "title": "Новости"
+    },
+    {
+      "file": "ru/media.html",
+      "title": "Медиа"
+    },
+    {
+      "file": "en/index.html",
+      "title": "Home"
+    },
+    {
+      "file": "en/research.html",
+      "title": "Research Areas"
+    },
+    {
+      "file": "en/research-wireless.html",
+      "title": "5G/6G"
+    },
+    {
+      "file": "en/research-polar.html",
+      "title": "Polar codes"
+    },
+    {
+      "file": "en/research-access.html",
+      "title": "Multiple access"
+    },
+    {
+      "file": "en/research-metasurfaces.html",
+      "title": "Reconfigurable metasurfaces"
+    },
+    {
+      "file": "en/education.html",
+      "title": "Education"
+    },
+    {
+      "file": "en/projects.html",
+      "title": "Projects"
+    },
+    {
+      "file": "en/patents.html",
+      "title": "Patents"
+    },
+    {
+      "file": "en/publications.html",
+      "title": "Publications"
+    },
+    {
+      "file": "en/people.html",
+      "title": "Team"
+    },
+    {
+      "file": "en/students.html",
+      "title": "Turn curiosity into research"
+    },
+    {
+      "file": "en/cv-kryukov.html",
+      "title": "Yakov Kryukov"
+    },
+    {
+      "file": "en/cv-pokamestov.html",
+      "title": "Dmitriy Pokamestov"
+    },
+    {
+      "file": "en/cv.html",
+      "title": "CV"
+    },
+    {
+      "file": "en/news.html",
+      "title": "News"
+    },
+    {
+      "file": "en/media.html",
+      "title": "Media"
+    }
+  ],
+  "languages": {
+    "ru": {
+      "people": 9,
+      "research": 4,
+      "courses": 3,
+      "news": 1,
+      "profiles": 2,
+      "publicationItems": 135
+    },
+    "en": {
+      "people": 9,
+      "research": 4,
+      "courses": 3,
+      "news": 1,
+      "profiles": 2,
+      "publicationItems": 135
+    }
+  }
+}

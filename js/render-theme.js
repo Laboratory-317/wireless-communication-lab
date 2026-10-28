@@ -25,6 +25,17 @@
     }
   }
 
+  function designComparison(language) {
+    const query = new URLSearchParams(window.location.search);
+    const person = query.get('person');
+    const destination = page === 'home' ? 'index' : page === 'cv' && ['kryukov', 'pokamestov'].includes(person) ? `cv-${person}` : page;
+    const legacyQuery = new URLSearchParams({ lang: language });
+    if (page === 'cv' && person) legacyQuery.set('person', person);
+    const current = page === 'home' ? 'index' : page;
+    const ru = language === 'ru';
+    return `<nav class="design-compare" aria-label="${ru ? 'Версия оформления' : 'Site design'}"><span>${ru ? 'Оформление' : 'Design'}</span><a href="${current}.html?${legacyQuery}" aria-current="page">${ru ? 'Прежнее' : 'Classic'}</a><a href="../modern/${language}/${destination}.html">${ru ? 'Новое' : 'New'}</a></nav>`;
+  }
+
   function languageSwitch(currentLanguage) {
     return `
       <div class="language-switch" role="group" aria-label="Language">
@@ -582,6 +593,7 @@
 
     app.innerHTML = `
       <a class="skip-link" href="#content">${html(content.skipNavigation)}</a>
+      ${designComparison(language)}
       <header class="site-header">
         <div class="topbar">
           <div class="topbar-actions">

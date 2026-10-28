@@ -1,0 +1,203 @@
+---
+{
+  "title": "Publications",
+  "lang": "en",
+  "description": "Journal articles and conference papers. Search by title, author, publication venue and year.",
+  "pagetitle": "Publications — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "body-classes": "publications-page site-page",
+  "toc-title": "On this page",
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+
+## Selected
+
+- **Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)
+- **Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)
+- **Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Article](https://journals.eco-vector.com/0033-8494/article/view/684125)
+- **Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)
+- **Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)
+- **Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)
+- **Symbol Error-Rate Analytical Expressions for a Two-User PD-NOMA System with Square QAM.** Yakov V Kryukov, Dmitriy A Pokamestov, Serafim A Novichkov. *Symmetry*, vol. 13, no. 11, 2153. 2021. [DOI](https://doi.org/10.3390/sym13112153)
+- **Концепция физического уровня систем связи пятого поколения.** Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Ренат Рамазанович Абенов, Анатолий Яковлевич Демидов. *Известия высших учебных заведений. Радиоэлектроника*, vol. 60, no. 7, pp. 367–382. 2017. [Источник](https://elibrary.ru/item.asp?id=30452010) [DOI](https://doi.org/10.20535/s0021347017070019)
+
+## All publications
+
+### 2026
+
+- **A Novel Genetic Algorithm for Low-Complexity PAPR Reduction in OTFS Modulation.** Hashem Khaled Rehab, Artyom Konovalchikov, Eugeniy Rogozhnikov, Dmitriy Pokamestov, Kirill Dinochenko. *2026 Systems of Signal Synchronization, Generating and Processing in Telecommunications (SYNCHROINFO)*, pp. 1–8. 2026. [DOI](https://doi.org/10.1109/synchroinfo70145.2026.11613219)
+- **Fairness-Aware Comparison of PD-NOMA and OMA Under Max-Min, Proportional, and Round-Robin Scheduling.** Yakov Kryukov, Dmitriy Pokamestov, Artem Shinkevich, Georgy Shalin, Sergey Eremeev, Dmitriy Ilinskiy. *Internet Technology Letters*, vol. 9, no. 2, e70219. 2026. [DOI](https://doi.org/10.1002/itl2.70219)
+- **Множественный доступ с разделением по скорости: современное состояние и перспективы развития.** А. С. Шинкевич, Д. А. Покаместов, Я. В. Крюков, Г. Н. Шалин, С. А. Еремеев, Д. Е. Ильинский. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 29, no. 1 (89), pp. 53–67. 2026. [Источник](https://elibrary.ru/item.asp?id=91678911)
+- **Расчет мощности для обеспечения заданного качества приема в системе PD-NOMA с двумя пользователями и QAM-сигналами.** Я. В. Крюков, Д. А. Покаместов, А. С. Задорин, А. В. Филатов. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 18, no. 1, pp. 93–100. 2026. [Источник](https://elibrary.ru/item.asp?id=89121112)
+
+### 2025
+
+- **Adaptation of Polar Codes to Enhance BER Performance in Next-Generation Communication Systems.** Georgiy Shalin, Dmitriy Pokamestov, Yakov Kryukov, Artyom Shinkevich, Sergey Eremeev, Dmitriy Ilinskiy. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 330–333. 2025. [DOI](https://doi.org/10.1109/edm65517.2025.11096696)
+- **Analysis and design of common channel precoding algorithms for RSMA.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Eugeniy Rogozhnikov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 440–444. 2025.
+- **Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)
+- **Comparative Analysis of RSMA and SDMA under ZF and RZF Precoding.** Artyom Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Rudolf Litvinov, Eugeniy Rogozhnikov. *2025 IEEE XVII International Scientific and Technical Conference on Actual Problems of Electronic Instrument Engineering (APEIE)*, pp. 1–5. 2025. [DOI](https://doi.org/10.1109/apeie66761.2025.11289218)
+- **Evaluation of the capacity of Rate-Splitting Multiple Access communication systems.** DА Pokamestov, АV Filatov, Ya V Kryukov, АS Shinkevich, GN Shalin, ЕV Rogozhnikov. *Journal of Communications Technology and Electronics*, vol. 70, no. 1, pp. 88–95. 2025. DOI: 10.31857/S0033849425010102. [Article](https://journals.eco-vector.com/0033-8494/article/view/684125)
+- **Influence of Phase States of Binary Unit Cell on Ris Characteristics.** Sergey Eremeev, Dmitriy Ilinskiy, Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov, Ivan Rybakov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–524. 2025. [DOI](https://doi.org/10.1109/edm65517.2025.11096689)
+- **Linear Frequency Modulated Signals in a Multipath Channel with Time and Frequency Offsets.** S Mukhamadiev, E Rogozhnikov, K Dinochenko, N Kalashnikova, Y Kryukov, D Pokamestov, E Lomakov. *Radiotehnika i èlektronika*, vol. 70, no. 6, pp. 583–597. 2025. [DOI](https://doi.org/10.7868/s3034590125060053)
+- **Modeling and Prototyping of Unit Cell for Reconfigurable Intelligent Surface: Electromagnetic Model, Design and Circuitry.** Dmitriy Ilinskiy, Sergey Eremeev, Yakov Kryukov, Dmitriy Pokamestov, Georgiy Shalin, Artem Shinkevich. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 450–453. 2025.
+- **Моделирование каналов многопользовательской системы связи с STAR-RIS в quadriga.** Я. В. Крюков, Д. А. Покаместов, С. А. Еремеев, Д. Е. Ильинский, Г. Н. Шалин, А. С. Шинкевич. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 17, no. 6, pp. 727–736. 2025. [Источник](https://elibrary.ru/item.asp?id=88792041)
+- **Однопортовое измерение RIS: теория, расчётная модель и эксперимент на 2,4 ггц.** С. А. Еремеев, Д. Е. Ильинский, Я. В. Крюков. *Шарыгинские чтения: Международная научная конференция ведущих научных школ в области радиолокации, радионавигации и радиоэлектронных систем передачи информации*, vol. 1, no. 1, pp. 139–144. 2025. [Источник](https://elibrary.ru/item.asp?id=89085072)
+- **Пассивный микроволновый радиометр 3-миллиметрового диапазона длин волн для проведения режимных наблюдений природных сред.** А. В. Филатов, Д. А. Покаместов, Я. В. Крюков, А. С. Шинкевич, Г. А. Шалин. *Известия высших учебных заведений. Радиофизика*, vol. 68, no. 7, pp. 545–555. 2025. [DOI](https://doi.org/10.52452/00213462_2025_68_07_545)
+- **Полярные коды: обзор подходов и направлений исследований.** Георгий Николаевич Шалин, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Артём Сергеевич Шинкевич, Сергей Александрович Еремеев, Дмитрий Евгеньевич Ильинский. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 28, no. 3, pp. 14–26. 2025.
+- **Разработка элементарной ячейки для реконфигурируемой интеллектуальной поверхности.** Д. Е. Ильинский, С. А. Еремеев, Я. В. Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-1, pp. 173–176. 2025. [Источник](https://elibrary.ru/item.asp?id=82965338)
+
+### 2024
+
+- **BER analytical expression for two-user PD-NOMA with square QAM by polynomial approximation.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *AIP Conference Proceedings*, vol. 2969, no. 1, 050022. 2024.
+- **Comparison of PD-NOMA Capacity with Conventional and Joint Gray-Mapping.** Andrey A Brovkin, Yakov V Kryukov, Dmitriy A Pokamestov, Artem S Shinkevich, Georgiy N Shalin, Dmitriy E Ilinskiy. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–523. 2024.
+- **Cистемы связи 6G: концепция, тренды, технологии физического уровня.** ДА Покаместов, ЯВ Крюков, РР Абенов, ЕВ Рогожников, АА Бровкин, АС Шинкевич, ГН Шалин. *Радиотехника и электроника*, vol. 69, no. 1, pp. 3–33. 2024. [DOI](https://doi.org/10.31857/S0033849424010016)
+- **Design of SCMA codebooks based on APSK constellations for Rayleigh fading channels.** I Kanatbekuli, D Pokamestov, Y Kryukov, G Shalin, A Shinkevich. *Third International Conference on Digital Technologies, Optics, and Materials Science (DTIEE 2024)*, vol. 13217, pp. 75–83. 2024.
+- **Evaluation of the efficiency of rate-splitting multiple access in next-generation communication systems scenarios.** Dmitriy Pokamestov, Artyom Shinkevich, Yakov Kryukov, Evgeniy Rogozhnikov, Georgiy Shalin, Sergey Zemlyanukhin. *2024 IEEE 9th All-Russian Microwave Conference (RMC)*, pp. 161–165. 2024.
+- **Implementation of scheduling in hybrid power domain non-orthogonal multiple access system considering adaptive modulation and coding schemes selection.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov. *International Journal of Communication Systems*, vol. 37, no. 2, e5642. 2024. [DOI](https://doi.org/10.1002/dac.5642)
+- **MCS map for link-level simulation of two-user PD-NOMA system.** Yakov Kryukov, Dmitriy Pokamestov, Andrey Brovkin, Artem Shinkevich, Georgiy Shalin. *Proceedings on Engineering*, vol. 6, no. 1, pp. 151–160. 2024. [DOI](https://doi.org/10.24874/pes06.01.017)
+- **Reducing Successive Interference Cancellation Iterations in Hybrid Beamforming Multiuser Massive Multiple Input Multiple Output Systems Through Grouping Users with Symmetry Channels.** Hashem Khaled Rehab, Eugeniy Rogozhnikov, Kirill Savenko, Semen Mukhamadiev, Yakov Kryukov, Dmitriy Pokamestov. *Symmetry*, vol. 16, no. 11, 1437. 2024.
+- **Simulation of RIS-assisted OFDM multipath channel.** Sergey A Eremeev, Dmitriy E Ilinskiy, Yakov V Kryukov, Dmitriy A Pokamestov, Georgiy N Shalin, Artem S Shinkevich. *2024 IEEE 25th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 660–663. 2024. [DOI](https://doi.org/10.1109/edm61683.2024.10615142)
+- **Алгоритм совместной оценки и компенсации ошибок временной и частотной синхронизации сигналов с возможностью регулирования точности оценки.** С. М. Мухамадиев, Е. В. Рогожников, Х. К. Х. А. А. Рехаб, К. В. Диноченко, Я. В. Крюков, Н. Г. Калашникова. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 3, pp. 331–340. 2024. [DOI](https://doi.org/10.17725/rensit.2024.16.331)
+- **Применение физического уровня 5G NR в космических коммуникациях, оценка эффективности.** Евгений Васильевич Рогожников, Эдгар Михайлович Дмитриев, Данила Александрович Кондрашов, Яков Владимирович Крюков, Артем Владимирович Коновальчиков, Семен Минисович Мухамадиев. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 16, no. 1, pp. 143–156. 2024. DOI: 10.17725/rensit.2024.16.143. [Article](http://rensit.ru/vypuski/article/550/)
+- **Формирование расширенных сигнально-кодовых конструкций на основе ldpс кодека 5G NR.** Денис Вячеславович Рыбалов, Андрей Александрович Моисеенко, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Александр Владимирович Филатов, Александр Михайлович Заболоцкий. *T Comm*, vol. 18, no. 12. 2024.
+
+### 2023
+
+- **Adaptation of the polar coding procedure in 5G NR for signaling in rayleigh channels.** G. N. Shalin, D. A. Pokamestov, Ya. V. Krykov, A. V. Filatov, A. S. Shinkevic, A. A. Brovkin. *T-Comm*, vol. 17, no. 11, pp. 58–63. 2023. [Источник](https://elibrary.ru/item.asp?id=59722088)
+- **Differential properties of polar codes.** Georgiy Shalin, Dmitriy Pokamestov, Yakov Kryukov, Artem Shinkevich, Andrey Brovkin, Eugeniy Rogozhnikov. *E3S Web of Conferences*, vol. 376, 01060. 2023.
+- **Evaluation of LDPC codes efficiency in channels with fading.** Artem Shinkevich, Dmitriy Pokamestov, Yakov Kryukov, Georgiy Shalin, Andrey Brovkin, Eugeniy Rogozhnikov. *E3S Web of Conferences*, vol. 376, 01061. 2023. [DOI](https://doi.org/10.1051/e3sconf/202337601061)
+- **Method for Digital Cancellation of System Interference in a Full-Duplex Power Line Communication System.** Semen Mukhamadiev, Eugeniy Rogozhnikov, Edgar Dmitriyev, Dmitriy Pokamestov, Yakov Kryukov, Serafim Novichkov, Dmitry Lakontsev. *Electronics*, vol. 12, no. 10, 2211. 2023. [DOI](https://doi.org/10.3390/electronics12102211)
+- **Representation of ICI as AWGN in PD-NOMA system model.** Yakov V Kryukov, Dmitriy A Pokamestov, Andrey A Brovkin. *2023 IEEE 24th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 580–583. 2023. [DOI](https://doi.org/10.1109/edm58354.2023.10225080)
+- **Моделирование карты радиопокрытия для систем PD-NOMA в сценарии robotics communication.** С. А. Еремеев, Д. Е. Ильинский, Ю. И. Можаров, А. Д. Долженко, Я. В. Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-1, pp. 139–141. 2023. [Источник](https://elibrary.ru/item.asp?id=54515120)
+- **Моделирование радиокарты помещения для оценки качества связи различных устройств.** Д. Е. Ильинский, Ю. И. Можаров, С. А. Еремеев, А. Д. Долженко, Я. В. Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-1, pp. 123–125. 2023. [Источник](https://elibrary.ru/item.asp?id=54515115)
+- **Помехоустойчивость многопользовательских систем MIMO при неидеальной оценке канала и других искажениях.** Артём Шинкевич, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Георгий Николаевич Шалин, Андрей Александрович Бровкин. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 15, no. 4, pp. 441–452. 2023. [DOI](https://doi.org/10.17725/rensit.2023.15.441)
+- **Распределение ресурса системы мобильной связи согласно стратегии proportional fair.** А. А. Бровкин, Я. В. Крюков, Д. А. Покаместов. *Сборник избранных статей научной сессии ТУСУР*, no. 1-3, pp. 111–114. 2023. [Источник](https://elibrary.ru/item.asp?id=54623922)
+- **Сравнение теоретической и реальной пропускной способности PD-NOMA.** Я. В. Крюков, Д. А. Покаместов, Е. В. Рогожников. *Радиотехника и электроника*, vol. 68, no. 1, pp. 95–102. 2023. [Источник](https://elibrary.ru/item.asp?id=50404421)
+
+### 2022
+
+- **Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)
+- **Adaptive Modulation Metod for Communication Systems Using Signals with Orthogonal Frequency Multiplexing.** Eugeniy V Rogozhnikov, Yakov V Kryukov, Edgar Dmitriyev, Dmitriy A Pokamestov, Danila A Kondrashov, Serafim A Novichkov. *2022 IEEE 23rd International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 246–250. 2022. [DOI](https://doi.org/10.1109/edm55285.2022.9855133)
+- **Modulation and coding scheme in SCMA communication system.** DA Pokamestov, Ya V Kryukov, I Kanatbekuli, EV Rogozhnikov, RR Abenov. *Journal of Physics: Conference Series*, vol. 2373, no. 5, 052028. 2022. [DOI](https://doi.org/10.1088/1742-6596/2373/5/052028)
+- **Scheduling PD-NOMA with round-robin, equal-rate and proportional-fair strategies.** Andrey A Brovkin, Yakov V Kryukov, Dmitriy A Pokamestov, Evgeniy V Rogozhnikov, Georgiy N Shalin, Artyom S Shinkevich. *2022 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–6. 2022. [DOI](https://doi.org/10.1109/sibcon56144.2022.10002960)
+- **SCMA-LDPC coded communication system.** Dmitriy Pokamestov, Artem Shinkevich, Yakov Kryukov, Georgiy Shalin, Eugeniy Rogozhnikov, Edgar Dmitriyev. *2022 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–5. 2022. [DOI](https://doi.org/10.1109/sibcon56144.2022.10003016)
+- **Simulation of Massive Transmission in Wide Area UNB LPWANs.** Ya V Kryukov, DA Pokamestov. *Proceedings of the Computational Methods in Systems and Software*, pp. 600–605. 2022. [DOI](https://doi.org/10.1007/978-3-031-21438-7_48)
+- **Исследование моделей пространственно-временного кодирования MIMO.** А. Н. Соломеина, Д. В. Митченков, Д. А. Покаместов, Я. В. Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-2, pp. 211–214. 2022. [Источник](https://elibrary.ru/item.asp?id=49525475)
+- **Оценка эффективности LDPC кодов в системах связи 5G NR.** АС Шинкевич, ДА Покаместов, ГН Шалин, АА Жалсараев. *Вызовы цифровой экономики: импортозамещение и стратегические приоритеты развития на региональном уровне*, 694. 2022.
+- **Приемник сигналов многоантенных систем связи с множественным доступом на основе разреженных кодов, основанный на qr-разложении.** Канатбекулы Ислам, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Ренат Рамазанович Абенов. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 14, no. 3, pp. 291–300. 2022.
+- **Сравнение декодеров группового сигнала с неортогональным множественным доступом, сформированного из сигнально-кодовых конструкций LTE.** Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов, Андрей Александрович Бровкин, Евгений Васильевич Рогожников. *Радиоэлектроника. Наносистемы. Информационные технологии*, vol. 14, no. 4, pp. 463–472. 2022.
+- **Экспериментальный макет системы PD-NOMA.** ЯВ Крюков. *Инициативы молодых-науке и производству*, pp. 106–109. 2022.
+
+### 2021
+
+- **Adapting SCMA Codebooks to Channel State.** Dmitriy A Pokamestov, Yakov V Kryukov, Eugeniy V Rogozhnikov, Islam Kanatbekuli. *2021 3rd International Youth Conference on Radio Electronics, Electrical and Power Engineering (REEPE)*, pp. 1–4. 2021. [DOI](https://doi.org/10.1109/reepe51337.2021.9388063)
+- **Joint selection of the MCS’s and power allocation coefficients in the two-user downlink PD-NOMA system.** Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov. *E3S Web of Conferences*, vol. 270, 01031. 2021. [DOI](https://doi.org/10.1051/e3sconf/202127001031)
+- **Methods for improving the accuracy of frequency shift estimation in 5G NR.** Vladimir S Milyutin, Eugeniy V Rogozhnikov, Kirill V Petrovskiy, Dmitriy A Pokamestov, Edgar M Dmitriyev, Serafim A Novichkov. *2021 International conference engineering and telecommunication (En&T)*, pp. 1–5. 2021.
+- **SCMA-MIMO system with adaptation to the channel state.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Islam Kanatbekuli, Edgar Dmitriyev. *Journal of Physics: Conference Series*, vol. 2134, no. 1, 012025. 2021. [DOI](https://doi.org/10.1088/1742-6596/2134/1/012025)
+- **Spectral efficiency analysis of two-user Downlink PD-NOMA with LTE modulation and coding schemes.** Ya V Kryukov, DA Pokamestov, RR Abenov, SM Mukhamadiev, I Kanatbekuli. *Journal of Physics: Conference Series*, vol. 2134, no. 1, 012023. 2021.
+- **Symbol Error-Rate Analytical Expressions for a Two-User PD-NOMA System with Square QAM.** Yakov V Kryukov, Dmitriy A Pokamestov, Serafim A Novichkov. *Symmetry*, vol. 13, no. 11, 2153. 2021. [DOI](https://doi.org/10.3390/sym13112153)
+- **The effect of frequency offset on the probability of bit and packet errors in processing signals with chirp spread spectrum modulation.** Semen M Mukhamadiev, Edgar M Dmitriyev, Evgeny V Rogozhnikov, Natalia V Duplishcheva, Yakov V Kryukov. *2021 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–5. 2021. [DOI](https://doi.org/10.1109/sibcon50419.2021.9438858)
+- **Time and frequency synchronization for NOMA communication system.** DA Pokamestov, Ya V Kryukov, K Yu Popova, DOK Balandin. *AIP Conference Proceedings*, vol. 2402, no. 1, 050063. 2021.
+- **Адаптация сигналов с множественным доступом на основе разреженных кодов к состоянию канала передачи.** ДА Покаместов, ЯВ Крюков, АС Мырзахметов. *НАУКА. ТЕХНОЛОГИИ. ИННОВАЦИИ*, pp. 109–114. 2021.
+- **Математическая модель оценки вероятности коллизий преамбул при случайном доступе в сценарии массового межмашинного взаимодействия.** Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов, Евгений Васильевич Рогожников, Серафим Алексеевич Новичков, Дмитрий Владимирович Лаконцев. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 24, no. 3, pp. 33–37. 2021.
+- **Модель оценки пропускной способности транспортных backhaul сетей 5G NR.** Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Серафим Алексеевич Новичков, Дмитрий Владимирович Лаконцев. *T-Comm: Телекоммуникации и транспорт*, vol. 15, no. 12, pp. 11–16. 2021. [DOI](https://doi.org/10.36724/2072-8735-2021-15-12-11-16)
+- **Опыт внедрения оборудования и сапр компании keysight technologies при подготовке конкурентоспособных специалистов радиотехнического профиля.** Ксения Юрьевна Попова, Евгений Васильевич Рогожников, Яков Владимирович Крюков, Августина Ивановна Попова. *Современное образование: повышение конкурентоспособности университетов*, pp. 114–119. 2021.
+- **Повышение помехоустойчивости систем связи с OFDM.** ГН Шалин, АС Шинкевич, ДА Покаместов. *Электронные средства и системы управления: материалы XVII Международной научно-практической конференции*, vol. 2, no. 2$\pi$, pp. 11–14. 2021.
+- **Экспериментальное исследование системы передачи на основе FBMC/OQAM.** РР Абенов, ЕВ Рогожников, ЯВ Крюков, ДА Покаместов, ПА Абенова. *Известия высших учебных заведений России. Радиоэлектроника*, vol. 24, no. 6, pp. 16–26. 2021.
+
+### 2020
+
+- **A simple proportional fair scheduling for downlink power domain non-orthogonal multiple access systems.** Ya V Kryukov, AA Brovkin, DA Pokamestov, AS Kvashnina. *Journal of Physics: Conference Series*, vol. 1679, no. 3, 032055. 2020. [DOI](https://doi.org/10.1088/1742-6596/1679/3/032055)
+- **Analysis of the downlink channel estimation methods in communication systems with SCMA.** Dmitriy Pokamestov, Yakov Kryukov, Evgeniy Rogozhnikov, Evgeniy Mishchenko, Andrew Brovkin. *2020 International Conference on Electrical, Communication, and Computer Engineering (ICECCE)*, pp. 1–6. 2020. [DOI](https://doi.org/10.1109/icecce49384.2020.9179266)
+- **Approach to Implementation Full-duplex Communication Technology in Power Line Communication Systems.** Andrey K Movchan, Eugeniy V Rogozhnikov, Edgar M Dmitriyev, Dmitriy A Pokamestov, Kirill V Petrovskiy. *2020 21st International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 112–117. 2020. [DOI](https://doi.org/10.1109/edm49804.2020.9153499)
+- **Downlink and uplink MIMO-SCMA System.** I Kanatbekuli, D Pokamestov, Y Kryukov, E Rogozhnikov. *Journal of Physics: Conference Series*, vol. 1679, no. 3, 032074. 2020.
+- **Method for the Blind Estimation of Power Coefficients in PD-NOMA Systems.** Ya V Kryukov, DA Pokamestov, EV Rogozhnikov, AK Movchan, AS Kvashnina. *Journal of Physics: Conference Series*, vol. 1694, no. 1, 012016. 2020.
+- **Power and Frequency Scheduling Using Equal Throughput Strategy in PD-NOMA Systems.** Ya V Kryukov, Dmitriy A Pokamestov, AA Brovkin, EV Rogozhnikov. *Computer Science On-line Conference*, pp. 584–595. 2020. [DOI](https://doi.org/10.1007/978-3-030-51974-2_54)
+- **Spread spectrum technology research and its application in power line communication systems.** Edgar M Dmitriyev, Eugeny V Rogozhnikov, Andrey K Movchan, Semyon M Mukhamadiev, Yakov V Krukov, NV Duplishcheva. *T-Comm-Телекоммуникации и Транспорт*, vol. 14, no. 10, pp. 45–52. 2020.
+- **Алгоритмы LDPC кодирования в системах связи 5G NR.** ДА Покаместов, ЯВ Крюков, И Канатбекулы. *НАУКА. ТЕХНОЛОГИИ. ИННОВАЦИИ*, pp. 150–154. 2020.
+- **Анализ вычислительной сложности и времени выполнения стека протоколов в сетях 5G New Radio.** Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов, Евгений Васильевич Рогожников, Серафим Алексеевич Новичков, Дмитрий Владимирович Лаконцев. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 23, no. 3, pp. 31–37. 2020.
+- **Анализ факторов влияющих на работу системы связи с неортогональным множественным доступом.** ЕВ Рогожников, ЯВ Крюков, ДА Покаместов, ЭМ Дмитриев, РР Абенов. *СВЧ-техника и телекоммуникационные технологии*, no. 1-1, pp. 108–109. 2020.
+- **Детектирование и подавление ложного сигнала GPS.** Егор Вадимович Николаенко, Яков Владимирович Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-1, pp. 70–72. 2020.
+- **Компьютерный практикум по моделированию формирования и обработки OFDM-сигнала как возможность формирования компетенций для цифровой экономики.** Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов, Сергей Богомолов, Ксения Юрьевна Попова, et al.. *Современные тенденции развития непрерывного образования: вызовы цифровой экономики*, pp. 60–62. 2020.
+- **Моделирование множественного канала связи с использованием PD-NOMA.** Данил Олегович Баландин, Алёна Сергеевна Квашнина, Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, no. 1-1, pp. 28–30. 2020.
+- **Модель нисходящего канала системы связи с MIMO-SCMA.** Ислам Канатбекулы, Алёна Сергеевна Квашнина, Дмитрий Алексеевич Покаместов. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, no. 1-1, pp. 12–14. 2020.
+- **Модель формирования опорных сигналов нисходящей линии связи 5G NR.** Алёна Сергеевна Квашнина, Ислам Канатбекулы, Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, no. 1-1, pp. 18–20. 2020.
+- **Подход к реализации технологии полнодуплексной связи в системах передачи данных по цепям питания.** Андрей К Мовчан, Евгений В Рогожников, Эдгар М Дмитриев, Дмитрий А Покаместов, Кирилл В Петровский. *XXI Международная конференция молодых специалистов по микро/нанотехнологиям и электронным приборам (EDM-2020)*, pp. 25–25. 2020.
+- **Поиск соты и синхронизация в 5G NR.** ЯВ Крюков, ДА Покаместов, ЕВ Рогожников. *СВЧ-техника и телекоммуникационные технологии*, no. 1-1, pp. 130–131. 2020.
+
+### 2019
+
+- **Analysis of factors affecting the operation of the communication system with nonorthogonal multiple access.** Eugeniy Rogozhnikov, Yakov Kryukov, Dmitriy Pokamestov, Edgar Dmitriev, Renat Abenov. *ITM Web of Conferences*, vol. 30, 04003. 2019. [DOI](https://doi.org/10.1051/itmconf/20193004003)
+- **Cell search and synchronization in 5G NR.** Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov. *ITM Web of conferences*, vol. 30, 04007. 2019. [DOI](https://doi.org/10.1051/itmconf/20193004007)
+- **Error Rate Performance of Communication Systems with SCMA.** Dmitriy A Pokamestov, Yakov V Kryukov, Eugeniy V Rogozhnikov. *2019 20th International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 134–138. 2019. [DOI](https://doi.org/10.1109/edm.2019.8823323)
+- **Experimental Study of Wireless Communication Channels with SCMA.** Dmitriy Pokamestov, Yakov Kryukov, Eygeniy Rogozhnikov, Renat Abebov. *2019 International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON)*, pp. 0156–0160. 2019. [DOI](https://doi.org/10.1109/sibircon48586.2019.8958086)
+- **FBMC/OQAM Equalization Scheme with Linear Interpolation.** Renat R Abenov, Dmitriy A Pokamestov, Evgeniy V Rogozhnikov, Demidov Ya Anatoliy, Yakov V Kryukov. *2019 International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON)*, pp. 0130–0133. 2019. [DOI](https://doi.org/10.1109/sibircon48586.2019.8958090)
+- **PD-NOMA power coefficients calculation while using QAM signals.** Ya V Kryukov, DA Pokamestov, EV Rogozhnikov. *International Conference on Distributed Computer and Communication Networks*, pp. 152–162. 2019. [DOI](https://doi.org/10.1007/978-3-030-36625-4_13)
+- **Performance Comparison of FPGA-based Methods for Preamble Detection at Interference.** Eugeny Rogozhnikov, Edgar Dmitriev, Kirill Savenko, Andrey Movchan, Yakov Kryukov, Dmitriy Pokamestov. *2019 International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON)*, pp. 0152–0155. 2019. [DOI](https://doi.org/10.1109/sibircon48586.2019.8958341)
+- **Исследование влияния кодовых книг на помехоустойчивость систем связи с SCMA.** Данила Александрович Кондрашов, Евгений Владимирович Мищенко, Дмитрий Алексеевич Покаместов, Павел Станиславович Сиренко. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, vol. 1, no. 1-1, pp. 17–20. 2019.
+- **Исследование влияния погрешности оценки канала передачи на расчет мощности при уплотнении пользовательских каналов методом PD-NOMA.** Артем Аркадьевич Охрименко, Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, vol. 1, no. 1-1, pp. 28–30. 2019.
+- **Моделирование канала связи CO-NOMA.** Яков Владимирович Крюков, Дмитрий Алексеевич Покаместов, Евгений Васильевич Рогожников, Юлия Сергеевна Громова. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 22, no. 2, pp. 12–16. 2019.
+- **Оценка характеристик и компенсация влияния канала передачи для систем связи с OFDM.** Ислам Канатбекулы, Дмитрий Алексеевич Покаместов, Данила Александрович Кондрашов, Евгений Владимирович Мищенко. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, vol. 1, no. 1-1, pp. 38–41. 2019.
+- **Формирование адаптивных к состоянию канала передачи сигнальных конструкций для систем связи с множественным доступом на основе разреженных кодов.** ДА ПОКАМЕСТОВ. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 22, no. 2, pp. 12–16. 2019.
+
+### 2018
+
+- **Experimental research of PD/NOMA.** Yakov V Kryukov, Dmitriy A Pokamestov, Eugeniy V Rogozhnikov, Anatoliy Ya Demidov, Yulia S Gromova. *2018 19th International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 176–179. 2018. [DOI](https://doi.org/10.1109/edm.2018.8435069)
+- **Processing of Signals with Orthogonal Frequency Multiplexing and Spread Spectrum at Low Signal-to-Noise Ratios.** Eugeniy V Rogozhnikov, Yakov V Kryukov, Dmitriy A Pokamestov. *2018 19th International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 180–184. 2018. [DOI](https://doi.org/10.1109/edm.2018.8434977)
+- **SCMA codebooks generation for transmission on an arbitrary subcarriers number.** Dmitriy A Pokamestov, Yakov V Kryukov, Eugeniy V Rogozhnikov, Anatoliy Ya Demidov, Renat R Abenov. *2018 19th International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 145–148. 2018. [DOI](https://doi.org/10.1109/edm.2018.8435015)
+- **Исследование помехоустойчивости каналов связи с уплотнением по мощности.** Сержан Серикович Сарыпбеков, Яков Владимирович Крюков. *Молодой ученый*, no. 18, pp. 88–92. 2018.
+- **Исследование помехоустойчивости множественного канала связи с мощностным уплотнением на ортогональных несущих pd/ofmda.** Владимир Иванович Иванов, Яков Владимирович Крюков. *Сборник избранных статей научной сессии ТУСУР*, no. 1-1, pp. 62–64. 2018.
+- **Канал связи с мультиплексированием абонентов по мощности.** Артем Аркадьевич Охрименко, Яков Владимирович Крюков, Артур Викторович Местников, Александр Николаевич Глазырин. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, no. 1-1, pp. 12–16. 2018.
+- **Метод множественного доступа с разделением каналов по мощности.** Я. В. Крюков, А. Я. Демидов, Д. А. Покаместов, Е. В. Рогожников, Р. Р. Абенов. *Омский научный вестник*, no. 6 (162), pp. 184–188. 2018. [Источник](https://elibrary.ru/item.asp?id=36721877)
+- **Метод множественного доступа с разделением каналов по мощности на ортогональных несущих.** Яков Владимирович Крюков, Анатолий Яковлевич Демидов, Дмитрий Алексеевич Покаместов. *T-Comm-Телекоммуникации и Транспорт*, vol. 12, no. 1, pp. 17–22. 2018.
+- **Оценка вычислительной сложности демодуляции PD-NOMA сигнала.** ЯВ Крюков, ЮС Громова. *Гагаринские чтения-2018*, pp. 239–240. 2018.
+- **Проблемы оценки канала в системе с частотным мультиплексированием с использованием банка фильтров.** Ренат Рамазанович Абенов, Евгений Васильевич Рогожников, Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Анатолий Яковлевич Демидов. *Вестник СибГУТИ*, no. 1, pp. 72–78. 2018.
+- **Способы улучшения эквалайзирования в системах связи с OFDM.** Василий Васильевич Ковалев, Дмитрий Алексеевич Покаместов. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 21, no. 1, pp. 32–36. 2018.
+
+### 2017
+
+- **Dynamically changing SCMA codebooks.** DA Pokamestov, A Ya Demidov, Ya V Kryukov, EV Rogozhnikov. *2017 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–4. 2017. [DOI](https://doi.org/10.1109/sibcon.2017.7998451)
+- **Full duplex wireless communication system, analog and digital cancellation, experimental research.** EV Rogozhnikov, AS Koldomov, DA Pokamestov, Ya V Kryukov. *2017 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–5. 2017. [DOI](https://doi.org/10.1109/sibcon.2017.7998469)
+- **Концепция физического уровня систем связи пятого поколения.** Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков, Евгений Васильевич Рогожников, Ренат Рамазанович Абенов, Анатолий Яковлевич Демидов. *Известия высших учебных заведений. Радиоэлектроника*, vol. 60, no. 7, pp. 367–382. 2017. [Источник](https://elibrary.ru/item.asp?id=30452010) [DOI](https://doi.org/10.20535/s0021347017070019)
+- **Расчёт зон обслуживания кластера базовых станций систем сотовой связи при заданном распределении абонентов.** Дмитрий Алексеевич Покаместов, Василий Андреевич Кологривов, Галина Петровна Бабур-Карателли, Яков Владимирович Крюков. *Вестник СибГУТИ*, no. 2 (38), pp. 26–34. 2017.
+
+### 2016
+
+- **Decrease in the computational complexity of the signal processing algorithms for passive radars using the signals of illuminators of opportunity.** Eugeniy V Rogozhnikov, Dmitriy A Pokamestov, Renat R Abenov. *2016 17th International Conference of Young Specialists on Micro/Nanotechnologies and Electron Devices (EDM)*, pp. 168–172. 2016. [DOI](https://doi.org/10.1109/edm.2016.7538718)
+- **Powerline Communications Channel: Modeling and Noise Monitoring.** Renat R. Abenov, Dmitriy A. Pokamestov, Andrey A. Geltser, Yakov V. Kryukov, Evgeniy V. Rogozhnikov. *Президиум организационного комитета*, pp. 7–13. 2016. [Источник](https://elibrary.ru/item.asp?id=26827973)
+- **Алгоритм расчета мощности каналов при неортогональном множественном доступе NOMA.** Яков Владимирович Крюков, Анатолий Яковлевич Демидов, Дмитрий Алексеевич Покаместов. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 19, no. 4, pp. 91–94. 2016.
+- **Влияние формирующих матриц на помехозащищенность каналов связи с множественным доступом на основе разреженных кодов.** Дмитрий Алексеевич Покаместов, Анатолий Яковлевич Демидов, Яков Владимирович Крюков. *Доклады Томского государственного университета систем управления и радиоэлектроники*, vol. 19, no. 3, pp. 65–69. 2016.
+- **Использование эквалайзирования для борьбы с многолучевым распространением.** Василий Васильевич Ковалев, Дмитрий Алексеевич Покаместов. *Science Time*, no. 7 (31), pp. 104–112. 2016.
+- **Метод неортогонального множественного доступа.** ЯВ Крюков, АЯ Демидов, ДА Покаместов. *26-я Международная Крымская конференция" СВЧ-техника и телекоммуникационные технологии"(КрыМиКо'2016)*, pp. 658–664. 2016.
+- **Множественный доступ с разреженным кодом.** ДА Покаместов, АЯ Демидов, ЯВ Крюков. *26-я Международная Крымская конференция" СВЧ-техника и телекоммуникационные технологии"(КрыМиКо'2016)*, pp. 693–699. 2016.
+- **Помехоустойчивость канала управления системы LTE.** Яков Крюков, Дмитрий Покаместов, Евгений Рогожников. *Технологии и средства связи*, no. 4, pp. 54–57. 2016.
+- **Формирование и обработка OFDM сигналов.** Василий Васильевич Ковалев, Оксана Юрьевна Селецкая, Дмитрий Алексеевич Покаместов. *Молодой ученый*, no. 14, pp. 151–154. 2016.
+- **Формирование и обработка сигналов множественного доступа с разреженным кодом.** ДА Покаместов, АЯ Демидов, ЯВ Крюков, ЕВ Рогожников, РР Абенов. *Электросвязь*, no. 10, pp. 56–61. 2016.
+
+### 2015
+
+- **Multipath powerline communications channel (PLC) modelling.** Renat Abenov, Dmitriy Pokamestov, Andrew Geltser. *2015 IEEE International Conference on Microwaves, Communications, Antennas and Electronic Systems (COMCAS)*, pp. 1–4. 2015.
+- **Multirate wideband communication channel.** YV Krukov, EV Rogozhnikov, AA Shibelgut. *2015 International Siberian Conference on Control and Communications (SIBCON)*, pp. 1–4. 2015. [DOI](https://doi.org/10.1109/sibcon.2015.7147110)
+- **Метод подавления прямого сигнала подсвета в многопозиционной пассивной РЛС, работающей по сигналам сторонних источников.** ЕВ Рогожников, ЯВ Крюков, АА Шибельгут, ЕП Ворошилин. *Известия МГТУ МАМИ*, vol. 4, no. 1, pp. 81–87. 2015.
+- **Регистратор OFDM сигналов на базе плис aLTEra.** ДА Покаместов, АВ Максимов, ЯВ Крюков. *Многоядерные процессоры, параллельное программирование, ПЛИС, системы обработки сигналов*, vol. 1, no. 5, pp. 57–62. 2015.
+- **Эквалайзирование канала данных системы LTE с частотно-селективными замираниями и аддитивным гауссовым шумом.** Яков Владимирович Крюков, Дарья Николаевна Ушарова, Александр Сергеевич Вершинин. *Молодой ученый*, no. 10, pp. 244–247. 2015.
+
+### 2014
+
+- **Method for increasing the accuracy of the doppler frequency shift estimation in the passive radar systems operated by signals from the telecommunication sources.** EV Rogozhnikov, YV Krukov, DA Pokamestov. *Applied and Fundamental Studies*, pp. 73–76. 2014.
+- **Декодер Витерби.** ВА Ахмадулина, ДА Каримова, ДА Покаместов. *Электронные средства и системы управления. Материалы докладов Международной научно-практической конференции*, no. 1, pp. 4–6. 2014.
+- **Модель фазового шума с учетом спектральной маски синтезаторов частоты и генераторов сигнала.** Яков Владимирович Крюков, Евгений Васильевич Рогожников, Дмитрий Алексеевич Покаместов. *Известия Томского политехнического университета. Инжиниринг георесурсов*, vol. 325, no. 5, pp. 45–51. 2014.
+- **Регистрация OFDMA сигналов с периодической преамбулой.** Дмитрий Алексеевич Покаместов, Яков Владимирович Крюков. *Научная сессия ТУСУР-2014*, pp. 58–60. 2014.

@@ -1,0 +1,8 @@
+/* Compare the two site designs without changing either page layout. */
+.design-compare { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:6px; box-sizing:border-box; max-width:1200px; width:calc(100% - 64px); margin:0 auto; padding:10px 0 0; color:var(--home-muted,var(--muted,#70695f)); font:12px/1.5 system-ui,sans-serif; }
+.design-compare > span { margin-right:6px; }
+.design-compare a { display:inline-block; padding:5px 11px; border:1px solid var(--home-line,var(--line,#cdc6b9)); border-radius:4px; color:var(--home-ink,var(--ink,#262825)); text-decoration:none; }
+.design-compare a[aria-current="page"] { background:var(--home-soft,var(--wash,#eae3d5)); font-weight:650; }
+.design-compare a:focus-visible { outline:3px solid var(--home-accent,var(--accent,#8b3d2b)); outline-offset:3px; }
+@media(max-width:760px) { .design-compare { width:calc(100% - 44px); } }
+@media(max-width:390px) { .design-compare { width:calc(100% - 32px); } }

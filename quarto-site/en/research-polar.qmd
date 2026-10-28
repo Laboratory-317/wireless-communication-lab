@@ -1,0 +1,56 @@
+---
+{
+  "title": "Polar codes",
+  "lang": "en",
+  "description": "We study polar codes, their adaptation to radio channel conditions and their use in non-orthogonal multiple access systems.",
+  "pagetitle": "Polar codes — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "body-classes": "research-detail-page site-page",
+  "toc": true,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+[← All research areas](research.qmd)
+
+Polar codes provide error protection for transmitted data. We study how coding parameters and adaptation to radio channel conditions affect error rates.
+
+We also investigate the use of polar codes with non-orthogonal multiple access. We evaluate these approaches using communication system models, including fading channel models.
+
+![​Polar codes](../assets/research/polar-en.svg){.detail-diagram}
+
+::: {.research-context}
+
+[POLAR CODES · CHANNEL CODING]{.portfolio-tags}
+
+**Related projects**
+
+RSF No. 24-29-00172 · 2024–2025
+
+[Projects and funding →](projects.qmd#project-archive)
+
+:::
+
+## Related publications
+
+::: {.research-evidence}
+
+- **Adaptation of Polar Codes to Enhance BER Performance in Next-Generation Communication Systems.** Georgiy Shalin, Dmitriy Pokamestov, Yakov Kryukov, Artyom Shinkevich, Sergey Eremeev, Dmitriy Ilinskiy. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 330–333. 2025. [DOI](https://doi.org/10.1109/edm65517.2025.11096696)
+
+- **Adaptation of signal with NOMA and polar codes to the Rayleigh channel.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Serafim Novichkov. *Symmetry*, vol. 14, no. 10, 2103. 2022. [DOI](https://doi.org/10.3390/sym14102103)
+
+:::
+
+[Full bibliography →](publications.qmd)

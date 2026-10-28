@@ -1,0 +1,29 @@
+---
+{
+  "title": "Staff profiles",
+  "lang": "en",
+  "description": "Research, teaching and professional achievements of laboratory staff.",
+  "pagetitle": "Staff profiles — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc": false,
+  "toc-title": "On this page",
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "body-classes": "site-page cv-page",
+  "anchor-sections": false
+}
+---
+
+These profiles describe the research, projects, teaching and awards of laboratory staff.
+
+- [Yakov Kryukov](cv-kryukov.qmd)
+- [Dmitriy Pokamestov](cv-pokamestov.qmd)

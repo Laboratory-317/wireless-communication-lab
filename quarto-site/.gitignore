@@ -1,0 +1,12 @@
+/_site/
+/.quarto/
+/preview.log
+/preview-error.log
+/verification.json
+
+**/*.quarto_ipynb
+
+/assets/research/*-dark.svg
+/assets/research/*-light.svg
+/ru/_home-sections.qmd
+/en/_home-sections.qmd

@@ -1,0 +1,47 @@
+<script>
+(() => {
+  const match = location.pathname.match(/\/(ru|en)\/(?:([^/]+)\.html)?$/);
+  if (!match) return;
+  const lang = match[1], page = match[2] || 'index';
+  document.querySelectorAll('#quarto-header a.nav-link').forEach(a => {
+    const language = a.textContent.trim().toLowerCase();
+    if (!['ru','en'].includes(language)) return;
+    a.href = `../${language}/${page}.html`;
+    a.hreflang = language;
+    if (language === lang) a.setAttribute('aria-current','page');
+  });
+  if (!document.body.classList.contains('publications-page')) return;
+  const ru = lang === 'ru';
+  const groups = [...document.querySelectorAll('main section.level3')].filter(s => /^\d{4}$/.test(s.querySelector('h3')?.textContent.trim()));
+  if (!groups.length) return;
+  const archive = groups[0].parentElement;
+  const featured = [...document.querySelectorAll('main section.level2')].filter(s => s !== archive && s.querySelector('ul'));
+  const entries = groups.flatMap(group => [...group.querySelectorAll('ul > li')].map(li => ({li,group,year:group.querySelector('h3').textContent.trim(),text:li.textContent.toLocaleLowerCase()})));
+  const tools = document.createElement('div');
+  tools.className = 'publication-tools';
+  tools.innerHTML = `<div class="publication-fields"><label for="paper-search">${ru?'Поиск по названию, автору или журналу':'Search by title, author or journal'}<input id="paper-search" type="search" placeholder="${ru?'Например: NOMA, Kryukov, RIS':'Try NOMA, Kryukov, RIS'}" autocomplete="off"></label><label for="paper-year">${ru?'Год публикации':'Publication year'}<select id="paper-year"><option value="">${ru?'Все годы':'All years'}</option></select></label><button type="button">${ru?'Сбросить':'Reset'}</button></div><p class="publication-status" role="status" aria-live="polite" aria-atomic="true"></p>`;
+  (featured[0] || archive).before(tools);
+  const input = tools.querySelector('input'), select = tools.querySelector('select'), status = tools.querySelector('[role=status]');
+  for (const year of [...new Set(entries.map(e => e.year))].sort((a,b)=>b-a)) {
+    const option = document.createElement('option'); option.value=year; option.textContent=year; select.append(option);
+  }
+  const empty = document.createElement('p'); empty.className='publication-empty'; empty.hidden=true;
+  empty.textContent=ru?'Ничего не найдено. Попробуйте другой запрос или выберите все годы.':'No results. Try another search or select all years.';
+  archive.after(empty);
+  const surnameGroups = [["покаместов", "pokamestov"], ["крюков", "kryukov", "krykov", "krukov", "kriukov"], ["литвинов", "litvinov"], ["шинкевич", "shinkevich", "shinkevic"], ["шалин", "shalin"], ["еремеев", "eremeev"], ["ильинский", "ilinskiy", "ilinsky"]];
+  const aliases = Object.fromEntries(surnameGroups.flatMap(group => group.map(name => [name, group])));
+  input.value = new URLSearchParams(location.search).get("researcher") || "";
+  function filter() {
+    const terms=input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let count=0;
+    entries.forEach(e => { const show=(!select.value || e.year===select.value) && terms.every(t=>(aliases[t] || [t]).some(alias=>e.text.includes(alias))); e.li.hidden=!show; if(show) count++; });
+    groups.forEach(g => { g.hidden = !entries.some(e=>e.group===g && !e.li.hidden); });
+    featured.forEach(s=>{s.hidden=Boolean(terms.length || select.value);});
+    empty.hidden=count!==0;
+    status.textContent=ru?`Найдено работ: ${count} из ${entries.length}`:`Showing ${count} of ${entries.length} publications`;
+  }
+  input.addEventListener('input',filter); select.addEventListener('change',filter);
+  tools.querySelector('button').addEventListener('click',()=>{input.value='';select.value='';filter();input.focus();});
+  filter();
+})();
+</script>

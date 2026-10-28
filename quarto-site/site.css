@@ -1,0 +1,190 @@
+/* Shared layout and semantic colors for every page, using the homepage palette. */
+:root {
+  --lab-line:var(--home-line); --lab-muted:var(--home-muted);
+  --lab-ink:var(--home-ink); --lab-accent:var(--home-accent);
+  --bs-body-bg:var(--home-bg); --bs-body-color:var(--home-ink);
+  --bs-border-color:var(--home-line); --bs-link-color:var(--home-accent);
+  --bs-link-hover-color:var(--home-accent); --bs-secondary-color:var(--home-muted);
+  --bs-tertiary-bg:var(--home-soft); --bs-secondary-bg:var(--home-surface);
+  --quarto-body-bg:var(--home-bg); --quarto-body-color:var(--home-ink);
+}
+body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"Segoe UI",system-ui,sans-serif; line-height:1.7; padding-top:0!important; }
+.site-page #quarto-header,.site-page > footer.nav-footer,.site-page > footer.footer,.site-page .nav-footer { display:none!important; }
+.site-page .site-header { display:flex; align-items:center; gap:28px; max-width:1200px; width:calc(100% - 64px); margin:0 auto; padding:28px 0; border-bottom:1px solid var(--home-line); }
+.site-page .site-footer { display:flex!important; max-width:1200px; width:calc(100% - 64px); margin:0 auto; border-top:1px solid var(--home-line); padding-top:28px; }
+.site-search { display:grid; place-items:center; width:32px; height:32px; flex-shrink:0; padding:6px; border:0; border-radius:3px; background:transparent; color:var(--home-muted); cursor:pointer; }
+.site-search:hover { color:var(--home-accent); background:var(--home-soft); }
+.site-search svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.5; }
+.home-nav a[aria-current="page"],.site-footer a[aria-current="page"] { color:var(--home-accent); text-decoration:underline; text-underline-offset:7px; }
+.site-page a { color:var(--home-accent); }
+.site-page .home-nav a { color:var(--home-ink); }
+.site-page .home-nav a[aria-current="page"] { color:var(--home-accent); text-decoration:underline; text-underline-offset:7px; }
+.site-page a:focus-visible,.site-page button:focus-visible,.site-page summary:focus-visible,.site-page input:focus-visible,.site-page select:focus-visible { outline:3px solid var(--home-accent); outline-offset:4px; }
+.site-page:not(.home-page) #quarto-content { display:grid; grid-template-columns:minmax(0,1fr) 190px; column-gap:42px; max-width:1264px; width:100%; padding:0 32px!important; margin:0 auto; }
+.site-page:not(.home-page).fullcontent #quarto-content { display:block; }
+.site-page:not(.home-page) main.content { display:block; grid-column:1; grid-row:1; width:100%; max-width:none; min-width:0; margin:0!important; padding:48px 0 60px!important; }
+.site-page:not(.home-page) #quarto-margin-sidebar { grid-column:2; grid-row:1; min-width:0; margin:56px 0 0; padding:0; align-self:start; }
+.site-page #title-block-header { margin:0 0 32px; padding-bottom:30px; border-color:var(--home-line); }
+.site-page #title-block-header:before { color:var(--home-accent); font:11px/1.6 ui-monospace,Consolas,monospace; letter-spacing:.12em; }
+.site-page h1.title { font-size:clamp(34px,4.4vw,58px); font-weight:650; line-height:1.12; letter-spacing:-.05em; color:var(--home-ink); overflow-wrap:normal; }
+.site-page #title-block-header .description { color:var(--home-muted); font-size:17px; max-width:800px; line-height:1.7; }
+.site-page h2 { color:var(--home-ink); font-size:clamp(25px,2.7vw,34px); line-height:1.25; letter-spacing:-.035em; font-weight:650; }
+.site-page h3 { color:var(--home-ink); }
+.site-page p,.site-page li { overflow-wrap:anywhere; }
+.site-page figure figcaption { color:var(--home-muted); }
+.site-page hr { color:var(--home-line); opacity:1; }
+.site-page .sidebar nav[role="doc-toc"] { border-color:var(--home-line); color:var(--home-muted); font-size:12px; }
+.site-page #TOC a { color:var(--home-muted); }
+.site-page #TOC a.active { color:var(--home-accent)!important; border-color:var(--home-accent)!important; }
+.site-page :is(.research-entry,.course-entry,.project-case,.learning-card,.student-step,.student-track,.team-jump a,.project-program li,.team-grid .person-entry) { background:var(--home-surface); border-color:var(--home-line); border-radius:4px; }
+.site-page :is(.research-entry,.course-entry,.project-case,.learning-card,.student-track) p { color:var(--home-muted); }
+.site-page :is(.portfolio-lead,.learning-intro) { background:var(--home-surface); color:var(--home-ink); border:1px solid var(--home-line); border-radius:4px; }
+.site-page :is(.portfolio-lead,.learning-intro) h2 { color:var(--home-ink); }
+.site-page :is(.portfolio-lead-copy,.learning-intro > div) > p:not(.portfolio-kicker) { color:var(--home-muted); }
+.site-page :is(.portfolio-kicker,.portfolio-tags) { color:var(--home-accent); }
+.site-page :is(.portfolio-lead a,.case-facts strong,.learning-facts strong) { color:var(--home-accent); }
+.site-page :is(.case-facts,.learning-facts) { border-color:var(--home-line); }
+.site-page :is(.case-facts span,.learning-facts span) { color:var(--home-muted); }
+.site-page :is(.portfolio-contact,.research-context,.student-course-note,.student-contact,.publication-tools) { background:var(--home-soft); border-color:var(--home-accent); color:var(--home-ink); border-radius:4px; }
+.site-page :is(.portfolio-contact,.student-contact) p { color:var(--home-muted); }
+.site-page :is(.project-program summary,.student-track h3 a,.research-entry h2 a) { color:var(--home-ink); }
+.site-page .project-program summary span { color:var(--home-accent); background:var(--home-soft); }
+.site-page .team-jump a:hover { background:var(--home-soft); border-color:var(--home-accent); }
+.site-page .person-portrait { background:var(--home-soft); border-color:var(--home-line); }
+.site-page .team-grid .person-initials { background:var(--home-surface); color:var(--home-accent); }
+.site-page .person-info .person-interests li { color:var(--home-accent); background:var(--home-soft); border-color:var(--home-line); }
+.site-page :is(.person-publications,.student-contact-button) { background:var(--home-button); color:var(--home-button-ink); }
+.site-page :is(.person-publications,.student-contact-button):hover { background:var(--home-button); color:var(--home-button-ink); text-decoration:underline; }
+.site-page :is(.person-label,.person-info h3) { color:var(--home-ink); }
+.site-page :is(.research-portfolio-grid .research-entry figure,.project-case img,.course-visual,.research-gallery img) { background:var(--home-surface); }
+.site-page img.detail-diagram { background:var(--home-surface); border:1px solid var(--home-line); border-radius:4px; }
+.site-page .publication-tools { padding:22px; }
+.site-page .publication-tools :is(input,select,button) { color:var(--home-ink); background:var(--home-surface); border-color:var(--home-line); font-size:14px; }
+.site-page .publication-tools button:hover { background:var(--home-bg); }
+.site-page .publication-tools label { color:var(--home-ink); font-size:12px; }
+.site-page .publication-empty { border-color:var(--home-line); color:var(--home-muted); }
+.site-page.publications-page main li a { border-color:var(--home-line); color:var(--home-accent); }
+.site-page.publications-page main li a:hover { background:var(--home-soft); }
+.site-page.publications-page main li { font-size:14px; }
+.site-page.publications-page main li strong { font-size:18px; }
+.site-page .news-entry { padding:24px 0; border-color:var(--home-line); }
+.site-page .news-entry h3 { font-size:23px; }
+.site-page .news-entry p { font-size:16px; }
+.site-page :is(.patents-page,.cv-page) section > ul { padding-left:1.3rem; }
+.site-page.patents-page main > section > ul > li { padding:16px 0; border-bottom:1px solid var(--home-line); }
+.site-page table { color:var(--home-ink); border-color:var(--home-line); }
+.site-page table > :not(caption) > * > * { color:var(--home-ink); background:transparent; border-color:var(--home-line); }
+.site-page code { color:var(--home-accent); background:var(--home-soft); }
+.site-page pre { background:var(--home-surface); border-color:var(--home-line); }
+.site-page .quarto-title-meta { color:var(--home-muted); }
+/* Search remains available from the custom header and the native keyboard shortcut. */
+.aa-DetachedOverlay { background:color-mix(in srgb,var(--home-bg) 80%,transparent); }
+.aa-DetachedContainer,.aa-Panel,.aa-Form,.aa-InputWrapper,.aa-DetachedFormContainer { background:var(--home-surface)!important; color:var(--home-ink)!important; border-color:var(--home-line)!important; }
+.aa-Input,.aa-DetachedCancelButton,.aa-SubmitButton,.aa-ClearButton { color:var(--home-ink)!important; }
+.aa-Item[aria-selected="true"] { background:var(--home-soft)!important; }
+#quarto-search-results :is(.search-result-title,.search-result-text-container,.search-result-text,.search-result-section) { color:var(--home-ink); }
+.aa-DetachedContainer :is(.search-result-header,.search-result-doc,.search-result-title-container,.search-result-text-container,.search-result-section,.search-result-text) { background:var(--home-surface)!important; color:var(--home-ink)!important; border-color:var(--home-line)!important; }
+.aa-DetachedContainer .search-result-header { background:var(--home-soft)!important; }
+.aa-DetachedContainer .aa-Item[aria-selected="true"] :is(.search-result-doc,.search-result-title-container,.search-result-text-container,.search-result-section,.search-result-text) { background:var(--home-soft)!important; }
+.aa-DetachedContainer .search-match { color:var(--home-button-ink)!important; background:var(--home-button)!important; }
+.aa-DetachedContainer .search-result-doc-section { background:var(--home-surface)!important; color:var(--home-ink)!important; border-color:var(--home-line)!important; }
+.aa-DetachedContainer .aa-Item[aria-selected="true"] .search-result-doc-section { background:var(--home-soft)!important; }
+@media(max-width:1100px) {
+ .site-page .site-header { gap:20px; flex-wrap:wrap; }
+ .site-page .home-nav { gap:20px; }
+ .site-page .home-controls { margin-left:auto; }
+ .site-page:not(.home-page) #quarto-content { column-gap:28px; grid-template-columns:minmax(0,1fr) 160px; }
+}
+@media(max-width:980px) {
+ .site-page:not(.home-page) #quarto-content { display:block; }
+ .site-page:not(.home-page) #quarto-margin-sidebar { display:none; }
+}
+@media(max-width:760px) {
+ .site-page .site-header { width:calc(100% - 44px); padding:20px 0; }
+ .site-page .site-footer { width:calc(100% - 44px); }
+ .site-page:not(.home-page) #quarto-content { padding:0 22px!important; }
+ .site-page:not(.home-page) main.content { padding:32px 0 40px!important; }
+ .site-page .home-controls { gap:8px; }
+ .site-page .home-nav { order:3; width:100%; margin:0; justify-content:space-between; gap:10px; }
+ .site-page .home-nav a { font-size:12px; }
+ .site-page .site-footer nav { gap:12px 18px; }
+ .site-page #title-block-header { margin-bottom:24px; padding-bottom:24px; }
+}
+@media(max-width:390px) {
+ .site-page .site-header,.site-page .site-footer { width:calc(100% - 32px); }
+ .site-page:not(.home-page) #quarto-content { padding:0 16px!important; }
+ .site-page .site-header { gap:16px; }
+ .site-page .home-wordmark img { width:34px; height:34px; }
+ .site-page .home-wordmark { gap:6px; }
+ .site-page .home-wordmark strong { font-size:17px; }
+ .site-page .home-wordmark small { font-size:8px; }
+ .site-page .home-controls { gap:5px; }
+ .site-page .home-languages { border:0; padding:0; gap:4px; font-size:10px; }
+ .site-page .theme-choices button { width:25px; height:28px; padding:4px; }
+ .site-page .site-search { width:25px; padding:4px; }
+}
+
+.research-overview { margin:0 0 36px; }
+.research-overview .home-directions { grid-auto-rows:1fr; }
+
+/* Neutral introductions for students and projects: no featured research direction. */
+.site-page .neutral-lead { display:block; position:relative; isolation:isolate; overflow:hidden; }
+.site-page .neutral-lead .portfolio-lead-copy { max-width:900px; padding:44px; }
+.site-page .neutral-lead .portfolio-lead-copy > p:not(.portfolio-kicker) { max-width:660px; }
+.site-page .neutral-lead .home-wave { width:450px; height:300px; right:-100px; top:30px; opacity:.14; }
+@media(max-width:700px) {
+ .site-page .neutral-lead .portfolio-lead-copy { padding:26px; }
+ .site-page .neutral-lead h2 { font-size:clamp(26px,5vw,36px); }
+ .site-page .neutral-lead .home-wave { right:-270px; opacity:.08; }
+}
+
+
+/* Keep all five primary navigation links visible on narrow screens. */
+.site-page .home-nav { flex-wrap:wrap; }
+@media(max-width:760px) {
+ .site-page .home-nav { justify-content:flex-start; gap:8px 20px; }
+}
+
+/* Course cards use the same compact technical symbols as the research overview. */
+.site-page .learning-card { padding:24px; }
+.site-page .course-symbol { margin:0 0 18px; line-height:0; }
+.site-page .course-symbol .research-symbol { width:128px; height:112px; color:var(--home-accent); fill:none; stroke:currentColor; stroke-width:1.55; stroke-linecap:round; stroke-linejoin:round; }
+@media(max-width:760px) {
+ .site-page .learning-card { padding:22px; }
+ .site-page .course-symbol .research-symbol { width:100px; height:100px; }
+}
+
+/* Student research tracks share the homepage's technical symbols. */
+.site-page .student-track-symbol { margin:0 0 16px; line-height:0; }
+.site-page .student-track-symbol .research-symbol { width:128px; height:112px; color:var(--home-accent); fill:none; stroke:currentColor; stroke-width:1.55; stroke-linecap:round; stroke-linejoin:round; }
+@media(max-width:760px) {
+ .site-page .student-track-symbol .research-symbol { width:100px; height:100px; }
+}
+
+/* Student track cards: icon on the left, concise copy on the right. */
+.site-page .student-track { display:grid; grid-template-columns:112px minmax(0,1fr); align-items:center; gap:20px; padding:22px 24px; }
+.site-page .student-track-symbol { margin:0; }
+.site-page .student-track-symbol .research-symbol { width:112px; height:100px; }
+.site-page .student-track-copy { min-width:0; }
+.site-page .student-track-copy > p:first-child { margin:0 0 6px; }
+.site-page .student-track-copy h3 { margin:0 0 10px; font-size:20px; line-height:1.3; }
+.site-page .student-track-copy > p:last-child { margin:0; }
+@media(max-width:760px) {
+ .site-page .student-track { grid-template-columns:80px minmax(0,1fr); gap:16px; padding:18px 20px; }
+ .site-page .student-track-symbol .research-symbol { width:80px; height:80px; }
+ .site-page .student-track-copy h3 { font-size:19px; }
+}
+@media(max-width:390px) {
+ .site-page .student-track { grid-template-columns:64px minmax(0,1fr); gap:12px; padding:16px; }
+ .site-page .student-track-symbol .research-symbol { width:64px; height:72px; }
+ .site-page .student-track-copy h3 { font-size:18px; }
+}
+
+/* Compare the two site designs without changing either page layout. */
+.design-compare { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:6px; box-sizing:border-box; max-width:1200px; width:calc(100% - 64px); margin:0 auto; padding:10px 0 0; color:var(--home-muted,var(--muted,#70695f)); font:12px/1.5 system-ui,sans-serif; }
+.design-compare > span { margin-right:6px; }
+.design-compare a { display:inline-block; padding:5px 11px; border:1px solid var(--home-line,var(--line,#cdc6b9)); border-radius:4px; color:var(--home-ink,var(--ink,#262825)); text-decoration:none; }
+.design-compare a[aria-current="page"] { background:var(--home-soft,var(--wash,#eae3d5)); font-weight:650; }
+.design-compare a:focus-visible { outline:3px solid var(--home-accent,var(--accent,#8b3d2b)); outline-offset:3px; }
+@media(max-width:760px) { .design-compare { width:calc(100% - 44px); } }
+@media(max-width:390px) { .design-compare { width:calc(100% - 32px); } }

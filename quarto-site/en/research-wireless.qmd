@@ -1,0 +1,56 @@
+---
+{
+  "title": "Multi-antenna systems",
+  "lang": "en",
+  "description": "We study MIMO systems and signal processing methods to improve wireless communication efficiency.",
+  "pagetitle": "Multi-antenna systems — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "body-classes": "research-detail-page site-page",
+  "toc": true,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+[← All research areas](research.qmd)
+
+MIMO systems use multiple antennas to transmit and receive signals. We study signal processing and spatial user separation in multi-user wireless systems.
+
+We compare transmission and reception methods and evaluate the effects of the radio channel and inter-user interference. This work contributes to physical-layer research for 5G and 6G communication.
+
+![Multi-antenna communication](../assets/research/wireless-en.svg){.detail-diagram}
+
+::: {.research-context}
+
+[5G / 6G · MIMO · PHY]{.portfolio-tags}
+
+**Related projects**
+
+RSF No. 22-79-10148 · 2022–2025
+
+[Projects and funding →](projects.qmd#project-archive)
+
+:::
+
+## Related publications
+
+::: {.research-evidence}
+
+- **Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)
+
+- **Reducing Successive Interference Cancellation Iterations in Hybrid Beamforming Multiuser Massive Multiple Input Multiple Output Systems Through Grouping Users with Symmetry Channels.** Hashem Khaled Rehab, Eugeniy Rogozhnikov, Kirill Savenko, Semen Mukhamadiev, Yakov Kryukov, Dmitriy Pokamestov. *Symmetry*, vol. 16, no. 11, 1437. 2024.
+
+:::
+
+[Full bibliography →](publications.qmd)

@@ -1,0 +1,71 @@
+---
+{
+  "title": "Courses in communication systems",
+  "lang": "en",
+  "description": "Courses developed by laboratory researchers on wireless communication, multiple access and error-correcting codes.",
+  "pagetitle": "Courses in communication systems — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "body-classes": "education-page portfolio-page site-page",
+  "toc": false,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+
+:::: {.learning-grid}
+
+::: {.learning-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path class="symbol-channel" d="M34 40h92M34 40l92 48M34 88l92-48M34 88h92"/><path d="M27 47v-20m-7-4 7 9 7-9"/><path d="M27 95v-20m-7-4 7 9 7-9"/><path d="M133 47v-20m-7-4 7 9 7-9"/><path d="M133 95v-20m-7-4 7 9 7-9"/><rect class="symbol-surface" x="68" y="54" width="24" height="20" rx="2"/><text x="75" y="69">H</text><text x="17" y="118">Tx</text><text x="123" y="118">Rx</text></svg></div>
+
+[01 / COURSE]{.portfolio-tags}
+
+### Wireless Communication Fundamentals
+
+The main stages of digital signal transmission and reception: coding, modulation, filtering, OFDM and communication quality assessment. Practical work covers communication system simulation in MATLAB or Octave.
+
+<div class="course-bottom"><span>Duration<strong>2 months</strong></span><a href="https://engineers.tusur.ru/courses/osnovy-besprovodnoi-sviazi">Course at TUSUR ↗</a></div>
+
+:::
+
+::: {.learning-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M56 26v76h92" opacity=".6"/><text x="43" y="22">f</text><text x="149" y="116">t</text><rect x="63" y="34" width="16" height="16" rx="1" opacity="0.95"/><rect x="83" y="34" width="16" height="16" rx="1" opacity="0.6"/><rect x="103" y="34" width="16" height="16" rx="1" opacity="0.35"/><rect x="123" y="34" width="16" height="16" rx="1" opacity="0.95"/><rect x="63" y="54" width="16" height="16" rx="1" opacity="0.6"/><rect x="83" y="54" width="16" height="16" rx="1" opacity="0.35"/><rect x="103" y="54" width="16" height="16" rx="1" opacity="0.95"/><rect x="123" y="54" width="16" height="16" rx="1" opacity="0.6"/><rect x="63" y="74" width="16" height="16" rx="1" opacity="0.35"/><rect x="83" y="74" width="16" height="16" rx="1" opacity="0.95"/><rect x="103" y="74" width="16" height="16" rx="1" opacity="0.6"/><rect x="123" y="74" width="16" height="16" rx="1" opacity="0.35"/><rect x="8" y="25" width="13" height="19" rx="2"/><path d="M12 40h5M27 34h19m-5-4 5 4-5 4"/><rect x="8" y="55" width="13" height="19" rx="2"/><path d="M12 70h5M27 64h19m-5-4 5 4-5 4"/><rect x="8" y="85" width="13" height="19" rx="2"/><path d="M12 100h5M27 94h19m-5-4 5 4-5 4"/></svg></div>
+
+[02 / COURSE]{.portfolio-tags}
+
+### Multiple Access Technologies
+
+Radio resource sharing and simulation of systems using different multiple access methods. Topics include FDMA, TDMA, CDMA, SDMA, OFDMA, PD-NOMA and SCMA.
+
+<div class="course-bottom"><span>Duration<strong>2 months</strong></span><a href="https://engineers.tusur.ru/courses/tekhnologii-mnozhestvennogo-dostupa">Course at TUSUR ↗</a></div>
+
+:::
+
+::: {.learning-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><text x="2" y="32">u<tspan baseline-shift="sub" font-size="9">0</tspan></text><path d="M22 28H137"/><text x="142" y="32">x<tspan baseline-shift="sub" font-size="9">0</tspan></text><text x="2" y="56">u<tspan baseline-shift="sub" font-size="9">1</tspan></text><path d="M22 52H137"/><text x="142" y="56">x<tspan baseline-shift="sub" font-size="9">1</tspan></text><text x="2" y="80">u<tspan baseline-shift="sub" font-size="9">2</tspan></text><path d="M22 76H137"/><text x="142" y="80">x<tspan baseline-shift="sub" font-size="9">2</tspan></text><text x="2" y="104">u<tspan baseline-shift="sub" font-size="9">3</tspan></text><path d="M22 100H137"/><text x="142" y="104">x<tspan baseline-shift="sub" font-size="9">3</tspan></text><path d="M49 35V52"/><circle class="symbol-surface" cx="49" cy="28" r="7"/><path d="M45 28h8m-4-4v8"/><circle class="symbol-dot" cx="49" cy="52" r="2.6"/><path d="M49 83V100"/><circle class="symbol-surface" cx="49" cy="76" r="7"/><path d="M45 76h8m-4-4v8"/><circle class="symbol-dot" cx="49" cy="100" r="2.6"/><path d="M91 35V76"/><circle class="symbol-surface" cx="91" cy="28" r="7"/><path d="M87 28h8m-4-4v8"/><circle class="symbol-dot" cx="91" cy="76" r="2.6"/><path d="M113 59V100"/><circle class="symbol-surface" cx="113" cy="52" r="7"/><path d="M109 52h8m-4-4v8"/><circle class="symbol-dot" cx="113" cy="100" r="2.6"/></svg></div>
+
+[03 / COURSE]{.portfolio-tags}
+
+### Error-Correcting Coding
+
+Error detection and correction in digital communication systems. Topics include CRC, convolutional codes, Viterbi decoding, turbo codes, Hamming codes, LDPC and polar codes.
+
+<div class="course-bottom"><span>Duration<strong>2 months</strong></span><a href="https://engineers.tusur.ru/courses/pomekhoustoichivoe-kodirovanie">Course at TUSUR ↗</a></div>
+
+:::
+
+::::

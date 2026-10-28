@@ -1,0 +1,8 @@
+---
+title: Лаборатория беспроводной связи / Wireless Communication Laboratory
+toc: false
+include-in-header:
+  text: '<meta http-equiv="refresh" content="0; url=ru/index.html">'
+---
+
+[Русская версия](ru/index.qmd) · [English version](en/index.qmd)

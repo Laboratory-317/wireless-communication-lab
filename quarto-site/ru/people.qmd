@@ -1,0 +1,291 @@
+---
+{
+  "title": "Команда лаборатории",
+  "lang": "ru",
+  "description": "Сотрудники, аспиранты и студенты лаборатории: научные интересы, публикации и контакты.",
+  "pagetitle": "Команда лаборатории — Лаборатория беспроводной связи",
+  "include-before-body": [
+    "../site-header-ru.html"
+  ],
+  "toc-title": "На этой странице",
+  "body-classes": "people-page portfolio-page site-page",
+  "toc": false,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-ru.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+<nav class="team-jump" aria-label="Группы команды"><a href="#pokamestov">Научные сотрудники</a><a href="#stepnoy">Инженеры</a><a href="#shinkevich">Аспиранты</a><a href="#pogorelov">Студенты</a></nav>
+
+## Научные сотрудники
+
+::::: {.team-grid}
+
+:::: {.person-entry #pokamestov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Дмитрий Покаместов" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+
+::: {.person-info}
+
+### Покаместов Дмитрий Алексеевич
+
+<p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>NOMA / SCMA</li><li>Полярные коды</li><li>5G / 6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%9F%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D1%81%D1%82%D0%BE%D0%B2">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="mailto:dmaltomsk@mail.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=-_7z65YAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-9405-4573">ORCID ↗</a><a href="cv-pokamestov.html">CV ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 860831
+- **eLibrary SPIN-код:** 7819-9512
+- **WoS ResearcherID:** E-2544-2019
+- **Scopus AuthorID:** 57188748446
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #kryukov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Яков Крюков" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+
+::: {.person-info}
+
+### Крюков Яков Владимирович
+
+<p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Распределение ресурсов</li><li>PD-NOMA</li><li>RIS</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%9A%D1%80%D1%8E%D0%BA%D0%BE%D0%B2">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="mailto:iakov.v.kriukov@tusur.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=Ms3raocp3REC&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4115-9080">ORCID ↗</a><a href="cv-kryukov.html">CV ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 886532
+- **eLibrary SPIN-код:** 3956-3916
+- **WoS ResearcherID:** AAG-5931-2020
+- **Scopus AuthorID:** 57195284047
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #litvinov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Рудольф Литвинов" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+
+::: {.person-info}
+
+### Литвинов Рудольф Викторович
+
+<p class="person-role">Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RSMA / SDMA</li><li>Методы доступа 6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%9B%D0%B8%D1%82%D0%B2%D0%B8%D0%BD%D0%BE%D0%B2">Публикации сотрудника →</a>
+
+<div class="person-actions"></div>
+
+:::
+
+::::
+
+:::::
+
+## Инженеры
+
+::::: {.team-grid}
+
+:::: {.person-entry #stepnoy}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Виктор Степной" loading="lazy"><span class="person-category">Инженеры</span></div>
+
+::: {.person-info}
+
+### Степной Виктор Серафимович
+
+<p class="person-role">Старший преподаватель кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><p class="interest-source">Научные интересы пока не указаны.</p></div>
+
+<a class="person-publications" href="publications.html">Публикации лаборатории →</a>
+
+<div class="person-actions"><a href="mailto:stepnoyvs47@mail.ru">E-mail ↗</a></div>
+
+:::
+
+::::
+
+:::::
+
+## Аспиранты
+
+::::: {.team-grid}
+
+:::: {.person-entry #shinkevich}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Артём Шинкевич" loading="lazy"><span class="person-category">Аспиранты</span></div>
+
+::: {.person-info}
+
+### Шинкевич Артём Сергеевич
+
+<p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RSMA / MIMO</li><li>LDPC</li><li>Обработка сигналов</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%A8%D0%B8%D0%BD%D0%BA%D0%B5%D0%B2%D0%B8%D1%87">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="mailto:a.shinkevich00@gmail.com">E-mail ↗</a><a href="https://scholar.google.com/citations?user=TA-ngpgAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-0174-9158">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 1213138
+- **eLibrary SPIN-код:** 8492-1845
+- **Scopus AuthorID:** 57946915200
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #shalin}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Георгий Шалин" loading="lazy"><span class="person-category">Аспиранты</span></div>
+
+::: {.person-info}
+
+### Шалин Георгий Николаевич
+
+<p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Полярные коды</li><li>Помехоустойчивое кодирование</li><li>6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%A8%D0%B0%D0%BB%D0%B8%D0%BD">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0000-0001-5015-599X">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 1213133
+- **eLibrary SPIN-код:** 1529-0615
+- **Scopus AuthorID:** 57947072800
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #eremeev}
+
+<div class="person-portrait"><div class="person-initials" aria-label="Еремеев Сергей Александрович">СЕ</div><span class="person-category">Аспиранты</span></div>
+
+::: {.person-info}
+
+### Еремеев Сергей Александрович
+
+<p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RIS / STAR-RIS</li><li>Модели радиоканала</li><li>СВЧ-измерения</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%95%D1%80%D0%B5%D0%BC%D0%B5%D0%B5%D0%B2">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0009-0008-0570-5495">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 1222191
+- **eLibrary SPIN-код:** 6544-0460
+- **Scopus AuthorID:** 59296552300
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #ilinskiy}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Дмитрий Ильинский" loading="lazy"><span class="person-category">Аспиранты</span></div>
+
+::: {.person-info}
+
+### Ильинский Дмитрий Евгеньевич
+
+<p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RIS / STAR-RIS</li><li>Прототипирование</li><li>Управление поверхностями</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=%D0%98%D0%BB%D1%8C%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">Публикации сотрудника →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0009-0008-8697-8945">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Научные идентификаторы</summary>
+
+- **eLibrary AuthorID:** 1215444
+- **eLibrary SPIN-код:** 4167-9931
+- **WoS ResearcherID:** MFH-0927-2025
+- **Scopus AuthorID:** 59296800900
+
+</details>
+
+:::
+
+::::
+
+:::::
+
+## Студенты
+
+::::: {.team-grid}
+
+:::: {.person-entry #pogorelov}
+
+<div class="person-portrait"><div class="person-initials" aria-label="Погорелов Евгений Дмитриевич">ЕП</div><span class="person-category">Студенты</span></div>
+
+::: {.person-info}
+
+### Погорелов Евгений Дмитриевич
+
+<p class="person-role">Студент</p>
+
+<div class="person-interests"><p class="person-label">Научные интересы</p><p class="interest-source">Научные интересы пока не указаны.</p></div>
+
+<a class="person-publications" href="publications.html">Публикации лаборатории →</a>
+
+<div class="person-actions"></div>
+
+:::
+
+::::
+
+:::::
+
+::: {.portfolio-contact}
+
+### Присоединиться к команде
+
+Студентам, которые хотят заниматься беспроводной связью, предлагаем познакомиться с направлениями исследований и обсудить тему работы с лабораторией.
+
+[Студентам →](students.qmd) · [laboratory317@gmail.com](mailto:laboratory317@gmail.com)
+
+:::

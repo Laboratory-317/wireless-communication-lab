@@ -1,0 +1,29 @@
+---
+{
+  "title": "Профили сотрудников",
+  "lang": "ru",
+  "description": "Образование, научная работа, преподавание и профессиональные достижения сотрудников лаборатории.",
+  "pagetitle": "Профили сотрудников — Лаборатория беспроводной связи",
+  "include-before-body": [
+    "../site-header-ru.html"
+  ],
+  "toc": false,
+  "toc-title": "На этой странице",
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-ru.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "body-classes": "site-page cv-page",
+  "anchor-sections": false
+}
+---
+
+На этих страницах собраны сведения о научной работе, проектах, преподавании и наградах сотрудников лаборатории.
+
+- [Крюков Яков Владимирович](cv-kryukov.qmd)
+- [Покаместов Дмитрий Алексеевич](cv-pokamestov.qmd)

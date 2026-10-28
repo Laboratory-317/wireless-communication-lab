@@ -1,0 +1,50 @@
+---
+{
+  "title": "Патенты",
+  "lang": "ru",
+  "description": "Изобретения, полезные модели и зарегистрированные программы для ЭВМ, разработанные сотрудниками лаборатории.",
+  "pagetitle": "Патенты — Лаборатория беспроводной связи",
+  "include-before-body": [
+    "../site-header-ru.html"
+  ],
+  "toc-title": "На этой странице",
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-ru.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "body-classes": "site-page patents-page",
+  "anchor-sections": false
+}
+---
+
+
+## Изобретения
+
+- Способ адаптивного согласования скорости LDPC-кодирования и параметров модуляции данных. Патент RU 2866894. 2026. [PDF](../assets/patents/ldpc-rate-modulation-adaptation.pdf)
+- Способ компенсации частотного и фазового рассогласования в приемном тракте. Патент RU 2858326. 2026. [PDF](../assets/patents/frequency-phase-mismatch-compensation.pdf)
+- Способ оценки канала в системах передачи данных с ортогональным частотным мультиплексированием с применением Compressed Sensing. Патент RU 2858294. 2026. [PDF](../assets/patents/ofdm-compressed-sensing-channel-estimation.pdf)
+- Способ формирования структуры радиокадра с адаптивным размещением пилотных символов. Патент RU 2862272. 2026. [PDF](../assets/patents/adaptive-pilot-radio-frame.pdf)
+- Радиометрический приемник шумовых сигналов низкой интенсивности. Патент RU 2848653. 2025. [PDF](../assets/patents/radiometric-receiver-low-intensity-noise.pdf)
+
+## Полезные модели
+
+- Устройство передачи информации по цепям питания. Полезная модель. 2020. [PDF](../assets/patents/power-line-information-transmission-device.pdf)
+- Приемо-передающий модуль радиолокационной системы. Полезная модель. 2016. [PDF](../assets/patents/radar-transceiver-module.pdf)
+
+## Программы для ЭВМ
+
+- Модель системы связи с полярным кодированием для сценариев следующего поколения IH и UMa. Свидетельство RU 2025686708. 2025. [PDF](../assets/patents/ih-uma-polar-coding-model.pdf)
+- Модель для оценки спектральной эффективности систем связи с разделением по скорости. Свидетельство RU 2025696848. 2025. [PDF](../assets/patents/rsma-spectral-efficiency-model.pdf)
+- Модель многопользовательской системы связи с MIMO и полярным кодеком. Свидетельство RU 2023667837. 2023. [PDF](../assets/patents/mimo-polar-codec-multiuser-model.pdf)
+- Модель системы связи с полярным кодированием для канала Релея. Свидетельство RU 2023668072. 2023. [PDF](../assets/patents/rayleigh-polar-coding-model.pdf)
+- Модель приемника сигналов на основе QR-разложения для многоантенных систем связи с SCMA. Свидетельство RU 2022664441. 2022. [PDF](../assets/patents/qr-scma-mimo-receiver-model.pdf)
+- Модель системы связи с адаптивным к состоянию канала полярным кодеком и NOMA. Свидетельство RU 2022667267. 2022. [PDF](../assets/patents/adaptive-polar-noma-model.pdf)
+- Модель нисходящего канала системы связи с SCMA-MIMO. Свидетельство RU 2021667581. 2021. [PDF](../assets/patents/downlink-scma-mimo-model.pdf)
+- Модель системы связи с SCMA-MIMO. Свидетельство о государственной регистрации программы для ЭВМ. 2020. [PDF](../assets/patents/scma-mimo-model.pdf)
+- Модель оценки параметров канала передачи для систем связи с SCMA. Свидетельство о государственной регистрации программы для ЭВМ. 2020. [PDF](../assets/patents/scma-channel-estimation-model.pdf)
+- Модель системы связи с SCMA. Свидетельство о государственной регистрации программы для ЭВМ. 2019. [PDF](../assets/patents/scma-model.pdf)

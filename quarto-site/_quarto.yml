@@ -1,0 +1,56 @@
+project:
+  type: website
+  pre-render:
+    - node home-sections.cjs
+    - node theme-diagrams.cjs
+  post-render: node version-assets.cjs
+  output-dir: _site
+  render:
+    - index.qmd
+    - ru/*.qmd
+    - en/*.qmd
+  resources:
+    - assets/**
+    - labicon.png
+    - home-theme.js
+    - home.css
+    - site.css
+website:
+  title: Laboratory 317
+  favicon: labicon.png
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    title: "LAB / 317"
+    background: light
+    right:
+      - text: RU
+        href: ru/index.qmd
+      - text: EN
+        href: en/index.qmd
+  page-footer:
+    left: "ТУСУР · TUSUR · Томск / Tomsk"
+    right:
+      - text: laboratory317@gmail.com
+        href: mailto:laboratory317@gmail.com
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    css:
+      - home.css
+      - site.css
+    toc: true
+    toc-title: На этой странице / On this page
+    toc-depth: 2
+    anchor-sections: true
+    link-external-newwindow: true
+    code-copy: true
+    smooth-scroll: true
+    include-after-body: navigation.html
+    lang: ru
+    title-block-banner: false
+execute:
+  enabled: false

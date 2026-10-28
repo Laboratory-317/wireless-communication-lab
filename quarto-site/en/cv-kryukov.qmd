@@ -1,0 +1,50 @@
+---
+{
+  "title": "Yakov Kryukov",
+  "lang": "en",
+  "description": "Yakov Kryukov’s research, projects, teaching and awards.",
+  "pagetitle": "Yakov Kryukov — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "body-classes": "site-page cv-page",
+  "anchor-sections": false
+}
+---
+
+
+**Candidate of Technical Sciences, Associate Professor**
+
+His work combines communication system simulation and teaching telecommunications courses.
+
+## Work at TUSUR
+
+Since 2025, he has worked as Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR. His doctoral research focuses on signal generation, processing, and transmission in multi-user wireless communication systems with power-domain channel separation and reconfigurable intelligent surfaces.
+
+## Research and publications
+
+He studies non-orthogonal multiple access, error-correcting codes, multi-antenna systems and reconfigurable intelligent surfaces. His work focuses on signal generation and processing for 5G/6G communication systems.
+
+He has authored or co-authored more than 100 research publications. More than 60 appeared in venues indexed in Scopus or Web of Science, or included in Russia’s VAK or White List. He is also an author or co-author of 10 intellectual property assets.
+
+## Projects
+
+He participated in RSF No. 21-79-00160 "Communication resource allocation in telecommunication systems with non-orthogonal multiple access" and RSF No. 24-29-00172 "Improving non-orthogonal multiple access communication systems using polar codes". He also worked on TUSUR projects under Priority 2030, the TUSUR Advanced Engineering School, and UMNIK related to PD-NOMA, polar codes, RIS, and STAR-RIS.
+
+## Teaching
+
+He has taught at TUSUR since 2013 and supervised theses for 31 bachelor's students and 18 master's students. He teaches seven courses on communication systems in Russian and English and has developed eight online courses.
+
+## Awards
+
+Winner of the Vladimir Potanin Scholarship Program in 2017. Winner of the U-NOVUS young researchers' development competition in 2019. Second place in the TUSUR Best E-Course competition in 2023. Laureate of the Tomsk Region award in education, science, healthcare, and culture in 2024.

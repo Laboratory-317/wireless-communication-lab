@@ -1,0 +1,291 @@
+---
+{
+  "title": "Our team",
+  "lang": "en",
+  "description": "Laboratory staff and students, with research interests, publications and contact details.",
+  "pagetitle": "Our team — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "body-classes": "people-page portfolio-page site-page",
+  "toc": false,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+<nav class="team-jump" aria-label="Team groups"><a href="#pokamestov">Research Staff</a><a href="#stepnoy">Engineers</a><a href="#shinkevich">Postgraduate Students</a><a href="#pogorelov">Students</a></nav>
+
+## Research Staff
+
+::::: {.team-grid}
+
+:::: {.person-entry #pokamestov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Dmitriy Pokamestov" loading="lazy"><span class="person-category">Research Staff</span></div>
+
+::: {.person-info}
+
+### Dmitriy Pokamestov
+
+<p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>NOMA / SCMA</li><li>Polar codes</li><li>5G / 6G</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Pokamestov">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="mailto:dmaltomsk@mail.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=-_7z65YAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-9405-4573">ORCID ↗</a><a href="cv-pokamestov.html">CV ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 860831
+- **eLibrary SPIN code:** 7819-9512
+- **WoS ResearcherID:** E-2544-2019
+- **Scopus AuthorID:** 57188748446
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #kryukov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Yakov Kryukov" loading="lazy"><span class="person-category">Research Staff</span></div>
+
+::: {.person-info}
+
+### Yakov Kryukov
+
+<p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Resource allocation</li><li>PD-NOMA</li><li>RIS</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Kryukov">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="mailto:iakov.v.kriukov@tusur.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=Ms3raocp3REC&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4115-9080">ORCID ↗</a><a href="cv-kryukov.html">CV ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 886532
+- **eLibrary SPIN code:** 3956-3916
+- **WoS ResearcherID:** AAG-5931-2020
+- **Scopus AuthorID:** 57195284047
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #litvinov}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Rudolf Litvinov" loading="lazy"><span class="person-category">Research Staff</span></div>
+
+::: {.person-info}
+
+### Rudolf Litvinov
+
+<p class="person-role">Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RSMA / SDMA</li><li>6G multiple access</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Litvinov">Publications by this researcher →</a>
+
+<div class="person-actions"></div>
+
+:::
+
+::::
+
+:::::
+
+## Engineers
+
+::::: {.team-grid}
+
+:::: {.person-entry #stepnoy}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Viktor Stepnoy" loading="lazy"><span class="person-category">Engineers</span></div>
+
+::: {.person-info}
+
+### Viktor Stepnoy
+
+<p class="person-role">Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><p class="interest-source">Research interests are not listed.</p></div>
+
+<a class="person-publications" href="publications.html">Laboratory publications →</a>
+
+<div class="person-actions"><a href="mailto:stepnoyvs47@mail.ru">E-mail ↗</a></div>
+
+:::
+
+::::
+
+:::::
+
+## Postgraduate Students
+
+::::: {.team-grid}
+
+:::: {.person-entry #shinkevich}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Artyom Shinkevich" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+
+::: {.person-info}
+
+### Artyom Shinkevich
+
+<p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RSMA / MIMO</li><li>LDPC</li><li>Signal processing</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Shinkevich">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="mailto:a.shinkevich00@gmail.com">E-mail ↗</a><a href="https://scholar.google.com/citations?user=TA-ngpgAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-0174-9158">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 1213138
+- **eLibrary SPIN code:** 8492-1845
+- **Scopus AuthorID:** 57946915200
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #shalin}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Georgy Shalin" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+
+::: {.person-info}
+
+### Georgy Shalin
+
+<p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Polar codes</li><li>Error-correcting codes</li><li>6G</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Shalin">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0000-0001-5015-599X">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 1213133
+- **eLibrary SPIN code:** 1529-0615
+- **Scopus AuthorID:** 57947072800
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #eremeev}
+
+<div class="person-portrait"><div class="person-initials" aria-label="Sergey Eremeev">SE</div><span class="person-category">Postgraduate Students</span></div>
+
+::: {.person-info}
+
+### Sergey Eremeev
+
+<p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RIS / STAR-RIS</li><li>Radio channel models</li><li>RF measurements</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Eremeev">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0009-0008-0570-5495">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 1222191
+- **eLibrary SPIN code:** 6544-0460
+- **Scopus AuthorID:** 59296552300
+
+</details>
+
+:::
+
+::::
+
+:::: {.person-entry #ilinskiy}
+
+<div class="person-portrait"><img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Dmitriy Ilinskiy" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+
+::: {.person-info}
+
+### Dmitriy Ilinskiy
+
+<p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RIS / STAR-RIS</li><li>Prototyping</li><li>Surface control</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+
+<a class="person-publications" href="publications.html?researcher=Ilinskiy">Publications by this researcher →</a>
+
+<div class="person-actions"><a href="https://orcid.org/0009-0008-8697-8945">ORCID ↗</a></div>
+
+<details class="person-identifiers"><summary>Research identifiers</summary>
+
+- **eLibrary AuthorID:** 1215444
+- **eLibrary SPIN code:** 4167-9931
+- **WoS ResearcherID:** MFH-0927-2025
+- **Scopus AuthorID:** 59296800900
+
+</details>
+
+:::
+
+::::
+
+:::::
+
+## Students
+
+::::: {.team-grid}
+
+:::: {.person-entry #pogorelov}
+
+<div class="person-portrait"><div class="person-initials" aria-label="Evgeniy Dmitrievich Pogorelov">EP</div><span class="person-category">Students</span></div>
+
+::: {.person-info}
+
+### Evgeniy Dmitrievich Pogorelov
+
+<p class="person-role">Student</p>
+
+<div class="person-interests"><p class="person-label">Research interests</p><p class="interest-source">Research interests are not listed.</p></div>
+
+<a class="person-publications" href="publications.html">Laboratory publications →</a>
+
+<div class="person-actions"></div>
+
+:::
+
+::::
+
+:::::
+
+::: {.portfolio-contact}
+
+### Join the team
+
+Students interested in wireless communication can explore our research areas and contact the team to discuss a project.
+
+[Student opportunities →](students.qmd) · [laboratory317@gmail.com](mailto:laboratory317@gmail.com)
+
+:::

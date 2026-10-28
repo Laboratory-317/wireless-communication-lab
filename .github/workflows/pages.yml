@@ -30,12 +30,27 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Validate and build public site
-        run: |
-          node tools/build-site.js
-          node tools/check-site.js
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.10.18'
+
+      - name: Build classic site
+        run: node tools/build-site.js
         env:
           LAB_AUTO_TRANSLATE: "0"
+
+      - name: Build new design
+        working-directory: quarto-site
+        run: |
+          node home-sections.cjs
+          quarto render
+
+      - name: Assemble and validate both designs
+        run: |
+          node tools/build-comparison.js
+          node tools/check-site.js
+          node tools/check-comparison.js
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

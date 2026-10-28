@@ -1,0 +1,97 @@
+---
+{
+  "title": "Intelligent surfaces",
+  "lang": "en",
+  "description": "We model radio channels with RIS and STAR-RIS, study surface control algorithms and build experimental prototypes.",
+  "pagetitle": "Intelligent surfaces — Wireless Communication Laboratory",
+  "include-before-body": [
+    "../site-header-en.html"
+  ],
+  "toc-title": "On this page",
+  "body-classes": "research-detail-page site-page",
+  "toc": true,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-en.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+[← All research areas](research.qmd)
+
+::: {.research-context}
+
+[RIS · STAR-RIS · RF DESIGN]{.portfolio-tags}
+
+**Related projects**
+
+Advanced Engineering School · UMNIK · Priority 2030
+
+[Projects and funding →](projects.qmd#project-archive)
+
+:::
+
+A reconfigurable intelligent surface (RIS) changes how radio signals are reflected and thereby affects the radio channel. We model these channels, develop surface control algorithms and test them on experimental prototypes.
+
+RIS research began in 2023 as an initiative by laboratory staff and students. Fourth-year students carried out the first studies, modeling basic RIS application scenarios for their graduation theses.
+
+The work continued through a project at the TUSUR Advanced Engineering School. Support from the UMNIK competition enabled the team to move from modeling to building prototypes. Surfaces with [16](#ris-prototype) and [64 elements](#ris-exhibition) have been designed and manufactured.
+
+For the 16-element surface, the team developed a controller and software for configuring the RIS and evaluating its operation in real time. A mobile phone control module is also under development. For [anechoic chamber measurements](#ris-chamber), students built a [stepper-motor rotation device with indicator lights](#ris-control).
+
+Two graduates who started working on RIS as students continued this work in postgraduate research. We study surface control algorithms, remote control from mobile devices and RIS applications in non-terrestrial networks. Another topic is STAR-RIS: surfaces that simultaneously reflect and transmit electromagnetic waves.
+
+The work involves microwave modeling, antenna engineering, mechanical design, PCB layout, controller development and radio measurements. Results have been presented in scientific publications, at EDM conferences and technical exhibitions, including [Rost UP](#ris-exhibition), and in students’ graduation theses.
+
+This research combines modeling and algorithm development, refinement of prototypes and measurement methods, and training students in research and engineering.
+
+## Prototypes and experimental work
+
+:::: {.research-gallery}
+
+::: {#ris-chamber .research-photo}
+
+![RIS experiments in an anechoic chamber](../assets/research/ris/anechoic-chamber-team.jpg){loading="lazy"}
+
+:::
+
+::: {#ris-prototype .research-photo}
+
+![A 16-element RIS prototype in the measurement setup](../assets/research/ris/anechoic-chamber-prototype.jpg){loading="lazy"}
+
+:::
+
+::: {#ris-control .research-photo}
+
+![Rotating platform and RIS control board](../assets/research/ris/rotation-control-setup.jpg){loading="lazy"}
+
+:::
+
+::: {#ris-exhibition .research-photo}
+
+![Presentation of a 64-element RIS prototype at the Rost UP exhibition](../assets/research/ris/prototype-exhibition.jpg){loading="lazy"}
+
+:::
+
+::::
+
+
+
+
+## Related publications
+
+::: {.research-evidence}
+
+- **Influence of Phase States of Binary Unit Cell on Ris Characteristics.** Sergey Eremeev, Dmitriy Ilinskiy, Yakov Kryukov, Dmitriy Pokamestov, Eugeniy Rogozhnikov, Ivan Rybakov. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 520–524. 2025. [DOI](https://doi.org/10.1109/edm65517.2025.11096689)
+
+- **Modeling and Prototyping of Unit Cell for Reconfigurable Intelligent Surface: Electromagnetic Model, Design and Circuitry.** Dmitriy Ilinskiy, Sergey Eremeev, Yakov Kryukov, Dmitriy Pokamestov, Georgiy Shalin, Artem Shinkevich. *2025 IEEE 26th International Conference of Young Professionals in Electron Devices and Materials (EDM)*, pp. 450–453. 2025.
+
+:::
+
+[Full bibliography →](publications.qmd)

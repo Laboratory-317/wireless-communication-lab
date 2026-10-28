@@ -1,0 +1,56 @@
+---
+{
+  "title": "Многоантенные системы",
+  "lang": "ru",
+  "description": "Исследуем многоантенные системы MIMO и методы обработки сигналов для повышения эффективности беспроводной связи.",
+  "pagetitle": "Многоантенные системы — Лаборатория беспроводной связи",
+  "include-before-body": [
+    "../site-header-ru.html"
+  ],
+  "toc-title": "На этой странице",
+  "body-classes": "research-detail-page site-page",
+  "toc": true,
+  "include-after-body": [
+    "../navigation.html",
+    "../site-footer-ru.html"
+  ],
+  "include-in-header": [
+    {
+      "text": "<script src=\"../home-theme.js\"></script>"
+    }
+  ],
+  "anchor-sections": false
+}
+---
+
+[← Все направления](research.qmd)
+
+В многоантенных системах MIMO несколько антенн участвуют в передаче и приёме сигналов. Исследуем обработку сигналов и пространственное разделение пользователей в многопользовательских беспроводных системах.
+
+Сравниваем методы формирования и приёма сигналов, оцениваем влияние канала и межпользовательских помех. Эти задачи связаны с разработкой технологий физического уровня для связи 5G и 6G.
+
+![Многоантенная связь](../assets/research/wireless.svg){.detail-diagram}
+
+::: {.research-context}
+
+[5G / 6G · MIMO · PHY]{.portfolio-tags}
+
+**Связанные проекты**
+
+РНФ № 22-79-10148 · 2022–2025
+
+[Проекты и финансирование →](projects.qmd#project-archive)
+
+:::
+
+## Публикации по теме
+
+::: {.research-evidence}
+
+- **Comparative analysis of multiple access techniques for 6G communication systems.** Dmitriy Pokamestov, Yakov Kryukov, Eugeniy Rogozhnikov, Georgiy Shalin, Artem Shinkevich, Rudolf Litvinov. *Telecommunication Systems*, vol. 88, no. 3, 104. 2025. [DOI](https://doi.org/10.1007/s11235-025-01333-8)
+
+- **Reducing Successive Interference Cancellation Iterations in Hybrid Beamforming Multiuser Massive Multiple Input Multiple Output Systems Through Grouping Users with Symmetry Channels.** Hashem Khaled Rehab, Eugeniy Rogozhnikov, Kirill Savenko, Semen Mukhamadiev, Yakov Kryukov, Dmitriy Pokamestov. *Symmetry*, vol. 16, no. 11, 1437. 2024.
+
+:::
+
+[Полная библиография →](publications.qmd)
