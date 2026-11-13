@@ -120,7 +120,7 @@
 
 ::::
 
-## Professional Development Courses {#professional-courses}
+## Professional Development Courses for Company Employees {#professional-courses}
 
 :::: {.learning-grid}
 
