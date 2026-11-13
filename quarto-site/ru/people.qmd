@@ -197,7 +197,7 @@
 
 :::: {.person-entry #eremeev}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/eremeev-sergey.jpg" alt="Сергей Еремеев" loading="lazy"><span class="person-category">Аспиранты</span></div>
+<div class="person-portrait"><img class="person-photo" src="../assets/people/eremeev-sergey-portrait.png" alt="Сергей Еремеев" loading="lazy"><span class="person-category">Аспиранты</span></div>
 
 ::: {.person-info}
 

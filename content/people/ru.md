@@ -80,7 +80,7 @@
 - ORCID: 0000-0001-5015-599X
 
 ### Еремеев Сергей Александрович
-![Сергей Еремеев](assets/people/eremeev-sergey.jpg)
+![Сергей Еремеев](assets/people/eremeev-sergey-portrait.png)
 
 Ассистент кафедры ТОР ТУСУР.
 
