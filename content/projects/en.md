@@ -1,5 +1,9 @@
 # Projects
 
+## Start-1 (Round 2)
+
+- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. Application No. С1-636153. Grant from the Foundation for Assistance to Small Innovative Enterprises — 5 million rubles. [Results published November 3, 2026](https://www.fasie.ru/press/fund/start-1-2026-results/).
+
 ## Russian Science Foundation
 
 - RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).

@@ -27,6 +27,13 @@
 
 The laboratory’s projects, grants and contract research, with their project periods.
 
+<details id="start-1" class="project-program" open>
+<summary>Start-1 (Round 2) <span>01</span></summary>
+
+- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. Application No. С1-636153. Grant from the Foundation for Assistance to Small Innovative Enterprises — 5 million rubles. [Results published November 3, 2026](https://www.fasie.ru/press/fund/start-1-2026-results/).
+
+</details>
+
 <details class="project-program" open>
 <summary>Russian Science Foundation <span>04</span></summary>
 
