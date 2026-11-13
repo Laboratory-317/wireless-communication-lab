@@ -33,7 +33,11 @@
     if (page === 'cv' && person) legacyQuery.set('person', person);
     const current = page === 'home' ? 'index' : page;
     const ru = language === 'ru';
-    return `<nav class="design-compare" aria-label="${ru ? 'Версия оформления' : 'Site design'}"><span>${ru ? 'Оформление' : 'Design'}</span><a href="${current}.html?${legacyQuery}" aria-current="page">${ru ? 'Прежнее' : 'Classic'}</a><a href="../modern/${language}/${destination}.html">${ru ? 'Новое' : 'New'}</a></nav>`;
+    const scientificQuery = new URLSearchParams(query);
+    scientificQuery.delete('lang');
+    scientificQuery.delete('person');
+    const suffix = scientificQuery.size ? `?${scientificQuery}` : '';
+    return `<nav class="design-compare" aria-label="${ru ? 'Версия оформления' : 'Site design'}"><span>${ru ? 'Оформление' : 'Design'}</span><a href="${current}.html?${legacyQuery}" aria-current="page">${ru ? 'Прежнее' : 'Classic'}</a><a href="../modern/${language}/${destination}.html">${ru ? 'Новое' : 'New'}</a><a href="../scientific/${language}/${destination}.html${html(suffix)}">${ru ? 'Научная' : 'Scientific'}</a></nav>`;
   }
 
   function languageSwitch(currentLanguage) {

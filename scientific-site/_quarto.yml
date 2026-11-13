@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - ru/*.qmd
+    - en/*.qmd
+  resources:
+    - assets/**
+    - labicon.png
+    - scientific.css
+    - scientific.js
+website:
+  title: Laboratory 317 · Scientific
+  favicon: labicon.png
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    title: LAB / 317
+    right:
+      - text: RU
+        href: ru/index.qmd
+      - text: EN
+        href: en/index.qmd
+format:
+  html:
+    theme: cosmo
+    css: scientific.css
+    toc: false
+    page-layout: full
+    title-block-style: none
+    anchor-sections: false
+    link-external-newwindow: true
+    code-copy: true
+    smooth-scroll: false
+execute:
+  enabled: false

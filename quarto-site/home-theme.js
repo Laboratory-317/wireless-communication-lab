@@ -47,6 +47,8 @@
     }
     const modernLink = document.querySelector('[data-modern-design]');
     if (modernLink) modernLink.href = `${page}.html${location.search}`;
+    const scientificLink = document.querySelector('[data-scientific-design]');
+    if (scientificLink) scientificLink.href = `../../scientific/${lang}/${page}.html${location.search}${location.hash}`;
     const section = page.startsWith('research') ? 'research'
       : page.startsWith('cv') ? 'people' : page;
     document.querySelectorAll('.home-languages a').forEach(a => {

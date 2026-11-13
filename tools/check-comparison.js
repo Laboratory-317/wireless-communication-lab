@@ -28,8 +28,10 @@ for (const lang of ['ru','en']) {
   const html = fs.readFileSync(modern,'utf8');
   assert(html.includes('data-classic-design'));
   assert(html.includes('data-modern-design'));
+  assert(html.includes('data-scientific-design'));
 }
 const classic = fs.readFileSync(path.join(root,'themes-preview','journal','index.html'),'utf8');
 assert(classic.includes('../modern/ru/index.html'));
 assert(classic.includes('design-compare'));
-console.log(`Checked ${pages} HTML pages and ${links} local references across both designs.`);
+assert(classic.includes('../scientific/ru/index.html'));
+console.log(`Checked ${pages} HTML pages and ${links} local references across all three designs.`);
