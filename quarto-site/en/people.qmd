@@ -197,7 +197,7 @@
 
 :::: {.person-entry #eremeev}
 
-<div class="person-portrait"><div class="person-initials" aria-label="Sergey Eremeev">SE</div><span class="person-category">Postgraduate Students</span></div>
+<div class="person-portrait"><img class="person-photo" src="../assets/people/eremeev-sergey.jpg" alt="Sergey Eremeev" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
 
 ::: {.person-info}
 

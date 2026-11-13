@@ -87,6 +87,8 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 
 ### Sergey Eremeev
 
+![Sergey Eremeev](assets/people/eremeev-sergey.jpg)
+
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
 - E-mail:
