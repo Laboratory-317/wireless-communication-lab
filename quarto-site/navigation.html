@@ -28,7 +28,7 @@
   const empty = document.createElement('p'); empty.className='publication-empty'; empty.hidden=true;
   empty.textContent=ru?'Ничего не найдено. Попробуйте другой запрос или выберите все годы.':'No results. Try another search or select all years.';
   archive.after(empty);
-  const surnameGroups = [["покаместов", "pokamestov"], ["крюков", "kryukov", "krykov", "krukov", "kriukov"], ["литвинов", "litvinov"], ["шинкевич", "shinkevich", "shinkevic"], ["шалин", "shalin"], ["еремеев", "eremeev"], ["ильинский", "ilinskiy", "ilinsky"]];
+  const surnameGroups = [["покаместов", "pokamestov"], ["крюков", "kryukov", "krykov", "krukov", "kriukov"], ["литвинов", "litvinov"], ["степной", "stepnoy"], ["шинкевич", "shinkevich", "shinkevic"], ["шалин", "shalin"], ["еремеев", "eremeev"], ["ильинский", "ilinskiy", "ilinsky"]];
   const aliases = Object.fromEntries(surnameGroups.flatMap(group => group.map(name => [name, group])));
   input.value = new URLSearchParams(location.search).get("researcher") || "";
   function filter() {

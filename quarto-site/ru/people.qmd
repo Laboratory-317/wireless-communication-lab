@@ -125,7 +125,7 @@
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><p class="interest-source">Научные интересы пока не указаны.</p></div>
 
-<a class="person-publications" href="publications.html">Публикации лаборатории →</a>
+<a class="person-publications" href="publications.html?researcher=%D0%A1%D1%82%D0%B5%D0%BF%D0%BD%D0%BE%D0%B9">Публикации сотрудника →</a>
 
 <div class="person-actions"><a href="mailto:stepnoyvs47@mail.ru">E-mail ↗</a></div>
 

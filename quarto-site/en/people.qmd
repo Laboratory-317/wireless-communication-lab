@@ -125,7 +125,7 @@
 
 <div class="person-interests"><p class="person-label">Research interests</p><p class="interest-source">Research interests are not listed.</p></div>
 
-<a class="person-publications" href="publications.html">Laboratory publications →</a>
+<a class="person-publications" href="publications.html?researcher=Stepnoy">Publications by this researcher →</a>
 
 <div class="person-actions"><a href="mailto:stepnoyvs47@mail.ru">E-mail ↗</a></div>
 
