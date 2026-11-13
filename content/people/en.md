@@ -115,5 +115,6 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 ## Students
 
 ### Evgeniy Dmitrievich Pogorelov
+![Evgeniy Pogorelov](assets/people/pogorelov-evgeniy.jpg)
 
 - E-mail:
