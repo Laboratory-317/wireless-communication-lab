@@ -1,15 +1,15 @@
 # Projects
 
-## Start-1 (Round 2)
-
-- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. Application No. С1-636153. Grant from the Foundation for Assistance to Small Innovative Enterprises — 5 million rubles. [Results published November 3, 2026](https://www.fasie.ru/press/fund/start-1-2026-results/).
-
 ## Russian Science Foundation
 
 - RSF No. 24-29-00172. Improving non-orthogonal multiple access communication systems using polar codes. 2024–2025. [RSF project record](https://rscf.ru/project/24-29-00172/).
 - RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. [RSF project record](https://rscf.ru/project/22-79-10148/).
 - RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.
 - RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021.
+
+## Start
+
+- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. 2026–2027.
 
 ## Priority 2030
 
@@ -28,6 +28,8 @@
 
 ## UMNIK
 
+- Development of an intelligent software system for determining digital signal parameters using machine learning. 2026–2027.
+- Development of the ReCK-RIS hardware and software system for controlling a reconfigurable metasurface. 2026–2027.
 - Development of a reconfigurable intelligent surface. 2024-2025.
 
 ## Industry Contracts

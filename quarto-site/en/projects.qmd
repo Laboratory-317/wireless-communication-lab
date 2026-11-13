@@ -27,13 +27,6 @@
 
 The laboratory’s projects, grants and contract research, with their project periods.
 
-<details id="start-1" class="project-program" open>
-<summary>Start-1 (Round 2) <span>01</span></summary>
-
-- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. Application No. С1-636153. Grant from the Foundation for Assistance to Small Innovative Enterprises — 5 million rubles. [Results published November 3, 2026](https://www.fasie.ru/press/fund/start-1-2026-results/).
-
-</details>
-
 <details class="project-program" open>
 <summary>Russian Science Foundation <span>04</span></summary>
 
@@ -41,6 +34,13 @@ The laboratory’s projects, grants and contract research, with their project pe
 - RSF No. 22-79-10148. Advanced multiple access methods for future 6G wireless communication systems. 2022-2025. [RSF project record](https://rscf.ru/project/22-79-10148/).
 - RSF No. 21-79-00160. Communication resource allocation in telecommunication systems with non-orthogonal multiple access. 2021-2023.
 - RSF No. 19-79-00087. Using non-orthogonal multiple access methods for wireless communication systems. 2019-2021.
+
+</details>
+
+<details id="start-1" class="project-program" open>
+<summary>Start <span>01</span></summary>
+
+- Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. 2026–2027.
 
 </details>
 
@@ -66,8 +66,10 @@ The laboratory’s projects, grants and contract research, with their project pe
 </details>
 
 <details class="project-program" open>
-<summary>UMNIK <span>01</span></summary>
+<summary>UMNIK <span>03</span></summary>
 
+- Development of an intelligent software system for determining digital signal parameters using machine learning. 2026–2027.
+- Development of the ReCK-RIS hardware and software system for controlling a reconfigurable metasurface. 2026–2027.
 - Development of a reconfigurable intelligent surface. 2024-2025.
 
 </details>
