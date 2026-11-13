@@ -39,7 +39,7 @@
 
 <p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>NOMA / SCMA</li><li>Polar codes</li><li>5G / 6G</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Multiple access methods (NOMA, SCMA, RSMA)</li><li>Signal design and adaptation</li><li>Error correction coding (polar codes, LDPC)</li><li>Multiple antenna communication systems (MIMO)</li><li>Channel estimation and synchronization</li><li>Machine learning in telecommunications</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Pokamestov">Publications by this researcher →</a>
 
@@ -68,7 +68,7 @@
 
 <p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Resource allocation</li><li>PD-NOMA</li><li>RIS</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Nonorthogonal multiple access (NOMA)</li><li>Radio resource management</li><li>Modulation and coding adaptation</li><li>Channel modeling with reconfigurable intelligent surfaces (RIS)</li><li>Massive machine type communications (mMTC)</li><li>Communication system synchronization</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Kryukov">Publications by this researcher →</a>
 
@@ -97,7 +97,7 @@
 
 <p class="person-role">Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RSMA / SDMA</li><li>6G multiple access</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Nonlinear optics</li><li>Wave propagation in metamaterials</li><li>Soliton formation and wave stability</li><li>Multiple access with rate splitting (RSMA)</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Litvinov">Publications by this researcher →</a>
 
@@ -123,7 +123,7 @@
 
 <p class="person-role">Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><p class="interest-source">Research interests are not listed.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Electromagnetic data transmission in downhole telemetry systems</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Stepnoy">Publications by this researcher →</a>
 
@@ -149,7 +149,7 @@
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RSMA / MIMO</li><li>LDPC</li><li>Signal processing</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Multiple access with rate splitting (RSMA)</li><li>Multiple antenna communication systems (MIMO)</li><li>Spatial signal processing</li><li>Error correction coding (LDPC)</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Shinkevich">Publications by this researcher →</a>
 
@@ -177,7 +177,7 @@
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Polar codes</li><li>Error-correcting codes</li><li>6G</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Polar coding and decoding</li><li>Coding adaptation to wireless channels</li><li>Improving the error performance of OFDM systems</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Shalin">Publications by this researcher →</a>
 
@@ -205,7 +205,7 @@
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RIS / STAR-RIS</li><li>Radio channel models</li><li>RF measurements</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Modeling and experimental studies of reconfigurable intelligent surfaces (RIS)</li><li>Multipath radio channel modeling</li><li>Radio coverage assessment</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Eremeev">Publications by this researcher →</a>
 
@@ -233,7 +233,7 @@
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><ul><li>RIS / STAR-RIS</li><li>Prototyping</li><li>Surface control</li></ul><p class="interest-source">Topics based on this researcher’s publications.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Design and modeling of reconfigurable intelligent surface (RIS) elements</li><li>RIS circuit design</li><li>Radio coverage modeling</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=Ilinskiy">Publications by this researcher →</a>
 
@@ -268,7 +268,7 @@
 
 <p class="person-role">Student</p>
 
-<div class="person-interests"><p class="person-label">Research interests</p><p class="interest-source">Research interests are not listed.</p></div>
+<div class="person-interests"><p class="person-label">Research interests</p><ul><li>Machine learning in telecommunications</li></ul></div>
 
 <a class="person-publications" href="publications.html">Laboratory publications →</a>
 

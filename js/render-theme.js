@@ -435,6 +435,10 @@
                     <div class="person-info">
                       <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
                       ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
+                      ${person.researchInterests?.length ? `<div class="person-interests">
+                        <h5>${language === "en" ? "Research interests" : "Научные интересы"}</h5>
+                        <ul>${person.researchInterests.map((interest) => `<li>${html(interest)}</li>`).join("")}</ul>
+                      </div>` : ""}
                       <dl class="profile-list">
                         ${personContacts(person).map(profileContact).join("")}
                       </dl>

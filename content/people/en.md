@@ -11,6 +11,7 @@
 
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Multiple access methods (NOMA, SCMA, RSMA); Signal design and adaptation; Error correction coding (polar codes, LDPC); Multiple antenna communication systems (MIMO); Channel estimation and synchronization; Machine learning in telecommunications
 - E-mail: dmaltomsk@mail.ru
 - Scholar: https://scholar.google.com/citations?user=-_7z65YAAAAJ&hl=ru
 - eLibrary AuthorID: 860831
@@ -27,6 +28,7 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Nonorthogonal multiple access (NOMA); Radio resource management; Modulation and coding adaptation; Channel modeling with reconfigurable intelligent surfaces (RIS); Massive machine type communications (mMTC); Communication system synchronization
 - E-mail: iakov.v.kriukov@tusur.ru
 - Scholar: https://scholar.google.com/citations?user=Ms3raocp3REC&hl=ru
 - eLibrary AuthorID: 886532
@@ -43,6 +45,7 @@ Candidate of Technical Sciences, Associate Professor at the Department of Teleco
 
 Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Nonlinear optics; Wave propagation in metamaterials; Soliton formation and wave stability; Multiple access with rate splitting (RSMA)
 - E-mail:
 - Scholar:
 - ORCID:
@@ -55,6 +58,7 @@ Candidate of Physical and Mathematical Sciences, Associate Professor at the Depa
 
 Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Electromagnetic data transmission in downhole telemetry systems
 - E-mail: stepnoyvs47@mail.ru
 
 ## Postgraduate Students
@@ -65,6 +69,7 @@ Senior Lecturer at the Department of Telecommunications and Basic Principles of 
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Multiple access with rate splitting (RSMA); Multiple antenna communication systems (MIMO); Spatial signal processing; Error correction coding (LDPC)
 - E-mail: a.shinkevich00@gmail.com
 - Scholar: https://scholar.google.com/citations?user=TA-ngpgAAAAJ&hl=ru
 - eLibrary AuthorID: 1213138
@@ -78,6 +83,7 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Polar coding and decoding; Coding adaptation to wireless channels; Improving the error performance of OFDM systems
 - E-mail:
 - Scholar:
 - eLibrary AuthorID: 1213133
@@ -91,6 +97,7 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Modeling and experimental studies of reconfigurable intelligent surfaces (RIS); Multipath radio channel modeling; Radio coverage assessment
 - E-mail:
 - Scholar:
 - eLibrary AuthorID: 1222191
@@ -104,6 +111,7 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 
 Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.
 
+- Research areas: Design and modeling of reconfigurable intelligent surface (RIS) elements; RIS circuit design; Radio coverage modeling
 - E-mail:
 - Scholar:
 - eLibrary AuthorID: 1215444
@@ -117,4 +125,5 @@ Assistant at the Department of Telecommunications and Basic Principles of Radio 
 ### Evgeniy Dmitrievich Pogorelov
 ![Evgeniy Pogorelov](assets/people/pogorelov-evgeniy-portrait.png)
 
+- Research areas: Machine learning in telecommunications
 - E-mail:

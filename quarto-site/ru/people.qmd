@@ -39,7 +39,7 @@
 
 <p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>NOMA / SCMA</li><li>Полярные коды</li><li>5G / 6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Методы множественного доступа (NOMA, SCMA, RSMA)</li><li>Синтез и адаптация сигналов</li><li>Помехоустойчивое кодирование (полярные коды, LDPC)</li><li>Многоантенные системы связи (MIMO)</li><li>Оценка канала и синхронизация</li><li>Машинное обучение в телекоммуникациях</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%9F%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D1%81%D1%82%D0%BE%D0%B2">Публикации сотрудника →</a>
 
@@ -68,7 +68,7 @@
 
 <p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Распределение ресурсов</li><li>PD-NOMA</li><li>RIS</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Неортогональный множественный доступ (NOMA)</li><li>Управление радиоресурсами</li><li>Адаптация модуляции и кодирования</li><li>Моделирование каналов с реконфигурируемыми поверхностями (RIS)</li><li>Массовая межмашинная связь (mMTC)</li><li>Синхронизация систем связи</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%9A%D1%80%D1%8E%D0%BA%D0%BE%D0%B2">Публикации сотрудника →</a>
 
@@ -97,7 +97,7 @@
 
 <p class="person-role">Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RSMA / SDMA</li><li>Методы доступа 6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Нелинейная оптика</li><li>Распространение волн в метаматериалах</li><li>Формирование солитонов и устойчивость волновых процессов</li><li>Множественный доступ с разделением по скорости (RSMA)</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%9B%D0%B8%D1%82%D0%B2%D0%B8%D0%BD%D0%BE%D0%B2">Публикации сотрудника →</a>
 
@@ -123,7 +123,7 @@
 
 <p class="person-role">Старший преподаватель кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><p class="interest-source">Научные интересы пока не указаны.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Электромагнитная передача данных в системах забойной телеметрии</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%A1%D1%82%D0%B5%D0%BF%D0%BD%D0%BE%D0%B9">Публикации сотрудника →</a>
 
@@ -149,7 +149,7 @@
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RSMA / MIMO</li><li>LDPC</li><li>Обработка сигналов</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Множественный доступ с разделением по скорости (RSMA)</li><li>Многоантенные системы связи (MIMO)</li><li>Пространственная обработка сигналов</li><li>Помехоустойчивое кодирование (LDPC)</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%A8%D0%B8%D0%BD%D0%BA%D0%B5%D0%B2%D0%B8%D1%87">Публикации сотрудника →</a>
 
@@ -177,7 +177,7 @@
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Полярные коды</li><li>Помехоустойчивое кодирование</li><li>6G</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Полярное кодирование и декодирование</li><li>Адаптация кодирования к радиоканалу</li><li>Повышение помехоустойчивости систем OFDM</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%A8%D0%B0%D0%BB%D0%B8%D0%BD">Публикации сотрудника →</a>
 
@@ -205,7 +205,7 @@
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RIS / STAR-RIS</li><li>Модели радиоканала</li><li>СВЧ-измерения</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Моделирование и экспериментальное исследование реконфигурируемых поверхностей (RIS)</li><li>Моделирование многолучевых радиоканалов</li><li>Оценка радиопокрытия</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%95%D1%80%D0%B5%D0%BC%D0%B5%D0%B5%D0%B2">Публикации сотрудника →</a>
 
@@ -233,7 +233,7 @@
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>RIS / STAR-RIS</li><li>Прототипирование</li><li>Управление поверхностями</li></ul><p class="interest-source">Темы указаны по публикациям сотрудника.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Разработка и моделирование элементов реконфигурируемых поверхностей (RIS)</li><li>Схемотехника RIS</li><li>Моделирование радиопокрытия</li></ul></div>
 
 <a class="person-publications" href="publications.html?researcher=%D0%98%D0%BB%D1%8C%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">Публикации сотрудника →</a>
 
@@ -268,7 +268,7 @@
 
 <p class="person-role">Студент</p>
 
-<div class="person-interests"><p class="person-label">Научные интересы</p><p class="interest-source">Научные интересы пока не указаны.</p></div>
+<div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Машинное обучение в телекоммуникациях</li></ul></div>
 
 <a class="person-publications" href="publications.html">Публикации лаборатории →</a>
 

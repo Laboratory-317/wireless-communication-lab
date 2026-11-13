@@ -290,6 +290,26 @@ main {
   white-space:pre-line;
 }
 
+.person-interests {
+  margin:18px 0;
+}
+
+.person-interests h5 {
+  margin:0 0 8px;
+  font-size:13px;
+}
+
+.person-interests ul {
+  display:grid;
+  gap:6px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:14px;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
 .photo-placeholder {
   width:140px;
   aspect-ratio:1;

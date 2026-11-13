@@ -527,6 +527,7 @@ function parsePeopleEntries(lines) {
       name: name.trim(),
       photo: "",
       description: "",
+      researchInterests: [],
       contacts: []
     };
     people.push(current);
@@ -559,6 +560,10 @@ function parsePeopleEntries(lines) {
 
     if (listItem) {
       const [label, ...valueParts] = listItem[1].split(":");
+      if (/^(Направления исследований|Research areas)$/i.test(label.trim())) {
+        current.researchInterests = valueParts.join(":").split(";").map((item) => item.trim()).filter(Boolean);
+        return;
+      }
       if (!valueParts.length) {
         current.description = `${current.description} ${listItem[1]}`.trim();
         return;
