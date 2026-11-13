@@ -260,7 +260,7 @@
 
 :::: {.person-entry #pogorelov}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/pogorelov-evgeniy.jpg" alt="Евгений Погорелов" loading="lazy"><span class="person-category">Студенты</span></div>
+<div class="person-portrait"><img class="person-photo" src="../assets/people/pogorelov-evgeniy-portrait.png" alt="Евгений Погорелов" loading="lazy"><span class="person-category">Студенты</span></div>
 
 ::: {.person-info}
 

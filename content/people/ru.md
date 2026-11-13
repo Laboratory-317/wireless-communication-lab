@@ -107,6 +107,6 @@
 ## Студенты
 
 ### Погорелов Евгений Дмитриевич
-![Евгений Погорелов](assets/people/pogorelov-evgeniy.jpg)
+![Евгений Погорелов](assets/people/pogorelov-evgeniy-portrait.png)
 
 - E-mail:
