@@ -2,7 +2,7 @@
 {
   "title": "Курсы по системам связи",
   "lang": "ru",
-  "description": "Курсы сотрудников лаборатории по беспроводной связи, множественному доступу и помехоустойчивому кодированию.",
+  "description": "Дисциплины для студентов ТУСУРа и курсы повышения квалификации по системам связи.",
   "pagetitle": "Курсы по системам связи — Лаборатория беспроводной связи",
   "include-before-body": [
     "../site-header-ru.html"
@@ -23,6 +23,104 @@
 }
 ---
 
+
+## Курсы для студентов ТУСУР {#student-courses}
+
+:::: {.learning-grid .student-course-grid}
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><rect x="45" y="28" width="70" height="72" rx="4"/><path d="M57 17v11m15-11v11m16-11v11m15-11v11M57 100v11m15-11v11m16-11v11m15-11v11M33 40h12m-12 16h12m-12 16h12m-12 16h12M115 40h12m-12 16h12m-12 16h12m-12 16h12"/><rect x="57" y="40" width="18" height="18" rx="2"/><rect x="87" y="70" width="16" height="18" rx="2"/><path d="M75 49h20v21M66 58v21h21M45 49h12M103 79h12"/><circle class="symbol-dot" cx="66" cy="79" r="2.5"/><text x="61" y="54">&amp;</text></svg></div>
+
+[01 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Программирование логических интегральных схем {#student-course-1}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><text x="2" y="32">u<tspan baseline-shift="sub" font-size="9">0</tspan></text><path d="M22 28H137"/><text x="142" y="32">x<tspan baseline-shift="sub" font-size="9">0</tspan></text><text x="2" y="56">u<tspan baseline-shift="sub" font-size="9">1</tspan></text><path d="M22 52H137"/><text x="142" y="56">x<tspan baseline-shift="sub" font-size="9">1</tspan></text><text x="2" y="80">u<tspan baseline-shift="sub" font-size="9">2</tspan></text><path d="M22 76H137"/><text x="142" y="80">x<tspan baseline-shift="sub" font-size="9">2</tspan></text><text x="2" y="104">u<tspan baseline-shift="sub" font-size="9">3</tspan></text><path d="M22 100H137"/><text x="142" y="104">x<tspan baseline-shift="sub" font-size="9">3</tspan></text><path d="M49 35V52"/><circle class="symbol-surface" cx="49" cy="28" r="7"/><path d="M45 28h8m-4-4v8"/><circle class="symbol-dot" cx="49" cy="52" r="2.6"/><path d="M49 83V100"/><circle class="symbol-surface" cx="49" cy="76" r="7"/><path d="M45 76h8m-4-4v8"/><circle class="symbol-dot" cx="49" cy="100" r="2.6"/><path d="M91 35V76"/><circle class="symbol-surface" cx="91" cy="28" r="7"/><path d="M87 28h8m-4-4v8"/><circle class="symbol-dot" cx="91" cy="76" r="2.6"/><path d="M113 59V100"/><circle class="symbol-surface" cx="113" cy="52" r="7"/><path d="M109 52h8m-4-4v8"/><circle class="symbol-dot" cx="113" cy="100" r="2.6"/></svg></div>
+
+[02 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Помехоустойчивое кодирование {#student-course-2}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M56 26v76h92" opacity=".6"/><text x="43" y="22">f</text><text x="149" y="116">t</text><rect x="63" y="34" width="16" height="16" rx="1" opacity="0.95"/><rect x="83" y="34" width="16" height="16" rx="1" opacity="0.6"/><rect x="103" y="34" width="16" height="16" rx="1" opacity="0.35"/><rect x="123" y="34" width="16" height="16" rx="1" opacity="0.95"/><rect x="63" y="54" width="16" height="16" rx="1" opacity="0.6"/><rect x="83" y="54" width="16" height="16" rx="1" opacity="0.35"/><rect x="103" y="54" width="16" height="16" rx="1" opacity="0.95"/><rect x="123" y="54" width="16" height="16" rx="1" opacity="0.6"/><rect x="63" y="74" width="16" height="16" rx="1" opacity="0.35"/><rect x="83" y="74" width="16" height="16" rx="1" opacity="0.95"/><rect x="103" y="74" width="16" height="16" rx="1" opacity="0.6"/><rect x="123" y="74" width="16" height="16" rx="1" opacity="0.35"/><rect x="8" y="25" width="13" height="19" rx="2"/><path d="M12 40h5M27 34h19m-5-4 5 4-5 4"/><rect x="8" y="55" width="13" height="19" rx="2"/><path d="M12 70h5M27 64h19m-5-4 5 4-5 4"/><rect x="8" y="85" width="13" height="19" rx="2"/><path d="M12 100h5M27 94h19m-5-4 5 4-5 4"/></svg></div>
+
+[03 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Технологии множественного доступа {#student-course-3}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M80 80Q56 65 28 74v36q28-9 52 4 24-13 52-4V74q-28-9-52 6v34M39 84q17-4 29 2M39 94q17-4 29 2M92 86q12-6 29-2M92 96q12-6 29-2M80 57V30m-8-10 8 10 8-10"/><path d="M66 26a20 20 0 0 0 0 27M94 26a20 20 0 0 1 0 27M56 19a30 30 0 0 0 0 41M104 19a30 30 0 0 1 0 41" opacity=".55"/></svg></div>
+
+[04 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Введение в профессию {#student-course-4}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M80 50v14m0 0-18 42h36L80 64M68 92h24M73 80h14"/><circle class="symbol-dot" cx="80" cy="44" r="3"/><path d="M68 32a17 17 0 0 0 0 24M92 32a17 17 0 0 1 0 24M59 24a28 28 0 0 0 0 40M101 24a28 28 0 0 1 0 40"/><rect x="13" y="70" width="20" height="32" rx="3"/><path d="M19 96h8"/><rect x="127" y="70" width="20" height="32" rx="3"/><path d="M133 96h8"/><path class="symbol-channel" d="M35 76 58 58M125 76 102 58"/></svg></div>
+
+[05 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Базовые технологии систем радиодоступа {#student-course-5}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M12 40h32M72 40h70M112 40v22M100 62h24M100 70h24M112 70v24M100 94h24M104 100h16M108 106h8"/><rect x="44" y="32" width="28" height="16"/><circle class="symbol-dot" cx="112" cy="40" r="2.5"/><text x="54" y="24">R</text><text x="130" y="71">C</text><path class="symbol-channel" d="M12 104h66"/><path d="M12 104q8-28 16 0t16 0 16 0 16 0"/></svg></div>
+
+[06 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Радиотехнические цепи и сигналы {#student-course-6}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><rect x="66" y="25" width="28" height="24" rx="3"/><path d="M58 37h8M94 37h8"/><rect x="27" y="25" width="31" height="24"/><rect x="102" y="25" width="31" height="24"/><path d="M37 25v24M48 25v24M27 37h31M112 25v24M123 25v24M102 37h31M80 49v6M72 55q8 15 16 0M80 63v7"/><path class="symbol-channel" d="M73 68 42 101M87 68l31 33"/><path d="M25 116a55 44 0 0 1 110 0M47 116q33-17 66 0M67 116q13-51 26 0"/><circle class="symbol-dot" cx="42" cy="101" r="3"/><circle class="symbol-dot" cx="118" cy="101" r="3"/></svg></div>
+
+[07 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Основы космических информационных систем {#student-course-7}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path d="M39 33 71 58M39 94 71 70M90 64h29M80 54V30"/><rect x="13" y="20" width="26" height="22" rx="2"/><path d="M26 42v6M18 48h16"/><rect x="13" y="84" width="26" height="22" rx="2"/><path d="M26 106v6M18 112h16"/><circle class="symbol-surface" cx="80" cy="64" r="11"/><path d="M75 64h10M80 59v10"/><rect x="119" y="43" width="28" height="42" rx="3"/><path d="M119 57h28M119 71h28"/><circle class="symbol-dot" cx="125" cy="50" r="2"/><circle class="symbol-dot" cx="125" cy="64" r="2"/><circle class="symbol-dot" cx="125" cy="78" r="2"/><rect x="70" y="10" width="20" height="20" rx="3"/></svg></div>
+
+[08 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Основы построения инфокоммуникационных систем и сетей {#student-course-8}
+
+:::
+
+::: {.learning-card .student-course-card}
+
+<div class="course-symbol"><svg class="research-symbol" viewBox="0 0 160 128" aria-hidden="true"><path class="symbol-channel" d="m56 72 36 32h42M56 72V29h35"/><path d="m20 104 36-32h36l35-39"/><circle class="symbol-surface" cx="20" cy="104" r="6"/><circle class="symbol-surface" cx="56" cy="72" r="6"/><circle class="symbol-surface" cx="92" cy="72" r="6"/><circle class="symbol-dot" cx="127" cy="33" r="4"/><circle cx="92" cy="104" r="4" opacity=".5"/><circle cx="91" cy="29" r="4" opacity=".5"/><path d="M127 27V9l19 6-19 6"/></svg></div>
+
+[09 / ДИСЦИПЛИНА]{.portfolio-tags}
+
+### Проектирование индивидуальной траектории развития {#student-course-9}
+
+:::
+
+::::
+
+## Курсы повышения квалификации {#professional-courses}
 
 :::: {.learning-grid}
 

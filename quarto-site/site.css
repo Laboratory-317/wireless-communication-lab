@@ -149,6 +149,15 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .site-page .learning-card { padding:24px; }
 .site-page .course-symbol { margin:0 0 18px; line-height:0; }
 .site-page .course-symbol .research-symbol { width:128px; height:112px; color:var(--home-accent); fill:none; stroke:currentColor; stroke-width:1.55; stroke-linecap:round; stroke-linejoin:round; }
+.education-page .student-course-card h3 { margin:.8rem 0 0; font-size:22px; line-height:1.35; }
+.education-page .student-course-card > p { margin-bottom:0; }
+@media(max-width:1000px) {
+ .education-page .student-course-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:640px) {
+ .education-page .student-course-grid { grid-template-columns:1fr; }
+ .education-page .student-course-card h3 { font-size:20px; }
+}
 @media(max-width:760px) {
  .site-page .learning-card { padding:22px; }
  .site-page .course-symbol .research-symbol { width:100px; height:100px; }
