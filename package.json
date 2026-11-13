@@ -1,0 +1,19 @@
+{
+  "name": "wireless-communication-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт лаборатории беспроводной связи ТУСУР: классическое оформление и Quarto, RU/EN.",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "doctor": "node tools/project.cjs doctor",
+    "dev": "node tools/project.cjs dev",
+    "build": "node tools/project.cjs build",
+    "preview": "node tools/project.cjs preview",
+    "check": "node tools/project.cjs check",
+    "check:sources": "node tools/project.cjs check:sources",
+    "test": "node tools/project.cjs test",
+    "validate": "node tools/project.cjs validate",
+    "scholar:check": "node tools/project.cjs scholar:check",
+    "scholar:sync": "node tools/project.cjs scholar:sync"
+  }
+}

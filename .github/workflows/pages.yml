@@ -31,42 +31,34 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version-file: .node-version
 
-      - name: Set up Python for Scholar synchronization
-        if: github.event_name != 'push' && github.ref == 'refs/heads/main'
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version-file: .python-version
+
+      - name: Test project utilities
+        run: node tools/project.cjs test
 
       - name: Synchronize recent Google Scholar publications
         if: github.event_name != 'push' && github.ref == 'refs/heads/main'
-        run: |
-          python -m unittest discover -s tools -p 'test_*sources.py'
-          python -m unittest discover -s tools -p test_sync_scholar.py
-          python tools/sync-scholar.py
+        run: node tools/project.cjs scholar:sync
+
+      - name: Read Quarto version
+        id: quarto
+        run: node -e "require('node:fs').appendFileSync(process.env.GITHUB_OUTPUT, 'version=' + require('node:fs').readFileSync('.quarto-version', 'utf8').trim() + '\n')"
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: '1.10.18'
+          version: ${{ steps.quarto.outputs.version }}
 
-      - name: Build classic site
-        run: node tools/build-site.js
-        env:
-          LAB_AUTO_TRANSLATE: "0"
+      - name: Build both designs
+        run: node tools/project.cjs build
 
-      - name: Build new design
-        working-directory: quarto-site
-        run: |
-          node home-sections.cjs
-          quarto render
-
-      - name: Assemble and validate both designs
-        run: |
-          node tools/build-comparison.js
-          node tools/check-site.js
-          node tools/check-comparison.js
+      - name: Validate both designs
+        run: node tools/project.cjs check
 
       - name: Save validated publication additions
         if: github.event_name != 'push' && github.ref == 'refs/heads/main'

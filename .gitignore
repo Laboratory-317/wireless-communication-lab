@@ -5,3 +5,9 @@ themes-preview/*-demo/
 .env
 .env.*
 !.env.example
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+Thumbs.db

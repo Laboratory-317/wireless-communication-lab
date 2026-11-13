@@ -1,0 +1,35 @@
+name: Check project
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+      - name: Read Quarto version
+        id: quarto
+        run: node -e "require('node:fs').appendFileSync(process.env.GITHUB_OUTPUT, 'version=' + require('node:fs').readFileSync('.quarto-version', 'utf8').trim() + '\n')"
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: ${{ steps.quarto.outputs.version }}
+      - name: Validate project
+        run: node tools/project.cjs validate
