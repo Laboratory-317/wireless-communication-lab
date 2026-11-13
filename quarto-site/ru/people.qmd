@@ -2,7 +2,7 @@
 {
   "title": "Команда лаборатории",
   "lang": "ru",
-  "description": "Сотрудники, аспиранты и студенты лаборатории: научные интересы, публикации и контакты.",
+  "description": "Научные интересы, публикации и контакты команды лаборатории.",
   "pagetitle": "Команда лаборатории — Лаборатория беспроводной связи",
   "include-before-body": [
     "../site-header-ru.html"
@@ -23,21 +23,25 @@
 }
 ---
 
-<nav class="team-jump" aria-label="Группы команды"><a href="#pokamestov">Научные сотрудники</a><a href="#stepnoy">Инженеры</a><a href="#shinkevich">Аспиранты</a><a href="#pogorelov">Студенты</a></nav>
+:::::: {.team-grid}
 
-## Научные сотрудники
+::::: {.person-entry #pokamestov}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #pokamestov}
+<img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Дмитрий Покаместов" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Дмитрий Покаместов" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Покаместов Дмитрий Алексеевич
+## Покаместов Дмитрий Алексеевич
 
 <p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Методы множественного доступа (NOMA, SCMA, RSMA)</li><li>Синтез и адаптация сигналов</li><li>Помехоустойчивое кодирование (полярные коды, LDPC)</li><li>Многоантенные системы связи (MIMO)</li><li>Оценка канала и синхронизация</li><li>Машинное обучение в телекоммуникациях</li></ul></div>
 
@@ -56,17 +60,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #kryukov}
+::::: {.person-entry #kryukov}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Яков Крюков" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Яков Крюков" loading="lazy">
 
-### Крюков Яков Владимирович
+::: {.person-heading}
+
+## Крюков Яков Владимирович
 
 <p class="person-role">Кандидат технических наук, доцент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Неортогональный множественный доступ (NOMA)</li><li>Управление радиоресурсами</li><li>Адаптация модуляции и кодирования</li><li>Моделирование каналов с реконфигурируемыми поверхностями (RIS)</li><li>Массовая межмашинная связь (mMTC)</li><li>Синхронизация систем связи</li></ul></div>
 
@@ -85,17 +97,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #litvinov}
+::::: {.person-entry #litvinov}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Рудольф Литвинов" loading="lazy"><span class="person-category">Научные сотрудники</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Рудольф Литвинов" loading="lazy">
 
-### Литвинов Рудольф Викторович
+::: {.person-heading}
+
+## Литвинов Рудольф Викторович
 
 <p class="person-role">Кандидат физико-математических наук, доцент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Нелинейная оптика</li><li>Распространение волн в метаматериалах</li><li>Формирование солитонов и устойчивость волновых процессов</li><li>Множественный доступ с разделением по скорости (RSMA)</li></ul></div>
 
@@ -105,23 +125,25 @@
 
 :::
 
-::::
-
 :::::
 
-## Инженеры
+::::: {.person-entry #stepnoy}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #stepnoy}
+<img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Виктор Степной" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Виктор Степной" loading="lazy"><span class="person-category">Инженеры</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Степной Виктор Серафимович
+## Степной Виктор Серафимович
 
 <p class="person-role">Старший преподаватель кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Электромагнитная передача данных в системах забойной телеметрии</li></ul></div>
 
@@ -131,23 +153,25 @@
 
 :::
 
-::::
-
 :::::
 
-## Аспиранты
+::::: {.person-entry #shinkevich}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #shinkevich}
+<img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Артём Шинкевич" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Артём Шинкевич" loading="lazy"><span class="person-category">Аспиранты</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Шинкевич Артём Сергеевич
+## Шинкевич Артём Сергеевич
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Множественный доступ с разделением по скорости (RSMA)</li><li>Многоантенные системы связи (MIMO)</li><li>Пространственная обработка сигналов</li><li>Помехоустойчивое кодирование (LDPC)</li></ul></div>
 
@@ -165,17 +189,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #shalin}
+::::: {.person-entry #shalin}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Георгий Шалин" loading="lazy"><span class="person-category">Аспиранты</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Георгий Шалин" loading="lazy">
 
-### Шалин Георгий Николаевич
+::: {.person-heading}
+
+## Шалин Георгий Николаевич
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Полярное кодирование и декодирование</li><li>Адаптация кодирования к радиоканалу</li><li>Повышение помехоустойчивости систем OFDM</li></ul></div>
 
@@ -193,17 +225,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #eremeev}
+::::: {.person-entry #eremeev}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/eremeev-sergey-portrait.png" alt="Сергей Еремеев" loading="lazy"><span class="person-category">Аспиранты</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/eremeev-sergey-portrait.png" alt="Сергей Еремеев" loading="lazy">
 
-### Еремеев Сергей Александрович
+::: {.person-heading}
+
+## Еремеев Сергей Александрович
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Моделирование и экспериментальное исследование реконфигурируемых поверхностей (RIS)</li><li>Моделирование многолучевых радиоканалов</li><li>Оценка радиопокрытия</li></ul></div>
 
@@ -221,17 +261,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #ilinskiy}
+::::: {.person-entry #ilinskiy}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Дмитрий Ильинский" loading="lazy"><span class="person-category">Аспиранты</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Дмитрий Ильинский" loading="lazy">
 
-### Ильинский Дмитрий Евгеньевич
+::: {.person-heading}
+
+## Ильинский Дмитрий Евгеньевич
 
 <p class="person-role">Ассистент кафедры ТОР ТУСУР.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Разработка и моделирование элементов реконфигурируемых поверхностей (RIS)</li><li>Схемотехника RIS</li><li>Моделирование радиопокрытия</li></ul></div>
 
@@ -250,23 +298,23 @@
 
 :::
 
-::::
-
 :::::
 
-## Студенты
+::::: {.person-entry #pogorelov}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #pogorelov}
+<img class="person-photo" src="../assets/people/pogorelov-evgeniy-portrait.png" alt="Евгений Погорелов" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/pogorelov-evgeniy-portrait.png" alt="Евгений Погорелов" loading="lazy"><span class="person-category">Студенты</span></div>
+::: {.person-heading}
+
+## Погорелов Евгений Дмитриевич
+
+:::
+
+::::
 
 ::: {.person-info}
-
-### Погорелов Евгений Дмитриевич
-
-<p class="person-role">Студент</p>
 
 <div class="person-interests"><p class="person-label">Научные интересы</p><ul><li>Машинное обучение в телекоммуникациях</li></ul></div>
 
@@ -276,13 +324,13 @@
 
 :::
 
-::::
-
 :::::
+
+::::::
 
 ::: {.portfolio-contact}
 
-### Присоединиться к команде
+## Присоединиться к команде
 
 Студентам, которые хотят заниматься беспроводной связью, предлагаем познакомиться с направлениями исследований и обсудить тему работы с лабораторией.
 

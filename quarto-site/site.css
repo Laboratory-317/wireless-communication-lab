@@ -36,7 +36,7 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .site-page .sidebar nav[role="doc-toc"] { border-color:var(--home-line); color:var(--home-muted); font-size:12px; }
 .site-page #TOC a { color:var(--home-muted); }
 .site-page #TOC a.active { color:var(--home-accent)!important; border-color:var(--home-accent)!important; }
-.site-page :is(.research-entry,.course-entry,.project-case,.learning-card,.student-step,.student-track,.team-jump a,.project-program li,.team-grid .person-entry) { background:var(--home-surface); border-color:var(--home-line); border-radius:4px; }
+.site-page :is(.research-entry,.course-entry,.project-case,.learning-card,.student-step,.student-track,.project-program li,.team-grid .person-entry) { background:var(--home-surface); border-color:var(--home-line); border-radius:4px; }
 .site-page :is(.research-entry,.course-entry,.project-case,.learning-card,.student-track) p { color:var(--home-muted); }
 .site-page :is(.portfolio-lead,.learning-intro) { background:var(--home-surface); color:var(--home-ink); border:1px solid var(--home-line); border-radius:4px; }
 .site-page :is(.portfolio-lead,.learning-intro) h2 { color:var(--home-ink); }
@@ -49,13 +49,10 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .site-page :is(.portfolio-contact,.student-contact) p { color:var(--home-muted); }
 .site-page :is(.project-program summary,.student-track h3 a,.research-entry h2 a) { color:var(--home-ink); }
 .site-page .project-program summary span { color:var(--home-accent); background:var(--home-soft); }
-.site-page .team-jump a:hover { background:var(--home-soft); border-color:var(--home-accent); }
-.site-page .person-portrait { background:var(--home-soft); border-color:var(--home-line); }
-.site-page .team-grid .person-initials { background:var(--home-surface); color:var(--home-accent); }
+.site-page .person-header { background:var(--home-soft); border-color:var(--home-line); }
 .site-page .person-info .person-interests li { color:var(--home-accent); background:var(--home-soft); border-color:var(--home-line); }
 .site-page :is(.person-publications,.student-contact-button) { background:var(--home-button); color:var(--home-button-ink); }
 .site-page :is(.person-publications,.student-contact-button):hover { background:var(--home-button); color:var(--home-button-ink); text-decoration:underline; }
-.site-page :is(.person-label,.person-info h3) { color:var(--home-ink); }
 .site-page :is(.research-portfolio-grid .research-entry figure,.project-case img,.course-visual,.research-gallery img) { background:var(--home-surface); }
 .site-page img.detail-diagram { background:var(--home-surface); border:1px solid var(--home-line); border-radius:4px; }
 .site-page .publication-tools { padding:22px; }

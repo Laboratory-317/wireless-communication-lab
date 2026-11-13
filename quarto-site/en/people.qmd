@@ -2,7 +2,7 @@
 {
   "title": "Our team",
   "lang": "en",
-  "description": "Laboratory staff and students, with research interests, publications and contact details.",
+  "description": "Research interests, publications and contact details for the laboratory team.",
   "pagetitle": "Our team — Wireless Communication Laboratory",
   "include-before-body": [
     "../site-header-en.html"
@@ -23,21 +23,25 @@
 }
 ---
 
-<nav class="team-jump" aria-label="Team groups"><a href="#pokamestov">Research Staff</a><a href="#stepnoy">Engineers</a><a href="#shinkevich">Postgraduate Students</a><a href="#pogorelov">Students</a></nav>
+:::::: {.team-grid}
 
-## Research Staff
+::::: {.person-entry #pokamestov}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #pokamestov}
+<img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Dmitriy Pokamestov" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/pokamestov-dmitriy.jpg" alt="Dmitriy Pokamestov" loading="lazy"><span class="person-category">Research Staff</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Dmitriy Pokamestov
+## Dmitriy Pokamestov
 
 <p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Multiple access methods (NOMA, SCMA, RSMA)</li><li>Signal design and adaptation</li><li>Error correction coding (polar codes, LDPC)</li><li>Multiple antenna communication systems (MIMO)</li><li>Channel estimation and synchronization</li><li>Machine learning in telecommunications</li></ul></div>
 
@@ -56,17 +60,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #kryukov}
+::::: {.person-entry #kryukov}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Yakov Kryukov" loading="lazy"><span class="person-category">Research Staff</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/kryukov-yakov.png" alt="Yakov Kryukov" loading="lazy">
 
-### Yakov Kryukov
+::: {.person-heading}
+
+## Yakov Kryukov
 
 <p class="person-role">Candidate of Technical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Nonorthogonal multiple access (NOMA)</li><li>Radio resource management</li><li>Modulation and coding adaptation</li><li>Channel modeling with reconfigurable intelligent surfaces (RIS)</li><li>Massive machine type communications (mMTC)</li><li>Communication system synchronization</li></ul></div>
 
@@ -85,17 +97,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #litvinov}
+::::: {.person-entry #litvinov}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Rudolf Litvinov" loading="lazy"><span class="person-category">Research Staff</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/litvinov-rudolf.jpg" alt="Rudolf Litvinov" loading="lazy">
 
-### Rudolf Litvinov
+::: {.person-heading}
+
+## Rudolf Litvinov
 
 <p class="person-role">Candidate of Physical and Mathematical Sciences, Associate Professor at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Nonlinear optics</li><li>Wave propagation in metamaterials</li><li>Soliton formation and wave stability</li><li>Multiple access with rate splitting (RSMA)</li></ul></div>
 
@@ -105,23 +125,25 @@
 
 :::
 
-::::
-
 :::::
 
-## Engineers
+::::: {.person-entry #stepnoy}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #stepnoy}
+<img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Viktor Stepnoy" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/stepnoy-viktor.jpg" alt="Viktor Stepnoy" loading="lazy"><span class="person-category">Engineers</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Viktor Stepnoy
+## Viktor Stepnoy
 
 <p class="person-role">Senior Lecturer at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Electromagnetic data transmission in downhole telemetry systems</li></ul></div>
 
@@ -131,23 +153,25 @@
 
 :::
 
-::::
-
 :::::
 
-## Postgraduate Students
+::::: {.person-entry #shinkevich}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #shinkevich}
+<img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Artyom Shinkevich" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/shinkevich-artem.png" alt="Artyom Shinkevich" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+::: {.person-heading}
 
-::: {.person-info}
-
-### Artyom Shinkevich
+## Artyom Shinkevich
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Multiple access with rate splitting (RSMA)</li><li>Multiple antenna communication systems (MIMO)</li><li>Spatial signal processing</li><li>Error correction coding (LDPC)</li></ul></div>
 
@@ -165,17 +189,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #shalin}
+::::: {.person-entry #shalin}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Georgy Shalin" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/shalin-georgy.jpg" alt="Georgy Shalin" loading="lazy">
 
-### Georgy Shalin
+::: {.person-heading}
+
+## Georgy Shalin
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Polar coding and decoding</li><li>Coding adaptation to wireless channels</li><li>Improving the error performance of OFDM systems</li></ul></div>
 
@@ -193,17 +225,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #eremeev}
+::::: {.person-entry #eremeev}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/eremeev-sergey-portrait.png" alt="Sergey Eremeev" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/eremeev-sergey-portrait.png" alt="Sergey Eremeev" loading="lazy">
 
-### Sergey Eremeev
+::: {.person-heading}
+
+## Sergey Eremeev
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Modeling and experimental studies of reconfigurable intelligent surfaces (RIS)</li><li>Multipath radio channel modeling</li><li>Radio coverage assessment</li></ul></div>
 
@@ -221,17 +261,25 @@
 
 :::
 
-::::
+:::::
 
-:::: {.person-entry #ilinskiy}
+::::: {.person-entry #ilinskiy}
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Dmitriy Ilinskiy" loading="lazy"><span class="person-category">Postgraduate Students</span></div>
+:::: {.person-header}
 
-::: {.person-info}
+<img class="person-photo" src="../assets/people/ilinskiy-dmitriy.jpg" alt="Dmitriy Ilinskiy" loading="lazy">
 
-### Dmitriy Ilinskiy
+::: {.person-heading}
+
+## Dmitriy Ilinskiy
 
 <p class="person-role">Assistant at the Department of Telecommunications and Basic Principles of Radio Engineering, TUSUR.</p>
+
+:::
+
+::::
+
+::: {.person-info}
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Design and modeling of reconfigurable intelligent surface (RIS) elements</li><li>RIS circuit design</li><li>Radio coverage modeling</li></ul></div>
 
@@ -250,23 +298,23 @@
 
 :::
 
-::::
-
 :::::
 
-## Students
+::::: {.person-entry #pogorelov}
 
-::::: {.team-grid}
+:::: {.person-header}
 
-:::: {.person-entry #pogorelov}
+<img class="person-photo" src="../assets/people/pogorelov-evgeniy-portrait.png" alt="Evgeniy Pogorelov" loading="lazy">
 
-<div class="person-portrait"><img class="person-photo" src="../assets/people/pogorelov-evgeniy-portrait.png" alt="Evgeniy Pogorelov" loading="lazy"><span class="person-category">Students</span></div>
+::: {.person-heading}
+
+## Evgeniy Dmitrievich Pogorelov
+
+:::
+
+::::
 
 ::: {.person-info}
-
-### Evgeniy Dmitrievich Pogorelov
-
-<p class="person-role">Student</p>
 
 <div class="person-interests"><p class="person-label">Research interests</p><ul><li>Machine learning in telecommunications</li></ul></div>
 
@@ -276,13 +324,13 @@
 
 :::
 
-::::
-
 :::::
+
+::::::
 
 ::: {.portfolio-contact}
 
-### Join the team
+## Join the team
 
 Students interested in wireless communication can explore our research areas and contact the team to discuss a project.
 

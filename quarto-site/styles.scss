@@ -85,15 +85,6 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .research-image { max-width:340px; width:100%; display:block; margin:1.5rem auto; }
 .research-photo { margin:2rem 0; }
 .research-photo img { max-height:650px; object-fit:contain; border-radius:6px; }
-.person-entry { display:grid; grid-template-columns:110px minmax(0,1fr); gap:1.6rem; border-bottom:1px solid var(--lab-line); padding:1.8rem 0; margin:0; }
-.person-entry > p { margin:0; }
-.person-photo,.person-initials { width:110px; height:140px; border-radius:4px; object-fit:cover; object-position:top; }
-.person-initials { display:grid; place-items:center; background:#e2eeef; color:#006b71; font-size:2.4rem; }
-.person-entry h3 { margin:0 0 .7rem; font-size:1.3rem; }
-.person-info { min-width:0; }
-.person-info ul { padding:0; list-style:none; font-size:.83rem; }
-.person-info li { margin:.25rem 0; }
-.person-info strong { color:var(--lab-muted); font-weight:500; }
 .news-entry { border-top:1px solid var(--lab-line); padding:1.6rem 0; }
 .news-date { font-size:.68rem; letter-spacing:.08em; color:var(--lab-accent); font-weight:650; }
 .news-entry h3 { font-size:1.3rem; margin:.6rem 0; }
@@ -125,9 +116,6 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
  .hero-image { height:240px; min-height:0; }
  #title-block-header { margin-bottom:2rem; padding-bottom:1.8rem; }
  .research-entry,.course-entry { padding:1.3rem; }
- .person-entry { grid-template-columns:70px minmax(0,1fr); gap:1rem; }
- .person-photo,.person-initials { width:70px; height:95px; }
- .person-entry h3 { font-size:1.08rem; }
  .publication-fields { grid-template-columns:minmax(0,1fr) auto; }
  .publication-fields label:first-child { grid-column:1/-1; }
 }
@@ -175,7 +163,7 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .project-program > ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; padding:0; list-style:none; margin:1.2rem 0 .4rem; }
 .project-program li { background:white; border:1px solid var(--lab-line); padding:1.3rem; font-size:.85rem; line-height:1.8; margin:0; border-radius:4px; }
 .portfolio-contact { padding:2rem 2.3rem; margin:3rem 0 1rem; background:#e8f1f1; border-left:3px solid var(--lab-accent); border-radius:0 5px 5px 0; }
-.portfolio-contact h3 { margin:0 0 .7rem; font-size:1.6rem; }
+.people-page .portfolio-contact h2 { margin:0 0 .7rem; padding:0; border:0; font-size:1.6rem; }
 .portfolio-contact p { color:var(--lab-muted); font-size:.9rem; max-width:42rem; }
 .portfolio-contact p:last-child { margin:0; }
 .portfolio-contact a { font-weight:650; }
@@ -207,7 +195,7 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
  .project-program summary { font-size:1.05rem; padding-right:2.2rem; position:relative; }
  .project-program summary span { position:absolute; right:0; top:.5rem; }
  .portfolio-contact { padding:1.4rem; }
- .portfolio-contact h3 { font-size:1.3rem; }
+ .people-page .portfolio-contact h2 { font-size:1.3rem; }
  .case-facts { gap:1.5rem; }
 }
 /* Keep Quarto's figure wrappers aligned with the portfolio card grid. */
@@ -219,24 +207,35 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .portfolio-lead h2 a.anchorjs-link { margin:0; }
 .research-gallery img { object-fit:contain; background:#eaf0f3; }
 
-/* Team portfolio: portraits, research focus and direct access to evidence. */
-.team-jump { display:flex; flex-wrap:wrap; gap:.6rem; margin:-.5rem 0 1rem; }
-.team-jump a { padding:.45rem .85rem; border:1px solid var(--lab-line); border-radius:3px; font-size:.76rem; text-decoration:none; background:white; }
-.team-jump a:hover { border-color:var(--lab-accent); background:#eaf4f1; }
+/* Team cards. */
 .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.4rem; margin:1.5rem 0 2.5rem; }
-.team-grid .person-entry { display:flex; flex-direction:column; gap:0; margin:0; padding:0; border:1px solid var(--lab-line); border-radius:6px; background:white; overflow:hidden; scroll-margin-top:6rem; }
-.person-portrait { display:flex; align-items:flex-end; gap:1.5rem; padding:1.6rem 1.6rem 0; background:linear-gradient(120deg,#e5efef,#f3f6f6); border-bottom:1px solid var(--lab-line); }
-.team-grid .person-photo,.team-grid .person-initials { width:145px; height:178px; flex:0 0 145px; border-radius:4px 4px 0 0; object-fit:cover; object-position:center 20%; }
-.team-grid .person-initials { background:var(--lab-ink); color:#b7f0d7; font-size:2.8rem; font-weight:500; letter-spacing:-.05em; }
-.person-category { color:var(--lab-accent); font-size:.64rem; text-transform:uppercase; letter-spacing:.12em; line-height:1.7; padding-bottom:1.2rem; max-width:12rem; }
-.team-grid .person-info { padding:1.7rem; flex:1; }
-.team-grid .person-info h3 { font-size:1.5rem; line-height:1.25; letter-spacing:-.03em; margin:0 0 .7rem; }
-.person-role { font-size:.83rem; color:var(--lab-muted); line-height:1.7; margin:0 0 1.4rem; }
-.person-interests { border-top:1px solid var(--lab-line); padding-top:1.15rem; margin:1.2rem 0; }
+.team-grid .person-entry { border:1px solid var(--lab-line); border-radius:6px; background:white; overflow:hidden; scroll-margin-top:6rem; }
+.person-header,.person-info { padding:clamp(.9rem,2vw,1.6rem); }
+.person-header {
+  display:grid;
+  grid-template-columns:clamp(4.5rem,17vw,145px) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(.75rem,2vw,1.5rem);
+  border-bottom:1px solid var(--lab-line);
+}
+.person-header > p { margin:0; }
+.person-photo { display:block; width:100%; aspect-ratio:145/178; border-radius:4px; object-fit:cover; object-position:center 20%; }
+.team-grid .person-heading h2 {
+  margin:0 0 .45rem;
+  padding:0;
+  border:0;
+  font-size:clamp(1.1rem,2.3vw,1.5rem);
+  line-height:1.25;
+  letter-spacing:-.03em;
+  overflow-wrap:anywhere;
+}
+.person-role { font-size:.83rem; color:var(--lab-muted); line-height:1.55; margin:0; }
+.person-info li { margin:.25rem 0; }
+.person-info strong { color:var(--lab-muted); font-weight:500; }
+.person-interests { margin:0 0 1.2rem; }
 .person-label { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--lab-ink); margin:0 0 .65rem; }
 .person-info .person-interests ul { display:flex; flex-wrap:wrap; gap:.4rem; margin:0; padding:0; list-style:none; }
 .person-info .person-interests li { font-size:.72rem; line-height:1.5; color:#006a6d; background:#edf5f3; border:1px solid #d5e7e2; padding:.3rem .55rem; border-radius:3px; margin:0; }
-.interest-source { font-size:.67rem; color:var(--lab-muted); margin:.6rem 0 0; }
 .person-publications { display:inline-block; background:var(--lab-ink); color:white; padding:.65rem .9rem; font-size:.76rem; font-weight:600; border-radius:3px; text-decoration:none; margin:.1rem 0 1rem; }
 .person-publications:hover { background:#006a6d; color:white; }
 .person-actions { display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:.1rem 0 .5rem; }
@@ -245,14 +244,12 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .person-identifiers { margin-top:1rem; border-top:1px solid var(--lab-line); padding-top:.9rem; }
 .person-identifiers summary { font-size:.73rem; color:var(--lab-muted); cursor:pointer; }
 .person-identifiers summary:focus-visible { outline:3px solid var(--lab-accent); outline-offset:4px; }
-.person-info .person-identifiers ul { margin:.7rem 0 0; font-size:.71rem; }
-@media(max-width:750px) {
+.person-info .person-identifiers ul { margin:.7rem 0 0; padding:0; list-style:none; font-size:.71rem; }
+@media(max-width:880px) {
  .team-grid { grid-template-columns:1fr; }
- .team-grid .person-info { padding:1.4rem; }
- .team-grid .person-info h3 { font-size:1.4rem; }
- .person-portrait { padding:1.3rem 1.3rem 0; gap:1rem; }
- .team-grid .person-photo,.team-grid .person-initials { width:125px; height:160px; flex-basis:125px; }
- .person-category { font-size:.6rem; }
+}
+@media(max-width:480px) {
+ .person-header { align-items:start; }
 }
 
 /* Learning and student opportunities. */

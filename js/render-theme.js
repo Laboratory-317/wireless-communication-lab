@@ -397,8 +397,7 @@
           return `<div class="profile-link"><a href="https://orcid.org/${html(value)}">ORCID</a></div>`;
         }
 
-        const emailClass = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? " profile-email" : "";
-        return `<div class="profile-field${emailClass}"><dt>${html(label)}</dt><dd>${contactValue(contact)}</dd></div>`;
+        return `<div class="profile-field"><dt>${html(label)}</dt><dd>${contactValue(contact)}</dd></div>`;
       }
 
       function personCvHref(person) {
@@ -416,39 +415,31 @@
           <div class="section-head">
             <h2>${labels.peopleTitle}</h2>
           </div>
-          ${content.peopleGroups.map((group, groupIndex) => `
-            <section class="people-group people-group-${groupIndex + 1}" aria-label="${group.title}">
-              <div class="group-head">
-                <h3>${group.title}</h3>
-                <span>${group.people.length}</span>
-              </div>
-              <div class="people-list">
-                ${group.people.map((person) => {
-                  const name = personName(person);
-                  const description = personDescription(person);
-                  const cvHref = personCvHref(person);
-                  return `
-                  <article class="person">
-                    <div class="person-photo">
-                      ${personPhoto(person, name)}
-                    </div>
-                    <div class="person-info">
-                      <h4>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h4>
-                      ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
-                      ${person.researchInterests?.length ? `<div class="person-interests">
-                        <h5>${language === "en" ? "Research interests" : "Научные интересы"}</h5>
-                        <ul>${person.researchInterests.map((interest) => `<li>${html(interest)}</li>`).join("")}</ul>
-                      </div>` : ""}
-                      <dl class="profile-list">
-                        ${personContacts(person).map(profileContact).join("")}
-                      </dl>
-                    </div>
-                  </article>
-                `;
-                }).join("")}
-              </div>
-            </section>
-          `).join("")}
+          <div class="people-list">
+            ${content.peopleGroups.flatMap((group) => group.people).map((person) => {
+              const name = personName(person);
+              const description = personDescription(person);
+              const cvHref = personCvHref(person);
+              return `
+                <article class="person">
+                  <div class="person-photo">
+                    ${personPhoto(person, name)}
+                  </div>
+                  <div class="person-info">
+                    <h3>${cvHref ? `<a href="${html(cvHref)}">${html(name)}</a>` : html(name)}</h3>
+                    ${description ? `<div class="person-bio markdown-block">${blockMarkdown(description)}</div>` : ""}
+                    ${person.researchInterests?.length ? `<div class="person-interests">
+                      <h4>${language === "en" ? "Research interests" : "Научные интересы"}</h4>
+                      <ul>${person.researchInterests.map((interest) => `<li>${html(interest)}</li>`).join("")}</ul>
+                    </div>` : ""}
+                    <dl class="profile-list">
+                      ${personContacts(person).map(profileContact).join("")}
+                    </dl>
+                  </div>
+                </article>
+              `;
+            }).join("")}
+          </div>
         </section>
       `;
     }

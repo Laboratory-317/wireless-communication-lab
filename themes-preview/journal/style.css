@@ -1,4 +1,4 @@
-@import url("../../css/theme-base.css?v=20260922-activities");
+@import url("../../css/theme-base.css?v=20261113-people");
 /* Research journal: masthead, editorial columns and fine typographic rules. */
 :root {
   --light-paper:#f7f3eb;
@@ -245,15 +245,17 @@ h2,h3,h4 {
 }
 
 .person {
-  grid-template-columns:150px 1fr;
+  grid-template-columns:150px minmax(0,1fr);
 }
 
-.photo-placeholder {
-  width:150px;
+.person h3 {
+  font-size:clamp(20px,2.3vw,25px);
 }
 
-.person h4 {
-  font-size:25px;
+@media(max-width:900px) {
+  .people-list {
+    grid-template-columns:1fr;
+  }
 }
 
 .news-list {
@@ -335,11 +337,8 @@ h2,h3,h4 {
   }
 
   .person {
-    grid-template-columns:130px 1fr;
-  }
-
-  .photo-placeholder {
-    width:130px;
+    grid-template-columns:clamp(76px,17vw,130px) minmax(0,1fr);
+    gap:16px;
   }
 
   .site-footer {

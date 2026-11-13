@@ -251,22 +251,6 @@ main {
   align-items:center;
 }
 
-.people-group {
-  margin-bottom:50px;
-}
-
-.group-head {
-  display:flex;
-  align-items:baseline;
-  gap:20px;
-  border-bottom:1px solid var(--line,#d7dddf);
-  margin-bottom:25px;
-}
-
-.group-head span {
-  font:12px ui-monospace,monospace;
-}
-
 .people-list {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -281,8 +265,8 @@ main {
   border-bottom:1px solid var(--line,#d7dddf);
 }
 
-.person h4 {
-  margin-bottom:16px;
+.person h3 {
+  margin-bottom:8px;
 }
 
 .person-bio {
@@ -294,7 +278,7 @@ main {
   margin:18px 0;
 }
 
-.person-interests h5 {
+.person-interests h4 {
   margin:0 0 8px;
   font-size:13px;
 }
@@ -311,7 +295,8 @@ main {
 }
 
 .photo-placeholder {
-  width:140px;
+  display:block;
+  width:100%;
   aspect-ratio:1;
   object-fit:contain;
   background:var(--wash,#edf1f2);
@@ -364,12 +349,6 @@ main {
 
 .profile-link a {
   font-weight:700;
-}
-
-.profile-email dd,
-.profile-email a {
-  white-space:nowrap;
-  overflow-wrap:normal;
 }
 
 .grouped-section,.publication-section,.cv-section {
@@ -520,10 +499,6 @@ main {
   .person {
     grid-template-columns:110px minmax(0,1fr);
     gap:18px;
-  }
-
-  .photo-placeholder {
-    width:110px;
   }
 
   .site-footer {
