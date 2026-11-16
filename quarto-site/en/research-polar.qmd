@@ -2,7 +2,7 @@
 {
   "title": "Polar codes",
   "lang": "en",
-  "description": "We study polar codes, their adaptation to radio channel conditions and their use in non-orthogonal multiple access systems.",
+  "description": "We study polar and LDPC codes, their adaptation to radio channel conditions and their use in multiple access systems.",
   "pagetitle": "Polar codes — Wireless Communication Laboratory",
   "include-before-body": [
     "../site-header-en.html"
@@ -25,7 +25,7 @@
 
 [← All research areas](research.qmd)
 
-Polar codes provide error protection for transmitted data. We study how coding parameters and adaptation to radio channel conditions affect error rates.
+Polar and LDPC codes provide error protection for transmitted data. We study how coding parameters and adaptation to radio channel conditions affect error rates.
 
 We also investigate the use of polar codes with non-orthogonal multiple access. We evaluate these approaches using communication system models, including fading channel models.
 

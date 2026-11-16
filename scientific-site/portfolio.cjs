@@ -10,7 +10,7 @@ module.exports = [
     en: { title: 'Rate-splitting multiple access', type: 'Model · algorithms', text: 'An RSMA simulation model with polar coding, adaptive precoding and power allocation.' }
   },
   {
-    id: 'ris', diagram: 'ris', photo: 'ris/anechoic-chamber-prototype.jpg', period: { ru: 'С 2023 года', en: 'Since 2023' }, href: 'research-metasurfaces.html',
+    id: 'ris', diagram: 'ris', photo: 'ris/anechoic-chamber-prototype.jpg', href: 'research-metasurfaces.html',
     source: 'projects.qmd / Advanced Engineering School 2023–2025, UMNIK 2024–2025; research-metasurfaces.qmd',
     ru: { title: 'От модели радиоканала к прототипу RIS', type: 'Модель · прототип', text: 'Моделирование каналов с RIS и экспериментальные поверхности. На фотографии — прототип на 16 элементов в измерительном стенде.', caption: 'Фото лаборатории · 16-элементная RIS в безэховой камере' },
     en: { title: 'From a channel model to a RIS prototype', type: 'Model · prototype', text: 'RIS channel modelling and experimental surfaces. The photograph shows the 16-element prototype in a measurement setup.', caption: 'Laboratory photograph · 16-element RIS in an anechoic chamber' }

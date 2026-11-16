@@ -25,7 +25,7 @@ function frame(label, index, body) {
 <style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}</style>
 ${rect(0,0,800,520,'fill="#f3f6f3"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
-${text(744,57,`0${index}`,'text-anchor="end" class="muted"')}
+
 ${body}
 ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class="small"')}
 </svg>\n`;
@@ -46,7 +46,7 @@ const drawings = {
   polar(l) {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');
     const ys=[187,249,311,373];
-    ys.forEach((y,i)=>{body+=line(126,y,660,y)+text(79,y+6,`u${['₀','₁','₂','₃'][i]}`)+text(683,y+6,`x${['₀','₁','₂','₃'][i]}`);});
+    ys.forEach((y,i)=>{body+=line(126,y,660,y)+text(79,y+6,`u${['₀','₁','₂','₃'][i]}`,'font-style="italic"')+text(683,y+6,`x${['₀','₁','₂','₃'][i]}`,'font-style="italic"');});
     for(const [x,a,b] of [[300,187,311],[300,249,373],[530,187,249],[530,311,373]]) {
       body+=line(x-83,b,x,a,'class="signal"')+circle(x-83,b,4,'style="fill:#257664;stroke:#257664"')+circle(x,a,12)+line(x-7,a,x+7,a)+line(x,a-7,x,a+7);
     }

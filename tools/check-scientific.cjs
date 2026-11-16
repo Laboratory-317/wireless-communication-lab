@@ -20,6 +20,10 @@ for (const lang of ['ru', 'en']) {
     assert.match(html, /scientific\.js/);
     assert.doesNotMatch(html, /(?:href|src)="[^\"]*(?:home\.css|site\.css|home-theme\.js)/);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${lang}/${page}: expected one h1`);
+    if (page === 'index') {
+      const hero = html.match(/<section class="sc-hero"[\s\S]*?<\/section>/)?.[0] || '';
+      assert.match(hero, /<h1\b[^>]*id="sc-home-title"/, `${lang}: home title must remain in the visible hero`);
+    }
     for (const design of ['classic', 'modern', 'scientific']) assert(html.includes(`data-sc-design="${design}"`));
     assert(html.includes(`../${lang === 'ru' ? 'en' : 'ru'}/${page}.html`));
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);

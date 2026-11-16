@@ -6,11 +6,11 @@ slug: wireless
 
 Multi-antenna systems, signal processing and radio channel design for mobile communications. We study ways to improve data transmission and radio resource efficiency. [Laboratory projects](projects.html).
 
-## Polar codes
+## Error-correcting codes
 
 slug: polar
 
-Error-correcting codes for reliable information transmission. Research includes adapting polar codes to channel conditions and using them in multiple access systems. [Research publications](publications.html).
+Error-correcting codes for reliable information transmission. We study polar and LDPC codes, their adaptation to channel conditions and their use in multiple access systems. [Research publications](publications.html).
 
 ## Multiple access
 

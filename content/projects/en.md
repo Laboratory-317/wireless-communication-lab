@@ -39,8 +39,11 @@
 
 ## Industry Contracts
 
-- Joint research with Skoltech on ultra-narrowband communications and 5G network modeling. 2019–2021.
-- Development of software and signal processing algorithms for Micran radio-relay modems. 2024.
+- Software and signal processing algorithms for Micran radio-relay modems. 2024.
+- A model for calculating the capacity of links between a 5G base station and the core network to optimize transport infrastructure. Skoltech. 2021.
+- A model for calculating the number of users served by a 5G base station with limited computing resources. Skoltech. 2019–2020.
+- Research and development of algorithms for generating and processing ultra-narrowband signals. Skoltech. 2019.
+- Testing 5G equipment: throughput, latency and signal propagation measurements. Skoltech.
 
 ## Individual Grants
 
