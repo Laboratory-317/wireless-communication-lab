@@ -22,7 +22,7 @@ module.exports = [
     en: { title: 'Polar codes for heterogeneous channels', type: 'Software', text: 'Registered software for optimizing the mapping of coded bits to physical resources.' }
   },
   {
-    id: 'dsp', diagram: 'dsp', period: '2024', href: 'projects.html#industry-contracts',
+    id: 'dsp', diagram: 'dsp', period: '2024–2026', href: 'projects.html#industry-contracts',
     source: 'projects.qmd / Industry contracts / Micran',
     ru: { title: 'Обработка сигналов для радиомодемов', type: 'ПО · алгоритмы', text: 'Совместная работа с НПФ «Микран»: программное обеспечение и алгоритмы обработки сигналов для модемов радиорелейных линий.' },
     en: { title: 'Signal processing for radio modems', type: 'Software · algorithms', text: 'Collaboration with Micran on software and signal processing algorithms for radio-relay modems.' }
