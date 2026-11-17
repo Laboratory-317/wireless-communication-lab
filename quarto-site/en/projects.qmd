@@ -26,7 +26,7 @@
 ::: {#project-archive}
 
 <details class="project-program" open>
-<summary>Russian Science Foundation <span>04</span></summary>
+<summary>Russian Science Foundation</summary>
 
 - [Improving non-orthogonal multiple access communication systems using polar codes](https://rscf.ru/project/24-29-00172/). 2024–2025.
 - [Advanced multiple access methods for future 6G wireless communication systems](https://rscf.ru/project/22-79-10148/). 2022–2025.
@@ -36,14 +36,14 @@
 </details>
 
 <details id="start-1" class="project-program" open>
-<summary>Start <span>01</span></summary>
+<summary>Start</summary>
 
 - Development of a broadband reconfigurable metasurface to improve wireless communications in the 4.4–5.0 GHz band. 2026–2027.
 
 </details>
 
 <details class="project-program" open>
-<summary>Priority 2030 <span>10</span></summary>
+<summary>Priority 2030</summary>
 
 - Adaptation of polar codes to heterogeneous transmission channels. 2026.
 - Rate-splitting multiple access (RSMA). 2024–2026.
@@ -59,7 +59,7 @@
 </details>
 
 <details class="project-program" open>
-<summary>TUSUR Advanced Engineering School <span>03</span></summary>
+<summary>TUSUR Advanced Engineering School</summary>
 
 - Development of methods and algorithms for digital distortion compensation in wireless communication systems. 2024–2026.
 - Development of a communication channel model with a reconfigurable intelligent surface. 2023–2025.
@@ -68,7 +68,7 @@
 </details>
 
 <details class="project-program" open>
-<summary>UMNIK <span>04</span></summary>
+<summary>UMNIK</summary>
 
 - Development of an intelligent software system for determining digital signal parameters using machine learning. 2026–2027.
 - Development of the ReCK-RIS hardware and software system for controlling a reconfigurable metasurface. 2026–2027.
@@ -78,7 +78,7 @@
 </details>
 
 <details class="project-program" open>
-<summary>Industry Contracts <span>05</span></summary>
+<summary>Industry Contracts</summary>
 
 - Software and signal processing algorithms for Micran radio-relay modems. 2024–2026.
 - A model for calculating the capacity of links between a 5G base station and the core network to optimize transport infrastructure. Skoltech. 2021.
@@ -89,7 +89,7 @@
 </details>
 
 <details class="project-program" open>
-<summary>Individual Grants <span>02</span></summary>
+<summary>Individual Grants</summary>
 
 - Signal generation and processing methods in multi-antenna communication systems with sparse-code multiple access. 2021–2022.
 - Adaptive channel-state-dependent signal structures for sparse-code multiple access communication systems. 2019–2020.

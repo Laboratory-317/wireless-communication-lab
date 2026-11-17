@@ -201,22 +201,12 @@ main {
 }
 
 .interest-list {
-  counter-reset:area;
   display:grid;
   gap:28px;
 }
 
 .interest-list article {
   min-width:0;
-  counter-increment:area;
-}
-
-.interest-list article:before {
-  content:counter(area,decimal-leading-zero);
-  font:12px/1.4 ui-monospace,monospace;
-  letter-spacing:.12em;
-  display:block;
-  margin-bottom:16px;
 }
 
 .interest-image {
@@ -373,13 +363,6 @@ main {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:30px;
-}
-
-.student-step>span {
-  display:block;
-  font:36px Georgia,serif;
-  margin-bottom:20px;
-  color:var(--accent);
 }
 
 .student-tracks {

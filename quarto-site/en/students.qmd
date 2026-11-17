@@ -29,8 +29,6 @@
 
 ::: {.student-step}
 
-[01]{.card-number}
-
 ### Choose a task
 
 You could start by modeling a radio channel, comparing two transmission methods or testing an idea from a paper. Together, we will define the task and identify what you need to solve it.
@@ -39,8 +37,6 @@ You could start by modeling a radio channel, comparing two transmission methods 
 
 ::: {.student-step}
 
-[02]{.card-number}
-
 ### Learn the methods
 
 The work involves programming, mathematical models and research papers. You can learn the methods through your chosen task and discuss questions with the team.
@@ -48,8 +44,6 @@ The work involves programming, mathematical models and research papers. You can 
 :::
 
 ::: {.student-step}
-
-[03]{.card-number}
 
 ### Test and explain your results
 

@@ -456,9 +456,8 @@
             <div class="student-lead markdown-block">${blockMarkdown(content.studentOffer.lead)}</div>
           </div>
           <div class="student-steps">
-            ${content.studentOffer.steps.map((step, index) => `
+            ${content.studentOffer.steps.map((step) => `
               <article class="student-step">
-                <span>${index + 1}</span>
                 <h3>${step.title}</h3>
                 <div class="markdown-block">${blockMarkdown(step.text)}</div>
               </article>
