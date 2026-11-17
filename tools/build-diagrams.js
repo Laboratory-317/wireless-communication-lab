@@ -18,23 +18,19 @@ const text = (x, y, value, extra = '') => `<text x="${x}" y="${y}" ${extra}>${es
 const line = (x1, y1, x2, y2, extra = '') => `<path d="M${x1} ${y1}L${x2} ${y2}" ${extra}/>`;
 const circle = (x,y,r,extra='') => `<circle cx="${x}" cy="${y}" r="${r}" ${extra}/>`;
 const rect = (x,y,w,h,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" ${extra}/>`;
-// Moving highlights sit on top of unchanged geometry; no data values are simulated.
+// Contrasting markers make travel visible against the stationary diagram.
+const movingDot=(a,b,c,d,delay=0,r=6)=>circle(0,0,r,`class="motion-dot" style="--x0:${a}px;--y0:${b}px;--x1:${c}px;--y1:${d}px;--motion-delay:${delay}s"`);
 function motionPaths(name) {
-  const routes = {
-    access: [[272,245,551,176],[551,266,272,245],[272,245,551,356]],
-    wireless: [[220,267,582,181],[220,267,636,273],[220,267,574,363]],
-    polar: [187,249,311,373].map(y=>[126,y,660,y]),
-    ris: [[142,330,512,217],[531,219,674,329]],
-    ldpc: [[0,1,4],[1,2,5],[2,3,6],[0,3,7]].flatMap((bits,j)=>bits.map(i=>[120+i*80,210,220+j*120,350]))
-  };
-  return (routes[name] || []).map(([a,b,c,d],i)=>line(a,b,c,d,`class="motion-packet" pathLength="100" style="--motion-delay:${(i%4)*0.7}s"`)).join('');
+  const routes={access:[[272,245,551,176],[551,266,272,245],[272,245,551,356]],polar:[187,249,311,373].map(y=>[126,y,660,y]),ldpc:[[0,1,4],[1,2,5],[2,3,6],[0,3,7]].flatMap((bits,j)=>bits.map(i=>[120+i*80,210,220+j*120,350]))};
+  if(name==='ris') return [0,2.5].map(delay=>circle(0,0,6,`class="motion-dot motion-reflection" style="--x0:142px;--y0:330px;--xm:522px;--ym:218px;--x1:674px;--y1:329px;--motion-delay:${delay}s"`)).join('');
+  return (routes[name]||[]).map(([a,b,c,d],i)=>movingDot(a,b,c,d,(i%4)*0.6)).join('');
 }
 function frame(label, index, body, name) {
   return `<svg id="still" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}.motion-packet{fill:none;stroke:#257664;stroke-width:4;stroke-linecap:round;stroke-dasharray:8 92;opacity:0;animation:lab-signal 7s linear infinite;animation-delay:var(--motion-delay,0s)}@keyframes lab-signal{0%,12%{stroke-dashoffset:108;opacity:0}18%{stroke-dashoffset:100;opacity:.9}65%{stroke-dashoffset:0;opacity:.9}72%,100%{stroke-dashoffset:-8;opacity:0}}svg:target .motion-packet{animation:none;opacity:0}@media(prefers-reduced-motion:reduce){.motion-packet{animation:none!important;opacity:0!important}}</style>
-${rect(0,0,800,520,'fill="#f3f6f3"')}${rect(32,32,4,60,'fill="#257664"')}
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}.motion-dot{fill:#183841;stroke:#fff;stroke-width:2;opacity:0;animation:lab-data 5s linear infinite;animation-delay:var(--motion-delay,0s)}@keyframes lab-data{0%{transform:translate(var(--x0),var(--y0));opacity:0}8%,12%{transform:translate(var(--x0),var(--y0));opacity:1}74%{transform:translate(var(--x1),var(--y1));opacity:1}82%,100%{transform:translate(var(--x1),var(--y1));opacity:0}}.motion-reflection{animation-name:lab-reflect}@keyframes lab-reflect{0%{transform:translate(var(--x0),var(--y0));opacity:0}8%,12%{transform:translate(var(--x0),var(--y0));opacity:1}43%{transform:translate(var(--xm),var(--ym));opacity:1}74%{transform:translate(var(--x1),var(--y1));opacity:1}82%,100%{transform:translate(var(--x1),var(--y1));opacity:0}}.motion-beam{transform-origin:var(--beam-origin);animation:lab-beam 9s ease-in-out infinite}@keyframes lab-beam{0%,12%,100%{transform:rotate(-13deg)}43%,57%{transform:rotate(13deg)}82%{transform:rotate(0deg)}}svg:target .motion-dot{animation:none;opacity:0}svg:target .motion-beam{animation-play-state:paused}@media(prefers-reduced-motion:reduce){.motion-dot{animation:none!important;opacity:0!important}.motion-beam{animation:none!important}}</style>
+${rect(0,0,800,520,'fill="none"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 
 ${body}${motionPaths(name)}
@@ -43,16 +39,12 @@ ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class=
 }
 const drawings = {
   wireless(l) {
-    let body = '<path d="M222 272L622 151L622 382Z" style="fill:#2576640d;stroke:none"/>';
-    body += rect(129,183,73,158,'rx="8" fill="#dce8e1" stroke="#183841" stroke-width="2"');
-    for(let r=0;r<4;r++) for(let c=0;c<2;c++) body+=rect(144+c*28,199+r*34,15,22,'rx="3" fill="#257664"');
-    body+=line(165,342,165,374)+line(141,375,189,375);
-    for(const [x,y] of [[600,164],[654,256],[592,346]]) {
-      body+=line(220,267,x-18,y+17,'class="signal" marker-end="url(#arrow)"');
-      body+=rect(x,y,28,46,'rx="5" fill="#fff" stroke="#183841" stroke-width="2"')+line(x+9,y+37,x+19,y+37);
-    }
-    body+='<path d="M320 218Q352 266 320 314M405 196Q454 266 405 336" style="stroke:#257664;stroke-width:2;stroke-dasharray:4 6"/>';
-    return body+text(165,413,l.source,'text-anchor="middle"')+text(635,413,l.target,'text-anchor="middle"');
+    let body=rect(147,151,55,218,'rx="8" fill="#dce8e1" stroke="#183841" stroke-width="2"');
+    for(let i=0;i<4;i++)body+=rect(160,169+i*49,29,24,'rx="3" fill="#257664"')+line(199,181+i*49,220,260,'style="stroke:#536c70;stroke-width:1"');
+    body+='<g class="motion-beam" style="--beam-origin:220px 260px"><path d="M220 260C350 205 550 150 680 260C550 370 350 315 220 260Z" style="fill:#257664;fill-opacity:.13;stroke:#257664;stroke-width:2"/>';
+    body+=line(220,260,657,260,'class="signal" marker-end="url(#arrow)"');
+    body+=movingDot(223,260,654,260,0,7)+movingDot(223,260,654,260,1.5,7)+'</g>';
+    return body+text(176,413,l.source,'text-anchor="middle"')+text(548,413,l.target,'text-anchor="middle"');
   },
   polar(l) {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');

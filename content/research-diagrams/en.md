@@ -1,11 +1,11 @@
 # Diagram labels
 
 ## wireless
-title: Directional wireless communication
-subtitle: An antenna array directs signals towards users
+title: Forming a directional beam
+subtitle: Coordinated antennas reinforce the signal in a chosen direction
 source: Antenna array
-target: User devices
-note: Multiple antennas work together
+target: Directional beam
+note: Beam shape and steering are schematic, not a calculated radiation pattern
 
 ## polar
 title: Inside a polar encoder

@@ -53,7 +53,7 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .site-page .person-info .person-interests li { color:var(--home-accent); background:var(--home-soft); border-color:var(--home-line); }
 .site-page :is(.person-publications,.student-contact-button) { background:var(--home-button); color:var(--home-button-ink); }
 .site-page :is(.person-publications,.student-contact-button):hover { background:var(--home-button); color:var(--home-button-ink); text-decoration:underline; }
-.site-page :is(.research-portfolio-grid .research-entry figure,.project-case img,.course-visual,.research-gallery img) { background:var(--home-surface); }
+.site-page :is(.research-portfolio-grid .research-entry figure,.project-case img,.course-visual) { background:var(--home-surface); }
 .site-page img.detail-diagram { background:var(--home-surface); border:1px solid var(--home-line); border-radius:4px; }
 .site-page .publication-tools { padding:22px; }
 .site-page .publication-tools :is(input,select,button) { color:var(--home-ink); background:var(--home-surface); border-color:var(--home-line); font-size:14px; }
@@ -238,3 +238,17 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .design-compare a:focus-visible { outline:3px solid var(--home-accent,var(--accent,#8b3d2b)); outline-offset:3px; }
 @media(max-width:760px) { .design-compare { width:calc(100% - 44px); } }
 @media(max-width:390px) { .design-compare { width:calc(100% - 32px); } }
+
+/* Photos keep their own proportions without a padded light rectangle. */
+.site-page .research-gallery .research-photo img { display:block; width:auto; max-width:100%; height:260px; margin-inline:auto; object-fit:contain; background:transparent; border-radius:4px; }
+.photo-zoom { display:flex; justify-content:center; background:transparent; cursor:zoom-in; }
+.photo-zoom:focus-visible { outline:3px solid var(--home-accent); outline-offset:5px; }
+.photo-dialog { box-sizing:border-box; width:fit-content; max-width:95vw; max-height:95vh; padding:48px 24px 20px; border:1px solid var(--home-line); border-radius:6px; background:var(--home-bg); color:var(--home-ink); }
+.photo-dialog::backdrop { background:rgb(0 0 0 / .78); }
+.photo-dialog figure { margin:0; }
+.photo-dialog img { display:block; width:auto; max-width:calc(95vw - 48px); height:auto; max-height:72vh; margin:auto; object-fit:contain; background:transparent; }
+.photo-dialog figcaption { max-width:850px; margin:12px auto 0; text-align:center; font-size:14px; line-height:1.5; }
+.photo-dialog button { padding:6px 12px; border:1px solid var(--home-line); border-radius:4px; background:var(--home-surface); color:var(--home-ink); cursor:pointer; }
+.photo-dialog-close { position:absolute; top:10px; right:12px; }
+.photo-dialog-controls { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:16px; font-size:14px; }
+body.photo-viewer-open { overflow:hidden; }

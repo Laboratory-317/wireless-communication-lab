@@ -33,4 +33,4 @@ html{scroll-padding-top:30px}body.scientific-page{margin:0;background:var(--sc-p
 @media print{.sc-chrome,.sc-footer,.sc-controls,.sc-flow-controls,.publication-tools,.sc-archive-heading button{display:none!important}.scientific-page #quarto-content{width:100%}.scientific-page{background:#fff!important;color:#000!important}.sc-project-featured{background:none}.sc-project-featured .sc-project-copy *{color:#000!important}details::details-content{display:block}.sc-detail-figure,.person-entry,.sc-project{break-inside:avoid}}
 
 /* Modern motion overlays are inert in the separate Scientific illustration system. */
-.research-symbol .motion-packet{display:none}
+.research-symbol .motion-dot{display:none}

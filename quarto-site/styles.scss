@@ -202,7 +202,7 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .project-case > .quarto-figure figure { display:block; margin:0; width:100%; }
 .project-case figcaption { display:none; }
 .portfolio-lead h2 a.anchorjs-link { margin:0; }
-.research-gallery img { object-fit:contain; background:#eaf0f3; }
+.research-gallery img { object-fit:contain; background:transparent; }
 
 /* Team cards. */
 .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.4rem; margin:1.5rem 0 2.5rem; }

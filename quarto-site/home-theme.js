@@ -105,6 +105,65 @@
         apply();
       });
     });
+    const photos = [...document.querySelectorAll('.research-gallery img')];
+    if (photos.length) {
+      const ru = lang === 'ru';
+      let selected = 0, opener = null;
+      const dialog = document.createElement('dialog');
+      dialog.className = 'photo-dialog';
+      dialog.setAttribute('aria-label', ru ? 'Просмотр фотографий' : 'Photo viewer');
+      const close = document.createElement('button');
+      close.type = 'button'; close.className = 'photo-dialog-close';
+      close.textContent = ru ? 'Закрыть ×' : 'Close ×';
+      const figure = document.createElement('figure');
+      const full = document.createElement('img');
+      const caption = document.createElement('figcaption');
+      figure.append(full, caption);
+      const controls = document.createElement('div');
+      controls.className = 'photo-dialog-controls';
+      const previous = document.createElement('button');
+      previous.type = 'button'; previous.textContent = ru ? '← Назад' : '← Previous';
+      const next = document.createElement('button');
+      next.type = 'button'; next.textContent = ru ? 'Далее →' : 'Next →';
+      const count = document.createElement('span'); count.setAttribute('aria-live', 'polite');
+      controls.append(previous, count, next);
+      if (photos.length === 1) controls.hidden = true;
+      dialog.append(close, figure, controls);
+      document.body.append(dialog);
+      const show = (index) => {
+        selected = (index + photos.length) % photos.length;
+        const photo = photos[selected];
+        full.src = photo.currentSrc || photo.src;
+        full.alt = photo.alt || '';
+        caption.textContent = photo.closest('figure')?.querySelector('figcaption')?.textContent || photo.alt || '';
+        count.textContent = `${selected + 1} / ${photos.length}`;
+      };
+      previous.addEventListener('click', () => show(selected - 1));
+      next.addEventListener('click', () => show(selected + 1));
+      close.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault(); show(selected + (event.key === 'ArrowRight' ? 1 : -1));
+        }
+      });
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', () => {
+        document.body.classList.remove('photo-viewer-open');
+        opener?.focus();
+      });
+      photos.forEach((photo, index) => {
+        const link = document.createElement('a');
+        link.href = photo.currentSrc || photo.src;
+        link.className = 'photo-zoom';
+        link.setAttribute('aria-label', `${ru ? 'Увеличить' : 'Enlarge'}: ${photo.alt || (ru ? 'фотографию' : 'photo')}`);
+        photo.replaceWith(link); link.append(photo);
+        link.addEventListener('click', (event) => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button > 0) return;
+          event.preventDefault(); opener = link; show(index); dialog.showModal();
+          document.body.classList.add('photo-viewer-open'); close.focus();
+        });
+      });
+    }
     apply();
   });
 })();
