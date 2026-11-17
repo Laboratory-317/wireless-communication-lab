@@ -124,6 +124,25 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .research-overview { margin:0 0 36px; }
 .research-overview .home-directions { grid-auto-rows:1fr; }
 
+/* Give the research overview the screen space that Quarto reserves below it. */
+@media(min-width:1101px) {
+ body.research-page { display:flex; flex-direction:column; min-height:100svh; }
+ .site-page.research-page #quarto-content { display:flex; flex:1; min-height:0!important; max-width:1424px; }
+ .site-page.research-page main.content { display:flex; flex:1; flex-direction:column; align-self:stretch; padding:16px 0!important; }
+ .research-page .site-header { padding:18px 0; }
+ .research-page #title-block-header { margin-bottom:20px; padding-bottom:16px; }
+ .research-page #title-block-header:before { margin-bottom:8px; }
+ .research-page h1.title { font-size:42px; margin-bottom:8px; }
+ .research-page #title-block-header .description { max-width:none; font-size:16px; line-height:1.5; margin-bottom:0; }
+ .research-page .research-overview { display:flex; flex:1; margin:0; }
+ .research-page .home-directions { flex:1; gap:18px; }
+ .research-page .home-direction { grid-template-columns:160px minmax(0,1fr); gap:24px; padding:24px; min-height:clamp(192px,calc((100svh - 382px)/2),310px); }
+ .research-page .home-direction svg { width:160px; height:128px; }
+ .research-page .home-direction h3 { font-size:22px; line-height:1.25; margin-bottom:10px; }
+ .research-page .home-direction p { font-size:16px; line-height:1.5; margin-bottom:14px; }
+ .research-page .site-footer { padding:12px 0; }
+}
+
 /* Neutral introductions for students and projects: no featured research direction. */
 .site-page .neutral-lead { display:block; position:relative; isolation:isolate; overflow:hidden; }
 .site-page .neutral-lead .portfolio-lead-copy { max-width:900px; padding:44px; }
