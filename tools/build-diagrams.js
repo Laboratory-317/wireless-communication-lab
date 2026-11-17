@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
+const education = require('./educational-motion.cjs');
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 function labels(language) {
   const text = fs.readFileSync(path.join(root, 'content/research-diagrams', `${language}.md`), 'utf8');
@@ -18,34 +19,20 @@ const text = (x, y, value, extra = '') => `<text x="${x}" y="${y}" ${extra}>${es
 const line = (x1, y1, x2, y2, extra = '') => `<path d="M${x1} ${y1}L${x2} ${y2}" ${extra}/>`;
 const circle = (x,y,r,extra='') => `<circle cx="${x}" cy="${y}" r="${r}" ${extra}/>`;
 const rect = (x,y,w,h,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" ${extra}/>`;
-// Contrasting markers make travel visible against the stationary diagram.
-const movingDot=(a,b,c,d,delay=0,r=6)=>circle(0,0,r,`class="motion-dot" style="--x0:${a}px;--y0:${b}px;--x1:${c}px;--y1:${d}px;--motion-delay:${delay}s"`);
-function motionPaths(name) {
-  const routes={access:[[272,245,551,176],[551,266,272,245],[272,245,551,356]],polar:[187,249,311,373].map(y=>[126,y,660,y]),ldpc:[[0,1,4],[1,2,5],[2,3,6],[0,3,7]].flatMap((bits,j)=>bits.map(i=>[120+i*80,210,220+j*120,350]))};
-  if(name==='ris') return [0,2.5].map(delay=>circle(0,0,6,`class="motion-dot motion-reflection" style="--x0:142px;--y0:330px;--xm:522px;--ym:218px;--x1:674px;--y1:329px;--motion-delay:${delay}s"`)).join('');
-  return (routes[name]||[]).map(([a,b,c,d],i)=>movingDot(a,b,c,d,(i%4)*0.6)).join('');
-}
-function frame(label, index, body, name) {
-  return `<svg id="still" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+function frame(label, index, body, name, language) {
+  return `<svg id="still" class="edu-scene edu-${name}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}.motion-dot{fill:#183841;stroke:#fff;stroke-width:2;opacity:0;animation:lab-data 5s linear infinite;animation-delay:var(--motion-delay,0s)}@keyframes lab-data{0%{transform:translate(var(--x0),var(--y0));opacity:0}8%,12%{transform:translate(var(--x0),var(--y0));opacity:1}74%{transform:translate(var(--x1),var(--y1));opacity:1}82%,100%{transform:translate(var(--x1),var(--y1));opacity:0}}.motion-reflection{animation-name:lab-reflect}@keyframes lab-reflect{0%{transform:translate(var(--x0),var(--y0));opacity:0}8%,12%{transform:translate(var(--x0),var(--y0));opacity:1}43%{transform:translate(var(--xm),var(--ym));opacity:1}74%{transform:translate(var(--x1),var(--y1));opacity:1}82%,100%{transform:translate(var(--x1),var(--y1));opacity:0}}.motion-beam{transform-origin:var(--beam-origin);animation:lab-beam 9s ease-in-out infinite}@keyframes lab-beam{0%,12%,100%{transform:rotate(-13deg)}43%,57%{transform:rotate(13deg)}82%{transform:rotate(0deg)}}svg:target .motion-dot{animation:none;opacity:0}svg:target .motion-beam{animation-play-state:paused}@media(prefers-reduced-motion:reduce){.motion-dot{animation:none!important;opacity:0!important}.motion-beam{animation:none!important}}</style>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.css}</style>
 ${rect(0,0,800,520,'fill="none"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 
-${body}${motionPaths(name)}
+${body}${education.detailedOverlay(name,language)}
 ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class="small"')}
 </svg>\n`;
 }
 const drawings = {
-  wireless(l) {
-    let body=rect(147,151,55,218,'rx="8" fill="#dce8e1" stroke="#183841" stroke-width="2"');
-    for(let i=0;i<4;i++)body+=rect(160,169+i*49,29,24,'rx="3" fill="#257664"')+line(199,181+i*49,220,260,'style="stroke:#536c70;stroke-width:1"');
-    body+='<g class="motion-beam" style="--beam-origin:220px 260px"><path d="M220 260C350 205 550 150 680 260C550 370 350 315 220 260Z" style="fill:#257664;fill-opacity:.13;stroke:#257664;stroke-width:2"/>';
-    body+=line(220,260,657,260,'class="signal" marker-end="url(#arrow)"');
-    body+=movingDot(223,260,654,260,0,7)+movingDot(223,260,654,260,1.5,7)+'</g>';
-    return body+text(176,413,l.source,'text-anchor="middle"')+text(548,413,l.target,'text-anchor="middle"');
-  },
+  wireless(l,language) { return education.beamScene(language); },
   polar(l) {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');
     const ys=[187,249,311,373];
@@ -70,7 +57,7 @@ const drawings = {
       const x=220+j*120;
       body+=rect(x-12,338,24,24,'fill="#fff" stroke="#183841" stroke-width="2"')+text(x,391,`c${['₀','₁','₂','₃'][j]}`,'text-anchor="middle" font-style="italic"');
     });
-    return body+text(400,427,l.target,'text-anchor="middle" class="muted"');
+    return body;
   },
   access(l) {
     // A shared network, without implying any particular access technique.
@@ -99,7 +86,7 @@ const drawings = {
   },
   ris(l) {
     let body=line(138,339,682,339,'style="stroke:#a7b9b1;stroke-dasharray:5 6"');
-    body+=rect(368,283,50,105,'fill="#d7dcd4" stroke="#536c70"')+text(393,413,l.wall,'text-anchor="middle" class="muted"');
+    body+=rect(368,283,50,105,'fill="#d7dcd4" stroke="#536c70"')+text(393,278,l.wall,'text-anchor="middle" class="muted"');
     body+=rect(443,152,164,62,'rx="4" fill="#dce8e1" stroke="#183841"');
     for(let r=0;r<2;r++)for(let c=0;c<6;c++)body+=rect(450+c*25,159+r*25,20,20,'rx="2" fill="#257664"');
     body+=line(142,330,512,217,'class="signal" marker-end="url(#arrow)"')+line(531,219,674,329,'class="signal" marker-end="url(#arrow)"');
@@ -116,7 +103,7 @@ for (const language of ['ru','en']) {
     const label=localized[name];
     if(!label?.title || !label?.note) throw new Error(`Missing labels: ${language}/${name}`);
     const suffix=language==='ru'?'':'-en';
-    const svg=frame(label,++index,draw(label),name);
+    const svg=frame(label,++index,draw(label,language),name,language);
     fs.writeFileSync(path.join(root,'assets/research',`${name}${suffix}.svg`),svg);
     // Both designs use the same coding diagrams and geometry.
     fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);

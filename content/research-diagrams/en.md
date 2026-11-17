@@ -5,18 +5,18 @@ title: Forming a directional beam
 subtitle: Coordinated antennas reinforce the signal in a chosen direction
 source: Antenna array
 target: Directional beam
-note: Beam shape and steering are schematic, not a calculated radiation pattern
+note: Ideal array: 4 elements, λ/2 spacing; normalized array factor
 
 ## polar
 title: Inside a polar encoder
 subtitle: An example encoding transform for four bits
 source: Input bits
-target: Codeword bits
+target: Current values
 note: ⊕ — addition modulo 2
 
 ## ldpc
 title: LDPC: Tanner graph
-subtitle: A small example of bit and parity-check connections
+subtitle: An example of detecting and correcting a single bit error
 source: Codeword bits — variable nodes
 target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check

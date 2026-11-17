@@ -6,13 +6,21 @@ const output = path.join(__dirname, '_site');
 const versions = Object.fromEntries(['home.css', 'site.css', 'home-theme.js'].map(name => [
   name, createHash('sha256').update(fs.readFileSync(path.join(output, name))).digest('hex').slice(0, 12)
 ]));
+const diagramFolder = path.join(output, 'assets', 'research');
+const diagramHash = createHash('sha256');
+for (const name of fs.readdirSync(diagramFolder).filter(name => name.endsWith('.svg')).sort()) {
+  diagramHash.update(name).update(fs.readFileSync(path.join(diagramFolder, name)));
+}
+const diagramVersion = diagramHash.digest('hex').slice(0, 12);
 for (const directory of ['', 'ru', 'en']) {
   const folder = path.join(output, directory);
   for (const name of fs.readdirSync(folder).filter(name => name.endsWith('.html'))) {
     const file = path.join(folder, name);
     const source = fs.readFileSync(file, 'utf8');
     const versioned = source.replace(/\b(href|src)="([^"?]*\b(home\.css|site\.css|home-theme\.js))(?:\?[^"\s]*)?"/g,
-      (_, attribute, url, asset) => `${attribute}="${url}?v=${versions[asset]}"`);
+      (_, attribute, url, asset) => `${attribute}="${url}?v=${versions[asset]}"`)
+      .replace(/<meta name="lab-diagrams-version" content="[^"]*">\s*/g, '')
+      .replace('</head>', `<meta name="lab-diagrams-version" content="${diagramVersion}">\n</head>`);
     if (source !== versioned) fs.writeFileSync(file, versioned);
   }
 }

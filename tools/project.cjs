@@ -65,6 +65,7 @@ function test() {
   const python = resolveTool('python');
   checkSources();
   script('tools/test-scientific-diagrams.cjs');
+  script('tools/test-educational-motion.cjs');
   invoke(python, ['-m', 'unittest', 'discover', '-s', 'tools', '-p', 'test_*.py']);
 }
 

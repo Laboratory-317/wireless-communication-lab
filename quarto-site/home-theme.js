@@ -68,11 +68,13 @@
     document.querySelectorAll('[data-site-search]').forEach(button => {
       button.addEventListener('click', () => window.quartoOpenSearch?.());
     });
+    const diagramVersion = document.querySelector('meta[name="lab-diagrams-version"]')?.content;
+    const diagramQuery = diagramVersion ? `?v=${diagramVersion}` : '';
     document.querySelectorAll('img').forEach(img => {
-      const src = img.getAttribute('src') || '';
+      const src = (img.getAttribute('src') || '').split(/[?#]/)[0];
       if (/\/assets\/research\/(access|polar|ldpc|ris|wireless)(-en)?\.svg$/.test(src)) {
-        img.dataset.lightSrc = src.replace(/\.svg$/, '-light.svg');
-        img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg');
+        img.dataset.lightSrc = src.replace(/\.svg$/, '-light.svg') + diagramQuery;
+        img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg') + diagramQuery;
       }
     });
     const illustration = document.querySelector('.research-overview, .home-directions, .student-tracks, .learning-grid, figure:has(img[data-dark-src])');

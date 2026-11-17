@@ -34,3 +34,30 @@ html{scroll-padding-top:30px}body.scientific-page{margin:0;background:var(--sc-p
 
 /* Modern motion overlays are inert in the separate Scientific illustration system. */
 .research-symbol .motion-dot{display:none}
+
+
+
+
+/* Canonical educational scenes: static final state in Scientific. */
+
+.edu-phase{opacity:0;animation-duration:12s;animation-timing-function:linear;animation-iteration-count:infinite}
+.edu-one{animation-name:edu-one}.edu-two{animation-name:edu-two}.edu-three{animation-name:edu-three}
+@keyframes edu-one{0%,28%{opacity:1}32%,100%{opacity:0}}
+@keyframes edu-two{0%,32%{opacity:0}35%,61%{opacity:1}65%,100%{opacity:0}}
+@keyframes edu-three{0%,65%{opacity:0}68%,96%{opacity:1}100%{opacity:0}}
+.edu-wire{fill:none;stroke:var(--sc-muted);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.edu-box{fill:var(--sc-paper);stroke:var(--sc-ink);stroke-width:1.5}.edu-active{fill:none;stroke:var(--sc-accent);stroke-width:3;stroke-linecap:round}
+.edu-fill{fill:var(--sc-accent);stroke:var(--sc-accent);stroke-width:1}.edu-alt{fill:#b77538;stroke:#b77538;stroke-width:1}.edu-third{fill:var(--sc-muted);stroke:var(--sc-muted);stroke-width:1}
+.edu-faint{opacity:.22}.edu-bad{fill:none;stroke:#be3b36;stroke-width:3}.edu-error{fill:#be3b36;stroke:#be3b36}
+.edu-good{fill:var(--sc-accent);stroke:var(--sc-accent)}.edu-white{fill:var(--sc-paper);stroke:none;font:12px Arial,sans-serif}
+.edu-caption{fill:var(--sc-ink);stroke:none;font:600 17px Arial,sans-serif}.edu-bit{fill:var(--sc-ink);stroke:none;font:16px Consolas,monospace}.edu-label{fill:var(--sc-muted);stroke:none;font:14px Arial,sans-serif}
+.edu-lobe{fill:var(--sc-accent);fill-opacity:.13;stroke:var(--sc-accent);stroke-width:2}.edu-link{fill:none;stroke:var(--sc-accent);stroke-width:2;stroke-dasharray:4 5}
+.edu-draw{stroke-dasharray:100;stroke-dashoffset:100;animation:edu-reveal 12s linear infinite}
+.edu-received{opacity:0;animation:edu-received 12s linear infinite}
+@keyframes edu-received{0%,86%{opacity:0}89%,98%{opacity:1}100%{opacity:0}}
+@keyframes edu-reveal{0%,68%{stroke-dashoffset:100}87%,100%{stroke-dashoffset:0}}
+.edu-access .signal{opacity:.14}.edu-ris .signal{opacity:.2}
+svg:target .edu-phase,svg:target .edu-draw,svg:target .edu-received{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.edu-phase,.edu-draw,.edu-received{animation:none!important}.edu-phase{opacity:0!important}.edu-three,.edu-received{opacity:1!important}.edu-draw{stroke-dashoffset:0!important}}
+
+.research-symbol .edu-phase{animation:none!important;opacity:0!important}.research-symbol .edu-three{opacity:1!important}.research-symbol .edu-draw{animation:none!important;stroke-dashoffset:0!important}.research-symbol .edu-received{animation:none!important;opacity:1!important}.research-symbol .edu-caption{font:600 10px Arial,sans-serif}.research-symbol .edu-bit,.research-symbol .edu-white{font:10px Consolas,monospace}.research-symbol .edu-label{font:10px Arial,sans-serif}

@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const directory = path.join(__dirname, 'assets', 'research');
 const palette = {
+  '#be3b36': '#ff8276',
   '#257664': '#76dcd2', '#183841': '#e8f1f1', '#fff': '#15262e',
   '#536c70': '#a9bdc5', '#f3f6f3': '#15262e', '#ccdad3': '#2c4149',
   '#b77538': '#e8ad70', '#ccd9d3': '#2c4149', '#a7b9b1': '#718e98',
