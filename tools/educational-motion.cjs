@@ -63,7 +63,9 @@ function beamPath(cx,cy,r,steerDeg) {
 }
 function gauges(x,ys,steerDeg,r) {
   return ys.map((y,i)=>{
-    const angle=-Math.PI*i*Math.sin(steerDeg*Math.PI/180);
+    // The drawn element index increases downwards; positive phase progression
+    // therefore compensates propagation towards positive (upward) steering angles.
+    const angle=Math.PI*i*Math.sin(steerDeg*Math.PI/180);
     return circle(x,y,r,'edu-box')+path(`M${x} ${y}L${x+r*.78*Math.cos(angle)} ${y-r*.78*Math.sin(angle)}`,'edu-active');
   }).join('');
 }
@@ -111,8 +113,9 @@ function compactRis(lang) {
   let b=rect(65,17,54,23)+rect(84,67,10,44,'edu-third')+text(89,122,local(lang,'Преграда','Obstacle'),'edu-label');
   b+=path('M18 95H148','edu-wire')+circle(18,95,5)+rect(142,85,12,22)+text(18,112,'Tx','edu-label')+text(148,120,'Rx','edu-label')+text(92,12,'RIS','edu-label');
   b+=phase(0,path('M23 95H82','edu-bad')+path('M79 89L91 101M79 101L91 89','edu-bad')+text(92,143,captions.ris[lang][0]));
-  b+=phase(1,Array.from({length:8},(_,i)=>rect(68+(i%4)*12,20+Math.floor(i/4)*9,9,6,i%2?'edu-alt':'edu-fill')).join('')+text(92,143,captions.ris[lang][1]));
-  b+=phase(2,path('M23 93L92 42L142 89','edu-active')+circle(148,95,4,'edu-good')+text(92,143,captions.ris[lang][2]));return b;
+  const configuration=Array.from({length:8},(_,i)=>rect(68+(i%4)*12,20+Math.floor(i/4)*9,9,6,i%2?'edu-alt':'edu-fill')).join('');
+  b+=phase(1,configuration+text(92,143,captions.ris[lang][1]));
+  b+=phase(2,configuration+path('M23 93L92 42L142 89','edu-active')+circle(148,95,4,'edu-good')+text(92,143,captions.ris[lang][2]));return b;
 }
 function renderCompact(kind,lang) {
   const body={access:compactAccess,coding:compactCoding,ris:compactRis,wireless:(l)=>beamScene(l,true)}[kind](lang);
@@ -138,8 +141,9 @@ function detailedOverlay(kind,lang) {
     });
   } else if(kind==='ris') {
     b+=phase(0,path('M142 339H368','edu-bad')+path('M378 329L398 349M378 349L398 329','edu-bad')+text(400,430,captions.ris[lang][0]));
-    b+=phase(1,Array.from({length:12},(_,i)=>rect(450+i%6*25,159+Math.floor(i/6)*25,20,20,i%2?'edu-alt':'edu-fill')).join('')+text(400,430,captions.ris[lang][1]));
-    b+=phase(2,path('M142 330L522 217L674 329','edu-active')+circle(688,341,7,'edu-good')+text(400,430,captions.ris[lang][2]));
+    const configuration=Array.from({length:12},(_,i)=>rect(450+i%6*25,159+Math.floor(i/6)*25,20,20,i%2?'edu-alt':'edu-fill')).join('');
+    b+=phase(1,configuration+text(400,430,captions.ris[lang][1]));
+    b+=phase(2,configuration+path('M142 330L522 217L674 329','edu-active')+circle(688,341,7,'edu-good')+text(400,430,captions.ris[lang][2]));
   } else if(kind==='access') {
     const colors=['edu-fill','edu-alt','edu-third'],ys=[176,266,356];
     const pool=colors.map((c,i)=>rect(339+i*25,145,20,16,c)+rect(339+i*25,168,20,16,c)).join('');
