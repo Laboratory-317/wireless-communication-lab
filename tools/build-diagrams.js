@@ -18,15 +18,26 @@ const text = (x, y, value, extra = '') => `<text x="${x}" y="${y}" ${extra}>${es
 const line = (x1, y1, x2, y2, extra = '') => `<path d="M${x1} ${y1}L${x2} ${y2}" ${extra}/>`;
 const circle = (x,y,r,extra='') => `<circle cx="${x}" cy="${y}" r="${r}" ${extra}/>`;
 const rect = (x,y,w,h,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" ${extra}/>`;
-function frame(label, index, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+// Moving highlights sit on top of unchanged geometry; no data values are simulated.
+function motionPaths(name) {
+  const routes = {
+    access: [[272,245,551,176],[551,266,272,245],[272,245,551,356]],
+    wireless: [[220,267,582,181],[220,267,636,273],[220,267,574,363]],
+    polar: [187,249,311,373].map(y=>[126,y,660,y]),
+    ris: [[142,330,512,217],[531,219,674,329]],
+    ldpc: [[0,1,4],[1,2,5],[2,3,6],[0,3,7]].flatMap((bits,j)=>bits.map(i=>[120+i*80,210,220+j*120,350]))
+  };
+  return (routes[name] || []).map(([a,b,c,d],i)=>line(a,b,c,d,`class="motion-packet" pathLength="100" style="--motion-delay:${(i%4)*0.7}s"`)).join('');
+}
+function frame(label, index, body, name) {
+  return `<svg id="still" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}</style>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}.motion-packet{fill:none;stroke:#257664;stroke-width:4;stroke-linecap:round;stroke-dasharray:8 92;opacity:0;animation:lab-signal 7s linear infinite;animation-delay:var(--motion-delay,0s)}@keyframes lab-signal{0%,12%{stroke-dashoffset:108;opacity:0}18%{stroke-dashoffset:100;opacity:.9}65%{stroke-dashoffset:0;opacity:.9}72%,100%{stroke-dashoffset:-8;opacity:0}}svg:target .motion-packet{animation:none;opacity:0}@media(prefers-reduced-motion:reduce){.motion-packet{animation:none!important;opacity:0!important}}</style>
 ${rect(0,0,800,520,'fill="#f3f6f3"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 
-${body}
+${body}${motionPaths(name)}
 ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class="small"')}
 </svg>\n`;
 }
@@ -113,10 +124,10 @@ for (const language of ['ru','en']) {
     const label=localized[name];
     if(!label?.title || !label?.note) throw new Error(`Missing labels: ${language}/${name}`);
     const suffix=language==='ru'?'':'-en';
-    const svg=frame(label,++index,draw(label));
+    const svg=frame(label,++index,draw(label),name);
     fs.writeFileSync(path.join(root,'assets/research',`${name}${suffix}.svg`),svg);
     // Both designs use the same coding diagrams and geometry.
-    if (['polar','ldpc','access'].includes(name)) fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);
+    fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);
   }
 }
 console.log(`Built ${Object.keys(drawings).length*2} RU/EN research diagrams from Markdown labels.`);

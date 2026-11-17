@@ -4,7 +4,10 @@
   let preference = 'system';
   try { preference = localStorage.getItem('lab-theme') || 'system'; } catch {}
   if (!['light', 'dark', 'system'].includes(preference)) preference = 'system';
+  let motion = 'on';
+  try { motion = localStorage.getItem('lab-motion') === 'off' ? 'off' : 'on'; } catch {}
   function apply() {
+    document.documentElement.dataset.labMotion = motion;
     const theme = preference === 'system'
       ? (media.matches ? 'dark' : 'light') : preference;
     document.documentElement.dataset.labTheme = theme;
@@ -13,7 +16,7 @@
       document.body.classList.toggle('quarto-light', theme === 'light');
     }
     document.querySelectorAll('img[data-dark-src]').forEach(img => {
-      const source = theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc;
+      const source = (theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc) + (motion === 'off' ? '#still' : '');
       if (img.getAttribute('src') !== source) img.setAttribute('src', source);
     });
     document.querySelectorAll('[data-theme-choice]').forEach(button => {
@@ -72,6 +75,29 @@
         img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg');
       }
     });
+    const illustration = document.querySelector('.research-overview, .home-directions, .student-tracks, .learning-grid, figure:has(img[data-dark-src])');
+    if (illustration) {
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'motion-toggle';
+      const update = () => {
+        toggle.textContent = motion === 'on' ? 'Ⅱ' : '▷';
+        const label = motion === 'on'
+          ? (lang === 'ru' ? 'Приостановить анимацию' : 'Pause animation')
+          : (lang === 'ru' ? 'Включить анимацию' : 'Play animation');
+        toggle.setAttribute('aria-label', label);
+        toggle.title = label;
+        toggle.setAttribute('aria-pressed', String(motion === 'on'));
+      };
+      toggle.addEventListener('click', () => {
+        motion = motion === 'on' ? 'off' : 'on';
+        try { localStorage.setItem('lab-motion', motion); } catch {}
+        update(); apply();
+      });
+      update();
+      const controls = document.querySelector('.home-controls');
+      if (controls) controls.append(toggle); else illustration.before(toggle);
+    }
     document.querySelectorAll('[data-theme-choice]').forEach(button => {
       button.addEventListener('click', () => {
         preference = button.dataset.themeChoice;

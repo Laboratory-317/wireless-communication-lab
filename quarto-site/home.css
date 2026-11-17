@@ -123,3 +123,8 @@ body.home-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .research-symbol .symbol-surface { fill:var(--home-surface); }
 .research-symbol .symbol-dot { fill:currentColor; stroke:none; }
 .research-symbol .symbol-channel { stroke-dasharray:3 4; opacity:.65; }
+
+/* Quiet signal highlights, with a static fallback and a page-level pause. */
+.motion-packet{fill:none;stroke:var(--home-accent);stroke-width:4;stroke-linecap:round;stroke-dasharray:8 92;opacity:0;animation:lab-signal 7s linear infinite;animation-delay:var(--motion-delay,0s)}@keyframes lab-signal{0%,12%{stroke-dashoffset:108;opacity:0}18%{stroke-dashoffset:100;opacity:.9}65%{stroke-dashoffset:0;opacity:.9}72%,100%{stroke-dashoffset:-8;opacity:0}}:root[data-lab-motion="off"] .motion-packet{animation:none;opacity:0}@media(prefers-reduced-motion:reduce){.motion-packet{animation:none!important;opacity:0!important}}
+.research-symbol .motion-packet { stroke-width:2.8; }
+.motion-toggle { display:grid; place-items:center; flex-shrink:0; width:28px; height:32px; padding:0; border:1px solid var(--home-line); border-radius:4px; background:transparent; color:var(--home-muted); font:18px/1 system-ui,sans-serif; cursor:pointer; }
