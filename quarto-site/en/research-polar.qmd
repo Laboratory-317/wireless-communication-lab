@@ -1,9 +1,9 @@
 ---
 {
-  "title": "Polar codes",
+  "title": "Error-correcting codes",
   "lang": "en",
   "description": "We study polar and LDPC codes, their adaptation to radio channel conditions and their use in multiple access systems.",
-  "pagetitle": "Polar codes — Wireless Communication Laboratory",
+  "pagetitle": "Error-correcting codes — Wireless Communication Laboratory",
   "include-before-body": [
     "../site-header-en.html"
   ],
@@ -29,11 +29,17 @@ Polar and LDPC codes provide error protection for transmitted data. We study how
 
 We also investigate the use of polar codes with non-orthogonal multiple access. We evaluate these approaches using communication system models, including fading channel models.
 
+The polar transform is shown for four input bits. Horizontal lines carry the bits; vertical connections implement addition modulo 2.
+
 ![​Polar codes](../assets/research/polar-en.svg){.detail-diagram}
+
+For LDPC codes, a Tanner graph describes the connections between codeword bits and parity checks. Circles represent bits, squares represent checks, and an edge indicates that a bit participates in a check.
+
+![Tanner graph: LDPC codeword bits and parity checks](../assets/research/ldpc-en.svg){.detail-diagram}
 
 ::: {.research-context}
 
-[POLAR CODES · CHANNEL CODING]{.portfolio-tags}
+[POLAR · LDPC · CHANNEL CODING]{.portfolio-tags}
 
 **Related projects**
 

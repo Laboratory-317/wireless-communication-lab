@@ -136,8 +136,8 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
  .research-page #title-block-header .description { max-width:none; font-size:16px; line-height:1.5; margin-bottom:0; }
  .research-page .research-overview { display:flex; flex:1; margin:0; }
  .research-page .home-directions { flex:1; gap:18px; }
- .research-page .home-direction { grid-template-columns:160px minmax(0,1fr); gap:24px; padding:24px; min-height:clamp(192px,calc((100svh - 382px)/2),310px); }
- .research-page .home-direction svg { width:160px; height:128px; }
+ .research-page .home-direction { grid-template-columns:184px minmax(0,1fr); gap:20px; padding:20px; min-height:clamp(192px,calc((100svh - 382px)/2),310px); }
+ .research-page .home-direction svg { width:184px; height:148px; }
  .research-page .home-direction h3 { font-size:22px; line-height:1.25; margin-bottom:10px; }
  .research-page .home-direction p { font-size:16px; line-height:1.5; margin-bottom:14px; }
  .research-page .site-footer { padding:12px 0; }

@@ -47,10 +47,27 @@ const drawings = {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');
     const ys=[187,249,311,373];
     ys.forEach((y,i)=>{body+=line(126,y,660,y)+text(79,y+6,`u${['₀','₁','₂','₃'][i]}`,'font-style="italic"')+text(683,y+6,`x${['₀','₁','₂','₃'][i]}`,'font-style="italic"');});
-    for(const [x,a,b] of [[300,187,311],[300,249,373],[530,187,249],[530,311,373]]) {
-      body+=line(x-83,b,x,a,'class="signal"')+circle(x-83,b,4,'style="fill:#257664;stroke:#257664"')+circle(x,a,12)+line(x-7,a,x+7,a)+line(x,a-7,x,a+7);
+    for(const [x,a,b] of [[280,187,311],[350,249,373],[490,187,249],[560,311,373]]) {
+      body+=line(x,b,x,a+12,'class="signal"')+circle(x,b,4,'style="fill:#257664;stroke:#257664"')+circle(x,a,12)+line(x-7,a,x+7,a)+line(x,a-7,x,a+7);
     }
     return body;
+  },
+  ldpc(l) {
+    // Each row lists the variable nodes in one parity-check equation.
+    const checks = [[0,1,4], [1,2,5], [2,3,6], [0,3,7]];
+    const xs = Array.from({length:8}, (_,i)=>120+i*80);
+    let body=text(400,145,l.source,'text-anchor="middle" class="muted"');
+    checks.forEach((bits,j)=>bits.forEach(i=>{
+      body+=line(xs[i],210,220+j*120,350,'class="signal"');
+    }));
+    xs.forEach((x,i)=>{
+      body+=circle(x,210,12)+text(x,183,`x${['₀','₁','₂','₃','₄','₅','₆','₇'][i]}`,'text-anchor="middle" font-style="italic"');
+    });
+    checks.forEach((bits,j)=>{
+      const x=220+j*120;
+      body+=rect(x-12,338,24,24,'fill="#fff" stroke="#183841" stroke-width="2"')+text(x,391,`c${['₀','₁','₂','₃'][j]}`,'text-anchor="middle" font-style="italic"');
+    });
+    return body+text(400,427,l.target,'text-anchor="middle" class="muted"');
   },
   access(l) {
     let body=text(210,145,l.left,'text-anchor="middle" font-weight="700"')+text(592,145,l.right,'text-anchor="middle" font-weight="700"');
@@ -82,7 +99,10 @@ for (const language of ['ru','en']) {
     const label=localized[name];
     if(!label?.title || !label?.note) throw new Error(`Missing labels: ${language}/${name}`);
     const suffix=language==='ru'?'':'-en';
-    fs.writeFileSync(path.join(root,'assets/research',`${name}${suffix}.svg`),frame(label,++index,draw(label)));
+    const svg=frame(label,++index,draw(label));
+    fs.writeFileSync(path.join(root,'assets/research',`${name}${suffix}.svg`),svg);
+    // Both designs use the same coding diagrams and geometry.
+    if (name==='polar' || name==='ldpc') fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);
   }
 }
-console.log('Built 8 RU/EN research diagrams from Markdown labels.');
+console.log(`Built ${Object.keys(drawings).length*2} RU/EN research diagrams from Markdown labels.`);

@@ -14,6 +14,13 @@ source: Input bits
 target: Codeword bits
 note: ⊕ — addition modulo 2
 
+## ldpc
+title: LDPC: Tanner graph
+subtitle: A small example of bit and parity-check connections
+source: Codeword bits — variable nodes
+target: Check nodes: connected bits sum to 0 modulo 2
+note: Circle — bit · square — check · edge — bit participates in a check
+
 ## access
 title: Sharing radio resources
 subtitle: Two ways to share a single frequency channel

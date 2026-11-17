@@ -13,7 +13,7 @@ const lightPalette = {
   '#536c70': '#4c626b', '#257664': '#006e76', '#ccdad3': '#c4ccc5',
   '#ccd9d3': '#c4ccc5', '#dce8e1': '#dbe3dd'
 };
-for (const file of fs.readdirSync(directory).filter(name => /^(access|polar|ris|wireless)(-en)?\.svg$/.test(name))) {
+for (const file of fs.readdirSync(directory).filter(name => /^(access|polar|ldpc|ris|wireless)(-en)?\.svg$/.test(name))) {
   const source = fs.readFileSync(path.join(directory, file), 'utf8');
   for (const [theme, colors] of [['light', lightPalette], ['dark', palette]]) {
     const themed = source.replace(/#[0-9a-fA-F]{3,8}\b/g, color => colors[color.toLowerCase()] || color);

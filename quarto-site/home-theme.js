@@ -67,7 +67,7 @@
     });
     document.querySelectorAll('img').forEach(img => {
       const src = img.getAttribute('src') || '';
-      if (/\/assets\/research\/(access|polar|ris|wireless)(-en)?\.svg$/.test(src)) {
+      if (/\/assets\/research\/(access|polar|ldpc|ris|wireless)(-en)?\.svg$/.test(src)) {
         img.dataset.lightSrc = src.replace(/\.svg$/, '-light.svg');
         img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg');
       }

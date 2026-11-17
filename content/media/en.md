@@ -14,6 +14,12 @@ Multiple antenna elements contribute to directional signal transmission.
 
 An example transform for four input bits; ⊕ denotes addition modulo two.
 
+## LDPC coding
+
+![Tanner graph: bits and parity checks](assets/research/ldpc-en.svg)
+
+A Tanner graph connects codeword bits to parity checks. Each square imposes a constraint: the connected bits sum to zero modulo 2.
+
 ## Radio resources
 
 ![Time division and power-domain multiple access](assets/research/access-en.svg)
