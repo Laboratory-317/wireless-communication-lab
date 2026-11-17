@@ -205,6 +205,31 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
  .site-page .student-track-copy h3 { font-size:18px; }
 }
 
+/* Reused research artwork keeps the same readable scale across sections. */
+@media(min-width:1101px) {
+ .site-page .course-symbol { display:flex; align-items:center; min-height:148px; }
+
+ .home-page .home-direction { grid-template-columns:184px minmax(0,1fr); gap:20px; padding:20px; }
+ .home-page .home-direction .research-direction-symbol,
+ .site-page .course-symbol .research-direction-symbol,
+ .site-page .student-track-symbol .research-direction-symbol { width:184px; height:148px; }
+ .site-page .student-track { grid-template-columns:184px minmax(0,1fr); }
+}
+@media(max-width:1100px) {
+ .site-page .course-symbol { display:flex; align-items:center; min-height:112px; }
+ .home-direction .coding-symbol { width:128px; height:104px; }
+ .home-direction:has(.coding-symbol) { grid-template-columns:128px minmax(0,1fr); }
+ .site-page .course-symbol .research-direction-symbol { width:128px; height:112px; }
+ .site-page .student-track-symbol .research-direction-symbol { width:96px; height:100px; }
+ .site-page .student-track { grid-template-columns:96px minmax(0,1fr); }
+}
+@media(max-width:390px) {
+ .home-direction .coding-symbol { width:100px; height:90px; }
+ .home-direction:has(.coding-symbol) { grid-template-columns:100px minmax(0,1fr); }
+ .site-page .student-track-symbol .research-direction-symbol { width:80px; height:90px; }
+ .site-page .student-track { grid-template-columns:80px minmax(0,1fr); }
+}
+
 /* Compare the two site designs without changing either page layout. */
 .design-compare { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:6px; box-sizing:border-box; max-width:1200px; width:calc(100% - 64px); margin:0 auto; padding:10px 0 0; color:var(--home-muted,var(--muted,#70695f)); font:12px/1.5 system-ui,sans-serif; }
 .design-compare > span { margin-right:6px; }
