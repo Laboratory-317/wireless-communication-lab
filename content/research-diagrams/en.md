@@ -22,16 +22,17 @@ target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check
 
 ## access
-title: Sharing radio resources
-subtitle: Two ways to share a single frequency channel
-left: Separate resources
-right: Shared resource
-leftnote: Users take turns transmitting
-rightnote: Signals are separated at the receiver
-usera: User A
-userb: User B
-time: Time
-note: TDMA — time division · PD-NOMA — power-domain access
+title: Multiple access methods
+subtitle: Different ways to share radio resources
+oma: OMA: TDMA / OFDMA
+omanote: Separate time-frequency blocks
+noma: PD-NOMA
+nomanote: Overlapping signals, different powers
+scma: SCMA
+scmanote: Sparse codebooks
+rsma: RSMA
+rsmanote: Common and private streams
+note: Conceptual diagrams; not a comparison of method performance
 
 ## ris
 title: Steering a reflected signal

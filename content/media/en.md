@@ -22,9 +22,9 @@ A Tanner graph connects codeword bits to parity checks. Each square imposes a co
 
 ## Radio resources
 
-![Time division and power-domain multiple access](assets/research/access-en.svg)
+![Multiple access methods](assets/research/access-en.svg)
 
-A comparison of users transmitting in separate time slots (TDMA) and simultaneously at different power levels (PD-NOMA). Colours identify two users.
+Multiple access methods share radio resources in different ways: OMA assigns orthogonal time-frequency blocks; PD-NOMA superposes signals with different powers; SCMA uses sparse codebooks; RSMA forms common and private streams. The diagrams explain principles, not comparative performance.
 
 ## Controlling propagation
 

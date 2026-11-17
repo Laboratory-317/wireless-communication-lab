@@ -70,14 +70,29 @@ const drawings = {
     return body+text(400,427,l.target,'text-anchor="middle" class="muted"');
   },
   access(l) {
-    let body=text(210,145,l.left,'text-anchor="middle" font-weight="700"')+text(592,145,l.right,'text-anchor="middle" font-weight="700"');
-    body+=rect(50,180,320,130,'rx="6" fill="#fff" stroke="#ccdad3"')+rect(430,180,320,130,'rx="6" fill="#fff" stroke="#ccdad3"');
-    for(let i=0;i<4;i++)body+=rect(62+i*77,192,68,106,`rx="3" fill="${i%2?'#b77538':'#257664'}"`);
-    body+=rect(442,192,296,66,'rx="3" fill="#257664"')+rect(442,262,296,36,'rx="3" fill="#b77538"');
-    body+=line(50,326,369,326,'class="signal" marker-end="url(#arrow)"')+line(430,326,748,326,'class="signal" marker-end="url(#arrow)"');
-    body+=text(210,351,l.time,'text-anchor="middle" class="small"')+text(592,351,l.time,'text-anchor="middle" class="small"');
-    body+=text(210,383,l.leftnote,'text-anchor="middle" class="small"')+text(592,383,l.rightnote,'text-anchor="middle" class="small"');
-    body+=rect(195,411,12,12,'fill="#257664"')+text(217,422,l.usera,'class="small"')+rect(438,411,12,12,'fill="#b77538"')+text(460,422,l.userb,'class="small"');
+    let body='';
+    for(const [x,y] of [[40,120],[410,120],[40,282],[410,282]]) body+=rect(x,y,350,150,'rx="5" fill="#fff" stroke="#ccdad3"');
+    const heading=(x,y,value)=>text(x,y,value,'font-weight="700" class="small"');
+    body+=heading(56,143,l.oma)+heading(426,143,l.noma)+heading(56,305,l.scma)+heading(426,305,l.rsma);
+    // OMA: disjoint time-frequency resource elements.
+    for(let r=0;r<2;r++)for(let c=0;c<4;c++) body+=rect(65+c*72,155+r*30,64,24,`fill="${(r+c)%2?'#b77538':'#257664'}"`);
+    body+=line(58,216,362,216,'style="stroke:#536c70"')+text(365,220,'t','class="small"')+text(47,165,'f','class="small"');
+    body+=text(56,251,l.omanote,'class="small"');
+    // Power-domain NOMA: two components in the same interval.
+    const wave=(a,phase,color)=>'<path d="'+Array.from({length:139},(_,i)=>`${i?'L':'M'}${440+i*2} ${(185-a*Math.sin(i/138*8*Math.PI+phase)).toFixed(2)}`).join('')+`" style="stroke:${color};stroke-width:2.5"/>`;
+    body+=wave(28,0,'#257664')+wave(12,Math.PI/3,'#b77538')+text(426,251,l.nomanote,'class="small"');
+    // SCMA: sparse codewords mapped to shared resource elements.
+    const supports=[[0,2],[1,3],[0,3]];
+    supports.forEach((indices,j)=>indices.forEach(i=>{body+=line(90+j*110,333,65+i*90,378,'style="stroke:#536c70"');}));
+    for(let j=0;j<3;j++) body+=rect(75+j*110,321,30,24,`fill="${j%2?'#b77538':'#257664'}"`)+text(90+j*110,338,`C${j+1}`,'text-anchor="middle" class="small" style="fill:#fff"');
+    for(let i=0;i<4;i++)body+=rect(55+i*90,372,20,14,'fill="#dce8e1" stroke="#183841"');
+    body+=text(56,413,l.scmanote,'class="small"');
+    // RSMA: message splitting, then common and private streams.
+    body+=rect(433,327,84,44,'fill="#dce8e1" stroke="#183841"')+text(475,354,'W₁, W₂','text-anchor="middle" class="small"');
+    for(const [y,label,color] of [[321,'s_c','#257664'],[351,'s₁','#b77538'],[381,'s₂','#b77538']]) {
+      body+=line(517,349,570,y+9,'style="stroke:#536c70"')+rect(570,y,150,20,`fill="${color}"`)+text(645,y+15,label,'text-anchor="middle" class="small" style="fill:#fff"');
+    }
+    body+=text(426,413,l.rsmanote,'class="small"');
     return body;
   },
   ris(l) {
@@ -102,7 +117,7 @@ for (const language of ['ru','en']) {
     const svg=frame(label,++index,draw(label));
     fs.writeFileSync(path.join(root,'assets/research',`${name}${suffix}.svg`),svg);
     // Both designs use the same coding diagrams and geometry.
-    if (name==='polar' || name==='ldpc') fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);
+    if (['polar','ldpc','access'].includes(name)) fs.writeFileSync(path.join(root,'quarto-site/assets/research',`${name}${suffix}.svg`),svg);
   }
 }
 console.log(`Built ${Object.keys(drawings).length*2} RU/EN research diagrams from Markdown labels.`);
