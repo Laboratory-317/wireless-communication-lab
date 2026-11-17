@@ -22,17 +22,13 @@ target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check
 
 ## access
-title: Multiple access methods
-subtitle: Different ways to share radio resources
-oma: OMA: TDMA / OFDMA
-omanote: Separate time-frequency blocks
-noma: PD-NOMA
-nomanote: Overlapping signals, different powers
-scma: SCMA
-scmanote: Sparse codebooks
-rsma: RSMA
-rsmanote: Common and private streams
-note: Conceptual diagrams; not a comparison of method performance
+title: One network — many devices
+subtitle: A base station coordinates data exchange with connected devices
+station: Base station
+phone: Phone
+laptop: Laptop
+sensor: Sensor
+note: Multiple access coordinates how devices share a radio channel
 
 ## ris
 title: Steering a reflected signal

@@ -70,29 +70,28 @@ const drawings = {
     return body+text(400,427,l.target,'text-anchor="middle" class="muted"');
   },
   access(l) {
+    // A shared network, without implying any particular access technique.
     let body='';
-    for(const [x,y] of [[40,120],[410,120],[40,282],[410,282]]) body+=rect(x,y,350,150,'rx="5" fill="#fff" stroke="#ccdad3"');
-    const heading=(x,y,value)=>text(x,y,value,'font-weight="700" class="small"');
-    body+=heading(56,143,l.oma)+heading(426,143,l.noma)+heading(56,305,l.scma)+heading(426,305,l.rsma);
-    // OMA: disjoint time-frequency resource elements.
-    for(let r=0;r<2;r++)for(let c=0;c<4;c++) body+=rect(65+c*72,155+r*30,64,24,`fill="${(r+c)%2?'#b77538':'#257664'}"`);
-    body+=line(58,216,362,216,'style="stroke:#536c70"')+text(365,220,'t','class="small"')+text(47,165,'f','class="small"');
-    body+=text(56,251,l.omanote,'class="small"');
-    // Power-domain NOMA: two components in the same interval.
-    const wave=(a,phase,color)=>'<path d="'+Array.from({length:139},(_,i)=>`${i?'L':'M'}${440+i*2} ${(185-a*Math.sin(i/138*8*Math.PI+phase)).toFixed(2)}`).join('')+`" style="stroke:${color};stroke-width:2.5"/>`;
-    body+=wave(28,0,'#257664')+wave(12,Math.PI/3,'#b77538')+text(426,251,l.nomanote,'class="small"');
-    // SCMA: sparse codewords mapped to shared resource elements.
-    const supports=[[0,2],[1,3],[0,3]];
-    supports.forEach((indices,j)=>indices.forEach(i=>{body+=line(90+j*110,333,65+i*90,378,'style="stroke:#536c70"');}));
-    for(let j=0;j<3;j++) body+=rect(75+j*110,321,30,24,`fill="${j%2?'#b77538':'#257664'}"`)+text(90+j*110,338,`C${j+1}`,'text-anchor="middle" class="small" style="fill:#fff"');
-    for(let i=0;i<4;i++)body+=rect(55+i*90,372,20,14,'fill="#dce8e1" stroke="#183841"');
-    body+=text(56,413,l.scmanote,'class="small"');
-    // RSMA: message splitting, then common and private streams.
-    body+=rect(433,327,84,44,'fill="#dce8e1" stroke="#183841"')+text(475,354,'W₁, W₂','text-anchor="middle" class="small"');
-    for(const [y,label,color] of [[321,'s_c','#257664'],[351,'s₁','#b77538'],[381,'s₂','#b77538']]) {
-      body+=line(517,349,570,y+9,'style="stroke:#536c70"')+rect(570,y,150,20,`fill="${color}"`)+text(645,y+15,label,'text-anchor="middle" class="small" style="fill:#fff"');
+    for(const y of [176,266,356]) {
+      body+=line(272,245,551,y,'class="signal" style="stroke-dasharray:6 6"');
+      const dy=y-245, dx=279, norm=Math.hypot(dx,dy);
+      const ux=dx/norm, uy=dy/norm;
+      for(const [x0,y0,sign] of [[280,245+dy*8/279,-1],[543,y-dy*8/279,1]]) {
+        body+=line(x0,y0,x0-sign*ux*9-uy*5,y0-sign*uy*9+ux*5,'class="signal"')+line(x0,y0,x0-sign*ux*9+uy*5,y0-sign*uy*9-ux*5,'class="signal"');
+      }
     }
-    body+=text(426,413,l.rsmanote,'class="small"');
+    // Base station and radio waves.
+    body+='<path d="M220 224L169 356H271ZM193 295H247M181 326H259M193 295L259 326M247 295L181 326M220 224V198"/>';
+    body+=circle(220,188,7,'style="fill:#257664;stroke:#257664"');
+    body+='<path d="M198 166Q177 188 198 210M242 166Q263 188 242 210M184 153Q150 188 184 223M256 153Q290 188 256 223" class="signal"/>';
+    body+=text(220,396,l.station,'text-anchor="middle"');
+    // Phone, laptop and sensor: familiar examples of network users.
+    body+=rect(565,150,30,52,'rx="5" fill="#fff" stroke="#183841" stroke-width="2"')+line(574,194,586,194);
+    body+=text(623,183,l.phone);
+    body+=rect(554,241,54,35,'rx="3" fill="#fff" stroke="#183841" stroke-width="2"')+'<path d="M548 283H614L608 276H554Z"/>';
+    body+=text(633,268,l.laptop);
+    body+=rect(562,337,38,38,'rx="7" fill="#fff" stroke="#183841" stroke-width="2"')+circle(581,356,7)+line(581,337,581,323)+circle(581,320,3);
+    body+=text(626,363,l.sensor);
     return body;
   },
   ris(l) {

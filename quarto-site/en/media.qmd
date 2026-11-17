@@ -45,9 +45,9 @@ A Tanner graph connects codeword bits to parity checks. Each square imposes a co
 
 ## Multiple access
 
-![Multiple access methods](../assets/research/access-en.svg){}
+![Data exchange between a base station and devices](../assets/research/access-en.svg){}
 
-Multiple access methods share radio resources in different ways: OMA assigns orthogonal time-frequency blocks; PD-NOMA superposes signals with different powers; SCMA uses sparse codebooks; RSMA forms common and private streams. The diagrams explain principles, not comparative performance.
+Phones, laptops and sensors exchange data with a base station. Multiple access methods coordinate how these devices share the radio channel.
 
 ## Reconfigurable intelligent surfaces
 
