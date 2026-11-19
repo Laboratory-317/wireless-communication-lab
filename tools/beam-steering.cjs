@@ -3,9 +3,9 @@
 // Azimuth is measured from +x towards +y; elevation from the xy plane.
 const rad = degrees => degrees * Math.PI / 180;
 const f = value => Number(value.toFixed(3));
-const street = [.75,-.34,-.21];
-const indoor = [.91,.25,.16];
-const streetUsers = [[.68,-.45,-.21],street,[.83,-.26,-.21]];
+const street = [.75,-.34,-.31];
+const indoor = [.91,.25,.06];
+const streetUsers = [[.68,-.45,-.31],street,[.83,-.26,-.31]];
 function targetAt(t) {
   const mix = (1-Math.cos(2*Math.PI*t))/2;
   return street.map((value,i)=>value+(indoor[i]-value)*mix);
@@ -37,12 +37,11 @@ function direction(plane,x,y,radius,t,sy=1) {
   const angle=rad(steering(t)[plane]);
   return [f(x+radius*Math.cos(angle)),f(y-sy*radius*Math.sin(angle))];
 }
-const sizes={small:{x:34,y:77,r:112},full:{x:198,y:281,r:395}};
+const sizes={small:{x:45,y:53,r:96},full:{x:160,y:189,r:365}};
 function project(point,size) {
   const {x,y,r}=sizes[size], [px,py,pz]=point;
-  // Oblique view from in front of the panel, with both its face and the beam length visible.
-  const depth=1+.18*py;
-  return [f(x+r*(.68*px+.81*py)/depth),f(y+r*(-.17*px+.13*py-.93*pz)/depth)];
+  // Parallel projection keeps equally tall edges the same height across the facade.
+  return [f(x+r*(.95*px+.43*py)),f(y+r*(.075*px-.18*py-.90*pz))];
 }
 const linePath=points=>points.map((p,i)=>(i?'L':'M')+p.join(' ')).join('');
 function beamVector(t) {
@@ -103,6 +102,7 @@ const css=`
 .edu-window{fill:#536c70;fill-opacity:.15;stroke:#536c70;stroke-width:.7}
 .edu-room{fill:#b77538;fill-opacity:.20;stroke:#b77538;stroke-width:1.2}
 .edu-floor{fill:none;stroke:#536c70;stroke-width:.7;opacity:.35}
+.edu-mast{fill:none;stroke:#536c70;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .edu-person{fill:#183841;stroke:#183841;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .edu-person-body{fill:none}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}
@@ -113,12 +113,14 @@ function render(lang,compact) {
   const label=(cx,cy,value,cls='edu-scan-note')=>`<text x="${cx}" y="${cy}" text-anchor="middle" class="${cls}">${value}</text>`;
   let b='';
   const p=point=>project(point,size);
-  for(let k=0;k<=4;k++) {
-    b+=`<path class="edu-scan-grid" d="${linePath([p([k*.25,-.45,-.22]),p([k*.25,.45,-.22])])}${linePath([p([0,(k-2)*.225,-.22]),p([1,(k-2)*.225,-.22])])}"/>`;
+  const ground=-.38;
+  for(let k=0;k<=6;k++) {
+    const gx=-.12+k*.21,gy=-.58+k*.21;
+    b+=`<path class="edu-scan-grid" d="${linePath([p([gx,-.58,ground]),p([gx,.68,ground])])}${linePath([p([-.12,gy,ground]),p([1.14,gy,ground])])}"/>`;
   }
   const polygon=(points,cls)=>`<path d="${linePath(points.map(p))}Z" class="${cls}"/>`;
   const facade=(y1,y2,z1,z2,cls)=>polygon([[.88,y1,z1],[.88,y2,z1],[.88,y2,z2],[.88,y1,z2]],cls);
-  const base=-.28,roof=.335,left=.10,right=.59,back=1;
+  const base=ground,roof=.235,left=.10,right=.59,back=1;
   b+=polygon([[.88,right,base],[back,right,base],[back,right,roof],[.88,right,roof]],'edu-building-side');
   b+=polygon([[.88,left,roof],[back,left,roof],[back,right,roof],[.88,right,roof]],'edu-building-roof');
   b+=facade(left,right,base,roof,'edu-building');
@@ -132,14 +134,24 @@ function render(lang,compact) {
       b+=`<path d="${linePath([p([.88,start+.052,bottom]),p([.88,start+.052,bottom+.07])])}" class="edu-floor"/>`;
     }
   }
-  b+=facade(.126,.405,.086,.204,'edu-room');
+  b+=facade(.126,.405,-.014,.104,'edu-room');
   const shapes=(live)=>['surface','mesh','guide'].map(part=>`<path d="${g[part]}" class="${part==='surface'?'edu-volume-surface':part==='mesh'?'edu-volume-mesh':'edu-scan-guide'}${live?' edu-beam-live edu-volume-'+size+'-'+part:''}"/>`).join('')+(live?`<circle r="${compact?2:4}" class="edu-scan-dot edu-beam-live edu-volume-${size}-tip"/>`:`<circle cx="${g.tip[0]}" cy="${g.tip[1]}" r="${compact?2:4}" class="edu-scan-dot"/>`);
   b+=shapes(true)+`<g class="edu-beam-snapshot">${shapes(false)}</g>`;
   const panel=(yy,zz,dy,dz)=>linePath([p([0,yy,zz]),p([0,yy+dy,zz]),p([0,yy+dy,zz+dz]),p([0,yy,zz+dz])])+'Z';
   b+=`<path d="${panel(-.08,-.08,.16,.16)}" class="edu-box"/>`;
   for(let row=0;row<4;row++)for(let col=0;col<4;col++)b+=`<path d="${panel(-.068+col*.035,-.068+row*.035,.025,.025)}" class="edu-fill"/>`;
-  b+=`<path d="${linePath([p([0,0,-.08]),p([0,0,-.22])])}${linePath([p([0,-.055,-.22]),p([0,.055,-.22])])}" class="edu-wire"/>`;
-  b+=label(x-(compact?16:46),y+(compact?21:66),ru?'БС':'BS');
+  const mastLevel=level=>{
+    const height=ground+level*(-.08-ground),width=.067-.046*level;
+    return [[0,-width,height],[0,width,height],[.055-.037*level,0,height]].map(p);
+  };
+  let mast='';
+  for(let i=0;i<4;i++) {
+    const lower=mastLevel(i/4),upper=mastLevel((i+1)/4);
+    for(let j=0;j<3;j++)mast+=linePath([lower[j],upper[j],lower[(j+1)%3]]);
+  }
+  b+=`<path d="${mast}" class="edu-mast"/>`;
+  const [mastX,mastY]=p([0,0,ground]);
+  b+=label(mastX-(compact?14:42),mastY-7,ru?'БС':'BS');
   const person=point=>{
     const [px,py]=p(point),scale=compact?.52:1.3;
     return `<g transform="translate(${px} ${py}) scale(${scale})" class="edu-person"><circle cx="-4" cy="-7" r="2.8" class="edu-person"/><path d="M-4 -3V6l-3 7m3-7 3 7m-3-16-4 7m4-7L0 0" class="edu-person-body"/><path d="M1 -4v5" class="edu-person-body"/></g>`;
@@ -148,8 +160,8 @@ function render(lang,compact) {
   if(!compact) {
     const [streetX,streetY]=p(street),[indoorX,indoorY]=p(indoor);
     b+=label(streetX,streetY+34,ru?'Пользователи на улице':'Outdoor users');
-    b+=label(indoorX-105,indoorY-48,ru?'Пользователь в помещении':'Indoor user');
-    b+=`<path d="M${indoorX-42} ${indoorY-38}L${indoorX-9} ${indoorY-10}" class="edu-scan-grid"/>`;
+    b+=label(indoorX-134,indoorY-37,ru?'Пользователь в помещении':'Indoor user');
+    b+=`<path d="M${indoorX-56} ${indoorY-30}L${indoorX-9} ${indoorY-10}" class="edu-scan-grid"/>`;
     b+=label(400,429,ru?'БС меняет азимут и угол места луча':'The base station steers the beam in azimuth and elevation');
   }
   return b;
