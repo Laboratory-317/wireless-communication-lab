@@ -21,10 +21,10 @@ source: Codeword bits — variable nodes
 target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check
 
-## ldpc-recovery
-title: How LDPC recovers an erased bit
-subtitle: The channel loses one bit value, but its position is known
-note: ⊕ denotes XOR. One parity check with a single unknown is enough to recover the bit.
+## coding-repetition
+title: How redundancy helps correct an error
+subtitle: A simple example using three copies of one bit
+note: Triple repetition can correct one error in a group of three copies.
 
 ## access
 title: One network — many devices

@@ -245,11 +245,11 @@
             ${item.images.length ? researchImage(item) : ""}
             <div class="markdown-block">${blockMarkdown(item.article ? item.article.text : item.text)}</div>
           </div>
-          ${item.slug === "polar" ? ["polar", "ldpc", "ldpc-recovery"].map((diagram, i) => {
+          ${item.slug === "polar" ? ["polar", "ldpc", "coding-repetition"].map((diagram, i) => {
             const english = language === "en";
             const captions = english
-              ? ["Polar encoding", "LDPC Tanner graph", "Recovering an erased LDPC bit"]
-              : ["Полярное кодирование", "Граф Таннера LDPC", "Восстановление стёртого бита LDPC"];
+              ? ["Polar encoding", "LDPC Tanner graph", "Correcting one error with triple repetition"]
+              : ["Полярное кодирование", "Граф Таннера LDPC", "Исправление ошибки тройным повторением"];
             return `<figure class="coding-figure"><img src="${assetSrc(`assets/research/${diagram}${english ? "-en" : ""}.svg`)}" alt="${html(captions[i])}" loading="lazy"></figure>`;
           }).join("") : ""}
           ${item.article?.photos.length ? `

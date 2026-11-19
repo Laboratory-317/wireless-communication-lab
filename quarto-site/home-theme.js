@@ -72,7 +72,7 @@
     const diagramQuery = diagramVersion ? `?v=${diagramVersion}` : '';
     document.querySelectorAll('img').forEach(img => {
       const src = (img.getAttribute('src') || '').split(/[?#]/)[0];
-      if (/\/assets\/research\/(access|polar|ldpc|ldpc-recovery|ris|wireless)(-en)?\.svg$/.test(src)) {
+      if (/\/assets\/research\/(access|polar|ldpc|coding-repetition|ris|wireless)(-en)?\.svg$/.test(src)) {
         img.dataset.lightSrc = src.replace(/\.svg$/, '-light.svg') + diagramQuery;
         img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg') + diagramQuery;
       }

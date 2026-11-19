@@ -24,7 +24,7 @@ function frame(label, index, body, name, language) {
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
 <style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.diagramCss(name)}
-${name==='ldpc-recovery'?'.edu-one,.edu-two,.edu-three{animation-duration:15s;animation-timing-function:step-end}@keyframes edu-one{0%{opacity:1}27%{opacity:0}}@keyframes edu-two{0%{opacity:0}27%{opacity:1}64%{opacity:0}}@keyframes edu-three{0%{opacity:0}64%,100%{opacity:1}}':''}</style>
+${name==='coding-repetition'?'.edu-one,.edu-two,.edu-three{animation-duration:15s;animation-timing-function:step-end}@keyframes edu-one{0%{opacity:1}27%{opacity:0}}@keyframes edu-two{0%{opacity:0}27%{opacity:1}64%{opacity:0}}@keyframes edu-three{0%{opacity:0}64%,100%{opacity:1}}':''}</style>
 ${rect(0,0,800,520,'fill="none"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 
@@ -34,7 +34,7 @@ ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class=
 }
 const drawings = {
   wireless(l,language) { return education.beamScene(language); },
-  'ldpc-recovery'(l,language) { return education.erasureScene(language); },
+  'coding-repetition'(l,language) { return education.repetitionScene(language); },
   polar(l) {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');
     const ys=[187,249,311,373];
