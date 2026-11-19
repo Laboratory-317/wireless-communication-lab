@@ -53,6 +53,7 @@ html{scroll-padding-top:30px}body.scientific-page{margin:0;background:var(--sc-p
 
 
 
+
 /* Canonical educational scenes: static final state in Scientific. */
 
 .edu-phase{opacity:0;animation-duration:18s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
@@ -102,6 +103,10 @@ svg:target *,svg:target .edu-phase{animation-play-state:paused!important}
 .edu-room{fill:#b77538;fill-opacity:.20;stroke:#b77538;stroke-width:1.2}
 .edu-floor{fill:none;stroke:var(--sc-muted);stroke-width:.7;opacity:.35}
 .edu-mast{fill:none;stroke:var(--sc-muted);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.edu-ground-shadow{fill:var(--sc-ink);stroke:none;opacity:.15}
+.edu-foundation{fill:var(--sc-muted);stroke:none}
+.edu-entry{fill:var(--sc-muted);fill-opacity:.34;stroke:var(--sc-muted);stroke-width:1}
+.edu-door{fill:var(--sc-muted);stroke:var(--sc-ink);stroke-width:.8}
 .edu-person{fill:var(--sc-ink);stroke:var(--sc-ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .edu-person-body{fill:none}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}

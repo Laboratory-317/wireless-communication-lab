@@ -175,6 +175,10 @@ body.home-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .edu-room{fill:var(--home-secondary);fill-opacity:.20;stroke:var(--home-secondary);stroke-width:1.2}
 .edu-floor{fill:none;stroke:var(--home-muted);stroke-width:.7;opacity:.35}
 .edu-mast{fill:none;stroke:var(--home-muted);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.edu-ground-shadow{fill:var(--home-ink);stroke:none;opacity:.15}
+.edu-foundation{fill:var(--home-muted);stroke:none}
+.edu-entry{fill:var(--home-muted);fill-opacity:.34;stroke:var(--home-muted);stroke-width:1}
+.edu-door{fill:var(--home-muted);stroke:var(--home-ink);stroke-width:.8}
 .edu-person{fill:var(--home-ink);stroke:var(--home-ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .edu-person-body{fill:none}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}

@@ -103,6 +103,10 @@ const css=`
 .edu-room{fill:#b77538;fill-opacity:.20;stroke:#b77538;stroke-width:1.2}
 .edu-floor{fill:none;stroke:#536c70;stroke-width:.7;opacity:.35}
 .edu-mast{fill:none;stroke:#536c70;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.edu-ground-shadow{fill:#183841;stroke:none;opacity:.15}
+.edu-foundation{fill:#536c70;stroke:none}
+.edu-entry{fill:#536c70;fill-opacity:.34;stroke:#536c70;stroke-width:1}
+.edu-door{fill:#536c70;stroke:#183841;stroke-width:.8}
 .edu-person{fill:#183841;stroke:#183841;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .edu-person-body{fill:none}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}
@@ -121,19 +125,27 @@ function render(lang,compact) {
   const polygon=(points,cls)=>`<path d="${linePath(points.map(p))}Z" class="${cls}"/>`;
   const facade=(y1,y2,z1,z2,cls)=>polygon([[.88,y1,z1],[.88,y2,z1],[.88,y2,z2],[.88,y1,z2]],cls);
   const base=ground,roof=.235,left=.10,right=.59,back=1;
+  // The shadow, footprint, and entrance all lie on the same ground plane as the grid.
+  b+=polygon([[.84,.085,base],[1.10,.085,base],[1.10,.645,base],[.84,.645,base]],'edu-ground-shadow');
+  b+=polygon([[.88,left,base],[back,left,base],[back,right,base],[.88,right,base]],'edu-ground-shadow');
+  b+=polygon([[.75,.24,base],[.88,.24,base],[.88,.44,base],[.75,.44,base]],'edu-entry');
+  b+=polygon([[.88,right,base],[back,right,base],[back,right,roof],[.88,right,roof]],'edu-building');
   b+=polygon([[.88,right,base],[back,right,base],[back,right,roof],[.88,right,roof]],'edu-building-side');
   b+=polygon([[.88,left,roof],[back,left,roof],[back,right,roof],[.88,right,roof]],'edu-building-roof');
   b+=facade(left,right,base,roof,'edu-building');
+  b+=facade(left,right,base,base+.023,'edu-foundation');
+  b+=polygon([[.88,right,base],[back,right,base],[back,right,base+.023],[.88,right,base+.023]],'edu-foundation');
   for(let row=0;row<5;row++) {
     const floor=base+row*.121,bottom=floor+.028;
     if(row>0)b+=`<path d="${linePath([p([.88,left,floor]),p([.88,right,floor]),p([back,right,floor])])}" class="edu-floor"/>`;
     for(let column=0;column<3;column++) {
-      if(row===3&&column<2)continue;
+      if((row===3&&column<2)||(row===0&&column===1))continue;
       const start=left+.045+column*.15;
       b+=facade(start,start+.105,bottom,bottom+.07,'edu-window');
       b+=`<path d="${linePath([p([.88,start+.052,bottom]),p([.88,start+.052,bottom+.07])])}" class="edu-floor"/>`;
     }
   }
+  b+=facade(.291,.389,base,base+.103,'edu-door');
   b+=facade(.126,.405,-.014,.104,'edu-room');
   const shapes=(live)=>['surface','mesh','guide'].map(part=>`<path d="${g[part]}" class="${part==='surface'?'edu-volume-surface':part==='mesh'?'edu-volume-mesh':'edu-scan-guide'}${live?' edu-beam-live edu-volume-'+size+'-'+part:''}"/>`).join('')+(live?`<circle r="${compact?2:4}" class="edu-scan-dot edu-beam-live edu-volume-${size}-tip"/>`:`<circle cx="${g.tip[0]}" cy="${g.tip[1]}" r="${compact?2:4}" class="edu-scan-dot"/>`);
   b+=shapes(true)+`<g class="edu-beam-snapshot">${shapes(false)}</g>`;
