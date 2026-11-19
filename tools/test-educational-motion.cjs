@@ -44,4 +44,12 @@ for(const lang of ['ru','en'])for(const page of ['index','research','students','
 }
 assert(scene.css.includes('prefers-reduced-motion'));
 assert(scene.css.includes('svg:target .edu-phase'));
+// The renderer alone is insufficient: every direction page must embed its illustration.
+for(const lang of ['ru','en'])for(const [page,asset] of [
+  ['access','access'],['polar','polar'],['metasurfaces','ris'],['wireless','wireless']
+]) {
+  const source=fs.readFileSync(path.join(root,`quarto-site/${lang}/research-${page}.qmd`),'utf8');
+  const image=`../assets/research/${asset}${lang==='en'?'-en':''}.svg){.detail-diagram}`;
+  assert(source.includes(image),`Missing animated illustration on ${lang}/research-${page}`);
+}
 console.log('Educational scenes: all 16 polar vectors, 8 single-bit corrections, 543 complex array sums and 34 reused scenes verified.');

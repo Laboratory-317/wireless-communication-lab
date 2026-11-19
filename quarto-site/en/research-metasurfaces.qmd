@@ -39,6 +39,8 @@ Advanced Engineering School · UMNIK · Priority 2030
 
 A reconfigurable intelligent surface (RIS) changes how radio signals are reflected and thereby affects the radio channel. We model these channels, develop surface control algorithms and test them on experimental prototypes.
 
+![How an RIS provides a signal path around an obstacle](../assets/research/ris-en.svg){.detail-diagram}
+
 RIS research began in 2023 as an initiative by laboratory staff and students. Fourth-year students carried out the first studies, modeling basic RIS application scenarios for their graduation theses.
 
 The work continued through a project at the TUSUR Advanced Engineering School. Support from the UMNIK competition enabled the team to move from modeling to building prototypes. Surfaces with [16](#ris-prototype) and [64 elements](#ris-exhibition) have been designed and manufactured.
