@@ -140,26 +140,6 @@ function renderCompact(kind,lang,still=false) {
   const body={access:compactAccess,coding:compactCoding,ris:compactRis,wireless:(l)=>beamScene(l,true)}[kind](lang);
   return `<svg class="research-symbol research-direction-symbol edu-scene edu-${kind}${kind==='coding'?' coding-symbol':''}${still||kind==='coding'?' edu-static':''}" viewBox="0 0 184 148" aria-hidden="true">${body}</svg>`;
 }
-function repetitionScene(lang) {
-  const ru=lang==='ru';
-  const stages = [
-    {title:ru?'1. Повторяем исходный бит':'1. Repeat the original bit',bits:[1,1,1],
-      note:ru?'Передатчик посылает три копии единицы':'The transmitter sends three copies of 1'},
-    {title:ru?'2. Канал меняет одну копию':'2. The channel flips one copy',bits:[1,0,1],
-      note:ru?'Средняя копия изменилась с 1 на 0':'The middle copy changes from 1 to 0'},
-    {title:ru?'3. Выбираем значение по большинству':'3. Choose the majority value',bits:[1,0,1],
-      note:ru?'Две единицы и один ноль. Получаем 1':'Two ones and one zero give a result of 1'}
-  ];
-  return stages.map(({title,bits,note},stage)=>{
-    const tiles=bits.map((bit,i)=>{
-      const x=290+i*110;
-      const color=stage===1&&i===1?'edu-alt':stage===2&&bit===1?'edu-fill':'edu-box';
-      return rect(x-39,195,78,78,color)+text(x,244,bit,color==='edu-box'?'edu-bit':'edu-white','style="font-size:30px"');
-    }).join('');
-    const decision=stage===2?rect(376,305,48,46,'edu-fill')+text(400,336,1,'edu-white','style="font-size:26px"'):'';
-    return phase(stage,text(400,144,title)+tiles+decision+text(400,392,note,'edu-caption'));
-  }).join('');
-}
 function detailedOverlay(kind,lang) {
   let b='';
   if(kind==='wireless')return '';
@@ -193,4 +173,4 @@ function detailedOverlay(kind,lang) {
   }return b;
 }
 const staticCss='.edu-static *{animation:none!important}.edu-static .edu-phase{opacity:0!important}.edu-static .edu-three{opacity:1!important}.edu-static .edu-packet,.edu-static .edu-beam-live,.edu-static .edu-gauges-live{display:none}.edu-static .edu-beam-snapshot{display:initial}.edu-static .edu-cell{opacity:1}';
-module.exports={css:css+staticCss+steering.css,diagramCss:kind=>css+staticCss+(kind==='wireless'?steering.css:''),renderCompact,detailedOverlay,repetitionScene,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};
+module.exports={css:css+staticCss+steering.css,diagramCss:kind=>css+staticCss+(kind==='wireless'?steering.css:''),renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};

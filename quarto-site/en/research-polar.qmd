@@ -37,10 +37,6 @@ For LDPC codes, a Tanner graph describes the connections between codeword bits a
 
 ![Tanner graph: LDPC codeword bits and parity checks](../assets/research/ldpc-en.svg){.detail-diagram}
 
-Triple repetition is a simple example of error correction. If the channel corrupts one of three copies, the receiver recovers the bit from the two copies that agree.
-
-![Correcting one error with triple repetition](../assets/research/coding-repetition-en.svg){.detail-diagram}
-
 ::: {.research-context}
 
 [POLAR · LDPC · CHANNEL CODING]{.portfolio-tags}

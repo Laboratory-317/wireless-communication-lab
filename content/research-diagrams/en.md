@@ -21,11 +21,6 @@ source: Codeword bits — variable nodes
 target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check
 
-## coding-repetition
-title: How redundancy helps correct an error
-subtitle: A simple example using three copies of one bit
-note: Triple repetition can correct one error in a group of three copies.
-
 ## access
 title: One network — many devices
 subtitle: A base station coordinates data exchange with connected devices

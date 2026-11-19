@@ -37,10 +37,6 @@
 
 ![Граф Таннера: биты и проверки чётности LDPC-кода](../assets/research/ldpc.svg){.detail-diagram}
 
-Простейший пример помехоустойчивого кодирования — тройное повторение. Если канал исказил одну из трёх копий, приёмник восстанавливает бит по двум совпадающим значениям.
-
-![Исправление одной ошибки с помощью тройного повторения](../assets/research/coding-repetition.svg){.detail-diagram}
-
 ::: {.research-context}
 
 [POLAR · LDPC · CHANNEL CODING]{.portfolio-tags}

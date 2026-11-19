@@ -72,13 +72,13 @@
     const diagramQuery = diagramVersion ? `?v=${diagramVersion}` : '';
     document.querySelectorAll('img').forEach(img => {
       const src = (img.getAttribute('src') || '').split(/[?#]/)[0];
-      if (/\/assets\/research\/(access|polar|ldpc|coding-repetition|ris|wireless)(-en)?\.svg$/.test(src)) {
+      if (/\/assets\/research\/(access|polar|ldpc|ris|wireless)(-en)?\.svg$/.test(src)) {
         img.dataset.lightSrc = src.replace(/\.svg$/, '-light.svg') + diagramQuery;
         img.dataset.darkSrc = src.replace(/\.svg$/, '-dark.svg') + diagramQuery;
       }
     });
     const illustration = document.querySelector('.research-overview, .home-directions, .student-tracks, .learning-grid, figure:has(img[data-dark-src])');
-    if (illustration && !['education', 'research'].includes(page)) {
+    if (illustration && !['education', 'research', 'research-polar'].includes(page)) {
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'motion-toggle';

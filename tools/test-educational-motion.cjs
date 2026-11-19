@@ -74,7 +74,7 @@ for(const size of ['small','full']) {
 }
 // The renderer alone is insufficient: every direction page must embed its illustration.
 for(const lang of ['ru','en'])for(const [page,asset] of [
-  ['access','access'],['polar','polar'],['polar','ldpc'],['polar','coding-repetition'],['metasurfaces','ris'],['wireless','wireless']
+  ['access','access'],['polar','polar'],['polar','ldpc'],['metasurfaces','ris'],['wireless','wireless']
 ]) {
   const source=fs.readFileSync(path.join(root,`quarto-site/${lang}/research-${page}.qmd`),'utf8');
   const image=`../assets/research/${asset}${lang==='en'?'-en':''}.svg){.detail-diagram}`;
