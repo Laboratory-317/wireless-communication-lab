@@ -60,7 +60,7 @@ for(const time of [0,.125,.25,.5,.75,1]) {
 }
 for(const plane of ['azimuth','elevation']) {
   assert.equal(steering.sectionPath(plane,98,274,246,0),steering.sectionPath(plane,98,274,246,1));
-  assert.notEqual(steering.sectionPath(plane,98,274,246,.25),steering.sectionPath(plane,98,274,246,.75));
+  assert.notEqual(steering.sectionPath(plane,98,274,246,0),steering.sectionPath(plane,98,274,246,.5));
 }
 assert.deepEqual(steering.geometry(0,'full'),steering.geometry(1,'full'));
 const before=steering.beamVector(.1),after=steering.beamVector(.12);

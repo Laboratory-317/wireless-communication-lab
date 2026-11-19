@@ -3,8 +3,16 @@
 // Azimuth is measured from +x towards +y; elevation from the xy plane.
 const rad = degrees => degrees * Math.PI / 180;
 const f = value => Number(value.toFixed(3));
+const street = [.73,-.40,-.20];
+const indoor = [.91,.25,.16];
+const streetUsers = [[.67,-.49,-.20],street,[.79,-.34,-.20]];
+function targetAt(t) {
+  const mix = (1-Math.cos(2*Math.PI*t))/2;
+  return street.map((value,i)=>value+(indoor[i]-value)*mix);
+}
 function steering(t) {
-  return { azimuth: 25 * Math.sin(2 * Math.PI * t), elevation: -8 + 12 * Math.sin(2 * Math.PI * t + Math.PI / 3) };
+  const [x,y,z]=targetAt(t);
+  return {azimuth:Math.atan2(y,x)/rad(1),elevation:Math.atan2(z,Math.hypot(x,y))/rad(1)};
 }
 function factor(delta) {
   const q = Math.PI * delta / 2;
@@ -29,10 +37,10 @@ function direction(plane,x,y,radius,t,sy=1) {
   const angle=rad(steering(t)[plane]);
   return [f(x+radius*Math.cos(angle)),f(y-sy*radius*Math.sin(angle))];
 }
-const sizes={small:{x:39,y:55,r:130},full:{x:180,y:211,r:430}};
+const sizes={small:{x:39,y:59,r:112},full:{x:193,y:250,r:330}};
 function project(point,size) {
   const {x,y,r}=sizes[size], [px,py,pz]=point;
-  return [f(x+r*(.87*px+.42*py)),f(y+r*(.15*px-.32*py-.85*pz))];
+  return [f(x+r*(.85*px+.54*py)),f(y+r*(.09*px-.37*py-.89*pz))];
 }
 const linePath=points=>points.map((p,i)=>(i?'L':'M')+p.join(' ')).join('');
 function beamVector(t) {
@@ -41,6 +49,7 @@ function beamVector(t) {
 }
 function geometry(t,size) {
   const {azimuth,elevation}=steering(t),a=rad(azimuth),e=rad(elevation),s=beamVector(t);
+  const target=targetAt(t),range=Math.hypot(...target);
   const u=[-Math.sin(a),Math.cos(a),0],v=[-Math.sin(e)*Math.cos(a),-Math.sin(e)*Math.sin(a),Math.cos(e)];
   const rows=9,columns=17,mesh=[];
   // Follow the main lobe from its maximum to the first array-factor null.
@@ -53,7 +62,7 @@ function geometry(t,size) {
     let low=high-rad(1);for(let k=0;k<24;k++){const mid=(low+high)/2;if(outside(mid))high=mid;else low=mid;}
     for(let i=0;i<rows;i++) {
       const d=vector(high*i/(rows-1)), amplitude=factor(d[1]-s[1])*factor(d[2]-s[2]);
-      (mesh[i]||=[])[j]=project(d.map(value=>value*amplitude),size);
+      (mesh[i]||=[])[j]=project(d.map(value=>value*amplitude*range),size);
     }
   }
   let wire='';
@@ -65,12 +74,12 @@ function geometry(t,size) {
     const angle=i*Math.PI/24,dx=Math.cos(angle),dy=Math.sin(angle);
     return points.reduce((best,p)=>(p[0]-center[0])*dx+(p[1]-center[1])*dy>(best[0]-center[0])*dx+(best[1]-center[1])*dy?p:best,points[0]);
   });
-  const tip=project(s,size),ground=project([s[0],s[1],-.22],size),origin=project([0,0,0],size);
-  return {surface:linePath(envelope)+'Z',mesh:wire,guide:linePath([origin,tip]),drop:linePath([project([0,0,-.22],size),ground,tip]),tip};
+  const tip=project(target,size),origin=project([0,0,0],size);
+  return {surface:linePath(envelope)+'Z',mesh:wire,guide:linePath([origin,tip]),tip};
 }
 function keyframes(size) {
   const frames=Array.from({length:49},(_,i)=>({t:i/48,g:geometry(i/48,size)}));
-  return ['surface','mesh','guide','drop','tip'].map(part=>{
+  return ['surface','mesh','guide','tip'].map(part=>{
     const name=`edu-volume-${size}-${part}`;
     return '@keyframes '+name+'{'+frames.map(({t,g})=>`${f(t*100)}%{`+(part==='tip'?`transform:translate(${g.tip[0]}px,${g.tip[1]}px)`:`d:path('${g[part]}')`)+'}').join('')+'}'+`.${name}{animation:${name} 18s linear infinite}`;
   }).join('');
@@ -83,6 +92,11 @@ const css=`
 .edu-scan-dot{fill:#257664;stroke:#fff;stroke-width:1.5}
 .edu-volume-surface{fill:#257664;fill-opacity:.16;stroke:#257664;stroke-width:1.7;stroke-linejoin:round}
 .edu-volume-mesh{fill:none;stroke:#257664;stroke-width:.8;opacity:.6}
+.edu-building{fill:#fff;stroke:#536c70;stroke-width:1}
+.edu-building-side{fill:#536c70;fill-opacity:.23;stroke:#536c70;stroke-width:1}
+.edu-room{fill:#257664;fill-opacity:.12;stroke:#257664;stroke-width:1}
+.edu-person{fill:#183841;stroke:#183841;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.edu-person-body{fill:none}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}
 .research-symbol .edu-scan-note{font:9px Arial,sans-serif}
 `+Object.keys(sizes).map(keyframes).join('');
@@ -94,20 +108,40 @@ function render(lang,compact) {
   for(let k=0;k<=4;k++) {
     b+=`<path class="edu-scan-grid" d="${linePath([p([k*.25,-.45,-.22]),p([k*.25,.45,-.22])])}${linePath([p([0,(k-2)*.225,-.22]),p([1,(k-2)*.225,-.22])])}"/>`;
   }
-  const arc=Array.from({length:25},(_,i)=>p([.48*Math.cos(rad(-50+i*100/24)),.48*Math.sin(rad(-50+i*100/24)),-.22]));
-  b+=`<path d="${linePath(arc)}" class="edu-scan-guide"/>`;
-  const elevArc=Array.from({length:25},(_,i)=>p([.35*Math.cos(rad(-30+i*60/24)),0,.35*Math.sin(rad(-30+i*60/24))]));
-  b+=`<path d="${linePath(elevArc)}" class="edu-scan-guide"/>`;
-  const shapes=(live)=>['drop','surface','mesh','guide'].map(part=>`<path d="${g[part]}" class="${part==='surface'?'edu-volume-surface':part==='mesh'?'edu-volume-mesh':'edu-scan-guide'}${live?' edu-beam-live edu-volume-'+size+'-'+part:''}"/>`).join('')+(live?`<circle r="${compact?2:5}" class="edu-scan-dot edu-beam-live edu-volume-${size}-tip"/>`:`<circle cx="${g.tip[0]}" cy="${g.tip[1]}" r="${compact?2:5}" class="edu-scan-dot"/>`);
+  const polygon=(points,cls)=>`<path d="${linePath(points.map(p))}Z" class="${cls}"/>`;
+  const facade=(y1,y2,z1,z2,cls)=>polygon([[.88,y1,z1],[.88,y2,z1],[.88,y2,z2],[.88,y1,z2]],cls);
+  const base=-.30,roof=.37,left=.10,right=.58,back=1.04;
+  b+=polygon([[.88,right,base],[back,right,base],[back,right,roof],[.88,right,roof]],'edu-building-side');
+  b+=polygon([[.88,left,roof],[back,left,roof],[back,right,roof],[.88,right,roof]],'edu-building-side');
+  b+=facade(left,right,base,roof,'edu-building');
+  for(let row=0;row<5;row++) {
+    const bottom=base+.028+row*.129;
+    for(let column=0;column<3;column++) {
+      if(row===3&&column<2)continue;
+      const start=left+.038+column*.148;
+      b+=facade(start,start+.108,bottom,bottom+.082,'edu-building-side');
+    }
+  }
+  b+=facade(.126,.405,.098,.236,'edu-room');
+  const shapes=(live)=>['surface','mesh','guide'].map(part=>`<path d="${g[part]}" class="${part==='surface'?'edu-volume-surface':part==='mesh'?'edu-volume-mesh':'edu-scan-guide'}${live?' edu-beam-live edu-volume-'+size+'-'+part:''}"/>`).join('')+(live?`<circle r="${compact?2:4}" class="edu-scan-dot edu-beam-live edu-volume-${size}-tip"/>`:`<circle cx="${g.tip[0]}" cy="${g.tip[1]}" r="${compact?2:4}" class="edu-scan-dot"/>`);
   b+=shapes(true)+`<g class="edu-beam-snapshot">${shapes(false)}</g>`;
   const panel=(yy,zz,dy,dz)=>linePath([p([0,yy,zz]),p([0,yy+dy,zz]),p([0,yy+dy,zz+dz]),p([0,yy,zz+dz])])+'Z';
   b+=`<path d="${panel(-.08,-.08,.16,.16)}" class="edu-box"/>`;
   for(let row=0;row<4;row++)for(let col=0;col<4;col++)b+=`<path d="${panel(-.068+col*.035,-.068+row*.035,.025,.025)}" class="edu-fill"/>`;
   b+=`<path d="${linePath([p([0,0,-.08]),p([0,0,-.22])])}${linePath([p([0,-.055,-.22]),p([0,.055,-.22])])}" class="edu-wire"/>`;
   b+=label(x-(compact?13:40),y+(compact?33:103),ru?'БС':'BS');
-  b+=label(...p([.48,-.48,-.22]),ru?'Азимут φ':'Azimuth φ');
-  b+=label(...p([.28,0,.2]),ru?'Угол места θ':'Elevation θ');
-  if(!compact)b+=label(400,429,ru?'Один луч · одновременное управление по двум углам':'One beam · simultaneous azimuth and elevation steering');
+  const person=point=>{
+    const [px,py]=p(point),scale=compact?.52:1.3;
+    return `<g transform="translate(${px} ${py}) scale(${scale})" class="edu-person"><circle cx="-4" cy="-7" r="2.8" class="edu-person"/><path d="M-4 -3V6l-3 7m3-7 3 7m-3-16-4 7m4-7L0 0" class="edu-person-body"/><path d="M1 -4v5" class="edu-person-body"/></g>`;
+  };
+  b+=streetUsers.map(person).join('')+person(indoor);
+  if(!compact) {
+    const [streetX,streetY]=p(street),[indoorX,indoorY]=p(indoor);
+    b+=label(streetX,streetY+27,ru?'Пользователи на улице':'Outdoor users');
+    b+=label(indoorX-108,indoorY-57,ru?'Пользователь в помещении':'Indoor user');
+    b+=`<path d="M${indoorX-42} ${indoorY-48}L${indoorX-9} ${indoorY-12}" class="edu-scan-grid"/>`;
+    b+=label(400,429,ru?'БС меняет азимут и угол места луча':'The base station steers the beam in azimuth and elevation');
+  }
   return b;
 }
 module.exports={css,render,steering,planarFactor,sectionPath,direction,geometry,beamVector,project};

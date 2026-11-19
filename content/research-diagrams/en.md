@@ -2,7 +2,7 @@
 
 ## wireless
 title: Base station: electronic beam steering
-subtitle: One 3D beam: azimuth and elevation change simultaneously
+subtitle: The beam alternates between outdoor and indoor users
 source: Antenna array
 target: Directional beam
 note: Main lobe: 4×4 planar array, λ/2 spacing; normalized array factor
