@@ -40,7 +40,7 @@ for(const lang of ['ru','en'])for(const page of ['index','research','students','
   const source=fs.readFileSync(path.join(root,`quarto-site/${lang}/${page}.qmd`),'utf8');
   const svgs=[...source.matchAll(/<svg class="research-symbol research-direction-symbol edu-scene edu-(access|coding|ris|wireless)[^>]*>[\s\S]*?<\/svg>/g)];
   assert.equal(svgs.length,page==='education'?5:4);
-  for(const [svg,kind] of svgs)assert.equal(svg,scene.renderCompact(kind,lang));
+  for(const [svg,kind] of svgs)assert.equal(svg,scene.renderCompact(kind,lang,page==='research'));
 }
 assert(scene.css.includes('prefers-reduced-motion'));
 assert(scene.css.includes('svg:target .edu-phase'));

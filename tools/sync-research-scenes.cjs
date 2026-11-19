@@ -10,7 +10,7 @@ for(const lang of ['ru','en'])for(const page of ['index','research','students','
   const source=fs.readFileSync(file,'utf8').replace(/<svg class="research-symbol[^>]*>[\s\S]*?<\/svg>/g,svg=>{
     const kind=svg.includes('edu-coding')?'coding':svg.includes('edu-wireless')?'wireless':svg.includes('edu-access')?'access':svg.includes('edu-ris')?'ris':null;
     if(!kind)return svg;
-    count++;return renderCompact(kind,lang);
+    count++;return renderCompact(kind,lang,page==='research');
   });
   if(count!==(page==='education'?5:4))throw Error(`Unexpected scene count: ${lang}/${page}: ${count}`);
   fs.writeFileSync(file,source);
@@ -28,5 +28,6 @@ source=source.slice(0,start)+'/* Explanatory three-state scenes share one timeli
 const scientific=path.join(root,'scientific-site/scientific.css');let style=fs.readFileSync(scientific,'utf8');
 style=style.split('/* Canonical educational scenes: static final state in Scientific. */')[0];
 style+='\n/* Canonical educational scenes: static final state in Scientific. */\n'+themed({'#183841':'var(--sc-ink)','#fff':'var(--sc-paper)','#536c70':'var(--sc-muted)','#257664':'var(--sc-accent)'})+'\n.research-symbol .edu-phase{animation:none!important;opacity:0!important}.research-symbol .edu-three{opacity:1!important}.research-symbol .edu-draw{animation:none!important;stroke-dashoffset:0!important}.research-symbol .edu-received{animation:none!important;opacity:1!important}.research-symbol .edu-caption{font:600 10px Arial,sans-serif}.research-symbol .edu-bit,.research-symbol .edu-white{font:10px Consolas,monospace}.research-symbol .edu-label{font:10px Arial,sans-serif}\n';
+style+='\n.research-symbol *{animation:none!important}.research-symbol .edu-packet,.research-symbol .edu-beam-live,.research-symbol .edu-gauges-live{display:none}.research-symbol .edu-beam-snapshot{display:initial}.research-symbol .edu-cell{opacity:1}\n';
 fs.writeFileSync(scientific,style);
 console.log('Synchronized 34 reusable scenes and their shared styles.');

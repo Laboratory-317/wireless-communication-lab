@@ -6,20 +6,25 @@ const text = (x,y,s,cls='edu-caption',extra='') => `<text x="${x}" y="${y}" clas
 const path = (d,cls='edu-wire',extra='') => `<path d="${d}" class="${cls}" ${extra}/>`;
 const rect = (x,y,w,h,cls='edu-box') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" class="${cls}"/>`;
 const circle = (x,y,r,cls='edu-box') => `<circle cx="${x}" cy="${y}" r="${r}" class="${cls}"/>`;
-const phase = (i,body) => `<g class="edu-phase edu-${['one','two','three'][i]}" opacity="${i===2?1:0}" data-edu-state="${i}">${body}</g>`;
+const phase = (i,body) => {
+  // Moving data stays outside the caption/state fade, so transmission never stops.
+  const packets=[];
+  const layer=body.replace(/<circle\b[^>]*class="edu-packet [^"]*"[^>]*\/>/g,p=>{packets.push(p);return '';});
+  return `<g class="edu-phase edu-${['one','two','three'][i]}" opacity="${i===2?1:0}" data-edu-state="${i}">${layer}</g>`+packets.join('');
+};
 const local = (lang,ru,en) => lang==='ru'?ru:en;
 const captions = {
   access: {ru:['Устройствам нужна связь','Сеть распределяет ресурс','Данные переданы'],en:['Devices request a connection','Network assigns resources','Data delivered']},
   coding: {ru:['Преобразование битов','Проверки находят ошибку','Бит исправлен'],en:['Encoding the bits','Checks reveal a bit error','Bit corrected']},
   ris: {ru:['Прямой путь перекрыт','Настраиваем поверхность','Сигнал приходит через RIS'],en:['Direct path is blocked','Configure the surface','Signal arrives via RIS']},
-  wireless: {ru:['Общий луч — прямо','Новые фазы — луч выше','Новые фазы — луч ниже'],en:['One beam points ahead','New phases: beam up','New phases: beam down']}
+  wireless: {ru:Array(3).fill('Управление направлением луча'),en:Array(3).fill('Continuous beam steering')}
 };
 const css = `
-.edu-phase{opacity:0;animation-duration:12s;animation-timing-function:linear;animation-iteration-count:infinite}
+.edu-phase{opacity:0;animation-duration:18s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
 .edu-one{animation-name:edu-one}.edu-two{animation-name:edu-two}.edu-three{animation-name:edu-three}
-@keyframes edu-one{0%,28%{opacity:1}32%,100%{opacity:0}}
-@keyframes edu-two{0%,32%{opacity:0}35%,61%{opacity:1}65%,100%{opacity:0}}
-@keyframes edu-three{0%,65%{opacity:0}68%,96%{opacity:1}100%{opacity:0}}
+@keyframes edu-one{0%,24%,100%{opacity:1}36%,90%{opacity:0}}
+@keyframes edu-two{0%,24%,70%,100%{opacity:0}36%,58%{opacity:1}}
+@keyframes edu-three{0%,58%,100%{opacity:0}70%,90%{opacity:1}}
 .edu-wire{fill:none;stroke:#536c70;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .edu-box{fill:#fff;stroke:#183841;stroke-width:1.5}.edu-active{fill:none;stroke:#257664;stroke-width:3;stroke-linecap:round}
 .edu-fill{fill:#257664;stroke:#257664;stroke-width:1}.edu-alt{fill:#b77538;stroke:#b77538;stroke-width:1}.edu-third{fill:#536c70;stroke:#536c70;stroke-width:1}
@@ -32,9 +37,31 @@ const css = `
 @keyframes edu-received{0%,86%{opacity:0}89%,98%{opacity:1}100%{opacity:0}}
 @keyframes edu-reveal{0%,68%{stroke-dashoffset:100}87%,100%{stroke-dashoffset:0}}
 .edu-access .signal{opacity:.14}.edu-ris .signal{opacity:.2}
-svg:target .edu-phase,svg:target .edu-draw,svg:target .edu-received{animation-play-state:paused}
+svg:target *,svg:target .edu-phase{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.edu-phase,.edu-draw,.edu-received{animation:none!important}.edu-phase{opacity:0!important}.edu-three,.edu-received{opacity:1!important}.edu-draw{stroke-dashoffset:0!important}}
+/* Packets travel along the actual channel geometry, including reflection at RIS. */
+.edu-packet{offset-distance:0%;opacity:0;animation:edu-packet 2.8s linear infinite;animation-delay:var(--delay,0s)}
+@keyframes edu-packet{0%{offset-distance:0%;opacity:0}6%,94%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.edu-flow{stroke-dasharray:5 9;animation:edu-flow 2.4s linear infinite}
+@keyframes edu-flow{to{stroke-dashoffset:-28}}
+.edu-cell{animation:edu-cell 3.6s ease-in-out infinite;animation-delay:var(--delay,0s)}
+@keyframes edu-cell{0%,100%{opacity:.4}50%{opacity:1}}
+.edu-beam-snapshot{display:none}
+.edu-beam-live{animation:edu-beam-small 18s linear infinite}
+.edu-beam-full{animation-name:edu-beam-full}
+.edu-needle{animation:edu-steer 18s ease-in-out infinite}
+@keyframes edu-steer{0%{transform:rotate(calc(1deg * var(--phase)))}50%{transform:rotate(calc(-1deg * var(--phase)))}100%{transform:rotate(calc(1deg * var(--phase)))}}
+@media(prefers-reduced-motion:reduce){.edu-scene *{animation:none!important}.edu-packet,.edu-beam-live,.edu-gauges-live{display:none}.edu-beam-snapshot{display:initial}.edu-cell{opacity:1}}
 `;
+
+function packet(d,r=3,delay=0,cls='edu-fill') {
+  return [delay,delay-1.4].map(start=>`<circle r="${r}" class="edu-packet ${cls}" style="offset-path:path('${d}');--delay:${start}s"/>`).join('');
+}
+function beamKeyframes(name,x,y,r) {
+  // Cosine steering has matching position and velocity at the loop boundary.
+  const frames=Array.from({length:25},(_,i)=>[i*100/24,-15*Math.cos(i*Math.PI/12)]);
+  return `@keyframes ${name}{`+frames.map(([time,angle])=>`${time}%{d:path('${beamPath(x,y,r,angle,2)}')}`).join('')+'}';
+}
 
 // F tensor F, without bit reversal; row-vector convention x = u(F tensor F).
 function polarStates(input) {
@@ -52,10 +79,10 @@ function arrayFactor(theta,steer) {
   const psi=Math.PI*(Math.sin(theta)-Math.sin(steer));
   return Math.abs(Math.sin(psi/2))<1e-12?1:Math.abs(Math.sin(2*psi)/(4*Math.sin(psi/2)));
 }
-function beamPath(cx,cy,r,steerDeg) {
+function beamPath(cx,cy,r,steerDeg,step=.5) {
   const steer=steerDeg*Math.PI/180;
   let d=`M${cx} ${cy}`;
-  for(let degrees=-90;degrees<=90;degrees+=.5) {
+  for(let degrees=-90;degrees<=90;degrees+=step) {
     const theta=degrees*Math.PI/180, radius=r*arrayFactor(theta,steer);
     d+=`L${(cx+radius*Math.cos(theta)).toFixed(3)} ${(cy-radius*Math.sin(theta)).toFixed(3)}`;
   }
@@ -75,10 +102,12 @@ function beamScene(lang,compact=false) {
   const gx=compact?20:165;
   let result=ys.map(v=>rect(gx-10,v-9,20,18)+path(`M${gx+10} ${v}L${x} ${y}`,'edu-wire')).join('');
   const targets=[0,15,-15];
+  result+=path(beamPath(x,y,r,0,2),`edu-lobe edu-beam-live${compact?'':' edu-beam-full'}`);
+  result+='<g class="edu-gauges-live">'+ys.map((v,i)=>circle(gx,v,compact?6:10,'edu-box')+path(`M${gx} ${v}h${(compact?6:10)*.78}`,'edu-active edu-needle',`style="transform-origin:${gx}px ${v}px;--phase:${180*i*Math.sin(Math.PI/12)}"`)).join('')+'</g>';
   targets.forEach((deg)=>{const a=deg*Math.PI/180;result+=circle(x+(r+7)*Math.cos(a),y-(r+7)*Math.sin(a),compact?4:8,'edu-box');});
   targets.forEach((deg,i)=>{
     const a=deg*Math.PI/180,tx=x+(r+7)*Math.cos(a),ty=y-(r+7)*Math.sin(a);
-    result+=phase(i,path(beamPath(x,y,r,deg),'edu-lobe')+gauges(gx,ys,deg,compact?6:10)+circle(tx,ty,compact?4:8,'edu-good')+text(compact?92:400,compact?141:431,captions.wireless[lang][i]));
+    result+=phase(i,'<g class="edu-beam-snapshot">'+path(beamPath(x,y,r,deg),'edu-lobe')+gauges(gx,ys,deg,compact?6:10)+'</g>'+circle(tx,ty,compact?4:8,'edu-good')+text(compact?92:400,compact?141:431,captions.wireless[lang][i]));
   });
   if(!compact) result+=text(165,394,local(lang,'Фазы антенн','Antenna phases'),'edu-label');
   return result;
@@ -90,7 +119,7 @@ function compactAccess(lang) {
   b+=phase(0,ys.map((y,i)=>rect(29,y-6,20,12,colors[i])+text(39,y+4,'→','edu-white')).join('')+text(92,141,captions.access[lang][0]));
   const pool=colors.map((c,i)=>rect(55+i*22,103,18,11,c)+rect(55+i*22,118,18,11,c)).join('');
   b+=phase(1,pool+text(87,97,local(lang,'Радиоресурс','Radio resources'),'edu-label')+text(92,141,captions.access[lang][1]));
-  b+=phase(2,pool+ys.map((y,i)=>path(`M25 ${y}L145 65`,'edu-active')+circle(16,y,5,colors[i])).join('')+text(92,141,captions.access[lang][2]));return b;
+  b+=phase(2,pool+ys.map((y,i)=>path(`M25 ${y}L145 65`,'edu-active edu-flow')+packet(`M25 ${y}L145 65`,3,-i*.7,colors[i])+circle(16,y,5,colors[i])).join('')+text(92,141,captions.access[lang][2]));return b;
 }
 function compactCoding(lang) {
   let b=text(92,10,'POLAR','edu-label');
@@ -106,6 +135,8 @@ function compactCoding(lang) {
     let layer=polar[k].map((bit,i)=>text(7,ys[i]+3,polar[0][i],'edu-bit')+text(177,ys[i]+3,bit,'edu-bit')).join('');
     layer+=xs.map((x,i)=>circle(x,95,7,k===1&&i===2?'edu-error':'edu-good')+text(x,99,bits[i],'edu-white')).join('');
     layer+=cx.map((x,j)=>{const check=bits[j]^bits[j+1];return rect(x-6,114,12,12,check?'edu-error':'edu-good')+text(x,124,check,'edu-white');}).join('');
+    layer+=ys.map((y,i)=>packet(`M18 ${y}H166`,2,-i*.5)).join('');
+    if(k===1)layer+=cx.map((x,j)=>packet(`M${xs[j]} 95L${x} 120`,2,-j*.6)).join('');
     layer+=text(92,143,captions.coding[lang][k]);b+=phase(k,layer);
   }return b;
 }
@@ -113,13 +144,13 @@ function compactRis(lang) {
   let b=rect(65,17,54,23)+rect(84,67,10,44,'edu-third')+text(89,122,local(lang,'Преграда','Obstacle'),'edu-label');
   b+=path('M18 95H148','edu-wire')+circle(18,95,5)+rect(142,85,12,22)+text(18,112,'Tx','edu-label')+text(148,120,'Rx','edu-label')+text(92,12,'RIS','edu-label');
   b+=phase(0,path('M23 95H82','edu-bad')+path('M79 89L91 101M79 101L91 89','edu-bad')+text(92,143,captions.ris[lang][0]));
-  const configuration=Array.from({length:8},(_,i)=>rect(68+(i%4)*12,20+Math.floor(i/4)*9,9,6,i%2?'edu-alt':'edu-fill')).join('');
+  const configuration=Array.from({length:8},(_,i)=>`<g class="edu-cell" style="--delay:${-i*.3}s">`+rect(68+(i%4)*12,20+Math.floor(i/4)*9,9,6,i%2?'edu-alt':'edu-fill')+'</g>').join('');
   b+=phase(1,configuration+text(92,143,captions.ris[lang][1]));
-  b+=phase(2,configuration+path('M23 93L92 42L142 89','edu-active')+circle(148,95,4,'edu-good')+text(92,143,captions.ris[lang][2]));return b;
+  b+=phase(2,configuration+path('M23 93L92 42L142 89','edu-active')+packet('M23 93L92 42L142 89',3)+packet('M23 93L92 42L142 89',3,-1.4)+circle(148,95,4,'edu-good')+text(92,143,captions.ris[lang][2]));return b;
 }
-function renderCompact(kind,lang) {
+function renderCompact(kind,lang,still=false) {
   const body={access:compactAccess,coding:compactCoding,ris:compactRis,wireless:(l)=>beamScene(l,true)}[kind](lang);
-  return `<svg class="research-symbol research-direction-symbol edu-scene edu-${kind}${kind==='coding'?' coding-symbol':''}" viewBox="0 0 184 148" aria-hidden="true">${body}</svg>`;
+  return `<svg class="research-symbol research-direction-symbol edu-scene edu-${kind}${kind==='coding'?' coding-symbol':''}${still?' edu-static':''}" viewBox="0 0 184 148" aria-hidden="true">${body}</svg>`;
 }
 function detailedOverlay(kind,lang) {
   let b='';
@@ -129,27 +160,29 @@ function detailedOverlay(kind,lang) {
     const captionsLocal=local(lang,['Вход: 1011','Первый этап: 0111','Кодовое слово: 1101'],['Input: 1011','First stage: 0111','Codeword: 1101']);
     states.forEach((bits,k)=>{
       const gates=k===1?[[280,187],[350,249]]:k===2?[[490,187],[560,311]]:[];
-      b+=phase(k,bits.map((bit,i)=>rect(609,171+i*62,34,30)+text(626,193+i*62,bit,'edu-bit')).join('')+gates.map(([x,y])=>circle(x,y,17,'edu-active')).join('')+text(400,430,captionsLocal[k]));
+      b+=phase(k,bits.map((bit,i)=>rect(609,171+i*62,34,30)+text(626,193+i*62,bit,'edu-bit')+packet(`M126 ${187+i*62}H605`,5,-i*.5)).join('')+gates.map(([x,y])=>circle(x,y,17,'edu-active')).join('')+text(400,430,captionsLocal[k]));
     });
   } else if(kind==='ldpc') {
     [validWord,damagedWord,validWord].forEach((bits,k)=>{
       const syndrome=parity(bits);
       let layer=bits.map((bit,i)=>circle(120+i*80,210,12,k===1&&i===2?'edu-error':'edu-good')+text(120+i*80,216,bit,'edu-white')).join('');
       layer+=syndrome.map((bit,j)=>rect(208+j*120,338,24,24,bit?'edu-error':'edu-good')+text(220+j*120,356,bit,'edu-white')).join('');
+      layer+=checks.flatMap((indices,j)=>indices.map((i)=>packet(`M${120+i*80} 210L${220+j*120} 350`,4,-i*.3-j*.5))).join('');
       const caption=k===0?local(lang,'Все проверки выполнены','All parity checks pass'):captions.coding[lang][k];
       b+=phase(k,layer+text(400,430,caption));
     });
   } else if(kind==='ris') {
     b+=phase(0,path('M142 339H368','edu-bad')+path('M378 329L398 349M378 349L398 329','edu-bad')+text(400,430,captions.ris[lang][0]));
-    const configuration=Array.from({length:12},(_,i)=>rect(450+i%6*25,159+Math.floor(i/6)*25,20,20,i%2?'edu-alt':'edu-fill')).join('');
+    const configuration=Array.from({length:12},(_,i)=>`<g class="edu-cell" style="--delay:${-i*.3}s">`+rect(450+i%6*25,159+Math.floor(i/6)*25,20,20,i%2?'edu-alt':'edu-fill')+'</g>').join('');
     b+=phase(1,configuration+text(400,430,captions.ris[lang][1]));
-    b+=phase(2,configuration+path('M142 330L522 217L674 329','edu-active')+circle(688,341,7,'edu-good')+text(400,430,captions.ris[lang][2]));
+    b+=phase(2,configuration+path('M142 330L522 217L674 329','edu-active')+packet('M142 330L522 217L674 329',6)+packet('M142 330L522 217L674 329',6,-1.4)+circle(688,341,7,'edu-good')+text(400,430,captions.ris[lang][2]));
   } else if(kind==='access') {
     const colors=['edu-fill','edu-alt','edu-third'],ys=[176,266,356];
     const pool=colors.map((c,i)=>rect(339+i*25,145,20,16,c)+rect(339+i*25,168,20,16,c)).join('');
     b+=phase(0,ys.map((y,i)=>rect(500,y-9,31,19,colors[i])+text(516,y+5,'→','edu-white')).join('')+text(400,430,captions.access[lang][0]));
     b+=phase(1,pool+text(376,130,local(lang,'Радиоресурс','Radio resources'),'edu-label')+text(400,430,captions.access[lang][1]));
-    b+=phase(2,pool+ys.map(y=>path(`M272 245L551 ${y}`,'edu-active')+circle(581,y,7,'edu-good')).join('')+text(400,430,captions.access[lang][2]));
+    b+=phase(2,pool+ys.map((y,i)=>path(`M272 245L551 ${y}`,'edu-active edu-flow')+packet(`M272 245L551 ${y}`,6,-i*.7,colors[i])+circle(581,y,7,'edu-good')).join('')+text(400,430,captions.access[lang][2]));
   }return b;
 }
-module.exports={css,renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};
+const staticCss='.edu-static *{animation:none!important}.edu-static .edu-phase{opacity:0!important}.edu-static .edu-three{opacity:1!important}.edu-static .edu-packet,.edu-static .edu-beam-live,.edu-static .edu-gauges-live{display:none}.edu-static .edu-beam-snapshot{display:initial}.edu-static .edu-cell{opacity:1}';
+module.exports={css:css+staticCss+beamKeyframes('edu-beam-small',40,65,105)+beamKeyframes('edu-beam-full',220,260,420),renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};
