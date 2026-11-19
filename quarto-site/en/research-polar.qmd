@@ -37,6 +37,10 @@ For LDPC codes, a Tanner graph describes the connections between codeword bits a
 
 ![Tanner graph: LDPC codeword bits and parity checks](../assets/research/ldpc-en.svg){.detail-diagram}
 
+When the position of an erased bit is known, the decoder looks for a parity check in which that bit is the only unknown. In this example the check connects three bits, and the two known values determine the third.
+
+![Recovering an erased LDPC bit using a parity check](../assets/research/ldpc-recovery-en.svg){.detail-diagram}
+
 ::: {.research-context}
 
 [POLAR · LDPC · CHANNEL CODING]{.portfolio-tags}

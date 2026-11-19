@@ -11,15 +11,20 @@ note: Main lobe: 4×4 planar array, λ/2 spacing; normalized array factor
 title: Inside a polar encoder
 subtitle: An example encoding transform for four bits
 source: Input bits
-target: Current values
+target: Codeword
 note: ⊕ — addition modulo 2
 
 ## ldpc
 title: LDPC: Tanner graph
-subtitle: An example of detecting and correcting a single bit error
+subtitle: Codeword bits and their connections to parity checks
 source: Codeword bits — variable nodes
 target: Check nodes: connected bits sum to 0 modulo 2
 note: Circle — bit · square — check · edge — bit participates in a check
+
+## ldpc-recovery
+title: How LDPC recovers an erased bit
+subtitle: The channel loses one bit value, but its position is known
+note: ⊕ denotes XOR. One parity check with a single unknown is enough to recover the bit.
 
 ## access
 title: One network — many devices

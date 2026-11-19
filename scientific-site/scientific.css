@@ -56,6 +56,7 @@ html{scroll-padding-top:30px}body.scientific-page{margin:0;background:var(--sc-p
 
 
 
+
 /* Canonical educational scenes: static final state in Scientific. */
 
 .edu-phase{opacity:0;animation-duration:18s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}

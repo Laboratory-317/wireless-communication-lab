@@ -20,10 +20,11 @@ const line = (x1, y1, x2, y2, extra = '') => `<path d="M${x1} ${y1}L${x2} ${y2}"
 const circle = (x,y,r,extra='') => `<circle cx="${x}" cy="${y}" r="${r}" ${extra}/>`;
 const rect = (x,y,w,h,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" ${extra}/>`;
 function frame(label, index, body, name, language) {
-  return `<svg id="still" class="edu-scene edu-${name}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  return `<svg id="still" class="edu-scene edu-${name}${['polar','ldpc'].includes(name)?' edu-static':''}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.diagramCss(name)}</style>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.diagramCss(name)}
+${name==='ldpc-recovery'?'.edu-one,.edu-two,.edu-three{animation-duration:15s;animation-timing-function:step-end}@keyframes edu-one{0%{opacity:1}27%{opacity:0}}@keyframes edu-two{0%{opacity:0}27%{opacity:1}64%{opacity:0}}@keyframes edu-three{0%{opacity:0}64%,100%{opacity:1}}':''}</style>
 ${rect(0,0,800,520,'fill="none"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 
@@ -33,6 +34,7 @@ ${line(40,449,760,449,'style="stroke:#ccd9d3"')}${text(40,483,label.note,'class=
 }
 const drawings = {
   wireless(l,language) { return education.beamScene(language); },
+  'ldpc-recovery'(l,language) { return education.erasureScene(language); },
   polar(l) {
     let body=text(112,138,l.source,'text-anchor="middle" class="muted"')+text(680,138,l.target,'text-anchor="middle" class="muted"');
     const ys=[187,249,311,373];
@@ -44,7 +46,7 @@ const drawings = {
   },
   ldpc(l) {
     // Each row lists the variable nodes in one parity-check equation.
-    const checks = [[0,1,4], [1,2,5], [2,3,6], [0,3,7]];
+    const {checks} = education;
     const xs = Array.from({length:8}, (_,i)=>120+i*80);
     let body=text(400,145,l.source,'text-anchor="middle" class="muted"');
     checks.forEach((bits,j)=>bits.forEach(i=>{

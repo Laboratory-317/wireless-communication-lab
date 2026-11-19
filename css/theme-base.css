@@ -581,3 +581,5 @@ body:not([data-page="home"]) .brand img {
 
 .topbar, .topbar-actions { flex-wrap:wrap; }
 .topbar-actions { justify-content:flex-end; }
+.coding-figure { max-width:800px; margin:1.5rem auto; }
+.coding-figure img { display:block; width:100%; height:auto; background:#f7f8f4; }

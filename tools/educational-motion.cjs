@@ -138,7 +138,34 @@ function compactRis(lang) {
 }
 function renderCompact(kind,lang,still=false) {
   const body={access:compactAccess,coding:compactCoding,ris:compactRis,wireless:(l)=>beamScene(l,true)}[kind](lang);
-  return `<svg class="research-symbol research-direction-symbol edu-scene edu-${kind}${kind==='coding'?' coding-symbol':''}${still?' edu-static':''}" viewBox="0 0 184 148" aria-hidden="true">${body}</svg>`;
+  return `<svg class="research-symbol research-direction-symbol edu-scene edu-${kind}${kind==='coding'?' coding-symbol':''}${still||kind==='coding'?' edu-static':''}" viewBox="0 0 184 148" aria-hidden="true">${body}</svg>`;
+}
+function erasureScene(lang) {
+  const ru=lang==='ru';
+  const erasedIndex=2;
+  const check=checks.find(indices=>indices.includes(erasedIndex));
+  const known=check.filter(index=>index!==erasedIndex);
+  const restored=known.reduce((value,index)=>value^validWord[index],0);
+  const stages=ru
+    ? ['Передаём кодовое слово','Канал стирает бит x₂','Декодер восстанавливает x₂']
+    : ['Transmit the codeword','The channel erases bit x₂','The decoder restores x₂'];
+  const labels=ru
+    ? ['Все проверки чётности выполнены','Известны x₁ = 0 и x₅ = 1','Вместо «?» подставляем 1']
+    : ['All parity checks pass','x₁ = 0 and x₅ = 1 are known','Replace “?” with 1'];
+  let result=validWord.map((_,i)=>text(155+i*70,180,`x${'₀₁₂₃₄₅₆₇'[i]}`,'edu-label')).join('');
+  stages.forEach((title,stage)=>{
+    const tiles=validWord.map((bit,i)=>{
+      const x=155+i*70;
+      const highlight=i===erasedIndex&&stage>0||stage===1&&known.includes(i);
+      const color=highlight?(i===erasedIndex&&stage===1?'edu-alt':'edu-fill'):'edu-box';
+      const value=i===erasedIndex?(stage===1?'?':stage===2?restored:bit):bit;
+      return rect(x-25,200,50,52,color)+text(x,234,value,highlight?'edu-white':'edu-bit');
+    }).join('');
+    const equation=stage===0?'x₁ ⊕ x₂ ⊕ x₅ = 0':stage===1?'0 ⊕ x₂ ⊕ 1 = 0':`x₂ = 0 ⊕ 1 = ${restored}`;
+    result+=phase(stage,text(400,143,`${stage+1} / 3 · ${title}`)+tiles+
+      rect(195,288,410,112)+text(400,333,equation,'edu-caption')+text(400,369,labels[stage],'edu-label'));
+  });
+  return result;
 }
 function detailedOverlay(kind,lang) {
   let b='';
@@ -173,4 +200,4 @@ function detailedOverlay(kind,lang) {
   }return b;
 }
 const staticCss='.edu-static *{animation:none!important}.edu-static .edu-phase{opacity:0!important}.edu-static .edu-three{opacity:1!important}.edu-static .edu-packet,.edu-static .edu-beam-live,.edu-static .edu-gauges-live{display:none}.edu-static .edu-beam-snapshot{display:initial}.edu-static .edu-cell{opacity:1}';
-module.exports={css:css+staticCss+steering.css,diagramCss:kind=>css+staticCss+(kind==='wireless'?steering.css:''),renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};
+module.exports={css:css+staticCss+steering.css,diagramCss:kind=>css+staticCss+(kind==='wireless'?steering.css:''),renderCompact,detailedOverlay,erasureScene,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};

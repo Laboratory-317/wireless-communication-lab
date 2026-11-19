@@ -103,7 +103,7 @@ function transformBody(lang, page, body) {
     return raw(`<section class="sc-section sc-section-first">${sectionHeading('portfolio', label(ru, 'ИЗБРАННЫЕ РАБОТЫ', 'SELECTED WORK'), label(ru, 'Исследования в действии', 'Research in practice'))}${portfolioGrid(lang)}</section><div class="sc-archive-heading"><span class="sc-kicker">${label(ru, 'ФИНАНСИРОВАНИЕ', 'FUNDING')}</span><p>${label(ru, 'Полный архив грантов, программ и договорных работ.', 'The full archive of grants, programmes and contract research.')}</p><button type="button" data-sc-archive hidden aria-expanded="false">${label(ru, 'Раскрыть все разделы', 'Expand all sections')}</button></div>`) + body;
   }
   const direction = directions.find(d => d.page === page);
-  if (direction) {
+  if (direction && direction.kind !== 'polar') {
     body = body.replace(/!\[[^\]]*\]\(\.\.\/assets\/research\/[^)]+\.svg\)\{\.detail-diagram\}\s*/g, '');
     body = raw(figure(direction.kind, lang, 'research-' + direction.kind)) + body;
     // Translate presentation labels only. The scientific prose and records stay intact.
