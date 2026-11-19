@@ -37,10 +37,12 @@ function direction(plane,x,y,radius,t,sy=1) {
   const angle=rad(steering(t)[plane]);
   return [f(x+radius*Math.cos(angle)),f(y-sy*radius*Math.sin(angle))];
 }
-const sizes={small:{x:29,y:66,r:110},full:{x:141,y:248,r:388}};
+const sizes={small:{x:34,y:77,r:112},full:{x:198,y:281,r:395}};
 function project(point,size) {
   const {x,y,r}=sizes[size], [px,py,pz]=point;
-  return [f(x+r*(.87*px+.78*py)),f(y+r*(.07*px-.17*py-.94*pz))];
+  // Oblique view from in front of the panel, with both its face and the beam length visible.
+  const depth=1+.18*py;
+  return [f(x+r*(.68*px+.81*py)/depth),f(y+r*(-.17*px+.13*py-.93*pz)/depth)];
 }
 const linePath=points=>points.map((p,i)=>(i?'L':'M')+p.join(' ')).join('');
 function beamVector(t) {
@@ -137,7 +139,7 @@ function render(lang,compact) {
   b+=`<path d="${panel(-.08,-.08,.16,.16)}" class="edu-box"/>`;
   for(let row=0;row<4;row++)for(let col=0;col<4;col++)b+=`<path d="${panel(-.068+col*.035,-.068+row*.035,.025,.025)}" class="edu-fill"/>`;
   b+=`<path d="${linePath([p([0,0,-.08]),p([0,0,-.22])])}${linePath([p([0,-.055,-.22]),p([0,.055,-.22])])}" class="edu-wire"/>`;
-  b+=label(x-(compact?13:40),y+(compact?33:103),ru?'БС':'BS');
+  b+=label(x-(compact?16:46),y+(compact?21:66),ru?'БС':'BS');
   const person=point=>{
     const [px,py]=p(point),scale=compact?.52:1.3;
     return `<g transform="translate(${px} ${py}) scale(${scale})" class="edu-person"><circle cx="-4" cy="-7" r="2.8" class="edu-person"/><path d="M-4 -3V6l-3 7m3-7 3 7m-3-16-4 7m4-7L0 0" class="edu-person-body"/><path d="M1 -4v5" class="edu-person-body"/></g>`;
@@ -146,8 +148,8 @@ function render(lang,compact) {
   if(!compact) {
     const [streetX,streetY]=p(street),[indoorX,indoorY]=p(indoor);
     b+=label(streetX,streetY+34,ru?'Пользователи на улице':'Outdoor users');
-    b+=label(indoorX-152,indoorY-30,ru?'Пользователь в помещении':'Indoor user');
-    b+=`<path d="M${indoorX-69} ${indoorY-25}L${indoorX-9} ${indoorY-10}" class="edu-scan-grid"/>`;
+    b+=label(indoorX-105,indoorY-48,ru?'Пользователь в помещении':'Indoor user');
+    b+=`<path d="M${indoorX-42} ${indoorY-38}L${indoorX-9} ${indoorY-10}" class="edu-scan-grid"/>`;
     b+=label(400,429,ru?'БС меняет азимут и угол места луча':'The base station steers the beam in azimuth and elevation');
   }
   return b;
