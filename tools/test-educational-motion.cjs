@@ -62,6 +62,16 @@ for(const plane of ['azimuth','elevation']) {
   assert.equal(steering.sectionPath(plane,98,274,246,0),steering.sectionPath(plane,98,274,246,1));
   assert.notEqual(steering.sectionPath(plane,98,274,246,.25),steering.sectionPath(plane,98,274,246,.75));
 }
+assert.deepEqual(steering.geometry(0,'full'),steering.geometry(1,'full'));
+const before=steering.beamVector(.1),after=steering.beamVector(.12);
+assert.notEqual(Math.atan2(before[1],before[0]),Math.atan2(after[1],after[0]));
+assert.notEqual(Math.asin(before[2]),Math.asin(after[2]));
+for(const size of ['small','full']) {
+  const first=steering.geometry(0,size),next=steering.geometry(.3,size);
+  assert.notEqual(first.surface,next.surface);
+  assert.equal(first.mesh.match(/[ML]/g).length,next.mesh.match(/[ML]/g).length);
+  assert(!JSON.stringify(next).includes('NaN'));
+}
 // The renderer alone is insufficient: every direction page must embed its illustration.
 for(const lang of ['ru','en'])for(const [page,asset] of [
   ['access','access'],['polar','polar'],['metasurfaces','ris'],['wireless','wireless']

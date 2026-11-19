@@ -2,10 +2,10 @@
 
 ## wireless
 title: Base station: electronic beam steering
-subtitle: Steering the beam in azimuth and elevation
+subtitle: One 3D beam: azimuth and elevation change simultaneously
 source: Antenna array
 target: Directional beam
-note: Model: 4×4 planar array, λ/2 spacing; normalized array factor
+note: Main lobe: 4×4 planar array, λ/2 spacing; normalized array factor
 
 ## polar
 title: Inside a polar encoder

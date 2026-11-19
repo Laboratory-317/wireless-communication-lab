@@ -29,14 +29,51 @@ function direction(plane,x,y,radius,t,sy=1) {
   const angle=rad(steering(t)[plane]);
   return [f(x+radius*Math.cos(angle)),f(y-sy*radius*Math.sin(angle))];
 }
-const sizes={small:{x:[27,27],y:[40,108],r:118,sy:.45},full:{x:[98,458],y:[274,274],r:246,sy:1}};
-function keyframes(size,plane,index) {
-  const {x,y,r,sy}=sizes[size], name=`edu-${plane}-${size}`;
-  const frames=Array.from({length:49},(_,i)=>i/48);
-  const shape='@keyframes '+name+'{'+frames.map(t=>`${f(t*100)}%{d:path('${sectionPath(plane,x[index],y[index],r,t,sy)}')}`).join('')+'}';
-  const guide='@keyframes '+name+'-guide{'+frames.map(t=>`${f(t*100)}%{d:path('M${x[index]} ${y[index]}L${direction(plane,x[index],y[index],r,t,sy).join(' ')}')}`).join('')+'}';
-  const dot='@keyframes '+name+'-dot{'+frames.map(t=>`${f(t*100)}%{transform:translate(${direction(plane,x[index],y[index],r,t,sy).map(v=>v+'px').join(',')})}`).join('')+'}';
-  return shape+guide+dot+`.${name}{animation:${name} 18s linear infinite}.${name}-guide{animation:${name}-guide 18s linear infinite}.${name}-dot{animation:${name}-dot 18s linear infinite}`;
+const sizes={small:{x:39,y:55,r:130},full:{x:180,y:211,r:430}};
+function project(point,size) {
+  const {x,y,r}=sizes[size], [px,py,pz]=point;
+  return [f(x+r*(.87*px+.42*py)),f(y+r*(.15*px-.32*py-.85*pz))];
+}
+const linePath=points=>points.map((p,i)=>(i?'L':'M')+p.join(' ')).join('');
+function beamVector(t) {
+  const {azimuth,elevation}=steering(t),a=rad(azimuth),e=rad(elevation);
+  return [Math.cos(e)*Math.cos(a),Math.cos(e)*Math.sin(a),Math.sin(e)];
+}
+function geometry(t,size) {
+  const {azimuth,elevation}=steering(t),a=rad(azimuth),e=rad(elevation),s=beamVector(t);
+  const u=[-Math.sin(a),Math.cos(a),0],v=[-Math.sin(e)*Math.cos(a),-Math.sin(e)*Math.sin(a),Math.cos(e)];
+  const rows=9,columns=17,mesh=[];
+  // Follow the main lobe from its maximum to the first array-factor null.
+  // Both steering coordinates enter every vertex of this one 3D surface.
+  for(let j=0;j<columns;j++) {
+    const beta=2*Math.PI*j/(columns-1), tangent=u.map((value,i)=>value*Math.cos(beta)+v[i]*Math.sin(beta));
+    const vector=alpha=>s.map((value,i)=>value*Math.cos(alpha)+tangent[i]*Math.sin(alpha));
+    const outside=alpha=>{const d=vector(alpha);return Math.abs(d[1]-s[1])>=.5||Math.abs(d[2]-s[2])>=.5;};
+    let high=rad(1);while(high<rad(88)&&!outside(high))high+=rad(1);
+    let low=high-rad(1);for(let k=0;k<24;k++){const mid=(low+high)/2;if(outside(mid))high=mid;else low=mid;}
+    for(let i=0;i<rows;i++) {
+      const d=vector(high*i/(rows-1)), amplitude=factor(d[1]-s[1])*factor(d[2]-s[2]);
+      (mesh[i]||=[])[j]=project(d.map(value=>value*amplitude),size);
+    }
+  }
+  let wire='';
+  for(let i=1;i<rows-1;i++)wire+=linePath(mesh[i]);
+  for(let j=0;j<columns-1;j+=2)wire+=linePath(mesh.map(row=>row[j]));
+  const points=mesh.flat(),center=points.reduce((sum,p)=>[sum[0]+p[0]/points.length,sum[1]+p[1]/points.length],[0,0]);
+  // Fixed support directions keep the projected envelope's path topology stable.
+  const envelope=Array.from({length:48},(_,i)=>{
+    const angle=i*Math.PI/24,dx=Math.cos(angle),dy=Math.sin(angle);
+    return points.reduce((best,p)=>(p[0]-center[0])*dx+(p[1]-center[1])*dy>(best[0]-center[0])*dx+(best[1]-center[1])*dy?p:best,points[0]);
+  });
+  const tip=project(s,size),ground=project([s[0],s[1],-.22],size),origin=project([0,0,0],size);
+  return {surface:linePath(envelope)+'Z',mesh:wire,guide:linePath([origin,tip]),drop:linePath([project([0,0,-.22],size),ground,tip]),tip};
+}
+function keyframes(size) {
+  const frames=Array.from({length:49},(_,i)=>({t:i/48,g:geometry(i/48,size)}));
+  return ['surface','mesh','guide','drop','tip'].map(part=>{
+    const name=`edu-volume-${size}-${part}`;
+    return '@keyframes '+name+'{'+frames.map(({t,g})=>`${f(t*100)}%{`+(part==='tip'?`transform:translate(${g.tip[0]}px,${g.tip[1]}px)`:`d:path('${g[part]}')`)+'}').join('')+'}'+`.${name}{animation:${name} 18s linear infinite}`;
+  }).join('');
 }
 const css=`
 .edu-scan-grid{fill:none;stroke:#536c70;stroke-width:.8;opacity:.3}
@@ -44,36 +81,33 @@ const css=`
 .edu-scan-title{fill:#183841;stroke:none;font:600 18px Arial,sans-serif}
 .edu-scan-note{fill:#536c70;stroke:none;font:14px Arial,sans-serif}
 .edu-scan-dot{fill:#257664;stroke:#fff;stroke-width:1.5}
+.edu-volume-surface{fill:#257664;fill-opacity:.16;stroke:#257664;stroke-width:1.7;stroke-linejoin:round}
+.edu-volume-mesh{fill:none;stroke:#257664;stroke-width:.8;opacity:.6}
 .research-symbol .edu-scan-title{font:600 10px Arial,sans-serif}
 .research-symbol .edu-scan-note{font:9px Arial,sans-serif}
-`+Object.keys(sizes).flatMap(size=>['azimuth','elevation'].map((plane,i)=>keyframes(size,plane,i))).join('');
+`+Object.keys(sizes).map(keyframes).join('');
 function render(lang,compact) {
-  const size=compact?'small':'full', {x,y,r,sy}=sizes[size], ru=lang==='ru';
+  const size=compact?'small':'full', {x,y,r}=sizes[size], ru=lang==='ru',g=geometry(0,size);
   const label=(cx,cy,value,cls='edu-scan-note')=>`<text x="${cx}" y="${cy}" text-anchor="middle" class="${cls}">${value}</text>`;
   let b='';
-  ['azimuth','elevation'].forEach((plane,i)=>{
-    const cx=x[i],cy=y[i], name=`edu-${plane}-${size}`;
-    if(!compact) {
-      b+=label(cx+105,142,i===0?(ru?'Горизонтальная плоскость':'Horizontal plane'):(ru?'Вертикальная плоскость':'Vertical plane'),'edu-scan-title');
-      b+=label(cx+105,167,i===0?(ru?'Азимут φ · вид сверху':'Azimuth φ · top view'):(ru?'Угол места θ · вид сбоку':'Elevation θ · side view'));
-    } else b+=label(101,i===0?11:79,i===0?(ru?'Азимут':'Azimuth'):(ru?'Угол места':'Elevation'),'edu-scan-title');
-    for(const scale of [.5,1]) {
-      const radius=r*scale, dx=f(radius*Math.cos(rad(compact?14:32))), dy=f(radius*Math.sin(rad(compact?14:32)));
-      b+=`<path class="edu-scan-grid" d="M${f(cx+dx)} ${f(cy-dy)}A${radius} ${radius} 0 0 1 ${f(cx+dx)} ${f(cy+dy)}"/>`;
-    }
-    b+=`<path class="edu-scan-grid" d="M${cx} ${cy-r*(compact?.25:.43)}V${cy+r*(compact?.25:.43)}M${cx} ${cy}H${cx+r+7}"/>`;
-    const beam=sectionPath(plane,cx,cy,r,0,sy),tip=direction(plane,cx,cy,r,0,sy);
-    b+=`<path d="${beam}" class="edu-lobe edu-beam-live ${name}"/><path d="M${cx} ${cy}L${tip.join(' ')}" class="edu-scan-guide edu-beam-live ${name}-guide"/><circle r="${compact?2.5:5}" class="edu-scan-dot edu-beam-live ${name}-dot"/>`;
-    b+=`<g class="edu-beam-snapshot"><path d="${beam}" class="edu-lobe"/><path d="M${cx} ${cy}L${tip.join(' ')}" class="edu-scan-guide"/><circle cx="${tip[0]}" cy="${tip[1]}" r="${compact?2.5:5}" class="edu-scan-dot"/></g>`;
-    // Fixed antenna panel: only the electronic beam changes direction.
-    const cell=compact?2:5, pitch=compact?3:7, left=cx-(compact?16:36),top=cy-2*pitch;
-    b+=`<rect x="${left-3}" y="${top-3}" width="${pitch*4+3}" height="${pitch*4+3}" rx="3" class="edu-box"/>`;
-    for(let row=0;row<4;row++)for(let col=0;col<4;col++)b+=`<rect x="${left+col*pitch}" y="${top+row*pitch}" width="${cell}" height="${cell}" class="edu-fill"/>`;
-    b+=`<path d="M${left+pitch*2} ${top+pitch*4+2}v${compact?5:22}m-${compact?5:12} 0h${compact?10:24}" class="edu-wire"/>`;
-    b+=label(cx-(compact?8:20),cy+(compact?25:68),ru?'БС':'BS');
-    if(!compact)b+=label(cx+115,394,i===0?(ru?'Сканирование влево и вправо':'Steering left and right'):(ru?'Подъём и наклон луча':'Beam elevation and downtilt'));
-  });
-  if(!compact)b+=label(400,429,ru?'Антенная панель неподвижна · направление луча задаётся фазами':'Fixed antenna panel · phase shifts control the beam direction');
+  const p=point=>project(point,size);
+  for(let k=0;k<=4;k++) {
+    b+=`<path class="edu-scan-grid" d="${linePath([p([k*.25,-.45,-.22]),p([k*.25,.45,-.22])])}${linePath([p([0,(k-2)*.225,-.22]),p([1,(k-2)*.225,-.22])])}"/>`;
+  }
+  const arc=Array.from({length:25},(_,i)=>p([.48*Math.cos(rad(-50+i*100/24)),.48*Math.sin(rad(-50+i*100/24)),-.22]));
+  b+=`<path d="${linePath(arc)}" class="edu-scan-guide"/>`;
+  const elevArc=Array.from({length:25},(_,i)=>p([.35*Math.cos(rad(-30+i*60/24)),0,.35*Math.sin(rad(-30+i*60/24))]));
+  b+=`<path d="${linePath(elevArc)}" class="edu-scan-guide"/>`;
+  const shapes=(live)=>['drop','surface','mesh','guide'].map(part=>`<path d="${g[part]}" class="${part==='surface'?'edu-volume-surface':part==='mesh'?'edu-volume-mesh':'edu-scan-guide'}${live?' edu-beam-live edu-volume-'+size+'-'+part:''}"/>`).join('')+(live?`<circle r="${compact?2:5}" class="edu-scan-dot edu-beam-live edu-volume-${size}-tip"/>`:`<circle cx="${g.tip[0]}" cy="${g.tip[1]}" r="${compact?2:5}" class="edu-scan-dot"/>`);
+  b+=shapes(true)+`<g class="edu-beam-snapshot">${shapes(false)}</g>`;
+  const panel=(yy,zz,dy,dz)=>linePath([p([0,yy,zz]),p([0,yy+dy,zz]),p([0,yy+dy,zz+dz]),p([0,yy,zz+dz])])+'Z';
+  b+=`<path d="${panel(-.08,-.08,.16,.16)}" class="edu-box"/>`;
+  for(let row=0;row<4;row++)for(let col=0;col<4;col++)b+=`<path d="${panel(-.068+col*.035,-.068+row*.035,.025,.025)}" class="edu-fill"/>`;
+  b+=`<path d="${linePath([p([0,0,-.08]),p([0,0,-.22])])}${linePath([p([0,-.055,-.22]),p([0,.055,-.22])])}" class="edu-wire"/>`;
+  b+=label(x-(compact?13:40),y+(compact?33:103),ru?'БС':'BS');
+  b+=label(...p([.48,-.48,-.22]),ru?'Азимут φ':'Azimuth φ');
+  b+=label(...p([.28,0,.2]),ru?'Угол места θ':'Elevation θ');
+  if(!compact)b+=label(400,429,ru?'Один луч · одновременное управление по двум углам':'One beam · simultaneous azimuth and elevation steering');
   return b;
 }
-module.exports={css,render,steering,planarFactor,sectionPath,direction};
+module.exports={css,render,steering,planarFactor,sectionPath,direction,geometry,beamVector,project};
