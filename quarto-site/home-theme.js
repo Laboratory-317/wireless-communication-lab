@@ -78,7 +78,7 @@
       }
     });
     const illustration = document.querySelector('.research-overview, .home-directions, .student-tracks, .learning-grid, figure:has(img[data-dark-src])');
-    if (illustration) {
+    if (illustration && page !== 'education') {
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'motion-toggle';

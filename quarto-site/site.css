@@ -252,3 +252,12 @@ body.site-page { background:var(--home-bg); color:var(--home-ink); font-family:"
 .photo-dialog-close { position:absolute; top:10px; right:12px; }
 .photo-dialog-controls { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:16px; font-size:14px; }
 body.photo-viewer-open { overflow:hidden; }
+
+/* Education cards show the finished diagram without playing a sequence. */
+.education-page .edu-phase { animation:none!important; opacity:0!important; }
+.education-page .edu-three { opacity:1!important; }
+.education-page .edu-draw { animation:none!important; stroke-dashoffset:0!important; }
+.education-page .edu-received { animation:none!important; opacity:1!important; }
+.education-page .edu-caption { display:none; }
+.education-page .edu-wireless .edu-phase { opacity:0!important; }
+.education-page .edu-wireless .edu-one { opacity:1!important; }
