@@ -23,7 +23,7 @@ function frame(label, index, body, name, language) {
   return `<svg id="still" class="edu-scene edu-${name}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
 <title id="title">${escape(label.title)}</title><desc id="desc">${escape(label.subtitle)}</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#257664"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.css}</style>
+<style>text{font-family:Arial,sans-serif;fill:#183841;font-size:18px}path{fill:none;stroke:#183841;stroke-width:2}circle{fill:#fff;stroke:#183841;stroke-width:2}.muted{fill:#536c70;font-size:16px}.signal{stroke:#257664;stroke-width:3}.accent{fill:#257664}.head{font-size:27px;font-weight:700}.small{font-size:15px}${education.diagramCss(name)}</style>
 ${rect(0,0,800,520,'fill="none"')}${rect(32,32,4,60,'fill="#257664"')}
 ${text(52,58,label.title,'class="head"')}${text(52,88,label.subtitle,'class="muted"')}
 

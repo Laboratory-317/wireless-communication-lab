@@ -3,6 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const scene=require('./educational-motion.cjs');
+const steering=require('./beam-steering.cjs');
 const root=path.resolve(__dirname,'..');
 // Independently form F tensor F and compare every possible four-bit input.
 const f=[[1,0],[1,1]];
@@ -44,6 +45,23 @@ for(const lang of ['ru','en'])for(const page of ['index','research','students','
 }
 assert(scene.css.includes('prefers-reduced-motion'));
 assert(scene.css.includes('svg:target .edu-phase'));
+// Check the planar-array expression against an independent 16-element complex sum.
+for(const time of [0,.125,.25,.5,.75,1]) {
+  const target=steering.steering(time), a=target.azimuth*Math.PI/180, e=target.elevation*Math.PI/180;
+  assert(Math.abs(steering.planarFactor(a,e,a,e)-1)<1e-12);
+  for(const az of [-.6,0,.4])for(const el of [-.4,0,.3]) {
+    let real=0,imag=0;
+    for(let m=0;m<4;m++)for(let n=0;n<4;n++) {
+      const phase=Math.PI*(m*(Math.cos(el)*Math.sin(az)-Math.cos(e)*Math.sin(a))+n*(Math.sin(el)-Math.sin(e)));
+      real+=Math.cos(phase);imag+=Math.sin(phase);
+    }
+    assert(Math.abs(steering.planarFactor(az,el,a,e)-Math.hypot(real,imag)/16)<1e-12);
+  }
+}
+for(const plane of ['azimuth','elevation']) {
+  assert.equal(steering.sectionPath(plane,98,274,246,0),steering.sectionPath(plane,98,274,246,1));
+  assert.notEqual(steering.sectionPath(plane,98,274,246,.25),steering.sectionPath(plane,98,274,246,.75));
+}
 // The renderer alone is insufficient: every direction page must embed its illustration.
 for(const lang of ['ru','en'])for(const [page,asset] of [
   ['access','access'],['polar','polar'],['metasurfaces','ris'],['wireless','wireless']

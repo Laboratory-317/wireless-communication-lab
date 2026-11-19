@@ -2,6 +2,7 @@
 // Three observable states per scene. Calculations are shared with the SVG renderer,
 // while tests compare them with independent matrix and complex-sum references.
 const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
+const steering = require('./beam-steering.cjs');
 const text = (x,y,s,cls='edu-caption',extra='') => `<text x="${x}" y="${y}" class="${cls}" text-anchor="middle" ${extra}>${esc(s)}</text>`;
 const path = (d,cls='edu-wire',extra='') => `<path d="${d}" class="${cls}" ${extra}/>`;
 const rect = (x,y,w,h,cls='edu-box') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" class="${cls}"/>`;
@@ -97,20 +98,7 @@ function gauges(x,ys,steerDeg,r) {
   }).join('');
 }
 function beamScene(lang,compact=false) {
-  const x=compact?40:220,y=compact?65:260,r=compact?105:420;
-  const ys=compact?[32,53,74,95]:[175,230,285,340];
-  const gx=compact?20:165;
-  let result=ys.map(v=>rect(gx-10,v-9,20,18)+path(`M${gx+10} ${v}L${x} ${y}`,'edu-wire')).join('');
-  const targets=[0,15,-15];
-  result+=path(beamPath(x,y,r,0,2),`edu-lobe edu-beam-live${compact?'':' edu-beam-full'}`);
-  result+='<g class="edu-gauges-live">'+ys.map((v,i)=>circle(gx,v,compact?6:10,'edu-box')+path(`M${gx} ${v}h${(compact?6:10)*.78}`,'edu-active edu-needle',`style="transform-origin:${gx}px ${v}px;--phase:${180*i*Math.sin(Math.PI/12)}"`)).join('')+'</g>';
-  targets.forEach((deg)=>{const a=deg*Math.PI/180;result+=circle(x+(r+7)*Math.cos(a),y-(r+7)*Math.sin(a),compact?4:8,'edu-box');});
-  targets.forEach((deg,i)=>{
-    const a=deg*Math.PI/180,tx=x+(r+7)*Math.cos(a),ty=y-(r+7)*Math.sin(a);
-    result+=phase(i,'<g class="edu-beam-snapshot">'+path(beamPath(x,y,r,deg),'edu-lobe')+gauges(gx,ys,deg,compact?6:10)+'</g>'+circle(tx,ty,compact?4:8,'edu-good')+text(compact?92:400,compact?141:431,captions.wireless[lang][i]));
-  });
-  if(!compact) result+=text(165,394,local(lang,'Фазы антенн','Antenna phases'),'edu-label');
-  return result;
+  return steering.render(lang,compact);
 }
 function compactAccess(lang) {
   let b='';const ys=[30,65,100],colors=['edu-fill','edu-alt','edu-third'];
@@ -185,4 +173,4 @@ function detailedOverlay(kind,lang) {
   }return b;
 }
 const staticCss='.edu-static *{animation:none!important}.edu-static .edu-phase{opacity:0!important}.edu-static .edu-three{opacity:1!important}.edu-static .edu-packet,.edu-static .edu-beam-live,.edu-static .edu-gauges-live{display:none}.edu-static .edu-beam-snapshot{display:initial}.edu-static .edu-cell{opacity:1}';
-module.exports={css:css+staticCss+beamKeyframes('edu-beam-small',40,65,105)+beamKeyframes('edu-beam-full',220,260,420),renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};
+module.exports={css:css+staticCss+steering.css,diagramCss:kind=>css+staticCss+(kind==='wireless'?steering.css:''),renderCompact,detailedOverlay,beamScene,polarStates,checks,parity,validWord,damagedWord,arrayFactor,beamPath};

@@ -29,7 +29,7 @@ MIMO systems use multiple antennas to transmit and receive signals. We study sig
 
 We compare transmission and reception methods and evaluate the effects of the radio channel and inter-user interference. This work contributes to physical-layer research for 5G and 6G communication.
 
-![Multi-antenna communication](../assets/research/wireless-en.svg){.detail-diagram}
+![Base station steers its radiation pattern in azimuth and elevation](../assets/research/wireless-en.svg){.detail-diagram}
 
 ::: {.research-context}
 

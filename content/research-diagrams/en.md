@@ -1,11 +1,11 @@
 # Diagram labels
 
 ## wireless
-title: Forming a directional beam
-subtitle: Coordinated antennas reinforce the signal in a chosen direction
+title: Base station: electronic beam steering
+subtitle: Steering the beam in azimuth and elevation
 source: Antenna array
 target: Directional beam
-note: Ideal array: 4 elements, λ/2 spacing; normalized array factor
+note: Model: 4×4 planar array, λ/2 spacing; normalized array factor
 
 ## polar
 title: Inside a polar encoder
