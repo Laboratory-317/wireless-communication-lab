@@ -267,10 +267,19 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .course-bottom span { display:flex; flex-direction:column; font-size:.67rem; color:var(--lab-muted); }
 .course-bottom strong { font-size:.95rem; color:var(--lab-ink); }
 .course-bottom a { font-size:.76rem; font-weight:650; }
-.student-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.4rem; margin:1.5rem 0 3rem; }
-.student-step { padding:1.5rem 1.5rem 1.1rem; border-top:3px solid var(--lab-accent); background:white; }
-.student-step h3 { font-size:1.35rem; line-height:1.35; margin:.8rem 0 1rem; }
-.student-step p { color:var(--lab-muted); font-size:.88rem; }
+/* A compact progression, shared by both language and color themes. */
+.student-steps { display:grid; grid-template-columns:1fr 1fr 1.45fr; gap:2rem; counter-reset:student-step; margin:1.8rem 0 3rem; }
+.student-step { position:relative; min-width:0; padding:0; border:0; background:transparent; counter-increment:student-step; }
+.student-step::before { content:counter(student-step, decimal-leading-zero); display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--lab-accent); border-radius:50%; color:var(--lab-accent); font-size:.8rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.student-step:not(:last-child)::after { content:""; position:absolute; top:18px; left:52px; right:-14px; height:1px; background:var(--lab-line); }
+.student-step h3 { margin:1rem 0 0; font-size:1.18rem; font-weight:600; line-height:1.4; color:var(--lab-ink); }
+@media(max-width:700px) {
+ .student-steps { grid-template-columns:1fr; gap:0; margin:1.5rem 0 2.5rem; }
+ .student-step { display:grid; grid-template-columns:36px minmax(0,1fr); gap:1rem; align-items:start; padding-bottom:1.6rem; }
+ .student-step h3 { margin:.25rem 0 0; }
+ .student-step:not(:last-child)::after { top:44px; bottom:8px; left:18px; right:auto; width:1px; height:auto; }
+ .student-step:last-child { padding-bottom:0; }
+}
 .student-tracks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.1rem; margin:1.5rem 0 2rem; }
 .student-track { padding:1.7rem; border:1px solid var(--lab-line); border-radius:6px; background:white; }
 .student-track h3 { font-size:1.4rem; margin:.8rem 0 1rem; }
@@ -286,5 +295,5 @@ h3 { font-size:1.15rem; letter-spacing:-.018em; line-height:1.45; }
 .student-contact-button { display:inline-block; background:var(--lab-ink); color:white; padding:.8rem 1.2rem; border-radius:3px; text-decoration:none; font-weight:600; margin:.5rem 0; }
 .student-contact-button:hover { color:white; background:#006a6d; }
 #first-step { scroll-margin-top:5rem; }
-@media(max-width:1000px) { .learning-grid { grid-template-columns:1fr; } .course-visual img { max-height:270px; object-fit:contain; } .student-steps { grid-template-columns:1fr; } }
+@media(max-width:1000px) { .learning-grid { grid-template-columns:1fr; } .course-visual img { max-height:270px; object-fit:contain; } }
 @media(max-width:700px) { .learning-intro { grid-template-columns:1fr; gap:1.5rem; padding:1.5rem; } .learning-facts { grid-template-columns:1fr 1fr; border-left:0; border-top:1px solid #ffffff30; padding:1.2rem 0 0; } .learning-facts strong { font-size:2.3rem; } .student-tracks { grid-template-columns:1fr; } .student-contact { padding:1.5rem; } .student-contact h3 { font-size:1.5rem; } }
