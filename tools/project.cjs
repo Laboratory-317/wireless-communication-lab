@@ -72,6 +72,8 @@ function build() {
   const quarto = resolveTool('quarto');
   // Remove prior generated pages so deleted CVs cannot survive a rebuild.
   fs.rmSync(path.join(modern, '_site'), { recursive: true, force: true });
+  // Generate current SVGs before Quarto derives light/dark variants.
+  script('tools/build-diagrams.js');
   // Quarto resolves includes before pre-render on a fresh checkout.
   script('quarto-site/home-sections.cjs');
   invoke(quarto, ['render'], modern);

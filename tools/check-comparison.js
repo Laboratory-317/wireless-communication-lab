@@ -36,3 +36,13 @@ const entry = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert(entry.includes('themes-preview/modern/ru/'));
 assert(!entry.includes('journal'));
 console.log(`Checked ${pages} Modern HTML pages and ${links} local references; no CV or alternate designs.`);
+
+// Check the published assets, not just the renderer: stale SVGs must fail validation.
+for (const suffix of ['', '-en']) for (const theme of ['light', 'dark']) {
+  for (const [name, marker] of [['wireless', 'edu-volume-full-surface'], ['access', 'edu-active edu-flow']]) {
+    const file = path.join(modern, 'assets', 'research', `${name}${suffix}-${theme}.svg`);
+    const svg = fs.readFileSync(file, 'utf8');
+    assert(svg.includes(marker), `Outdated animated diagram: ${file}`);
+    assert(svg.includes('@keyframes'), `Missing animation: ${file}`);
+  }
+}
