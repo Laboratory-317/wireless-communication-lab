@@ -33,27 +33,10 @@
     const footer = document.querySelector('.site-footer');
     if (content && header) content.before(header);
     if (header && skip) header.before(skip);
-    const comparison = document.querySelector('.design-compare');
-    if (header && comparison) header.before(comparison);
     if (content && footer) content.after(footer);
     const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'ru';
     const page = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
-    const classicLink = document.querySelector('[data-classic-design]');
-    if (classicLink) {
-      const query = new URLSearchParams({ lang });
-      let classicPage = page;
-      let fragment = '';
-      if (page.startsWith('cv-')) { classicPage = 'cv'; query.set('person', page.slice(3)); }
-      if (page === 'news') { classicPage = 'index'; fragment = '#section-news'; }
-      if (page === 'media') classicPage = 'research';
-      classicLink.href = `../../journal/${classicPage}.html?${query}${fragment}`;
-    }
-    const modernLink = document.querySelector('[data-modern-design]');
-    if (modernLink) modernLink.href = `${page}.html${location.search}`;
-    const scientificLink = document.querySelector('[data-scientific-design]');
-    if (scientificLink) scientificLink.href = `../../scientific/${lang}/${page}.html${location.search}${location.hash}`;
-    const section = page.startsWith('research') ? 'research'
-      : page.startsWith('cv') ? 'people' : page;
+    const section = page.startsWith('research') ? 'research' : page;
     document.querySelectorAll('.home-languages a').forEach(a => {
       const target = a.getAttribute('lang');
       a.href = `../${target}/${page}.html${location.search}`;

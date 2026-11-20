@@ -54,10 +54,10 @@ jobs:
         with:
           version: ${{ steps.quarto.outputs.version }}
 
-      - name: Build both designs
+      - name: Build modern site
         run: node tools/project.cjs build
 
-      - name: Validate both designs
+      - name: Validate modern site
         run: node tools/project.cjs check
 
       - name: Save validated publication additions

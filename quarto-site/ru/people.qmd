@@ -47,7 +47,7 @@
 
 <a class="person-publications" href="publications.html?researcher=%D0%9F%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D1%81%D1%82%D0%BE%D0%B2">Публикации сотрудника →</a>
 
-<div class="person-actions"><a href="mailto:dmaltomsk@mail.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=-_7z65YAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-9405-4573">ORCID ↗</a><a href="cv-pokamestov.html">CV ↗</a></div>
+<div class="person-actions"><a href="mailto:dmaltomsk@mail.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=-_7z65YAAAAJ&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-9405-4573">ORCID ↗</a></div>
 
 <details class="person-identifiers"><summary>Научные идентификаторы</summary>
 
@@ -84,7 +84,7 @@
 
 <a class="person-publications" href="publications.html?researcher=%D0%9A%D1%80%D1%8E%D0%BA%D0%BE%D0%B2">Публикации сотрудника →</a>
 
-<div class="person-actions"><a href="mailto:iakov.v.kriukov@tusur.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=Ms3raocp3REC&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4115-9080">ORCID ↗</a><a href="cv-kryukov.html">CV ↗</a></div>
+<div class="person-actions"><a href="mailto:iakov.v.kriukov@tusur.ru">E-mail ↗</a><a href="https://scholar.google.com/citations?user=Ms3raocp3REC&amp;hl=ru">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4115-9080">ORCID ↗</a></div>
 
 <details class="person-identifiers"><summary>Научные идентификаторы</summary>
 

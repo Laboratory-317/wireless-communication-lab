@@ -6,7 +6,6 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const modern = path.join(root, 'quarto-site');
-const scientific = path.join(root, 'scientific-site', '.generated');
 const output = path.join(root, '_site');
 const version = name => fs.readFileSync(path.join(root, `.${name}-version`), 'utf8').trim();
 const expected = { node: version('node'), python: version('python'), quarto: version('quarto') };
@@ -71,18 +70,17 @@ function test() {
 
 function build() {
   const quarto = resolveTool('quarto');
-  script('tools/build-site.js');
+  // Remove prior generated pages so deleted CVs cannot survive a rebuild.
+  fs.rmSync(path.join(modern, '_site'), { recursive: true, force: true });
   // Quarto resolves includes before pre-render on a fresh checkout.
   script('quarto-site/home-sections.cjs');
   invoke(quarto, ['render'], modern);
-  script('scientific-site/prepare.cjs');
-  invoke(quarto, ['render'], scientific);
   script('tools/build-comparison.js');
   console.log('Готовый сайт: _site/');
 }
 
 function requireBuild() {
-  if (['modern', 'scientific'].some(design => !fs.existsSync(path.join(output, `themes-preview/${design}/ru/index.html`)))) {
+  if (!fs.existsSync(path.join(output, 'themes-preview/modern/ru/index.html'))) {
     throw new Error('Полная сборка не найдена. Сначала выполните: node tools/project.cjs build');
   }
 }
@@ -90,9 +88,7 @@ function requireBuild() {
 function check() {
   requireBuild();
   script('tools/check-publications.cjs');
-  script('tools/check-site.js');
   script('tools/check-comparison.js');
-  script('tools/check-scientific.cjs');
 }
 
 function port(args) {
@@ -133,8 +129,6 @@ function main() {
       requireBuild();
       const selectedPort = port(args);
       console.log(`Новое оформление: http://127.0.0.1:${selectedPort}/themes-preview/modern/ru/`);
-      console.log(`Прежнее оформление: http://127.0.0.1:${selectedPort}/themes-preview/journal/`);
-      console.log(`Scientific: http://127.0.0.1:${selectedPort}/themes-preview/scientific/ru/`);
       invoke(resolveTool('python'), ['-m', 'http.server', selectedPort, '--bind', '127.0.0.1', '--directory', output]);
       break;
     }
@@ -145,8 +139,8 @@ function main() {
       console.log('node tools/project.cjs <команда>\n\n' +
         'doctor         Проверить Node.js, Quarto и Python\n' +
         'dev            Quarto с обновлением при правках, только новое оформление\n' +
-        'build          Собрать три оформления в _site/\n' +
-        'preview        Показать готовую сборку трёх оформлений\n' +
+        'build          Собрать новое оформление в _site/\n' +
+        'preview        Показать готовую сборку\n' +
         'check:sources  Проверить синтаксис и согласованность библиографии\n' +
         'test           Проверить исходники и запустить тесты Python без сети\n' +
         'check          Проверить готовый сайт и внутренние ссылки\n' +

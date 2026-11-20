@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Лаборатория беспроводной связи</title>
-  <meta http-equiv="refresh" content="0; url=themes-preview/journal/">
+  <meta http-equiv="refresh" content="0; url=themes-preview/modern/ru/">
 </head>
 <body>
-  <p><a href="themes-preview/journal/">Перейти на сайт лаборатории</a></p>
+  <p><a href="themes-preview/modern/ru/">Перейти на сайт лаборатории</a></p>
   <script>
-    location.replace(`themes-preview/journal/${location.search}`);
+    const lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'ru';
+    location.replace(`themes-preview/modern/${lang}/${location.search}${location.hash}`);
   </script>
 </body>
 </html>
