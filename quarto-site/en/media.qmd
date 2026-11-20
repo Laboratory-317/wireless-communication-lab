@@ -27,30 +27,30 @@ These diagrams explain the principles of the systems we study; they do not show 
 
 ## Multi-antenna communications
 
-![Antenna array and directional transmission](../assets/research/wireless-en.svg){}
+![Antenna array and directional transmission](../assets/research/wireless-en.svg#still){}
 
 An antenna array directs signal transmission towards user devices.
 
 ## Polar coding
 
-![Encoding transform for four bits](../assets/research/polar-en.svg){}
+![Encoding transform for four bits](../assets/research/polar-en.svg#still){}
 
 An example transform for four input bits; ⊕ denotes addition modulo two.
 
 ## LDPC coding
 
-![Tanner graph: bits and parity checks](../assets/research/ldpc-en.svg)
+![Tanner graph: bits and parity checks](../assets/research/ldpc-en.svg#still)
 
 A Tanner graph connects codeword bits to parity checks. Each square imposes a constraint: the connected bits sum to zero modulo 2.
 
 ## Multiple access
 
-![Data exchange between a base station and devices](../assets/research/access-en.svg){}
+![Data exchange between a base station and devices](../assets/research/access-en.svg#still){}
 
 Phones, laptops and sensors exchange data with a base station. Multiple access methods coordinate how these devices share the radio channel.
 
 ## Reconfigurable intelligent surfaces
 
-![Signal reflection via an RIS](../assets/research/ris-en.svg){}
+![Signal reflection via an RIS](../assets/research/ris-en.svg#still){}
 
 The RIS provides a reflected path between the transmitter and receiver when an obstacle blocks the direct path.

@@ -10,7 +10,7 @@ for(const lang of ['ru','en'])for(const page of ['index','research','students','
   const source=fs.readFileSync(file,'utf8').replace(/<svg class="research-symbol[^>]*>[\s\S]*?<\/svg>/g,svg=>{
     const kind=svg.includes('edu-coding')?'coding':svg.includes('edu-wireless')?'wireless':svg.includes('edu-access')?'access':svg.includes('edu-ris')?'ris':null;
     if(!kind)return svg;
-    count++;return renderCompact(kind,lang,page==='research');
+    count++;return renderCompact(kind,lang,true);
   });
   if(count!==(page==='education'?5:4))throw Error(`Unexpected scene count: ${lang}/${page}: ${count}`);
   fs.writeFileSync(file,source);

@@ -4,10 +4,13 @@
   let preference = 'system';
   try { preference = localStorage.getItem('lab-theme') || 'system'; } catch {}
   if (!['light', 'dark', 'system'].includes(preference)) preference = 'system';
+  // Animate only inside an individual research direction, never on entry pages.
+  const page = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+  const animatedDirection = ['research-access', 'research-metasurfaces', 'research-wireless'].includes(page);
   let motion = 'on';
   try { motion = localStorage.getItem('lab-motion') === 'off' ? 'off' : 'on'; } catch {}
   function apply() {
-    document.documentElement.dataset.labMotion = motion;
+    document.documentElement.dataset.labMotion = animatedDirection ? motion : 'off';
     const theme = preference === 'system'
       ? (media.matches ? 'dark' : 'light') : preference;
     document.documentElement.dataset.labTheme = theme;
@@ -16,7 +19,7 @@
       document.body.classList.toggle('quarto-light', theme === 'light');
     }
     document.querySelectorAll('img[data-dark-src]').forEach(img => {
-      const source = (theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc) + (motion === 'off' ? '#still' : '');
+      const source = (theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc) + (!animatedDirection || motion === 'off' ? '#still' : '');
       if (img.getAttribute('src') !== source) img.setAttribute('src', source);
     });
     document.querySelectorAll('[data-theme-choice]').forEach(button => {
@@ -35,7 +38,6 @@
     if (header && skip) header.before(skip);
     if (content && footer) content.after(footer);
     const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'ru';
-    const page = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
     const section = page.startsWith('research') ? 'research' : page;
     document.querySelectorAll('.home-languages a').forEach(a => {
       const target = a.getAttribute('lang');
@@ -61,7 +63,7 @@
       }
     });
     const illustration = document.querySelector('.research-overview, .home-directions, .student-tracks, .learning-grid, figure:has(img[data-dark-src])');
-    if (illustration && !['education', 'research', 'research-polar'].includes(page)) {
+    if (illustration && animatedDirection) {
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'motion-toggle';
